@@ -1,0 +1,7 @@
+joblib
+numpy
+scikit-learn
+scikit-image
+opencv-python
+matplotlib
+python-dotenv
