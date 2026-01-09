@@ -15,7 +15,7 @@ from mytypes import (
 )
 
 from tools.relevance import compute_metrics
-from utils import show_confusion_matrix, show_metrics
+from utils import show_confusion_matrix, show_experiment_metrics
 import time
 
 
@@ -330,7 +330,7 @@ def standard_technique(
 
     # ETAPA 4: Mostrar métricas
     print("\n📋 ETAPA 4: Exibição de métricas")
-    show_metrics(model_metrics, title=model_name)
+    show_experiment_metrics(model_metrics, title=model_name)
 
     # ETAPA 5: Criar diretório do experimento se não fornecido
     if experiment_dir is None:

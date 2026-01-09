@@ -17,6 +17,8 @@ from sklearn.metrics import (
     precision_score,
 )
 
+from utils import show_metrics
+
 # Import image tools functions
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
@@ -31,17 +33,54 @@ from tools.image_tools import reconstruct_image_from_regions
 from mytypes import (
     PreparedSetsForClassification,
     ClassificationDataset,
-    ModelResults,
+    RelevanceModelResults,
     PredictResults,
     ModelMetrics,
     ModelLabels,
-    RelevanceResults
+    RelevanceResults,
+    ResultsKeyDict,
+    RelevanceTrainResults
 )
 
+def calculate_intermediary_metrics(
+    y_test, predict
+) -> ModelMetrics:
+    accuracy = accuracy_score(y_test, predict)
+    f1 = f1_score(y_test, predict)
+    recall = recall_score(y_test, predict)
+    precision = precision_score(y_test, predict)
+
+    return accuracy, f1, recall, precision
+
+def calculate_train_metrics(
+    metrics
+):
+    return {
+        'accuracy': {
+            'folds': metrics['accuracies'],
+            'mean': np.mean(metrics['accuracies']),
+            'std': np.std(metrics['accuracies'])
+        },
+        'f1': {
+            'folds': metrics['f1s'],
+            'mean': np.mean(metrics['f1s']),
+            'std': np.std(metrics['f1s'])
+        },
+        'recall': {
+            'folds': metrics['recalls'],
+            'mean': np.mean(metrics['recalls']),
+            'std': np.std(metrics['recalls'])
+        },
+        'precision': {
+            'folds': metrics['precisions'],
+            'mean': np.mean(metrics['precisions']),
+            'std': np.std(metrics['precisions'])
+        }
+    }
 
 def extract_model_results(
     base_model: BaseEstimator, folded_dataset: ClassificationDataset, title: str = ""
-) -> ModelResults:
+) -> RelevanceModelResults:
     """
     Extrai probabilidades positivas de um modelo usando validação cruzada.
 
@@ -59,10 +98,17 @@ def extract_model_results(
     # Validação cruzada para avaliação
     print(f"=== Iniciando treinamento assistido: {title} ===")
     print(f"Validação cruzada: {len(folded_dataset)} folds")
-    print("-" * 50)
+    print("=" * 50)
+
+    intermediary_metrics = {
+        'accuracies': [],
+        'f1s': [],
+        'recalls': [],
+        'precisions': [],
+    }
 
     # Validação cruzada para avaliação
-    for train_set, test_set in folded_dataset:
+    for fold_index, (train_set, test_set) in enumerate(folded_dataset):
         X_train, y_train, train_pieces_map = train_set
         X_test, y_test, test_pieces_map = test_set
 
@@ -72,21 +118,37 @@ def extract_model_results(
 
         print("Melhores parâmetros:", fold_model.best_params_)
 
-        predict = fold_model.predict_proba(X_test)
+        predict_probabilities = fold_model.predict_proba(X_test)
+        predict_results = fold_model.predict(X_test)
 
-        for i, p in enumerate(predict):
+        for i, p in enumerate(predict_probabilities):
             img = test_pieces_map[i]
 
             if probabilities.get(img) is None:
                 probabilities[img] = []
 
             probabilities[img].append(p[0])  # Probabilidade da classe positiva (0)
+        
+        # Calcula métricas intermediárias para o fold atual
+        metrics = calculate_intermediary_metrics(y_test, predict_results)
 
-    print("-" * 50)
-    return probabilities
+        accuracy, f1, recall, precision = metrics
+
+        intermediary_metrics['accuracies'].append(accuracy)
+        intermediary_metrics['f1s'].append(f1)
+        intermediary_metrics['recalls'].append(recall)
+        intermediary_metrics['precisions'].append(precision)
+
+        show_metrics(metrics, title=f"Fold {fold_index + 1} - {title}")
+    
+    # Calcula métricas de treinamento agregadas
+    train_metrics = calculate_train_metrics(intermediary_metrics)
+
+    print("=" * 50)
+    return (probabilities, train_metrics)
 
 
-def consolidate_model_results(specialists_results: List[ModelResults]) -> ModelResults:
+def consolidate_model_results(specialists_results: List[ResultsKeyDict]) -> ResultsKeyDict:
     """
     Consolida resultados de múltiplos folds em um único dicionário.
 
@@ -123,7 +185,7 @@ def extract_specialists_probabilities(
     class_names: List[str],
     model_name: str = "Specialist",
     k_folds: int = 5,
-) -> ModelResults:
+) -> RelevanceTrainResults:
     """
     Treina múltiplos especialistas e extrai suas probabilidades normalizadas.
 
@@ -141,6 +203,7 @@ def extract_specialists_probabilities(
     from joblib import parallel_backend
 
     extracted_probabilities = []
+    specialists_train_metrics = []
 
     print(f"🚀 Iniciando treinamento de especialistas {model_name}")
     print(f"   📋 {len(specialist_sets)} especialistas para treinar")
@@ -159,7 +222,7 @@ def extract_specialists_probabilities(
 
             # Usa a função de treinamento assistido fornecida
             try:
-                specialist_probabilities = extract_func(
+                (specialist_probabilities, specialist_train_metrics) = extract_func(
                     base_model=base_model,
                     folded_dataset=dataset,
                     title=specialist_title,
@@ -167,6 +230,7 @@ def extract_specialists_probabilities(
 
                 # Adiciona o modelo treinado ao array de especialistas
                 extracted_probabilities.append(specialist_probabilities)
+                specialists_train_metrics.append(specialist_train_metrics)
 
             except Exception as e:
                 print(
@@ -183,10 +247,10 @@ def extract_specialists_probabilities(
 
     images_probabilities = consolidate_model_results(extracted_probabilities)
 
-    return normalize_probabilities(images_probabilities)
+    return normalize_probabilities(images_probabilities), specialists_train_metrics
 
 
-def normalize_probabilities(probabilities: ModelResults) -> ModelResults:
+def normalize_probabilities(probabilities: ResultsKeyDict) -> ResultsKeyDict:
     """
     Normaliza probabilidades de especialistas para somarem 1.0 por amostra.
     """
@@ -206,7 +270,7 @@ def normalize_probabilities(probabilities: ModelResults) -> ModelResults:
     return normalized_probs  # Shape: (n_probabilities, n_specialists)
 
 
-def shannon_entropy(probabilities: ModelResults, use_clip=False, eps=1e-12) -> ModelResults:
+def shannon_entropy(probabilities: ResultsKeyDict, use_clip=False, eps=1e-12) -> ResultsKeyDict:
     """
     Calcula H(x_j) por amostra (linha) para uma matriz de probabilidades no formato (n_amostras, n_especialistas).
     H(x_j) = - sum_i P_i(x_j) * log_base(P_i(x_j)), com base = n_especialistas por padrão.
@@ -245,7 +309,7 @@ def shannon_entropy(probabilities: ModelResults, use_clip=False, eps=1e-12) -> M
     return entropies
 
 
-def shannon_entropy_manual(probabilities: ModelResults) -> ModelResults:
+def shannon_entropy_manual(probabilities: ResultsKeyDict) -> ResultsKeyDict:
     """
     Calcula H(x_j) por amostra (linha) para uma matriz de probabilidades no formato (n_amostras, n_especialistas).
     H(x_j) = - sum_i P_i(x_j) * log_base(P_i(x_j)), com base = n_especialistas por padrão.
@@ -277,7 +341,7 @@ def shannon_entropy_manual(probabilities: ModelResults) -> ModelResults:
     return entropies
 
 
-def calculate_relevance(entropies: ModelResults) -> ModelResults:
+def calculate_relevance(entropies: ResultsKeyDict) -> ResultsKeyDict:
     """
     Calcula R(x_j) para cada segmento de uma imagem a partir de suas entropias H(x_j).
     R(x_j) = 1 - H(x_j).
@@ -292,8 +356,8 @@ def calculate_relevance(entropies: ModelResults) -> ModelResults:
 
 
 def calculate_max_relevance(
-    relevances: ModelResults, probabilities: ModelResults
-) -> ModelResults:
+    relevances: ResultsKeyDict, probabilities: ResultsKeyDict
+) -> ResultsKeyDict:
     """
     Calcula R_max(x_j) para as relevâncias R(x_j) de cada imagem, ponderando pela maior probabilidade entre especialistas.
     R_max(x_j) = R(x_j) * max(P(x_j)).
@@ -324,8 +388,8 @@ def calculate_max_relevance(
 
 
 def calculate_ponderate_votes(
-    probabilities: ModelResults, max_relevances: ModelResults
-) -> ModelResults:
+    probabilities: ResultsKeyDict, max_relevances: ResultsKeyDict
+) -> ResultsKeyDict:
     """
     Calcula votos ponderados para cada segmento de uma imagem.
     Voto ponderado = P(x_j) * R_max(x_j).
@@ -355,7 +419,7 @@ def calculate_ponderate_votes(
     return weighted_votes
 
 
-def calculate_accumulated_votes(ponderated_votes: ModelResults) -> ModelResults:
+def calculate_accumulated_votes(ponderated_votes: ResultsKeyDict) -> ResultsKeyDict:
     """
     Calcula votos acumulados somando o valor do voto de todos os segmentos de um especialista.
     Voto acumulado = sum(P(x_j) * R_max(x_j)) ao longo dos especialistas.
@@ -378,7 +442,7 @@ def calculate_accumulated_votes(ponderated_votes: ModelResults) -> ModelResults:
     return accumulated_votes
 
 
-def predict_labels(accumulated_votes: ModelResults) -> PredictResults:
+def predict_labels(accumulated_votes: ResultsKeyDict) -> PredictResults:
     """
     Determina o rótulo final de cada imagem com base nos votos acumulados.
     Rótulo = índice do especialista com maior voto acumulado.
@@ -420,7 +484,7 @@ def compute_metrics(
 
 
 def generate_relevance_heatmaps(
-    max_relevances: ModelResults,
+    max_relevances: ResultsKeyDict,
     all_images_segmented: Dict[str, np.ndarray],
     model_name: str,
     colormap: str = "viridis",
@@ -800,7 +864,7 @@ def export_relevance_results_to_csv(
      labels_list, model_metrics) = relevance_results
     
     # Extrai as métricas globais
-    accuracy_global, f1_global, recall_global, precision_global = model_metrics
+    (accuracy_global, f1_global, recall_global, precision_global), specialists_train_metrics = model_metrics
     
     # Cria o diretório de saída
     csv_dir = os.path.join(output_dir, "csv_exports")
@@ -1017,7 +1081,7 @@ def relevance_technique(
         resultados: resultados da classificação
     """
 
-    probabilities = extract_specialists_probabilities(
+    probabilities, specialists_train_metrics = extract_specialists_probabilities(
         base_model=base_model,
         extract_func=extract_model_results,
         specialist_sets=specialist_sets,
@@ -1051,5 +1115,5 @@ def relevance_technique(
         accumulated_votes,
         predicted_labels,
         labels_list,
-        model_metrics,
+        (model_metrics, specialists_train_metrics)
     )

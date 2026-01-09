@@ -2,7 +2,7 @@
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score, classification_report, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
-from mytypes import ModelMetrics
+from mytypes import ExperimentMetrics, ModelMetrics
 
 def show_predict_infos(y, predict, title="", cmap="Blues", show_plots=True):
     """
@@ -88,20 +88,57 @@ def show_confusion_matrix(y, predict, title="", cmap="Blues", verbose=False, sav
     if verbose:
         plt.show()
 
+def show_experiment_metrics(metrics: ExperimentMetrics, title=""):
+    """
+    Exibe métricas de avaliação de modelos de classificação.
+    
+    Args:
+        metrics: Tupla com as métricas ((accuracy, f1, recall, precision), especialistas_train_metrics)
+        title: Título para exibição
+    """
+    (accuracy, f1, recall, precision), specialists_train_metrics = metrics
+
+    print("#" * 40)    
+    print(f"Métricas Finais Relevância {title}:")
+    print(f"   📊 Acurácia: {accuracy*100:.4f}%")
+    print(f"   📊 F1: {f1*100:.4f}%")
+    print(f"   📊 Recall: {recall*100:.4f}%")
+    print(f"   📊 Precision: {precision*100:.4f}%")
+    print("-" * 40)
+    print("Métricas de Treinamento dos Especialistas:")
+    for idx, train_metrics in enumerate(specialists_train_metrics):
+        sp_accuracy = train_metrics['accuracy']
+        sp_f1 = train_metrics['f1']
+        sp_recall = train_metrics['recall']
+        sp_precision = train_metrics['precision']
+
+        print(f"   Especialista {idx+1}:")
+        print(f"      1️⃣ Acurácia Média: {sp_accuracy['mean']*100:.4f}% +- {sp_accuracy['std']*100:.4f}%")
+        print(f'        | Folds: {sp_accuracy["folds"]}')
+        print(f"      2️⃣ F1 Média: {sp_f1['mean']*100:.4f}% +- {sp_f1['std']*100:.4f}%")
+        print(f'        | Folds: {sp_f1["folds"]}')
+        print(f"      3️⃣ Recall Médio: {sp_recall['mean']*100:.4f}% +- {sp_recall['std']*100:.4f}%")
+        print(f'        | Folds: {sp_recall["folds"]}')
+        print(f"      4️⃣ Precision Média: {sp_precision['mean']*100:.4f}% +- {sp_precision['std']*100:.4f}%")
+        print(f'        | Folds: {sp_precision["folds"]}')
+    print("#" * 40)
+    
+
 def show_metrics(metrics: ModelMetrics, title=""):
     """
     Exibe métricas de avaliação de modelos de classificação.
     
     Args:
-        metrics: Tupla com as métricas (accuracy, f1, recall, precision)
+        metrics: Tupla com as métricas (accuracy, f1, recall, precision))
         title: Título para exibição
     """
     accuracy, f1, recall, precision = metrics
 
-    print("-" * 40)
-    print(f"Métricas {title}:")
+    print("-" * 40)    
+    print(f"Métricas Finais Relevância {title}:")
     print(f"   📊 Acurácia: {accuracy*100:.4f}%")
     print(f"   📊 F1: {f1*100:.4f}%")
     print(f"   📊 Recall: {recall*100:.4f}%")
     print(f"   📊 Precision: {precision*100:.4f}%")
+    
     print("-" * 40)
