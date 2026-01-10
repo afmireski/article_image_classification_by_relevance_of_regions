@@ -875,13 +875,20 @@ def export_relevance_results_to_csv(
     os.makedirs(csv_dir, exist_ok=True)
     
     # Define o nome do arquivo se não fornecido
+    base_name = model_name.lower().replace('-', '_').replace(' ', '_')
     if filename is None:
-        filename = f"{model_name.lower().replace('-', '_').replace(' ', '_')}_results.csv"
+        filename = f"{base_name}_results.csv"
+
+    # Nome base (sem sufixo) para gerar também o CSV de métricas
     
-    filepath = os.path.join(csv_dir, filename)
+    metrics_filename = f"{base_name}_metrics.csv"
+    
+    results_filepath = os.path.join(csv_dir, filename)
+    metrics_filepath = os.path.join(csv_dir, metrics_filename)
     
     print(f"📊 Exportando resultados para CSV: {model_name}")
-    print(f"   📁 Arquivo: {filepath}")
+    print(f"   📁 Arquivo com os resultados: {results_filepath}")
+    print (f"   📁 Arquivo com as métricas: {metrics_filepath}")
     print(f"   🎯 Imagens: {len(predicted_labels)} amostras")
     print("-" * 50)
     
@@ -904,7 +911,7 @@ def export_relevance_results_to_csv(
         return json.dumps(rounded_arr)
     
     # Escreve o arquivo CSV
-    with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
+    with open(results_filepath, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = [
             'nome_imagem', 'label_predito', 'label_real',
             'acuracia_global', 'f1_global', 'recall_global', 'precision_global',
@@ -941,10 +948,111 @@ def export_relevance_results_to_csv(
                 continue
     
     print(f"   ✅ {processed_count} linhas escritas com sucesso")
-    print(f"   💾 Arquivo salvo: {filepath}")
+    print(f"   💾 Arquivo salvo: {results_filepath}")
+
+    # -----------------------------
+    # CSV de métricas do experimento
+    # -----------------------------
+    # Formato solicitado:
+    # model,accuracy,accuracy_std,f1_score,f1_score_std,recall,recall_std,precision,precision_std
+    # - Métricas globais e por fold não têm std: preencher com '###'
+    # - Métricas médias por especialista têm mean e std
+
+    def fmt_num(x):
+        return f"{x:.4f}"  # já em escala percentual
+
+    def fmt_std(x):
+        return f"{x:.4f}"  # já em escala percentual
+
+    tag_prefix = f"{base_name}_relevance"
+
+    def to_percent(x):
+        # Métricas internas são [0,1]; exporta em % (0-100)
+        return float(x) * 100.0
+
+    metrics_rows = []
+
+    # Global
+    metrics_rows.append(
+        {
+            "model": f"{tag_prefix}_global",
+            "accuracy (%)": fmt_num(to_percent(accuracy_global)),
+            "accuracy_std (+- %)": "###",
+            "f1_score (%)": fmt_num(to_percent(f1_global)),
+            "f1_score_std (+- %)": "###",
+            "recall (%)": fmt_num(to_percent(recall_global)),
+            "recall_std (+- %)": "###",
+            "precision (%)": fmt_num(to_percent(precision_global)),
+            "precision_std (+- %)": "###",
+        }
+    )
+
+    # Especialistas: mean/std + folds
+    for sp_idx, train_metrics in enumerate(specialists_train_metrics):
+        sp_accuracy = train_metrics["accuracy"]
+        sp_f1 = train_metrics["f1"]
+        sp_recall = train_metrics["recall"]
+        sp_precision = train_metrics["precision"]
+
+        # Mean (com std)
+        metrics_rows.append(
+            {
+                "model": f"{tag_prefix}_specialist_{sp_idx}_mean",
+                "accuracy (%)": fmt_num(to_percent(sp_accuracy["mean"])),
+                "accuracy_std (+- %)": fmt_std(to_percent(sp_accuracy["std"])),
+                "f1_score (%)": fmt_num(to_percent(sp_f1["mean"])),
+                "f1_score_std (+- %)": fmt_std(to_percent(sp_f1["std"])),
+                "recall (%)": fmt_num(to_percent(sp_recall["mean"])),
+                "recall_std (+- %)": fmt_std(to_percent(sp_recall["std"])),
+                "precision (%)": fmt_num(to_percent(sp_precision["mean"])),
+                "precision_std (+- %)": fmt_std(to_percent(sp_precision["std"])),
+            }
+        )
+
+        # Folds (sem std)
+        folds_count = min(
+            len(sp_accuracy.get("folds", [])),
+            len(sp_f1.get("folds", [])),
+            len(sp_recall.get("folds", [])),
+            len(sp_precision.get("folds", [])),
+        )
+
+        for fold_idx in range(folds_count):
+            metrics_rows.append(
+                {
+                    "model": f"{tag_prefix}_specialist_{sp_idx}_fold{fold_idx + 1}",
+                    "accuracy (%)": fmt_num(to_percent(sp_accuracy["folds"][fold_idx])),
+                    "accuracy_std (+- %)": "###",
+                    "f1_score (%)": fmt_num(to_percent(sp_f1["folds"][fold_idx])),
+                    "f1_score_std (+- %)": "###",
+                    "recall (%)": fmt_num(to_percent(sp_recall["folds"][fold_idx])),
+                    "recall_std (+- %)": "###",
+                    "precision (%)": fmt_num(to_percent(sp_precision["folds"][fold_idx])),
+                    "precision_std (+- %)": "###",
+                }
+            )
+    with open(metrics_filepath, "w", newline="", encoding="utf-8") as csvfile:
+        fieldnames = [
+            "model",
+            "accuracy (%)",
+            "accuracy_std (+- %)",
+            "f1_score (%)",
+            "f1_score_std (+- %)",
+            "recall (%)",
+            "recall_std (+- %)",
+            "precision (%)",
+            "precision_std (+- %)",
+        ]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in metrics_rows:
+            writer.writerow(row)
+
+    print(f"   ✅ {len(metrics_rows)} linhas de métricas escritas com sucesso")
+    print(f"   💾 Arquivo salvo: {metrics_filepath}")
     print("=" * 50)
     
-    return filepath
+    return results_filepath
 
 
 def export_all_relevance_results_to_csv(
