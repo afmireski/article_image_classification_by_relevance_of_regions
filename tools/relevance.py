@@ -141,7 +141,7 @@ def extract_model_results(
         intermediary_metrics['precisions'].append(precision)
 
         show_metrics(metrics, title=f"Fold {fold_index + 1} - {title}")
-        show_confusion_matrix(y_test, predict_results, title=f"{title} - Fold {fold_index + 1}",save_dir='results/confusion_matrixs/folds')
+        # show_confusion_matrix(y_test, predict_results, title=f"{title} - Fold {fold_index + 1}",save_dir='results/confusion_matrixs/folds', cmap='Purples')
 
         print("~" * 25)
     

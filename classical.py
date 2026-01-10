@@ -163,7 +163,7 @@ def save_standard_confusion_matrix(
         show_confusion_matrix(
             true_labels,
             predicted_labels,
-            title=f"{model_name} - Confusion Matrix",
+            title=f"{model_name}",
             cmap=cmap,
         )
 
@@ -346,7 +346,7 @@ def standard_technique(
     show_confusion_matrix(
             true_y,
             predicted_y,
-            title=f"{model_name} - Confusion Matrix",
+            title=f"{model_name}",
             cmap=cmap,
         )
 
