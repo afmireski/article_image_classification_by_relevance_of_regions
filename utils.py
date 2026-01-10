@@ -61,7 +61,8 @@ def show_confusion_matrix(y, predict, title="", cmap="Blues", verbose=False, sav
     import os
     
     # Cria a matriz de confusão
-    ConfusionMatrixDisplay.from_predictions(y, predict, colorbar=False, cmap=cmap)
+    disp = ConfusionMatrixDisplay.from_predictions(y, predict, colorbar=False, cmap=cmap)
+    fig = getattr(disp, "figure_", None)
     
     # Adiciona título se fornecido
     if len(title) > 0:
@@ -88,6 +89,12 @@ def show_confusion_matrix(y, predict, title="", cmap="Blues", verbose=False, sav
     if verbose:
         plt.show()
 
+    # Fecha a figura para evitar acumular muitas figuras abertas na memória
+    if fig is not None:
+        plt.close(fig)
+    else:
+        plt.close()
+
 def show_experiment_metrics(metrics: ExperimentMetrics, title=""):
     """
     Exibe métricas de avaliação de modelos de classificação.
@@ -97,6 +104,9 @@ def show_experiment_metrics(metrics: ExperimentMetrics, title=""):
         title: Título para exibição
     """
     (accuracy, f1, recall, precision), specialists_train_metrics = metrics
+
+    def print_folds(folds):
+        return ", ".join([f"{fold*100:.4f}%" for fold in folds])
 
     print("#" * 40)    
     print(f"Métricas Finais Relevância {title}:")
@@ -112,15 +122,15 @@ def show_experiment_metrics(metrics: ExperimentMetrics, title=""):
         sp_recall = train_metrics['recall']
         sp_precision = train_metrics['precision']
 
-        print(f"   Especialista {idx+1}:")
+        print(f"   Especialista classe {idx}:")
         print(f"      1️⃣ Acurácia Média: {sp_accuracy['mean']*100:.4f}% +- {sp_accuracy['std']*100:.4f}%")
-        print(f'        | Folds: {sp_accuracy["folds"]}')
+        print(f'        | Folds: {print_folds(sp_accuracy["folds"])}')
         print(f"      2️⃣ F1 Média: {sp_f1['mean']*100:.4f}% +- {sp_f1['std']*100:.4f}%")
-        print(f'        | Folds: {sp_f1["folds"]}')
+        print(f'        | Folds: {print_folds(sp_f1["folds"])}')
         print(f"      3️⃣ Recall Médio: {sp_recall['mean']*100:.4f}% +- {sp_recall['std']*100:.4f}%")
-        print(f'        | Folds: {sp_recall["folds"]}')
+        print(f'        | Folds: {print_folds(sp_recall["folds"])}')
         print(f"      4️⃣ Precision Média: {sp_precision['mean']*100:.4f}% +- {sp_precision['std']*100:.4f}%")
-        print(f'        | Folds: {sp_precision["folds"]}')
+        print(f'        | Folds: {print_folds(sp_precision["folds"])}')
     print("#" * 40)
     
 
@@ -135,7 +145,7 @@ def show_metrics(metrics: ModelMetrics, title=""):
     accuracy, f1, recall, precision = metrics
 
     print("-" * 40)    
-    print(f"Métricas Finais Relevância {title}:")
+    print(f"Métricas {title}:")
     print(f"   📊 Acurácia: {accuracy*100:.4f}%")
     print(f"   📊 F1: {f1*100:.4f}%")
     print(f"   📊 Recall: {recall*100:.4f}%")

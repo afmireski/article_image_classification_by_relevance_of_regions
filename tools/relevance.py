@@ -17,7 +17,7 @@ from sklearn.metrics import (
     precision_score,
 )
 
-from utils import show_metrics
+from utils import (show_metrics, show_confusion_matrix)
 
 # Import image tools functions
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -116,6 +116,7 @@ def extract_model_results(
         fold_model = clone(base_model)
         fold_model.fit(X_train, y_train)
 
+        print(f"\n~~ Fold {fold_index + 1} ~~")
         print("Melhores parâmetros:", fold_model.best_params_)
 
         predict_probabilities = fold_model.predict_proba(X_test)
@@ -140,6 +141,9 @@ def extract_model_results(
         intermediary_metrics['precisions'].append(precision)
 
         show_metrics(metrics, title=f"Fold {fold_index + 1} - {title}")
+        show_confusion_matrix(y_test, predict_results, title=f"{title} - Fold {fold_index + 1}",save_dir='results/confusion_matrixs/folds')
+
+        print("~" * 25)
     
     # Calcula métricas de treinamento agregadas
     train_metrics = calculate_train_metrics(intermediary_metrics)
