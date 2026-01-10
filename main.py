@@ -1,5 +1,10 @@
 import numpy as np
 import os
+
+os.environ.setdefault("MPLBACKEND", "Agg")
+import matplotlib
+
+matplotlib.use("Agg", force=True)
 from dotenv import load_dotenv
 
 # Import the image segmentation tools
@@ -43,7 +48,7 @@ from tools.relevance import (
     zip_and_cleanup_results,
 )
 
-from utils import show_confusion_matrix, show_metrics
+from utils import show_confusion_matrix, show_experiment_metrics
 
 # Load environment variables from .env file
 load_dotenv(".env", override=True)
@@ -93,7 +98,7 @@ def timed_relevance_technique(
 
     return results
 
-images_directory = "./images/experiment"
+images_directory = "./images/pieces"
 image_categories = ["dogs", "cats", "lions", "horses"]
 n_examples = 4
 NEEDS_RESIZE = int(os.getenv("NEEDS_RESIZE", True))
@@ -505,11 +510,11 @@ relevance_results_knn_lbp = timed_relevance_technique(
     knn_lbp_relevance_metrics,
 ) = relevance_results_knn_lbp
 
-show_metrics(knn_lbp_relevance_metrics, title=f"{base_name} LBP")
+show_experiment_metrics(knn_lbp_relevance_metrics, title=f"{base_name} LBP")
 show_confusion_matrix(
     knn_lbp_true_y,
     knn_lbp_predicted_y,
-    title=f"{base_name} LBP - Confusion Matrix",
+    title=f"{base_name} LBP",
     cmap="Blues",
 )
 generate_relevance_heatmaps(
@@ -551,11 +556,11 @@ relevance_results_knn_glcm = timed_relevance_technique(
     knn_glcm_relevance_metrics,
 ) = relevance_results_knn_glcm
 
-show_metrics(knn_glcm_relevance_metrics, title="KNN GLCM")
+show_experiment_metrics(knn_glcm_relevance_metrics, title="KNN GLCM")
 show_confusion_matrix(
     knn_glcm_true_y,
     knn_glcm_predicted_y,
-    title="KNN GLCM - Confusion Matrix",
+    title="KNN GLCM",
     cmap="Blues",
 )
 generate_relevance_heatmaps(
@@ -597,11 +602,11 @@ relevance_results_knn_lpq = timed_relevance_technique(
     knn_lpq_relevance_metrics,
 ) = relevance_results_knn_lpq
 
-show_metrics(knn_lpq_relevance_metrics, title="KNN LPQ")
+show_experiment_metrics(knn_lpq_relevance_metrics, title="KNN LPQ")
 show_confusion_matrix(
     knn_lpq_true_y,
     knn_lpq_predicted_y,
-    title="KNN LPQ - Confusion Matrix",
+    title="KNN LPQ",
     cmap="Blues",
 )
 generate_relevance_heatmaps(
@@ -643,11 +648,11 @@ relevance_results_knn_lbp_glcm = timed_relevance_technique(
     knn_lbp_glcm_relevance_metrics,
 ) = relevance_results_knn_lbp_glcm
 
-show_metrics(knn_lbp_glcm_relevance_metrics, title="KNN LBP+GLCM")
+show_experiment_metrics(knn_lbp_glcm_relevance_metrics, title="KNN LBP+GLCM")
 show_confusion_matrix(
     knn_lbp_glcm_true_y,
     knn_lbp_glcm_predicted_y,
-    title="KNN LBP+GLCM - Confusion Matrix",
+    title="KNN LBP+GLCM",
     cmap="Blues",
 )
 generate_relevance_heatmaps(
@@ -689,11 +694,11 @@ relevance_results_knn_lbp_lpq = timed_relevance_technique(
     knn_lbp_lpq_relevance_metrics,
 ) = relevance_results_knn_lbp_lpq
 
-show_metrics(knn_lbp_lpq_relevance_metrics, title="KNN LBP+LPQ")
+show_experiment_metrics(knn_lbp_lpq_relevance_metrics, title="KNN LBP+LPQ")
 show_confusion_matrix(
     knn_lbp_lpq_true_y,
     knn_lbp_lpq_predicted_y,
-    title="KNN LBP+LPQ - Confusion Matrix",
+    title="KNN LBP+LPQ",
     cmap="Blues",
 )
 generate_relevance_heatmaps(
@@ -735,11 +740,11 @@ relevance_results_knn_glcm_lpq = timed_relevance_technique(
     knn_glcm_lpq_relevance_metrics,
 ) = relevance_results_knn_glcm_lpq
 
-show_metrics(knn_glcm_lpq_relevance_metrics, title="KNN GLCM+LPQ")
+show_experiment_metrics(knn_glcm_lpq_relevance_metrics, title="KNN GLCM+LPQ")
 show_confusion_matrix(
     knn_glcm_lpq_true_y,
     knn_glcm_lpq_predicted_y,
-    title="KNN GLCM+LPQ - Confusion Matrix",
+    title="KNN GLCM+LPQ",
     cmap="Blues",
 )
 generate_relevance_heatmaps(
@@ -781,11 +786,11 @@ relevance_results_knn_lbp_glcm_lpq = timed_relevance_technique(
     knn_lbp_glcm_lpq_relevance_metrics,
 ) = relevance_results_knn_lbp_glcm_lpq
 
-show_metrics(knn_lbp_glcm_lpq_relevance_metrics, title="KNN LBP+GLCM+LPQ")
+show_experiment_metrics(knn_lbp_glcm_lpq_relevance_metrics, title="KNN LBP+GLCM+LPQ")
 show_confusion_matrix(
     knn_lbp_glcm_lpq_true_y,
     knn_lbp_glcm_lpq_predicted_y,
-    title="KNN LBP+GLCM+LPQ - Confusion Matrix",
+    title="KNN LBP+GLCM+LPQ",
     cmap="Blues",
 )
 generate_relevance_heatmaps(
@@ -834,9 +839,9 @@ relevance_results_svm_lbp = timed_relevance_technique(
     svm_lbp_relevance_metrics,
 ) = relevance_results_svm_lbp
 
-show_metrics(svm_lbp_relevance_metrics, title="SVM LBP")
+show_experiment_metrics(svm_lbp_relevance_metrics, title="SVM LBP")
 show_confusion_matrix(
-    svm_lbp_true_y, svm_lbp_predicted_y, title="SVM LBP - Confusion Matrix", cmap="Reds"
+    svm_lbp_true_y, svm_lbp_predicted_y, title="SVM LBP", cmap="Reds"
 )
 generate_relevance_heatmaps(
     max_relevances=svm_lbp_max_relevances,
@@ -876,11 +881,11 @@ relevance_results_svm_glcm = timed_relevance_technique(
     svm_glcm_relevance_metrics,
 ) = relevance_results_svm_glcm
 
-show_metrics(svm_glcm_relevance_metrics, title="SVM GLCM")
+show_experiment_metrics(svm_glcm_relevance_metrics, title="SVM GLCM")
 show_confusion_matrix(
     svm_glcm_true_y,
     svm_glcm_predicted_y,
-    title="SVM GLCM - Confusion Matrix",
+    title="SVM GLCM",
     cmap="Reds",
 )
 generate_relevance_heatmaps(
@@ -921,9 +926,9 @@ relevance_results_svm_lpq = timed_relevance_technique(
     svm_lpq_relevance_metrics,
 ) = relevance_results_svm_lpq
 
-show_metrics(svm_lpq_relevance_metrics, title="SVM LPQ")
+show_experiment_metrics(svm_lpq_relevance_metrics, title="SVM LPQ")
 show_confusion_matrix(
-    svm_lpq_true_y, svm_lpq_predicted_y, title="SVM LPQ - Confusion Matrix", cmap="Reds"
+    svm_lpq_true_y, svm_lpq_predicted_y, title="SVM LPQ", cmap="Reds"
 )
 generate_relevance_heatmaps(
     max_relevances=svm_lpq_max_relevances,
@@ -963,11 +968,11 @@ relevance_results_svm_lbp_glcm = timed_relevance_technique(
     svm_lbp_glcm_relevance_metrics,
 ) = relevance_results_svm_lbp_glcm
 
-show_metrics(svm_lbp_glcm_relevance_metrics, title="SVM LBP+GLCM")
+show_experiment_metrics(svm_lbp_glcm_relevance_metrics, title="SVM LBP+GLCM")
 show_confusion_matrix(
     svm_lbp_glcm_true_y,
     svm_lbp_glcm_predicted_y,
-    title="SVM LBP+GLCM - Confusion Matrix",
+    title="SVM LBP+GLCM",
     cmap="Reds",
 )
 generate_relevance_heatmaps(
@@ -1008,11 +1013,11 @@ relevance_results_svm_lbp_lpq = timed_relevance_technique(
     svm_lbp_lpq_relevance_metrics,
 ) = relevance_results_svm_lbp_lpq
 
-show_metrics(svm_lbp_lpq_relevance_metrics, title="SVM LBP+LPQ")
+show_experiment_metrics(svm_lbp_lpq_relevance_metrics, title="SVM LBP+LPQ")
 show_confusion_matrix(
     svm_lbp_lpq_true_y,
     svm_lbp_lpq_predicted_y,
-    title="SVM LBP+LPQ - Confusion Matrix",
+    title="SVM LBP+LPQ",
     cmap="Reds",
 )
 generate_relevance_heatmaps(
@@ -1053,11 +1058,11 @@ relevance_results_svm_glcm_lpq = timed_relevance_technique(
     svm_glcm_lpq_relevance_metrics,
 ) = relevance_results_svm_glcm_lpq
 
-show_metrics(svm_glcm_lpq_relevance_metrics, title="SVM GLCM+LPQ")
+show_experiment_metrics(svm_glcm_lpq_relevance_metrics, title="SVM GLCM+LPQ")
 show_confusion_matrix(
     svm_glcm_lpq_true_y,
     svm_glcm_lpq_predicted_y,
-    title="SVM GLCM+LPQ - Confusion Matrix",
+    title="SVM GLCM+LPQ",
     cmap="Reds",
 )
 generate_relevance_heatmaps(
@@ -1098,11 +1103,11 @@ relevance_results_svm_lbp_glcm_lpq = timed_relevance_technique(
     svm_lbp_glcm_lpq_relevance_metrics,
 ) = relevance_results_svm_lbp_glcm_lpq
 
-show_metrics(svm_lbp_glcm_lpq_relevance_metrics, title="SVM LBP+GLCM+LPQ")
+show_experiment_metrics(svm_lbp_glcm_lpq_relevance_metrics, title="SVM LBP+GLCM+LPQ")
 show_confusion_matrix(
     svm_lbp_glcm_lpq_true_y,
     svm_lbp_glcm_lpq_predicted_y,
-    title="SVM LBP+GLCM+LPQ - Confusion Matrix",
+    title="SVM LBP+GLCM+LPQ",
     cmap="Reds",
 )
 generate_relevance_heatmaps(
@@ -1124,329 +1129,6 @@ export_relevance_results_to_csv(
 print("✅ Relevância calculada para todos os 7 conjuntos de features")
 print("📊 Métricas e matrizes de confusão geradas para cada combinação")
 print("\n🎉 === CÁLCULO DE RELEVÂNCIA SVM CONCLUÍDO ===")
-
-# print("🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS RF ===")
-
-# base_name = "RF"
-
-# print("\n📊 Calculando relevância LBP...")
-# relevance_results_rf_lbp = relevance_technique(
-#     base_model=base_rf,
-#     specialist_sets=final_sp_lbp_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
-
-# (
-#     _,
-#     _,
-#     _,
-#     rf_lbp_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (rf_lbp_true_y, rf_lbp_predicted_y),
-#     rf_lbp_relevance_metrics,
-# ) = relevance_results_rf_lbp
-
-# show_metrics(rf_lbp_relevance_metrics, title=f"{base_name} LBP")
-# show_confusion_matrix(
-#     rf_lbp_true_y,
-#     rf_lbp_predicted_y,
-#     title=f"{base_name} LBP - Confusion Matrix",
-#     cmap="Greens",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=rf_lbp_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lbp",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
-
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_rf_lbp,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP",
-# )
-
-# print("\n📊 Calculando relevância GLCM...")
-# relevance_results_rf_glcm = relevance_technique(
-#     base_model=base_rf,
-#     specialist_sets=final_sp_glcm_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-GLCM",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
-
-# (
-#     _,
-#     _,
-#     _,
-#     rf_glcm_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (rf_glcm_true_y, rf_glcm_predicted_y),
-#     rf_glcm_relevance_metrics,
-# ) = relevance_results_rf_glcm
-
-# show_metrics(rf_glcm_relevance_metrics, title=f"{base_name} GLCM")
-# show_confusion_matrix(
-#     rf_glcm_true_y,
-#     rf_glcm_predicted_y,
-#     title=f"{base_name} GLCM - Confusion Matrix",
-#     cmap="Greens",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=rf_glcm_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_glcm",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
-
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_rf_glcm,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_GLCM",
-# )
-
-# print("\n📊 Calculando relevância LPQ...")
-# relevance_results_rf_lpq = relevance_technique(
-#     base_model=base_rf,
-#     specialist_sets=final_sp_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
-
-# (
-#     _,
-#     _,
-#     _,
-#     rf_lpq_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (rf_lpq_true_y, rf_lpq_predicted_y),
-#     rf_lpq_relevance_metrics,
-# ) = relevance_results_rf_lpq
-
-# show_metrics(rf_lpq_relevance_metrics, title=f"{base_name} LPQ")
-# show_confusion_matrix(
-#     rf_lpq_true_y,
-#     rf_lpq_predicted_y,
-#     title=f"{base_name} LPQ - Confusion Matrix",
-#     cmap="Greens",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=rf_lpq_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lpq",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
-
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_rf_lpq,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LPQ",
-# )
-
-# print("\n📊 Calculando relevância LBP+GLCM...")
-# relevance_results_rf_lbp_glcm = relevance_technique(
-#     base_model=base_rf,
-#     specialist_sets=final_sp_lbp_glcm_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+GLCM",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
-
-# (
-#     _,
-#     _,
-#     _,
-#     rf_lbp_glcm_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (rf_lbp_glcm_true_y, rf_lbp_glcm_predicted_y),
-#     rf_lbp_glcm_relevance_metrics,
-# ) = relevance_results_rf_lbp_glcm
-
-# show_metrics(rf_lbp_glcm_relevance_metrics, title=f"{base_name} LBP+GLCM")
-# show_confusion_matrix(
-#     rf_lbp_glcm_true_y,
-#     rf_lbp_glcm_predicted_y,
-#     title=f"{base_name} LBP+GLCM - Confusion Matrix",
-#     cmap="Greens",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=rf_lbp_glcm_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lbp_glcm",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
-
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_rf_lbp_glcm,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_GLCM",
-# )
-
-# print("\n📊 Calculando relevância LBP+LPQ...")
-# relevance_results_rf_lbp_lpq = relevance_technique(
-#     base_model=base_rf,
-#     specialist_sets=final_sp_lbp_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
-
-# (
-#     _,
-#     _,
-#     _,
-#     rf_lbp_lpq_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (rf_lbp_lpq_true_y, rf_lbp_lpq_predicted_y),
-#     rf_lbp_lpq_relevance_metrics,
-# ) = relevance_results_rf_lbp_lpq
-
-# show_metrics(rf_lbp_lpq_relevance_metrics, title=f"{base_name} LBP+LPQ")
-# show_confusion_matrix(
-#     rf_lbp_lpq_true_y,
-#     rf_lbp_lpq_predicted_y,
-#     title=f"{base_name} LBP+LPQ - Confusion Matrix",
-#     cmap="Greens",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=rf_lbp_lpq_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lbp_lpq",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
-
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_rf_lbp_lpq,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_LPQ",
-# )
-
-# print("\n📊 Calculando relevância GLCM+LPQ...")
-# relevance_results_rf_glcm_lpq = relevance_technique(
-#     base_model=base_rf,
-#     specialist_sets=final_sp_glcm_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-GLCM+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
-
-# (
-#     _,
-#     _,
-#     _,
-#     rf_glcm_lpq_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (rf_glcm_lpq_true_y, rf_glcm_lpq_predicted_y),
-#     rf_glcm_lpq_relevance_metrics,
-# ) = relevance_results_rf_glcm_lpq
-
-# show_metrics(rf_glcm_lpq_relevance_metrics, title=f"{base_name} GLCM+LPQ")
-# show_confusion_matrix(
-#     rf_glcm_lpq_true_y,
-#     rf_glcm_lpq_predicted_y,
-#     title=f"{base_name} GLCM+LPQ - Confusion Matrix",
-#     cmap="Greens",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=rf_glcm_lpq_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_glcm_lpq",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
-
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_rf_glcm_lpq,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_GLCM_LPQ",
-# )
-
-# print("\n📊 Calculando relevância LBP+GLCM+LPQ...")
-# relevance_results_rf_lbp_glcm_lpq = relevance_technique(
-#     base_model=base_rf,
-#     specialist_sets=final_sp_lbp_glcm_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+GLCM+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
-
-# (
-#     _,
-#     _,
-#     _,
-#     rf_lbp_glcm_lpq_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (rf_lbp_glcm_lpq_true_y, rf_lbp_glcm_lpq_predicted_y),
-#     rf_lbp_glcm_lpq_relevance_metrics,
-# ) = relevance_results_rf_lbp_glcm_lpq
-
-# show_metrics(rf_lbp_glcm_lpq_relevance_metrics, title=f"{base_name} LBP+GLCM+LPQ")
-# show_confusion_matrix(
-#     rf_lbp_glcm_lpq_true_y,
-#     rf_lbp_glcm_lpq_predicted_y,
-#     title=f"{base_name} LBP+GLCM+LPQ - Confusion Matrix",
-#     cmap="Greens",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=rf_lbp_glcm_lpq_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lbp_glcm_lpq",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
-
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_rf_lbp_glcm_lpq,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_GLCM_LPQ",
-# )
-
-# print("✅ Relevância calculada para todos os 7 conjuntos de features")
-# print("📊 Métricas e matrizes de confusão geradas para cada combinação")
-# print("\n🎉 === CÁLCULO DE RELEVÂNCIA RF CONCLUÍDO ===")
 
 zip_and_cleanup_results(
     results_dir="results",
