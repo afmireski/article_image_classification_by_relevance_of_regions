@@ -98,7 +98,7 @@ def timed_relevance_technique(
 
     return results
 
-images_directory = "./images/pieces"
+images_directory = "./images/experiment/animals"
 image_categories = ["dogs", "cats", "lions", "horses"]
 n_examples = 4
 NEEDS_RESIZE = int(os.getenv("NEEDS_RESIZE", True))
