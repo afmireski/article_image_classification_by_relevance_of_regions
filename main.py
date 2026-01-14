@@ -48,7 +48,7 @@ from tools.relevance import (
     zip_and_cleanup_results,
 )
 
-from utils import show_confusion_matrix, show_experiment_metrics
+from utils import show_confusion_matrix, show_relevance_experiment_metrics
 
 # Load environment variables from .env file
 load_dotenv(".env", override=True)
@@ -510,7 +510,7 @@ relevance_results_knn_lbp = timed_relevance_technique(
     knn_lbp_relevance_metrics,
 ) = relevance_results_knn_lbp
 
-show_experiment_metrics(knn_lbp_relevance_metrics, title=f"{base_name} LBP")
+show_relevance_experiment_metrics(knn_lbp_relevance_metrics, title=f"{base_name} LBP")
 show_confusion_matrix(
     knn_lbp_true_y,
     knn_lbp_predicted_y,
@@ -556,7 +556,7 @@ relevance_results_knn_glcm = timed_relevance_technique(
     knn_glcm_relevance_metrics,
 ) = relevance_results_knn_glcm
 
-show_experiment_metrics(knn_glcm_relevance_metrics, title="KNN GLCM")
+show_relevance_experiment_metrics(knn_glcm_relevance_metrics, title="KNN GLCM")
 show_confusion_matrix(
     knn_glcm_true_y,
     knn_glcm_predicted_y,
@@ -602,7 +602,7 @@ relevance_results_knn_lpq = timed_relevance_technique(
     knn_lpq_relevance_metrics,
 ) = relevance_results_knn_lpq
 
-show_experiment_metrics(knn_lpq_relevance_metrics, title="KNN LPQ")
+show_relevance_experiment_metrics(knn_lpq_relevance_metrics, title="KNN LPQ")
 show_confusion_matrix(
     knn_lpq_true_y,
     knn_lpq_predicted_y,
@@ -648,7 +648,7 @@ relevance_results_knn_lbp_glcm = timed_relevance_technique(
     knn_lbp_glcm_relevance_metrics,
 ) = relevance_results_knn_lbp_glcm
 
-show_experiment_metrics(knn_lbp_glcm_relevance_metrics, title="KNN LBP+GLCM")
+show_relevance_experiment_metrics(knn_lbp_glcm_relevance_metrics, title="KNN LBP+GLCM")
 show_confusion_matrix(
     knn_lbp_glcm_true_y,
     knn_lbp_glcm_predicted_y,
@@ -694,7 +694,7 @@ relevance_results_knn_lbp_lpq = timed_relevance_technique(
     knn_lbp_lpq_relevance_metrics,
 ) = relevance_results_knn_lbp_lpq
 
-show_experiment_metrics(knn_lbp_lpq_relevance_metrics, title="KNN LBP+LPQ")
+show_relevance_experiment_metrics(knn_lbp_lpq_relevance_metrics, title="KNN LBP+LPQ")
 show_confusion_matrix(
     knn_lbp_lpq_true_y,
     knn_lbp_lpq_predicted_y,
@@ -740,7 +740,7 @@ relevance_results_knn_glcm_lpq = timed_relevance_technique(
     knn_glcm_lpq_relevance_metrics,
 ) = relevance_results_knn_glcm_lpq
 
-show_experiment_metrics(knn_glcm_lpq_relevance_metrics, title="KNN GLCM+LPQ")
+show_relevance_experiment_metrics(knn_glcm_lpq_relevance_metrics, title="KNN GLCM+LPQ")
 show_confusion_matrix(
     knn_glcm_lpq_true_y,
     knn_glcm_lpq_predicted_y,
@@ -786,7 +786,7 @@ relevance_results_knn_lbp_glcm_lpq = timed_relevance_technique(
     knn_lbp_glcm_lpq_relevance_metrics,
 ) = relevance_results_knn_lbp_glcm_lpq
 
-show_experiment_metrics(knn_lbp_glcm_lpq_relevance_metrics, title="KNN LBP+GLCM+LPQ")
+show_relevance_experiment_metrics(knn_lbp_glcm_lpq_relevance_metrics, title="KNN LBP+GLCM+LPQ")
 show_confusion_matrix(
     knn_lbp_glcm_lpq_true_y,
     knn_lbp_glcm_lpq_predicted_y,
@@ -839,7 +839,7 @@ relevance_results_svm_lbp = timed_relevance_technique(
     svm_lbp_relevance_metrics,
 ) = relevance_results_svm_lbp
 
-show_experiment_metrics(svm_lbp_relevance_metrics, title="SVM LBP")
+show_relevance_experiment_metrics(svm_lbp_relevance_metrics, title="SVM LBP")
 show_confusion_matrix(
     svm_lbp_true_y, svm_lbp_predicted_y, title="SVM LBP", cmap="Reds"
 )
@@ -881,7 +881,7 @@ relevance_results_svm_glcm = timed_relevance_technique(
     svm_glcm_relevance_metrics,
 ) = relevance_results_svm_glcm
 
-show_experiment_metrics(svm_glcm_relevance_metrics, title="SVM GLCM")
+show_relevance_experiment_metrics(svm_glcm_relevance_metrics, title="SVM GLCM")
 show_confusion_matrix(
     svm_glcm_true_y,
     svm_glcm_predicted_y,
@@ -926,7 +926,7 @@ relevance_results_svm_lpq = timed_relevance_technique(
     svm_lpq_relevance_metrics,
 ) = relevance_results_svm_lpq
 
-show_experiment_metrics(svm_lpq_relevance_metrics, title="SVM LPQ")
+show_relevance_experiment_metrics(svm_lpq_relevance_metrics, title="SVM LPQ")
 show_confusion_matrix(
     svm_lpq_true_y, svm_lpq_predicted_y, title="SVM LPQ", cmap="Reds"
 )
@@ -968,7 +968,7 @@ relevance_results_svm_lbp_glcm = timed_relevance_technique(
     svm_lbp_glcm_relevance_metrics,
 ) = relevance_results_svm_lbp_glcm
 
-show_experiment_metrics(svm_lbp_glcm_relevance_metrics, title="SVM LBP+GLCM")
+show_relevance_experiment_metrics(svm_lbp_glcm_relevance_metrics, title="SVM LBP+GLCM")
 show_confusion_matrix(
     svm_lbp_glcm_true_y,
     svm_lbp_glcm_predicted_y,
@@ -1013,7 +1013,7 @@ relevance_results_svm_lbp_lpq = timed_relevance_technique(
     svm_lbp_lpq_relevance_metrics,
 ) = relevance_results_svm_lbp_lpq
 
-show_experiment_metrics(svm_lbp_lpq_relevance_metrics, title="SVM LBP+LPQ")
+show_relevance_experiment_metrics(svm_lbp_lpq_relevance_metrics, title="SVM LBP+LPQ")
 show_confusion_matrix(
     svm_lbp_lpq_true_y,
     svm_lbp_lpq_predicted_y,
@@ -1058,7 +1058,7 @@ relevance_results_svm_glcm_lpq = timed_relevance_technique(
     svm_glcm_lpq_relevance_metrics,
 ) = relevance_results_svm_glcm_lpq
 
-show_experiment_metrics(svm_glcm_lpq_relevance_metrics, title="SVM GLCM+LPQ")
+show_relevance_experiment_metrics(svm_glcm_lpq_relevance_metrics, title="SVM GLCM+LPQ")
 show_confusion_matrix(
     svm_glcm_lpq_true_y,
     svm_glcm_lpq_predicted_y,
@@ -1103,7 +1103,7 @@ relevance_results_svm_lbp_glcm_lpq = timed_relevance_technique(
     svm_lbp_glcm_lpq_relevance_metrics,
 ) = relevance_results_svm_lbp_glcm_lpq
 
-show_experiment_metrics(svm_lbp_glcm_lpq_relevance_metrics, title="SVM LBP+GLCM+LPQ")
+show_relevance_experiment_metrics(svm_lbp_glcm_lpq_relevance_metrics, title="SVM LBP+GLCM+LPQ")
 show_confusion_matrix(
     svm_lbp_glcm_lpq_true_y,
     svm_lbp_glcm_lpq_predicted_y,

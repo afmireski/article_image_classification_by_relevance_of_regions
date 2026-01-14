@@ -90,7 +90,7 @@ def test_extract_standard_probabilities():
     folds, _ = create_mock_dataset()
     model = create_mock_model()
     
-    probabilities = extract_standard_probabilities(
+    probabilities, train_metrics = extract_standard_probabilities(
         base_model=model,
         folded_dataset=folds,
         title="Test Model",
@@ -111,7 +111,7 @@ def test_extract_standard_probabilities():
     print(f"   - Exemplo de probabilidades: {list(probabilities.values())[0]}")
     print(f"   - Soma das probabilidades: {list(probabilities.values())[0].sum():.6f}")
     
-    return probabilities
+    return probabilities, train_metrics
 
 
 def test_predict_standard_labels(probabilities):
@@ -170,7 +170,7 @@ def test_save_standard_confusion_matrix(predicted_labels, true_labels):
     return filepath
 
 
-def test_export_standard_results_to_csv(probabilities, predicted_labels, true_labels):
+def test_export_standard_results_to_csv(probabilities, predicted_labels, true_labels, train_metrics):
     """Testa a exportação para CSV."""
     print("\n" + "=" * 60)
     print("TESTE 4: export_standard_results_to_csv()")
@@ -190,6 +190,7 @@ def test_export_standard_results_to_csv(probabilities, predicted_labels, true_la
         true_labels=true_labels,
         model_name="TEST_MODEL",
         experiment_dir=experiment_dir,
+        train_metrics=train_metrics,
     )
     
     # Validações
@@ -211,6 +212,16 @@ def test_export_standard_results_to_csv(probabilities, predicted_labels, true_la
             "probabilidades"
         ]
         assert rows[0].keys() == set(expected_columns), "❌ Colunas incorretas"
+
+    # Verifica arquivo de métricas
+    metrics_filepath = f"{experiment_dir}/csv_exports/TEST_MODEL_metrics.csv"
+    assert os.path.exists(metrics_filepath), f"❌ Arquivo de métricas não foi criado: {metrics_filepath}"
+
+    with open(metrics_filepath, 'r') as f:
+        reader = csv.DictReader(f)
+        metrics_rows = list(reader)
+        # 1 linha global + 5 folds
+        assert len(metrics_rows) == 6, f"❌ Esperado 6 linhas de métricas, obteve {len(metrics_rows)}"
     
     print(f"✅ Teste passou!")
     print(f"   - Arquivo salvo: {filepath}")
@@ -302,7 +313,7 @@ def run_all_tests():
     
     try:
         # Teste 1
-        probabilities = test_extract_standard_probabilities()
+        probabilities, train_metrics = test_extract_standard_probabilities()
         
         # Teste 2
         predicted_labels = test_predict_standard_labels(probabilities)
@@ -312,7 +323,7 @@ def run_all_tests():
         test_save_standard_confusion_matrix(predicted_labels, true_labels)
         
         # Teste 4
-        test_export_standard_results_to_csv(probabilities, predicted_labels, true_labels)
+        test_export_standard_results_to_csv(probabilities, predicted_labels, true_labels, train_metrics)
         
         # Teste 5
         test_standard_technique()

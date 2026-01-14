@@ -30,7 +30,7 @@ import sys
 from typing import Dict, List, Tuple
 
 # Importa funções utilitárias do projeto
-from utils import show_confusion_matrix, show_experiment_metrics
+from utils import show_confusion_matrix, show_relevance_experiment_metrics
 
 # Importa a função compute_metrics da técnica de relevância
 from tools.relevance import compute_metrics
@@ -295,7 +295,7 @@ def compute_global_metrics(
     print()
     
     # Exibe as métricas usando show_metrics() para consistência
-    show_experiment_metrics(model_metrics, title="Soma de Probabilidades")
+    show_relevance_experiment_metrics(model_metrics, title="Soma de Probabilidades")
     
     print("=" * 60)
     print()

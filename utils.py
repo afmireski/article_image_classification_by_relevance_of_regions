@@ -2,7 +2,7 @@
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score, classification_report, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
-from mytypes import ExperimentMetrics, ModelMetrics
+from mytypes import ExperimentMetrics, ModelMetrics, StandardExperimentMetrics
 
 def show_predict_infos(y, predict, title="", cmap="Blues", show_plots=True):
     """
@@ -95,7 +95,7 @@ def show_confusion_matrix(y, predict, title="", cmap="Blues", verbose=False, sav
     else:
         plt.close()
 
-def show_experiment_metrics(metrics: ExperimentMetrics, title=""):
+def show_relevance_experiment_metrics(metrics: ExperimentMetrics, title=""):
     """
     Exibe métricas de avaliação de modelos de classificação.
     
@@ -131,6 +131,47 @@ def show_experiment_metrics(metrics: ExperimentMetrics, title=""):
         print(f'        | Folds: {print_folds(sp_recall["folds"])}')
         print(f"      4️⃣ Precision Média: {sp_precision['mean']*100:.4f}% +- {sp_precision['std']*100:.4f}%")
         print(f'        | Folds: {print_folds(sp_precision["folds"])}')
+    print("#" * 40)
+    
+
+def show_standard_experiment_metrics(metrics: StandardExperimentMetrics, title=""):
+    """
+    Exibe métricas de avaliação de modelos de classificação.
+    
+    Args:
+        metrics: Tupla com as métricas ((accuracy, f1, recall, precision), especialistas_train_metrics)
+        title: Título para exibição
+    """
+    (accuracy, f1, recall, precision), train_metrics = metrics
+
+    def print_folds(folds):
+        return ", ".join([f"{fold*100:.4f}%" for fold in folds])
+
+    print("#" * 40)    
+    print(f"Métricas Finais {title}:")
+    print(f"   📊 Acurácia: {accuracy*100:.4f}%")
+    print(f"   📊 F1: {f1*100:.4f}%")
+    print(f"   📊 Recall: {recall*100:.4f}%")
+    print(f"   📊 Precision: {precision*100:.4f}%")
+    print("-" * 40)
+    print("Métricas do Treinamento:")
+
+    print(train_metrics)
+    
+    train_accuracy = train_metrics['accuracy']
+    train_f1 = train_metrics['f1']
+    train_recall = train_metrics['recall']
+    train_precision = train_metrics['precision']
+
+    print(f"      1️⃣ Acurácia Média: {train_accuracy['mean']*100:.4f}% +- {train_accuracy['std']*100:.4f}%")
+    print(f'        | Folds: {print_folds(train_accuracy["folds"])}')
+    print(f"      2️⃣ F1 Média: {train_f1['mean']*100:.4f}% +- {train_f1['std']*100:.4f}%")
+    print(f'        | Folds: {print_folds(train_f1["folds"])}')
+    print(f"      3️⃣ Recall Médio: {train_recall['mean']*100:.4f}% +- {train_recall['std']*100:.4f}%")
+    print(f'        | Folds: {print_folds(train_recall["folds"])}')
+    print(f"      4️⃣ Precision Média: {train_precision['mean']*100:.4f}% +- {train_precision['std']*100:.4f}%")
+    print(f'        | Folds: {print_folds(train_precision["folds"])}')
+        
     print("#" * 40)
     
 
