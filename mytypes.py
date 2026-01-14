@@ -83,13 +83,15 @@ ModelMetrics = Tuple[float, float, float, float]  # (accuracy, f1, recall, preci
 ModelLabels = Tuple[List[int], List[int]]  # (true_labels, predicted_labels)
 
 # Resultados de classificação padrão (multiclasse com imagens completas)
-StandardModelResults = Dict[str, np.ndarray]  # {img_id: [prob_class_0, prob_class_1, ..., prob_class_n]}
+StandardModelResults = Tuple[ResultsKeyDict, TrainMetrics]  # ({img_id: [prob_segment_0, prob_segment_1, ...]}, train_metrics)
+
+StandardExperimentMetrics = Tuple[ModelMetrics, TrainMetrics]
 
 StandardClassificationResults = Tuple[
     StandardModelResults,  # probabilidades por classe
     PredictResults,        # labels preditos
     ModelLabels,           # (true_labels, predicted_labels)
-    ModelMetrics,          # (accuracy, f1, recall, precision)
+    StandardExperimentMetrics,          # (accuracy, f1, recall, precision)
 ]
 
 ExperimentMetrics = Tuple[ModelMetrics, SpecialistsTrainMetrics]
