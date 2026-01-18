@@ -598,100 +598,100 @@ standard_results_knn_lbp_glcm_lpq = timed_standard_technique(
 print("\n✅ Classificação padrão KNN concluída para todos os 7 conjuntos de features")
 print("=" * 80)
 
-# print("🚀 === CLASSIFICAÇÃO PADRÃO - SVM ===")
+print("🚀 === CLASSIFICAÇÃO PADRÃO - SVM ===")
 
-# base_name = "SVM"
+base_name = "SVM"
 
-# # LBP
-# print("\n📊 Classificando com LBP...")
-# standard_results_svm_lbp = timed_standard_technique(
-#     base_model=base_svm,
-#     folded_dataset=final_lbp_full_folds,
-#     class_names=class_names,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP",
-#     k_folds=K_FOLDS,
-#     experiment_dir=standard_experiment_dir,
-#     cmap='Reds'
-# )
+# LBP
+print("\n📊 Classificando com LBP...")
+standard_results_svm_lbp = timed_standard_technique(
+    base_model=base_svm,
+    folded_dataset=final_lbp_full_folds,
+    class_names=class_names,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LBP",
+    k_folds=K_FOLDS,
+    experiment_dir=standard_experiment_dir,
+    cmap='Reds'
+)
 
-# # GLCM
-# print("\n📊 Classificando com GLCM...")
-# standard_results_svm_glcm = timed_standard_technique(
-#     base_model=base_svm,
-#     folded_dataset=final_glcm_full_folds,
-#     class_names=class_names,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_GLCM",
-#     k_folds=K_FOLDS,
-#     experiment_dir=standard_experiment_dir,
-#     cmap='Reds'
-# )
+# GLCM
+print("\n📊 Classificando com GLCM...")
+standard_results_svm_glcm = timed_standard_technique(
+    base_model=base_svm,
+    folded_dataset=final_glcm_full_folds,
+    class_names=class_names,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_GLCM",
+    k_folds=K_FOLDS,
+    experiment_dir=standard_experiment_dir,
+    cmap='Reds'
+)
 
-# # LPQ
-# print("\n📊 Classificando com LPQ...")
-# standard_results_svm_lpq = timed_standard_technique(
-#     base_model=base_svm,
-#     folded_dataset=final_lpq_full_folds,
-#     class_names=class_names,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LPQ",
-#     k_folds=K_FOLDS,
-#     experiment_dir=standard_experiment_dir,
-#     cmap='Reds'
-# )
+# LPQ
+print("\n📊 Classificando com LPQ...")
+standard_results_svm_lpq = timed_standard_technique(
+    base_model=base_svm,
+    folded_dataset=final_lpq_full_folds,
+    class_names=class_names,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LPQ",
+    k_folds=K_FOLDS,
+    experiment_dir=standard_experiment_dir,
+    cmap='Reds'
+)
 
-# # LBP+GLCM
-# print("\n📊 Classificando com LBP+GLCM...")
-# standard_results_svm_lbp_glcm = timed_standard_technique(
-#     base_model=base_svm,
-#     folded_dataset=final_lbp_glcm_full_folds,
-#     class_names=class_names,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_GLCM",
-#     k_folds=K_FOLDS,
-#     experiment_dir=standard_experiment_dir,
-#     cmap='Reds'
-# )
+# LBP+GLCM
+print("\n📊 Classificando com LBP+GLCM...")
+standard_results_svm_lbp_glcm = timed_standard_technique(
+    base_model=base_svm,
+    folded_dataset=final_lbp_glcm_full_folds,
+    class_names=class_names,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LBP_GLCM",
+    k_folds=K_FOLDS,
+    experiment_dir=standard_experiment_dir,
+    cmap='Reds'
+)
 
-# # LBP+LPQ
-# print("\n📊 Classificando com LBP+LPQ...")
-# standard_results_svm_lbp_lpq = timed_standard_technique(
-#     base_model=base_svm,
-#     folded_dataset=final_lbp_lpq_full_folds,
-#     class_names=class_names,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_LPQ",
-#     k_folds=K_FOLDS,
-#     experiment_dir=standard_experiment_dir,
-#     cmap='Reds'
-# )
+# LBP+LPQ
+print("\n📊 Classificando com LBP+LPQ...")
+standard_results_svm_lbp_lpq = timed_standard_technique(
+    base_model=base_svm,
+    folded_dataset=final_lbp_lpq_full_folds,
+    class_names=class_names,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LBP_LPQ",
+    k_folds=K_FOLDS,
+    experiment_dir=standard_experiment_dir,
+    cmap='Reds'
+)
 
-# # GLCM+LPQ
-# print("\n📊 Classificando com GLCM+LPQ...")
-# standard_results_svm_glcm_lpq = timed_standard_technique(
-#     base_model=base_svm,
-#     folded_dataset=final_glcm_lpq_full_folds,
-#     class_names=class_names,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_GLCM_LPQ",
-#     k_folds=K_FOLDS,
-#     experiment_dir=standard_experiment_dir,
-#     cmap='Reds'
-# )
+# GLCM+LPQ
+print("\n📊 Classificando com GLCM+LPQ...")
+standard_results_svm_glcm_lpq = timed_standard_technique(
+    base_model=base_svm,
+    folded_dataset=final_glcm_lpq_full_folds,
+    class_names=class_names,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_GLCM_LPQ",
+    k_folds=K_FOLDS,
+    experiment_dir=standard_experiment_dir,
+    cmap='Reds'
+)
 
-# # LBP+GLCM+LPQ
-# print("\n📊 Classificando com LBP+GLCM+LPQ...")
-# standard_results_svm_lbp_glcm_lpq = timed_standard_technique(
-#     base_model=base_svm,
-#     folded_dataset=final_lbp_glcm_lpq_full_folds,
-#     class_names=class_names,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_GLCM_LPQ",
-#     k_folds=K_FOLDS,
-#     experiment_dir=standard_experiment_dir,
-#     cmap='Reds'
-# )
+# LBP+GLCM+LPQ
+print("\n📊 Classificando com LBP+GLCM+LPQ...")
+standard_results_svm_lbp_glcm_lpq = timed_standard_technique(
+    base_model=base_svm,
+    folded_dataset=final_lbp_glcm_lpq_full_folds,
+    class_names=class_names,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LBP_GLCM_LPQ",
+    k_folds=K_FOLDS,
+    experiment_dir=standard_experiment_dir,
+    cmap='Reds'
+)
 
 print("\n✅ Classificação padrão SVM concluída para todos os 7 conjuntos de features")
 print("=" * 80)
