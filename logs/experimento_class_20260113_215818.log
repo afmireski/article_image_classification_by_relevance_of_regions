@@ -1,0 +1,1425 @@
+Categoria: dogs, Número de elementos: 30
+Categoria: cats, Número de elementos: 30
+Categoria: lions, Número de elementos: 30
+Categoria: horses, Número de elementos: 30
+Categoria: dogs, Número de elementos: 30
+Categoria: cats, Número de elementos: 30
+Categoria: lions, Número de elementos: 30
+Categoria: horses, Número de elementos: 30
+Categoria: dogs, Número de elementos: 30
+Categoria: cats, Número de elementos: 30
+Categoria: lions, Número de elementos: 30
+Categoria: horses, Número de elementos: 30
+Limpando variáveis desnecessárias...
+Variáveis antes da limpeza: 54 variáveis locais
+  ✓ Removida: lbps_by_categories_full
+  ✓ Removida: glcms_by_category_full
+  ✓ Removida: radius
+  ✓ Removida: n_pixels
+  ✓ Removida: n_examples
+
+✓ Limpeza concluída!
+  - 5 variáveis removidas
+  - Memória liberada pela coleta de lixo
+  - Variáveis após limpeza: 52 variáveis locais
+
+📋 Principais variáveis mantidas:
+  ✓ image_categories: list (tamanho: 4)
+  ✓ train_images_by_categories: dict (tamanho: 4)
+  ✓ labels: list (tamanho: 120)
+  ✓ GLCM_DISTANCES: list (tamanho: 3)
+  ✓ GLCM_ANGLES: ndarray (4,)
+  ✓ GLCM_FEATURES: list (tamanho: 6)
+
+💡 Variáveis limpas com sucesso! Agora você pode prosseguir com o treinamento dos modelos.
+🔄 Nova estrutura: combined_sets contém todos os conjuntos de features combinados.
+Classes: ['dogs', 'cats', 'lions', 'horses']
+
+============================================================
+PREPARANDO CONJUNTOS DE IMAGENS COMPLETAS
+============================================================
+============================================================
+PREPARANDO CONJUNTOS PARA CLASSIFICAÇÃO MULTICLASSE
+============================================================
+📊 Total de conjuntos de features: 7
+🔄 K-folds: 5
+🎲 Random state: 42
+
+🔧 Criando divisão base de folds (será reutilizada para todos os conjuntos)...
+📊 Total de imagens: 120
+📊 Total de classes: 4
+🔄 Dividindo em 5 folds...
+  Classe 0: 30 imagens
+  Classe 1: 30 imagens
+  Classe 2: 30 imagens
+  Classe 3: 30 imagens
+  Fold 0: [6, 6, 6, 6] (total: 24)
+  Fold 1: [6, 6, 6, 6] (total: 24)
+  Fold 2: [6, 6, 6, 6] (total: 24)
+  Fold 3: [6, 6, 6, 6] (total: 24)
+  Fold 4: [6, 6, 6, 6] (total: 24)
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos com sucesso!
+
+✅ Estrutura de folds criada com sucesso!
+📋 Cada fold terá:
+   - Treino: 96 imagens
+   - Teste: 24 imagens
+
+============================================================
+📦 Processando conjunto 1/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos para conjunto 1!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 59), y(96,)
+  ✅ Teste: 24 imagens → X(24, 59), y(24,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 59), y(96,)
+  ✅ Teste: 24 imagens → X(24, 59), y(24,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 59), y(96,)
+  ✅ Teste: 24 imagens → X(24, 59), y(24,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 59), y(96,)
+  ✅ Teste: 24 imagens → X(24, 59), y(24,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 59), y(96,)
+  ✅ Teste: 24 imagens → X(24, 59), y(24,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 1 preparado com sucesso!
+============================================================
+📦 Processando conjunto 2/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos para conjunto 2!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 72), y(96,)
+  ✅ Teste: 24 imagens → X(24, 72), y(24,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 72), y(96,)
+  ✅ Teste: 24 imagens → X(24, 72), y(24,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 72), y(96,)
+  ✅ Teste: 24 imagens → X(24, 72), y(24,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 72), y(96,)
+  ✅ Teste: 24 imagens → X(24, 72), y(24,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 72), y(96,)
+  ✅ Teste: 24 imagens → X(24, 72), y(24,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 2 preparado com sucesso!
+============================================================
+📦 Processando conjunto 3/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos para conjunto 3!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 256), y(96,)
+  ✅ Teste: 24 imagens → X(24, 256), y(24,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 256), y(96,)
+  ✅ Teste: 24 imagens → X(24, 256), y(24,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 256), y(96,)
+  ✅ Teste: 24 imagens → X(24, 256), y(24,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 256), y(96,)
+  ✅ Teste: 24 imagens → X(24, 256), y(24,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 256), y(96,)
+  ✅ Teste: 24 imagens → X(24, 256), y(24,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 3 preparado com sucesso!
+============================================================
+📦 Processando conjunto 4/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos para conjunto 4!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 131), y(96,)
+  ✅ Teste: 24 imagens → X(24, 131), y(24,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 131), y(96,)
+  ✅ Teste: 24 imagens → X(24, 131), y(24,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 131), y(96,)
+  ✅ Teste: 24 imagens → X(24, 131), y(24,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 131), y(96,)
+  ✅ Teste: 24 imagens → X(24, 131), y(24,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 131), y(96,)
+  ✅ Teste: 24 imagens → X(24, 131), y(24,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 4 preparado com sucesso!
+============================================================
+📦 Processando conjunto 5/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos para conjunto 5!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 315), y(96,)
+  ✅ Teste: 24 imagens → X(24, 315), y(24,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 315), y(96,)
+  ✅ Teste: 24 imagens → X(24, 315), y(24,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 315), y(96,)
+  ✅ Teste: 24 imagens → X(24, 315), y(24,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 315), y(96,)
+  ✅ Teste: 24 imagens → X(24, 315), y(24,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 315), y(96,)
+  ✅ Teste: 24 imagens → X(24, 315), y(24,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 5 preparado com sucesso!
+============================================================
+📦 Processando conjunto 6/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos para conjunto 6!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 328), y(96,)
+  ✅ Teste: 24 imagens → X(24, 328), y(24,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 328), y(96,)
+  ✅ Teste: 24 imagens → X(24, 328), y(24,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 328), y(96,)
+  ✅ Teste: 24 imagens → X(24, 328), y(24,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 328), y(96,)
+  ✅ Teste: 24 imagens → X(24, 328), y(24,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 328), y(96,)
+  ✅ Teste: 24 imagens → X(24, 328), y(24,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 6 preparado com sucesso!
+============================================================
+📦 Processando conjunto 7/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos para conjunto 7!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 387), y(96,)
+  ✅ Teste: 24 imagens → X(24, 387), y(24,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 387), y(96,)
+  ✅ Teste: 24 imagens → X(24, 387), y(24,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 387), y(96,)
+  ✅ Teste: 24 imagens → X(24, 387), y(24,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 387), y(96,)
+  ✅ Teste: 24 imagens → X(24, 387), y(24,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 96 imagens → X(96, 387), y(96,)
+  ✅ Teste: 24 imagens → X(24, 387), y(24,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 7 preparado com sucesso!
+
+============================================================
+🎊 TODOS OS 7 CONJUNTOS PREPARADOS COM SUCESSO!
+============================================================
+
+
+✅ Conjuntos de imagens completas preparados com sucesso!
+   - LBP: 5 folds
+   - GLCM: 5 folds
+   - LPQ: 5 folds
+   - LBP+GLCM: 5 folds
+   - LBP+LPQ: 5 folds
+   - GLCM+LPQ: 5 folds
+   - LBP+GLCM+LPQ: 5 folds
+============================================================
+
+Tunando parâmetros do KNN...
+Tunando parâmetros do Random Forest...
+Tunando SVM...
+🚀 === CLASSIFICAÇÃO PADRÃO - KNN ===
+
+📊 Classificando com LBP...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LBP
+============================================================
+   📊 Classes: ['dogs', 'cats', 'lions', 'horses']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 120
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LBP ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN_LBP:
+   📊 Acurácia: 87.5000%
+   📊 F1: 87.2328%
+   📊 Recall: 87.5000%
+   📊 Precision: 90.1786%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 2 - KNN_LBP:
+   📊 Acurácia: 50.0000%
+   📊 F1: 44.2735%
+   📊 Recall: 50.0000%
+   📊 Precision: 43.4524%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN_LBP:
+   📊 Acurácia: 62.5000%
+   📊 F1: 62.3543%
+   📊 Recall: 62.5000%
+   📊 Precision: 62.6190%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN_LBP:
+   📊 Acurácia: 75.0000%
+   📊 F1: 74.0793%
+   📊 Recall: 75.0000%
+   📊 Precision: 79.5238%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN_LBP:
+   📊 Acurácia: 70.8333%
+   📊 F1: 70.0000%
+   📊 Recall: 70.8333%
+   📊 Precision: 75.0000%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 120 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 120 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LBP:
+   📊 Acurácia: 69.1667%
+   📊 F1: 68.8295%
+   📊 Recall: 69.1667%
+   📊 Precision: 70.1717%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.875, 0.5, 0.625, 0.75, 0.7083333333333334], 'mean': np.float64(0.6916666666666667), 'std': np.float64(0.12527746981977425)}, 'f1': {'folds': [0.8723276723276723, 0.4427350427350427, 0.6235431235431235, 0.7407925407925408, 0.7], 'mean': np.float64(0.6758796758796759), 'std': np.float64(0.14176235046719535)}, 'recall': {'folds': [0.875, 0.5, 0.6249999999999999, 0.75, 0.7083333333333333], 'mean': np.float64(0.6916666666666667), 'std': np.float64(0.12527746981977425)}, 'precision': {'folds': [0.9017857142857143, 0.43452380952380953, 0.6261904761904761, 0.7952380952380952, 0.75], 'mean': np.float64(0.701547619047619), 'std': np.float64(0.16012573007829373)}}
+      1️⃣ Acurácia Média: 69.1667% +- 12.5277%
+        | Folds: 87.5000%, 50.0000%, 62.5000%, 75.0000%, 70.8333%
+      2️⃣ F1 Média: 67.5880% +- 14.1762%
+        | Folds: 87.2328%, 44.2735%, 62.3543%, 74.0793%, 70.0000%
+      3️⃣ Recall Médio: 69.1667% +- 12.5277%
+        | Folds: 87.5000%, 50.0000%, 62.5000%, 75.0000%, 70.8333%
+      4️⃣ Precision Média: 70.1548% +- 16.0126%
+        | Folds: 90.1786%, 43.4524%, 62.6190%, 79.5238%, 75.0000%
+########################################
+
+📁 Diretório do experimento: results
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LBP
+   📁 Arquivo: results/csv_exports/KNN_LBP_results.csv
+   📁 Arquivo de métricas: results/csv_exports/KNN_LBP_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LBP_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LBP_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LBP
+============================================================
+   📁 Resultados salvos em: results
+   🎯 Acurácia: 0.6917
+   📊 F1-Score: 0.6883
+   🔄 Recall: 0.6917
+   🎯 Precision: 0.7017
+============================================================
+
+⏱️  Tempo de execução (KNN_LBP): 1.54 s
+
+
+📊 Classificando com GLCM...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_GLCM
+============================================================
+   📊 Classes: ['dogs', 'cats', 'lions', 'horses']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 120
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_GLCM ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN_GLCM:
+   📊 Acurácia: 70.8333%
+   📊 F1: 67.6792%
+   📊 Recall: 70.8333%
+   📊 Precision: 71.4286%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 2 - KNN_GLCM:
+   📊 Acurácia: 62.5000%
+   📊 F1: 62.3918%
+   📊 Recall: 62.5000%
+   📊 Precision: 63.3333%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN_GLCM:
+   📊 Acurácia: 75.0000%
+   📊 F1: 74.8252%
+   📊 Recall: 75.0000%
+   📊 Precision: 75.7143%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN_GLCM:
+   📊 Acurácia: 70.8333%
+   📊 F1: 70.6876%
+   📊 Recall: 70.8333%
+   📊 Precision: 70.9524%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 5 - KNN_GLCM:
+   📊 Acurácia: 70.8333%
+   📊 F1: 70.0899%
+   📊 Recall: 70.8333%
+   📊 Precision: 71.4286%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 120 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 120 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_GLCM:
+   📊 Acurácia: 70.0000%
+   📊 F1: 69.8950%
+   📊 Recall: 70.0000%
+   📊 Precision: 70.2901%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.7083333333333334, 0.625, 0.75, 0.7083333333333334, 0.7083333333333334], 'mean': np.float64(0.7000000000000001), 'std': np.float64(0.040824829046386304)}, 'f1': {'folds': [0.676791958041958, 0.623917748917749, 0.7482517482517483, 0.706876456876457, 0.7008991008991009], 'mean': np.float64(0.6913474025974027), 'std': np.float64(0.04081448317242884)}, 'recall': {'folds': [0.7083333333333334, 0.625, 0.75, 0.7083333333333334, 0.7083333333333334], 'mean': np.float64(0.7000000000000001), 'std': np.float64(0.040824829046386304)}, 'precision': {'folds': [0.7142857142857143, 0.6333333333333333, 0.7571428571428571, 0.7095238095238096, 0.7142857142857143], 'mean': np.float64(0.7057142857142857), 'std': np.float64(0.040113218454576556)}}
+      1️⃣ Acurácia Média: 70.0000% +- 4.0825%
+        | Folds: 70.8333%, 62.5000%, 75.0000%, 70.8333%, 70.8333%
+      2️⃣ F1 Média: 69.1347% +- 4.0814%
+        | Folds: 67.6792%, 62.3918%, 74.8252%, 70.6876%, 70.0899%
+      3️⃣ Recall Médio: 70.0000% +- 4.0825%
+        | Folds: 70.8333%, 62.5000%, 75.0000%, 70.8333%, 70.8333%
+      4️⃣ Precision Média: 70.5714% +- 4.0113%
+        | Folds: 71.4286%, 63.3333%, 75.7143%, 70.9524%, 71.4286%
+########################################
+
+📁 Diretório do experimento: results
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_GLCM
+   📁 Arquivo: results/csv_exports/KNN_GLCM_results.csv
+   📁 Arquivo de métricas: results/csv_exports/KNN_GLCM_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_GLCM_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_GLCM_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_GLCM
+============================================================
+   📁 Resultados salvos em: results
+   🎯 Acurácia: 0.7000
+   📊 F1-Score: 0.6989
+   🔄 Recall: 0.7000
+   🎯 Precision: 0.7029
+============================================================
+
+⏱️  Tempo de execução (KNN_GLCM): 0.66 s
+
+
+📊 Classificando com LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LPQ
+============================================================
+   📊 Classes: ['dogs', 'cats', 'lions', 'horses']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 120
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN_LPQ:
+   📊 Acurácia: 83.3333%
+   📊 F1: 83.0952%
+   📊 Recall: 83.3333%
+   📊 Precision: 85.4167%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN_LPQ:
+   📊 Acurácia: 70.8333%
+   📊 F1: 70.2697%
+   📊 Recall: 70.8333%
+   📊 Precision: 72.2321%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN_LPQ:
+   📊 Acurácia: 50.0000%
+   📊 F1: 44.1667%
+   📊 Recall: 50.0000%
+   📊 Precision: 42.6389%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN_LPQ:
+   📊 Acurácia: 75.0000%
+   📊 F1: 73.3333%
+   📊 Recall: 75.0000%
+   📊 Precision: 83.3333%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN_LPQ:
+   📊 Acurácia: 70.8333%
+   📊 F1: 68.6626%
+   📊 Recall: 70.8333%
+   📊 Precision: 77.8571%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 120 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 120 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LPQ:
+   📊 Acurácia: 70.0000%
+   📊 F1: 69.6156%
+   📊 Recall: 70.0000%
+   📊 Precision: 70.8691%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.8333333333333334, 0.7083333333333334, 0.5, 0.75, 0.7083333333333334], 'mean': np.float64(0.7000000000000001), 'std': np.float64(0.109924216318941)}, 'f1': {'folds': [0.8309523809523809, 0.7026973026973027, 0.44166666666666665, 0.7333333333333333, 0.6866258741258742], 'mean': np.float64(0.6790551115551116), 'std': np.float64(0.12883202181461986)}, 'recall': {'folds': [0.8333333333333334, 0.7083333333333334, 0.5, 0.75, 0.7083333333333334], 'mean': np.float64(0.7000000000000001), 'std': np.float64(0.109924216318941)}, 'precision': {'folds': [0.8541666666666667, 0.7223214285714286, 0.4263888888888889, 0.8333333333333333, 0.7785714285714286], 'mean': np.float64(0.7229563492063491), 'std': np.float64(0.15520626580724822)}}
+      1️⃣ Acurácia Média: 70.0000% +- 10.9924%
+        | Folds: 83.3333%, 70.8333%, 50.0000%, 75.0000%, 70.8333%
+      2️⃣ F1 Média: 67.9055% +- 12.8832%
+        | Folds: 83.0952%, 70.2697%, 44.1667%, 73.3333%, 68.6626%
+      3️⃣ Recall Médio: 70.0000% +- 10.9924%
+        | Folds: 83.3333%, 70.8333%, 50.0000%, 75.0000%, 70.8333%
+      4️⃣ Precision Média: 72.2956% +- 15.5206%
+        | Folds: 85.4167%, 72.2321%, 42.6389%, 83.3333%, 77.8571%
+########################################
+
+📁 Diretório do experimento: results
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LPQ
+   📁 Arquivo: results/csv_exports/KNN_LPQ_results.csv
+   📁 Arquivo de métricas: results/csv_exports/KNN_LPQ_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LPQ
+============================================================
+   📁 Resultados salvos em: results
+   🎯 Acurácia: 0.7000
+   📊 F1-Score: 0.6962
+   🔄 Recall: 0.7000
+   🎯 Precision: 0.7087
+============================================================
+
+⏱️  Tempo de execução (KNN_LPQ): 0.70 s
+
+
+📊 Classificando com LBP+GLCM...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LBP_GLCM
+============================================================
+   📊 Classes: ['dogs', 'cats', 'lions', 'horses']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 120
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LBP_GLCM ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 1 - KNN_LBP_GLCM:
+   📊 Acurácia: 66.6667%
+   📊 F1: 65.1904%
+   📊 Recall: 66.6667%
+   📊 Precision: 68.4127%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN_LBP_GLCM:
+   📊 Acurácia: 50.0000%
+   📊 F1: 47.5000%
+   📊 Recall: 50.0000%
+   📊 Precision: 56.2500%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN_LBP_GLCM:
+   📊 Acurácia: 66.6667%
+   📊 F1: 66.4336%
+   📊 Recall: 66.6667%
+   📊 Precision: 67.1429%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 4 - KNN_LBP_GLCM:
+   📊 Acurácia: 70.8333%
+   📊 F1: 69.5238%
+   📊 Recall: 70.8333%
+   📊 Precision: 76.0417%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN_LBP_GLCM:
+   📊 Acurácia: 54.1667%
+   📊 F1: 52.0635%
+   📊 Recall: 54.1667%
+   📊 Precision: 55.5556%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 120 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 120 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LBP_GLCM:
+   📊 Acurácia: 61.6667%
+   📊 F1: 61.2546%
+   📊 Recall: 61.6667%
+   📊 Precision: 62.6843%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.6666666666666666, 0.5, 0.6666666666666666, 0.7083333333333334, 0.5416666666666666], 'mean': np.float64(0.6166666666666666), 'std': np.float64(0.08079466429027216)}, 'f1': {'folds': [0.651903651903652, 0.47500000000000003, 0.6643356643356644, 0.6952380952380952, 0.5206349206349206], 'mean': np.float64(0.6014224664224664), 'std': np.float64(0.08696787951886302)}, 'recall': {'folds': [0.6666666666666667, 0.49999999999999994, 0.6666666666666666, 0.7083333333333334, 0.5416666666666667], 'mean': np.float64(0.6166666666666668), 'std': np.float64(0.08079466429027217)}, 'precision': {'folds': [0.6841269841269841, 0.5625, 0.6714285714285714, 0.7604166666666666, 0.5555555555555556], 'mean': np.float64(0.6468055555555555), 'std': np.float64(0.07789821012927976)}}
+      1️⃣ Acurácia Média: 61.6667% +- 8.0795%
+        | Folds: 66.6667%, 50.0000%, 66.6667%, 70.8333%, 54.1667%
+      2️⃣ F1 Média: 60.1422% +- 8.6968%
+        | Folds: 65.1904%, 47.5000%, 66.4336%, 69.5238%, 52.0635%
+      3️⃣ Recall Médio: 61.6667% +- 8.0795%
+        | Folds: 66.6667%, 50.0000%, 66.6667%, 70.8333%, 54.1667%
+      4️⃣ Precision Média: 64.6806% +- 7.7898%
+        | Folds: 68.4127%, 56.2500%, 67.1429%, 76.0417%, 55.5556%
+########################################
+
+📁 Diretório do experimento: results
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LBP_GLCM
+   📁 Arquivo: results/csv_exports/KNN_LBP_GLCM_results.csv
+   📁 Arquivo de métricas: results/csv_exports/KNN_LBP_GLCM_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LBP_GLCM_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LBP_GLCM_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LBP_GLCM
+============================================================
+   📁 Resultados salvos em: results
+   🎯 Acurácia: 0.6167
+   📊 F1-Score: 0.6125
+   🔄 Recall: 0.6167
+   🎯 Precision: 0.6268
+============================================================
+
+⏱️  Tempo de execução (KNN_LBP_GLCM): 0.67 s
+
+
+📊 Classificando com LBP+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LBP_LPQ
+============================================================
+   📊 Classes: ['dogs', 'cats', 'lions', 'horses']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 120
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LBP_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN_LBP_LPQ:
+   📊 Acurácia: 83.3333%
+   📊 F1: 83.2168%
+   📊 Recall: 83.3333%
+   📊 Precision: 84.2857%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN_LBP_LPQ:
+   📊 Acurácia: 75.0000%
+   📊 F1: 74.0152%
+   📊 Recall: 75.0000%
+   📊 Precision: 76.2500%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN_LBP_LPQ:
+   📊 Acurácia: 66.6667%
+   📊 F1: 63.5417%
+   📊 Recall: 66.6667%
+   📊 Precision: 66.6667%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN_LBP_LPQ:
+   📊 Acurácia: 70.8333%
+   📊 F1: 67.9167%
+   📊 Recall: 70.8333%
+   📊 Precision: 81.6667%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN_LBP_LPQ:
+   📊 Acurácia: 70.8333%
+   📊 F1: 68.6626%
+   📊 Recall: 70.8333%
+   📊 Precision: 77.8571%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 120 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 120 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LBP_LPQ:
+   📊 Acurácia: 73.3333%
+   📊 F1: 72.9253%
+   📊 Recall: 73.3333%
+   📊 Precision: 74.9531%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.8333333333333334, 0.75, 0.6666666666666666, 0.7083333333333334, 0.7083333333333334], 'mean': np.float64(0.7333333333333334), 'std': np.float64(0.05651941652604392)}, 'f1': {'folds': [0.8321678321678323, 0.7401515151515152, 0.6354166666666667, 0.6791666666666667, 0.6866258741258742], 'mean': np.float64(0.714705710955711), 'std': np.float64(0.06750272930846755)}, 'recall': {'folds': [0.8333333333333334, 0.75, 0.6666666666666667, 0.7083333333333334, 0.7083333333333334], 'mean': np.float64(0.7333333333333334), 'std': np.float64(0.056519416526043885)}, 'precision': {'folds': [0.8428571428571429, 0.7625, 0.6666666666666667, 0.8166666666666667, 0.7785714285714286], 'mean': np.float64(0.7734523809523809), 'std': np.float64(0.060388481579544545)}}
+      1️⃣ Acurácia Média: 73.3333% +- 5.6519%
+        | Folds: 83.3333%, 75.0000%, 66.6667%, 70.8333%, 70.8333%
+      2️⃣ F1 Média: 71.4706% +- 6.7503%
+        | Folds: 83.2168%, 74.0152%, 63.5417%, 67.9167%, 68.6626%
+      3️⃣ Recall Médio: 73.3333% +- 5.6519%
+        | Folds: 83.3333%, 75.0000%, 66.6667%, 70.8333%, 70.8333%
+      4️⃣ Precision Média: 77.3452% +- 6.0388%
+        | Folds: 84.2857%, 76.2500%, 66.6667%, 81.6667%, 77.8571%
+########################################
+
+📁 Diretório do experimento: results
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LBP_LPQ
+   📁 Arquivo: results/csv_exports/KNN_LBP_LPQ_results.csv
+   📁 Arquivo de métricas: results/csv_exports/KNN_LBP_LPQ_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LBP_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LBP_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LBP_LPQ
+============================================================
+   📁 Resultados salvos em: results
+   🎯 Acurácia: 0.7333
+   📊 F1-Score: 0.7293
+   🔄 Recall: 0.7333
+   🎯 Precision: 0.7495
+============================================================
+
+⏱️  Tempo de execução (KNN_LBP_LPQ): 0.76 s
+
+
+📊 Classificando com GLCM+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_GLCM_LPQ
+============================================================
+   📊 Classes: ['dogs', 'cats', 'lions', 'horses']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 120
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_GLCM_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 1 - KNN_GLCM_LPQ:
+   📊 Acurácia: 83.3333%
+   📊 F1: 83.2168%
+   📊 Recall: 83.3333%
+   📊 Precision: 84.2857%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN_GLCM_LPQ:
+   📊 Acurácia: 66.6667%
+   📊 F1: 66.9372%
+   📊 Recall: 66.6667%
+   📊 Precision: 68.3333%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN_GLCM_LPQ:
+   📊 Acurácia: 62.5000%
+   📊 F1: 59.2876%
+   📊 Recall: 62.5000%
+   📊 Precision: 62.8571%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 4 - KNN_GLCM_LPQ:
+   📊 Acurácia: 87.5000%
+   📊 F1: 87.2328%
+   📊 Recall: 87.5000%
+   📊 Precision: 90.1786%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN_GLCM_LPQ:
+   📊 Acurácia: 70.8333%
+   📊 F1: 68.6626%
+   📊 Recall: 70.8333%
+   📊 Precision: 77.8571%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 120 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 120 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_GLCM_LPQ:
+   📊 Acurácia: 74.1667%
+   📊 F1: 73.9791%
+   📊 Recall: 74.1667%
+   📊 Precision: 75.1869%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.8333333333333334, 0.6666666666666666, 0.625, 0.875, 0.7083333333333334], 'mean': np.float64(0.7416666666666667), 'std': np.float64(0.09646530752325189)}, 'f1': {'folds': [0.8321678321678323, 0.6693722943722944, 0.5928758741258742, 0.8723276723276723, 0.6866258741258742], 'mean': np.float64(0.7306739094239095), 'std': np.float64(0.10493161663892991)}, 'recall': {'folds': [0.8333333333333334, 0.6666666666666666, 0.625, 0.875, 0.7083333333333334], 'mean': np.float64(0.7416666666666667), 'std': np.float64(0.09646530752325189)}, 'precision': {'folds': [0.8428571428571429, 0.6833333333333333, 0.6285714285714286, 0.9017857142857143, 0.7785714285714286], 'mean': np.float64(0.7670238095238096), 'std': np.float64(0.1002177334821956)}}
+      1️⃣ Acurácia Média: 74.1667% +- 9.6465%
+        | Folds: 83.3333%, 66.6667%, 62.5000%, 87.5000%, 70.8333%
+      2️⃣ F1 Média: 73.0674% +- 10.4932%
+        | Folds: 83.2168%, 66.9372%, 59.2876%, 87.2328%, 68.6626%
+      3️⃣ Recall Médio: 74.1667% +- 9.6465%
+        | Folds: 83.3333%, 66.6667%, 62.5000%, 87.5000%, 70.8333%
+      4️⃣ Precision Média: 76.7024% +- 10.0218%
+        | Folds: 84.2857%, 68.3333%, 62.8571%, 90.1786%, 77.8571%
+########################################
+
+📁 Diretório do experimento: results
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ
+   📁 Arquivo: results/csv_exports/KNN_GLCM_LPQ_results.csv
+   📁 Arquivo de métricas: results/csv_exports/KNN_GLCM_LPQ_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_GLCM_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_GLCM_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_GLCM_LPQ
+============================================================
+   📁 Resultados salvos em: results
+   🎯 Acurácia: 0.7417
+   📊 F1-Score: 0.7398
+   🔄 Recall: 0.7417
+   🎯 Precision: 0.7519
+============================================================
+
+⏱️  Tempo de execução (KNN_GLCM_LPQ): 0.82 s
+
+
+📊 Classificando com LBP+GLCM+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LBP_GLCM_LPQ
+============================================================
+   📊 Classes: ['dogs', 'cats', 'lions', 'horses']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 120
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LBP_GLCM_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 75.0000%
+   📊 F1: 75.1282%
+   📊 Recall: 75.0000%
+   📊 Precision: 77.3810%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 62.5000%
+   📊 F1: 62.3485%
+   📊 Recall: 62.5000%
+   📊 Precision: 64.4444%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 66.6667%
+   📊 F1: 63.5417%
+   📊 Recall: 66.6667%
+   📊 Precision: 66.6667%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 75.0000%
+   📊 F1: 72.6786%
+   📊 Recall: 75.0000%
+   📊 Precision: 83.7500%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 66.6667%
+   📊 F1: 64.1071%
+   📊 Recall: 66.6667%
+   📊 Precision: 74.3750%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 120 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 120 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 69.1667%
+   📊 F1: 68.6002%
+   📊 Recall: 69.1667%
+   📊 Precision: 71.1820%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.75, 0.625, 0.6666666666666666, 0.75, 0.6666666666666666], 'mean': np.float64(0.6916666666666667), 'std': np.float64(0.05)}, 'f1': {'folds': [0.7512820512820513, 0.6234848484848485, 0.6354166666666667, 0.7267857142857143, 0.6410714285714285], 'mean': np.float64(0.6756081418581419), 'std': np.float64(0.05267003216606474)}, 'recall': {'folds': [0.7499999999999999, 0.625, 0.6666666666666667, 0.75, 0.6666666666666667], 'mean': np.float64(0.6916666666666668), 'std': np.float64(0.049999999999999954)}, 'precision': {'folds': [0.7738095238095238, 0.6444444444444444, 0.6666666666666667, 0.8375, 0.74375], 'mean': np.float64(0.7332341269841269), 'std': np.float64(0.07063023883182162)}}
+      1️⃣ Acurácia Média: 69.1667% +- 5.0000%
+        | Folds: 75.0000%, 62.5000%, 66.6667%, 75.0000%, 66.6667%
+      2️⃣ F1 Média: 67.5608% +- 5.2670%
+        | Folds: 75.1282%, 62.3485%, 63.5417%, 72.6786%, 64.1071%
+      3️⃣ Recall Médio: 69.1667% +- 5.0000%
+        | Folds: 75.0000%, 62.5000%, 66.6667%, 75.0000%, 66.6667%
+      4️⃣ Precision Média: 73.3234% +- 7.0630%
+        | Folds: 77.3810%, 64.4444%, 66.6667%, 83.7500%, 74.3750%
+########################################
+
+📁 Diretório do experimento: results
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ
+   📁 Arquivo: results/csv_exports/KNN_LBP_GLCM_LPQ_results.csv
+   📁 Arquivo de métricas: results/csv_exports/KNN_LBP_GLCM_LPQ_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LBP_GLCM_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/KNN_LBP_GLCM_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LBP_GLCM_LPQ
+============================================================
+   📁 Resultados salvos em: results
+   🎯 Acurácia: 0.6917
+   📊 F1-Score: 0.6860
+   🔄 Recall: 0.6917
+   🎯 Precision: 0.7118
+============================================================
+
+⏱️  Tempo de execução (KNN_LBP_GLCM_LPQ): 0.71 s
+
+
+✅ Classificação padrão KNN concluída para todos os 7 conjuntos de features
+================================================================================
+
+✅ Classificação padrão SVM concluída para todos os 7 conjuntos de features
+================================================================================
+✅ Resultados compactados em: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/standards/experimento_20260113_215827.zip
+⏳ Tempo total de execução do script: 8.28 s
