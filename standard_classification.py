@@ -140,7 +140,7 @@ warnings.filterwarnings("ignore", message=".*Cannot register.*")
 #     return results
 
 
-images_directory = "./images/pieces"
+images_directory = "./images/experiment"
 image_categories = ["dogs", "cats", "lions", "horses"]
 n_examples = 4
 NEEDS_RESIZE = int(os.getenv("NEEDS_RESIZE", True))
