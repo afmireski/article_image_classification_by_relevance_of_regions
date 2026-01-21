@@ -132,7 +132,26 @@ def show_relevance_experiment_metrics(metrics: ExperimentMetrics, title=""):
         print(f"      4️⃣ Precision Média: {sp_precision['mean']*100:.4f}% +- {sp_precision['std']*100:.4f}%")
         print(f'        | Folds: {print_folds(sp_precision["folds"])}')
     print("#" * 40)
+    1
+def show_sum_experiment_metrics(metrics: ModelMetrics, title=""):
+    """
+    Exibe métricas de avaliação de modelos de classificação.
     
+    Args:
+        metrics: Tupla com as métricas (accuracy, f1, recall, precision)
+        title: Título para exibição
+    """
+    accuracy, f1, recall, precision = metrics
+
+    print("#" * 40)    
+    print(f"Métricas Finais Soma {title}:")
+    print(f"   📊 Acurácia: {accuracy*100:.4f}%")
+    print(f"   📊 F1: {f1*100:.4f}%")
+    print(f"   📊 Recall: {recall*100:.4f}%")
+    print(f"   📊 Precision: {precision*100:.4f}%")
+    print("-" * 40)
+    print("As métricas dos especialistas são as mesmas da técnica de relevância.")
+    print("#" * 40)
 
 def show_standard_experiment_metrics(metrics: StandardExperimentMetrics, title=""):
     """

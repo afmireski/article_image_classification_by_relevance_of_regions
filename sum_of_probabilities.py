@@ -30,10 +30,154 @@ import sys
 from typing import Dict, List, Tuple
 
 # Importa funções utilitárias do projeto
-from utils import show_confusion_matrix, show_relevance_experiment_metrics
+from utils import show_confusion_matrix, show_sum_experiment_metrics
 
 # Importa a função compute_metrics da técnica de relevância
 from tools.relevance import compute_metrics
+
+
+def _normalize_model_name(model_name: str) -> str:
+    base = model_name.lower().replace(" ", "_").replace("-", "_").replace("+", "_")
+    base = "".join(c for c in base if c.isalnum() or c == "_")
+    return base
+
+
+def _relevance_base_from_results_csv_path(results_csv_path: str) -> str:
+    filename = os.path.basename(results_csv_path)
+    if not filename.endswith("_results.csv"):
+        raise ValueError(
+            "❌ input_csv deve terminar com '_results.csv' para localizar o arquivo de métricas correspondente"
+        )
+    return filename[: -len("_results.csv")]
+
+
+def _relevance_base_from_metrics_csv_path(metrics_csv_path: str) -> str:
+    filename = os.path.basename(metrics_csv_path)
+    if not filename.endswith("_metrics.csv"):
+        raise ValueError(
+            "❌ relevance_metrics_filepath deve terminar com '_metrics.csv' para derivar o base_name"
+        )
+    return filename[: -len("_metrics.csv")]
+
+
+def export_sumprob_metrics_csv(
+    model_metrics: Tuple[float, float, float, float],
+    relevance_metrics_filepath: str,
+    output_dir: str,
+    sumprob_base_name: str | None = None,
+) -> str:
+    """Exporta o CSV de métricas do SumProb, copiando folds/mean do CSV de métricas da relevância.
+
+    - A linha global é calculada a partir de `model_metrics` (SumProb).
+    - As linhas de especialistas (mean/std + folds) são reutilizadas do arquivo `_metrics.csv` do modelo
+      correspondente da técnica de relevância.
+    """
+    print("📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)")
+    print(f"   📁 Metrics (relevância) de entrada: {relevance_metrics_filepath}")
+
+    if not os.path.exists(relevance_metrics_filepath):
+        raise FileNotFoundError(
+            "❌ Arquivo de métricas da relevância não encontrado. "
+            "O SumProb depende do experimento de relevância já ter sido exportado. "
+            f"Caminho esperado: {relevance_metrics_filepath}"
+        )
+
+    relevance_base = _relevance_base_from_metrics_csv_path(relevance_metrics_filepath)
+    if sumprob_base_name is None:
+        sumprob_base_name = f"{relevance_base}_sumprob"
+
+    metrics_filepath = os.path.join(output_dir, f"{sumprob_base_name}_metrics.csv")
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Colunas esperadas (mesmas do tools/relevance.py)
+    fieldnames = [
+        "model",
+        "accuracy (%)",
+        "accuracy_std (+- %)",
+        "f1_score (%)",
+        "f1_score_std (+- %)",
+        "recall (%)",
+        "recall_std (+- %)",
+        "precision (%)",
+        "precision_std (+- %)",
+    ]
+
+    def fmt_num(x: float) -> str:
+        return f"{x:.4f}"
+
+    def to_percent(x: float) -> float:
+        return float(x) * 100.0
+
+    accuracy, f1, recall, precision = model_metrics
+
+    metrics_rows: List[Dict[str, str]] = []
+
+    # Global (SumProb)
+    metrics_rows.append(
+        {
+            "model": f"{sumprob_base_name}_global",
+            "accuracy (%)": fmt_num(to_percent(accuracy)),
+            "accuracy_std (+- %)": "###",
+            "f1_score (%)": fmt_num(to_percent(f1)),
+            "f1_score_std (+- %)": "###",
+            "recall (%)": fmt_num(to_percent(recall)),
+            "recall_std (+- %)": "###",
+            "precision (%)": fmt_num(to_percent(precision)),
+            "precision_std (+- %)": "###",
+        }
+    )
+
+    # Reaproveita métricas intermediárias do treino (especialistas) do CSV da relevância
+    with open(relevance_metrics_filepath, "r", newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        if reader.fieldnames is None:
+            raise ValueError(f"❌ CSV de métricas vazio/malformado: {relevance_metrics_filepath}")
+
+        missing_cols = [c for c in fieldnames if c not in reader.fieldnames]
+        if missing_cols:
+            raise ValueError(
+                "❌ CSV de métricas da relevância não tem as colunas esperadas. "
+                f"Faltando: {missing_cols}"
+            )
+
+        for row in reader:
+            model_tag = (row.get("model") or "").strip()
+
+            # Copiamos apenas linhas intermediárias dos especialistas (mean + folds)
+            # Ex.: <base>_relevance_specialist_0_mean / <base>_relevance_specialist_0_fold2
+            if f"{relevance_base}_relevance_specialist_" not in model_tag:
+                continue
+
+            new_model_tag = model_tag.replace(
+                f"{relevance_base}_relevance", sumprob_base_name, 1
+            )
+
+            metrics_rows.append(
+                {
+                    "model": new_model_tag,
+                    "accuracy (%)": row["accuracy (%)"],
+                    "accuracy_std (+- %)": row["accuracy_std (+- %)"],
+                    "f1_score (%)": row["f1_score (%)"],
+                    "f1_score_std (+- %)": row["f1_score_std (+- %)"],
+                    "recall (%)": row["recall (%)"],
+                    "recall_std (+- %)": row["recall_std (+- %)"],
+                    "precision (%)": row["precision (%)"],
+                    "precision_std (+- %)": row["precision_std (+- %)"],
+                }
+            )
+
+    with open(metrics_filepath, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in metrics_rows:
+            writer.writerow(row)
+
+    print(f"   ✅ {len(metrics_rows)} linhas de métricas escritas com sucesso")
+    print(f"   💾 Arquivo salvo: {metrics_filepath}")
+    print("=" * 60)
+    print()
+
+    return metrics_filepath
 
 
 # ============================================================================
@@ -101,7 +245,7 @@ def read_relevance_csv(filepath: str) -> Dict[str, Dict]:
             processed_count += 1
     
     print(f"   ✅ {processed_count} imagens lidas com sucesso")
-    print(f"   📊 Exemplo de dados (primeira imagem):")
+    print("   📊 Exemplo de dados (primeira imagem):")
     
     # Mostra um exemplo dos dados lidos
     first_img = list(data.keys())[0]
@@ -110,7 +254,7 @@ def read_relevance_csv(filepath: str) -> Dict[str, Dict]:
     print(f"      - Label real: {first_data['label_real']}")
     print(f"      - Label predito (relevância): {first_data['label_predito']}")
     print(f"      - Shape probabilidades: {first_data['probabilidades'].shape}")
-    print(f"      - Primeiras probabilidades:")
+    print("      - Primeiras probabilidades:")
     print(f"        {first_data['probabilidades'][:2]}")  # Mostra primeiros 2 pedaços
     print("=" * 60)
     print()
@@ -240,7 +384,7 @@ def process_all_images(
     for label in predicted_labels.values():
         unique_predicted[label] = unique_predicted.get(label, 0) + 1
     
-    print(f"\n   📈 Distribuição de predições:")
+    print("\n   📈 Distribuição de predições:")
     label_names = {0: "dog", 1: "cat", 2: "lion", 3: "horse"}
     for label, count in sorted(unique_predicted.items()):
         label_name = label_names.get(label, f"label_{label}")
@@ -294,8 +438,10 @@ def compute_global_metrics(
     print(f"   ✅ Amostras processadas: {len(true_y)}")
     print()
     
+    print(model_metrics)
+
     # Exibe as métricas usando show_metrics() para consistência
-    show_relevance_experiment_metrics(model_metrics, title="Soma de Probabilidades")
+    show_sum_experiment_metrics(model_metrics, title="Soma de Probabilidades")
     
     print("=" * 60)
     print()
@@ -364,7 +510,7 @@ def generate_confusion_matrix(
         save_dir=save_dir
     )
     
-    print(f"   ✅ Matriz de confusão gerada")
+    print("   ✅ Matriz de confusão gerada")
     print(f"   💾 Arquivo salvo: {filepath}")
     print("=" * 60)
     print()
@@ -382,7 +528,8 @@ def export_to_csv(
     probability_sums: Dict[str, np.ndarray],
     probabilities: Dict[str, np.ndarray],
     model_metrics: Tuple[float, float, float, float],
-    output_filepath: str
+    output_filepath: str,
+    relevance_metrics_filepath: str
 ) -> str:
     """
     Exporta os resultados da soma de probabilidades para CSV.
@@ -394,6 +541,7 @@ def export_to_csv(
         probabilities: Dicionário {img_id: probabilidades_originais}
         model_metrics: Tupla (accuracy, f1, recall, precision)
         output_filepath: Caminho completo do arquivo CSV de saída
+        relevance_metrics_filepath: Caminho do arquivo *_metrics.csv da técnica de relevância
         
     Returns:
         str: Caminho do arquivo CSV gerado
@@ -469,6 +617,14 @@ def export_to_csv(
     print(f"   💾 Arquivo salvo: {output_filepath}")
     print("=" * 60)
     print()
+
+    # Exporta também o CSV de métricas intermediárias (folds/mean) reutilizando o *_metrics.csv da relevância
+    metrics_output_dir = os.path.dirname(output_filepath)
+    export_sumprob_metrics_csv(
+        model_metrics=model_metrics,
+        relevance_metrics_filepath=relevance_metrics_filepath,
+        output_dir=metrics_output_dir,
+    )
     
     return output_filepath
 
@@ -993,7 +1149,7 @@ def generate_comparison_csv(
             divergence_rows.append(divergence_row)
     
     print(f"   ✅ {len(comparison_rows)} linhas processadas")
-    print(f"   📊 Estatísticas de acerto:")
+    print("   📊 Estatísticas de acerto:")
     total = len(comparison_rows)
     for tipo, count in sorted(acerto_stats.items()):
         percentage = (count / total) * 100
@@ -1195,7 +1351,11 @@ def main(input_csv: str, output_dir: str, model_name: str = "SumProbabilities", 
             probability_sums=probability_sums,
             probabilities=original_probabilities,
             model_metrics=model_metrics,
-            output_filepath=csv_filepath
+            output_filepath=csv_filepath,
+            relevance_metrics_filepath=os.path.join(
+                os.path.dirname(input_csv),
+                f"{_relevance_base_from_results_csv_path(input_csv)}_metrics.csv",
+            ),
         )
         
         # Resumo final
@@ -1526,13 +1686,18 @@ if __name__ == "__main__":
                                      for img_id, img_data in data.items()}
             
             test_output_csv = "results/test_sum_probabilities_results.csv"
+            test_relevance_metrics = os.path.join(
+                os.path.dirname(test_csv),
+                f"{_relevance_base_from_results_csv_path(test_csv)}_metrics.csv",
+            )
             csv_path = export_to_csv(
                 predicted_labels=predicted_labels,
                 true_labels=true_labels,
                 probability_sums=probability_sums,
                 probabilities=original_probabilities,
                 model_metrics=model_metrics,
-                output_filepath=test_output_csv
+                output_filepath=test_output_csv,
+                relevance_metrics_filepath=test_relevance_metrics,
             )
             
             # Validações das ETAPAS 6, 7 e 8
@@ -1601,12 +1766,12 @@ if __name__ == "__main__":
             # Valida uma linha do CSV
             first_row = csv_rows[0]
             assert first_row['acuracia_global'] == str(round(accuracy, 4)), \
-                f"❌ Acurácia no CSV inconsistente"
+                "❌ Acurácia no CSV inconsistente"
             
             print(f"\n   ✅ CSV exportado: {csv_path}")
             print(f"   ✅ {len(csv_rows)} linhas escritas")
-            print(f"   ✅ Todas as colunas esperadas presentes")
-            print(f"   ✅ Formato consistente com CSV de entrada")
+            print("   ✅ Todas as colunas esperadas presentes")
+            print("   ✅ Formato consistente com CSV de entrada")
             
             print("=" * 60)
             print()
