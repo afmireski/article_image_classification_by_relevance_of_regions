@@ -1,0 +1,2184 @@
+MIN_K: 4, MAX_K: 20, BASE_SIZE: 512, BASE_K: 9
+Auto-segmenting 50 images from category 'peperomia_glabella' (K range: 4-20)...
+  Generated average 9.0 regions per image
+peperomia_glabella: 450 regions total
+Auto-segmenting 50 images from category 'piper_amalago' (K range: 4-20)...
+  Generated average 9.0 regions per image
+piper_amalago: 450 regions total
+Categoria: peperomia_glabella, Número de elementos: 50
+Categoria: piper_amalago, Número de elementos: 50
+Categoria: peperomia_glabella, Número de elementos: 50
+Categoria: piper_amalago, Número de elementos: 50
+Categoria: peperomia_glabella, Número de elementos: 50
+Categoria: piper_amalago, Número de elementos: 50
+==================================================
+RESUMO DOS CONJUNTOS DE FEATURES
+==================================================
+📊 Total de imagens: 100
+🔧 Total de conjuntos gerados: 7
+📋 Labels únicos: {'piper_amalago', 'peperomia_glabella'}
+
+🔹 LBP:
+   📁 Imagens: 100
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 900
+   🎯 Features por segmento: 59
+   📈 Total features por imagem: 531
+
+🔹 GLCM:
+   📁 Imagens: 100
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 900
+   🎯 Features por segmento: 72
+   📈 Total features por imagem: 648
+
+🔹 LPQ:
+   📁 Imagens: 100
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 900
+   🎯 Features por segmento: 256
+   📈 Total features por imagem: 2304
+
+🔹 LBP+GLCM:
+   📁 Imagens: 100
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 900
+   🎯 Features por segmento: 131
+   📈 Total features por imagem: 1179
+
+🔹 LBP+LPQ:
+   📁 Imagens: 100
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 900
+   🎯 Features por segmento: 315
+   📈 Total features por imagem: 2835
+
+🔹 GLCM+LPQ:
+   📁 Imagens: 100
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 900
+   🎯 Features por segmento: 328
+   📈 Total features por imagem: 2952
+
+🔹 LBP+GLCM+LPQ:
+   📁 Imagens: 100
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 900
+   🎯 Features por segmento: 387
+   📈 Total features por imagem: 3483
+
+==================================================
+Limpando variáveis desnecessárias...
+Variáveis antes da limpeza: 67 variáveis locais
+  ✓ Removida: segmented_train_images
+  ✓ Removida: lbps_by_categories
+  ✓ Removida: glcms_by_category
+  ✓ Removida: radius
+  ✓ Removida: n_pixels
+  ✓ Removida: n_examples
+
+✓ Limpeza concluída!
+  - 6 variáveis removidas
+  - Memória liberada pela coleta de lixo
+  - Variáveis após limpeza: 64 variáveis locais
+
+📋 Principais variáveis mantidas:
+  ✓ image_categories: list (tamanho: 2)
+  ✓ train_images_by_categories: dict (tamanho: 2)
+  ✓ labels: list (tamanho: 100)
+  ✓ GLCM_DISTANCES: list (tamanho: 3)
+  ✓ GLCM_ANGLES: ndarray (4,)
+  ✓ GLCM_FEATURES: list (tamanho: 6)
+
+💡 Variáveis limpas com sucesso! Agora você pode prosseguir com o treinamento dos modelos.
+🔄 Nova estrutura: combined_sets contém todos os conjuntos de features combinados.
+Classes: ['peperomia_glabella', 'piper_amalago']
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 59), y(720,)
+  ✅ Teste: 180 imagens → X(180, 59), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 72), y(720,)
+  ✅ Teste: 180 imagens → X(180, 72), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 256), y(720,)
+  ✅ Teste: 180 imagens → X(180, 256), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 131), y(720,)
+  ✅ Teste: 180 imagens → X(180, 131), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 315), y(720,)
+  ✅ Teste: 180 imagens → X(180, 315), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 328), y(720,)
+  ✅ Teste: 180 imagens → X(180, 328), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 50
+📊 Total imagens não-classe: 50
+🔄 Dividindo em 5 folds...
+  Fold 0: 10 classe, 10 não-classe
+  Fold 1: 10 classe, 10 não-classe
+  Fold 2: 10 classe, 10 não-classe
+  Fold 3: 10 classe, 10 não-classe
+  Fold 4: 10 classe, 10 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 1...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 2...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 3...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🔧 Construindo fold 4...
+  ✅ Treino: 40 classe + 40 não-classe = 80
+  ✅ Teste: 10 classe + 10 não-classe = 20
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 720 imagens → X(720, 387), y(720,)
+  ✅ Teste: 180 imagens → X(180, 387), y(180,)
+
+🎉 5 folds processados com sucesso!
+Tunando parâmetros do KNN...
+Tunando parâmetros do Random Forest...
+Tunando SVM...
+🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS KNN ===
+
+📊 Calculando relevância LBP...
+🚀 Iniciando treinamento de especialistas KNN-LBP
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia_glabella
+=== Iniciando treinamento assistido: KNN-LBP-Specialist-peperomia_glabella ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP-Specialist-peperomia_glabella:
+   📊 Acurácia: 77.7778%
+   📊 F1: 75.3086%
+   📊 Recall: 67.7778%
+   📊 Precision: 84.7222%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP-Specialist-peperomia_glabella:
+   📊 Acurácia: 85.0000%
+   📊 F1: 83.4356%
+   📊 Recall: 75.5556%
+   📊 Precision: 93.1507%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP-Specialist-peperomia_glabella:
+   📊 Acurácia: 80.0000%
+   📊 F1: 78.3133%
+   📊 Recall: 72.2222%
+   📊 Precision: 85.5263%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP-Specialist-peperomia_glabella:
+   📊 Acurácia: 77.7778%
+   📊 F1: 74.0260%
+   📊 Recall: 63.3333%
+   📊 Precision: 89.0625%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP-Specialist-peperomia_glabella:
+   📊 Acurácia: 79.4444%
+   📊 F1: 77.0186%
+   📊 Recall: 68.8889%
+   📊 Precision: 87.3239%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper_amalago
+=== Iniciando treinamento assistido: KNN-LBP-Specialist-piper_amalago ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP-Specialist-piper_amalago:
+   📊 Acurácia: 81.1111%
+   📊 F1: 82.4742%
+   📊 Recall: 88.8889%
+   📊 Precision: 76.9231%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP-Specialist-piper_amalago:
+   📊 Acurácia: 75.0000%
+   📊 F1: 75.6757%
+   📊 Recall: 77.7778%
+   📊 Precision: 73.6842%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP-Specialist-piper_amalago:
+   📊 Acurácia: 77.7778%
+   📊 F1: 80.0000%
+   📊 Recall: 88.8889%
+   📊 Precision: 72.7273%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP-Specialist-piper_amalago:
+   📊 Acurácia: 82.2222%
+   📊 F1: 83.8384%
+   📊 Recall: 92.2222%
+   📊 Precision: 76.8519%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP-Specialist-piper_amalago:
+   📊 Acurácia: 81.6667%
+   📊 F1: 83.7438%
+   📊 Recall: 94.4444%
+   📊 Precision: 75.2212%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LBP concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LBP): 2.31 s
+########################################
+Métricas Finais Relevância KNN LBP:
+   📊 Acurácia: 96.0000%
+   📊 F1: 95.9984%
+   📊 Recall: 96.0000%
+   📊 Precision: 96.0737%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 80.0000% +- 2.6527%
+        | Folds: 77.7778%, 85.0000%, 80.0000%, 77.7778%, 79.4444%
+      2️⃣ F1 Média: 77.6204% +- 3.2534%
+        | Folds: 75.3086%, 83.4356%, 78.3133%, 74.0260%, 77.0186%
+      3️⃣ Recall Médio: 69.5556% +- 4.1336%
+        | Folds: 67.7778%, 75.5556%, 72.2222%, 63.3333%, 68.8889%
+      4️⃣ Precision Média: 87.9571% +- 2.9990%
+        | Folds: 84.7222%, 93.1507%, 85.5263%, 89.0625%, 87.3239%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 79.5556% +- 2.7532%
+        | Folds: 81.1111%, 75.0000%, 77.7778%, 82.2222%, 81.6667%
+      2️⃣ F1 Média: 81.1464% +- 3.0659%
+        | Folds: 82.4742%, 75.6757%, 80.0000%, 83.8384%, 83.7438%
+      3️⃣ Recall Médio: 88.4444% +- 5.7349%
+        | Folds: 88.8889%, 77.7778%, 88.8889%, 92.2222%, 94.4444%
+      4️⃣ Precision Média: 75.0815% +- 1.6757%
+        | Folds: 76.9231%, 73.6842%, 72.7273%, 76.8519%, 75.2212%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_metrics.csv
+   🎯 Imagens: 100 amostras
+--------------------------------------------------
+   ✅ 100 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_metrics.csv
+==================================================
+
+📊 Calculando relevância GLCM...
+🚀 Iniciando treinamento de especialistas KNN-GLCM
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia_glabella
+=== Iniciando treinamento assistido: KNN-GLCM-Specialist-peperomia_glabella ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 86.1111%
+   📊 F1: 85.5491%
+   📊 Recall: 82.2222%
+   📊 Precision: 89.1566%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 91.6667%
+   📊 F1: 91.6201%
+   📊 Recall: 91.1111%
+   📊 Precision: 92.1348%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 83.3333%
+   📊 F1: 83.3333%
+   📊 Recall: 83.3333%
+   📊 Precision: 83.3333%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 85.5556%
+   📊 F1: 84.1463%
+   📊 Recall: 76.6667%
+   📊 Precision: 93.2432%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 88.3333%
+   📊 F1: 88.0000%
+   📊 Recall: 85.5556%
+   📊 Precision: 90.5882%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper_amalago
+=== Iniciando treinamento assistido: KNN-GLCM-Specialist-piper_amalago ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 85.0000%
+   📊 F1: 84.7458%
+   📊 Recall: 83.3333%
+   📊 Precision: 86.2069%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 80.5556%
+   📊 F1: 79.0419%
+   📊 Recall: 73.3333%
+   📊 Precision: 85.7143%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 81.1111%
+   📊 F1: 80.6818%
+   📊 Recall: 78.8889%
+   📊 Precision: 82.5581%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 85.5556%
+   📊 F1: 84.7059%
+   📊 Recall: 80.0000%
+   📊 Precision: 90.0000%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 85.0000%
+   📊 F1: 85.4054%
+   📊 Recall: 87.7778%
+   📊 Precision: 83.1579%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-GLCM concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-GLCM): 3.55 s
+########################################
+Métricas Finais Relevância KNN GLCM:
+   📊 Acurácia: 98.0000%
+   📊 F1: 97.9992%
+   📊 Recall: 98.0000%
+   📊 Precision: 98.0769%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 87.0000% +- 2.8241%
+        | Folds: 86.1111%, 91.6667%, 83.3333%, 85.5556%, 88.3333%
+      2️⃣ F1 Média: 86.5298% +- 2.9978%
+        | Folds: 85.5491%, 91.6201%, 83.3333%, 84.1463%, 88.0000%
+      3️⃣ Recall Médio: 83.7778% +- 4.6930%
+        | Folds: 82.2222%, 91.1111%, 83.3333%, 76.6667%, 85.5556%
+      4️⃣ Precision Média: 89.6913% +- 3.4670%
+        | Folds: 89.1566%, 92.1348%, 83.3333%, 93.2432%, 90.5882%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 83.4444% +- 2.1488%
+        | Folds: 85.0000%, 80.5556%, 81.1111%, 85.5556%, 85.0000%
+      2️⃣ F1 Média: 82.9162% +- 2.5593%
+        | Folds: 84.7458%, 79.0419%, 80.6818%, 84.7059%, 85.4054%
+      3️⃣ Recall Médio: 80.6667% +- 4.7971%
+        | Folds: 83.3333%, 73.3333%, 78.8889%, 80.0000%, 87.7778%
+      4️⃣ Precision Média: 85.5274% +- 2.6432%
+        | Folds: 86.2069%, 85.7143%, 82.5581%, 90.0000%, 83.1579%
+########################################
+📊 Exportando resultados para CSV: KNN_GLCM
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_metrics.csv
+   🎯 Imagens: 100 amostras
+--------------------------------------------------
+   ✅ 100 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_metrics.csv
+==================================================
+
+📊 Calculando relevância LPQ...
+🚀 Iniciando treinamento de especialistas KNN-LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia_glabella
+=== Iniciando treinamento assistido: KNN-LPQ-Specialist-peperomia_glabella ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN-LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 78.8889%
+   📊 F1: 75.9494%
+   📊 Recall: 66.6667%
+   📊 Precision: 88.2353%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 83.8889%
+   📊 F1: 82.6347%
+   📊 Recall: 76.6667%
+   📊 Precision: 89.6104%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 85.0000%
+   📊 F1: 84.3931%
+   📊 Recall: 81.1111%
+   📊 Precision: 87.9518%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN-LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 72.7778%
+   📊 F1: 64.7482%
+   📊 Recall: 50.0000%
+   📊 Precision: 91.8367%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 5 - KNN-LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 81.1111%
+   📊 F1: 80.2326%
+   📊 Recall: 76.6667%
+   📊 Precision: 84.1463%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper_amalago
+=== Iniciando treinamento assistido: KNN-LPQ-Specialist-piper_amalago ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 77.2222%
+   📊 F1: 77.5956%
+   📊 Recall: 78.8889%
+   📊 Precision: 76.3441%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 82.2222%
+   📊 F1: 82.0225%
+   📊 Recall: 81.1111%
+   📊 Precision: 82.9545%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN-LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 75.5556%
+   📊 F1: 75.8242%
+   📊 Recall: 76.6667%
+   📊 Precision: 75.0000%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN-LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 71.1111%
+   📊 F1: 71.1111%
+   📊 Recall: 71.1111%
+   📊 Precision: 71.1111%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 80.0000%
+   📊 F1: 82.0000%
+   📊 Recall: 91.1111%
+   📊 Precision: 74.5455%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LPQ): 4.91 s
+########################################
+Métricas Finais Relevância KNN LPQ:
+   📊 Acurácia: 97.0000%
+   📊 F1: 96.9973%
+   📊 Recall: 97.0000%
+   📊 Precision: 97.1698%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 80.3333% +- 4.3404%
+        | Folds: 78.8889%, 83.8889%, 85.0000%, 72.7778%, 81.1111%
+      2️⃣ F1 Média: 77.5916% +- 7.0188%
+        | Folds: 75.9494%, 82.6347%, 84.3931%, 64.7482%, 80.2326%
+      3️⃣ Recall Médio: 70.2222% +- 11.1643%
+        | Folds: 66.6667%, 76.6667%, 81.1111%, 50.0000%, 76.6667%
+      4️⃣ Precision Média: 88.3561% +- 2.5135%
+        | Folds: 88.2353%, 89.6104%, 87.9518%, 91.8367%, 84.1463%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 77.2222% +- 3.8168%
+        | Folds: 77.2222%, 82.2222%, 75.5556%, 71.1111%, 80.0000%
+      2️⃣ F1 Média: 77.7107% +- 4.1016%
+        | Folds: 77.5956%, 82.0225%, 75.8242%, 71.1111%, 82.0000%
+      3️⃣ Recall Médio: 79.7778% +- 6.5697%
+        | Folds: 78.8889%, 81.1111%, 76.6667%, 71.1111%, 91.1111%
+      4️⃣ Precision Média: 75.9910% +- 3.8859%
+        | Folds: 76.3441%, 82.9545%, 75.0000%, 71.1111%, 74.5455%
+########################################
+📊 Exportando resultados para CSV: KNN_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lpq_metrics.csv
+   🎯 Imagens: 100 amostras
+--------------------------------------------------
+   ✅ 100 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+GLCM...
+🚀 Iniciando treinamento de especialistas KNN-LBP+GLCM
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia_glabella
+=== Iniciando treinamento assistido: KNN-LBP+GLCM-Specialist-peperomia_glabella ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 83.3333%
+   📊 F1: 82.5581%
+   📊 Recall: 78.8889%
+   📊 Precision: 86.5854%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 89.4444%
+   📊 F1: 89.5028%
+   📊 Recall: 90.0000%
+   📊 Precision: 89.0110%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 85.0000%
+   📊 F1: 84.7458%
+   📊 Recall: 83.3333%
+   📊 Precision: 86.2069%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 83.8889%
+   📊 F1: 81.7610%
+   📊 Recall: 72.2222%
+   📊 Precision: 94.2029%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM-Specialist-peperomia_glabella:
+   📊 Acurácia: 85.5556%
+   📊 F1: 85.3933%
+   📊 Recall: 84.4444%
+   📊 Precision: 86.3636%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper_amalago
+=== Iniciando treinamento assistido: KNN-LBP+GLCM-Specialist-piper_amalago ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 85.0000%
+   📊 F1: 85.5615%
+   📊 Recall: 88.8889%
+   📊 Precision: 82.4742%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 85.0000%
+   📊 F1: 84.7458%
+   📊 Recall: 83.3333%
+   📊 Precision: 86.2069%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 83.3333%
+   📊 F1: 83.6957%
+   📊 Recall: 85.5556%
+   📊 Precision: 81.9149%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 87.7778%
+   📊 F1: 88.0435%
+   📊 Recall: 90.0000%
+   📊 Precision: 86.1702%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM-Specialist-piper_amalago:
+   📊 Acurácia: 87.2222%
+   📊 F1: 87.8307%
+   📊 Recall: 92.2222%
+   📊 Precision: 83.8384%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LBP+GLCM concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LBP+GLCM): 3.65 s
+########################################
+Métricas Finais Relevância KNN LBP+GLCM:
+   📊 Acurácia: 96.0000%
+   📊 F1: 95.9984%
+   📊 Recall: 96.0000%
+   📊 Precision: 96.0737%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 85.4444% +- 2.1488%
+        | Folds: 83.3333%, 89.4444%, 85.0000%, 83.8889%, 85.5556%
+      2️⃣ F1 Média: 84.7922% +- 2.7104%
+        | Folds: 82.5581%, 89.5028%, 84.7458%, 81.7610%, 85.3933%
+      3️⃣ Recall Médio: 81.7778% +- 5.9463%
+        | Folds: 78.8889%, 90.0000%, 83.3333%, 72.2222%, 84.4444%
+      4️⃣ Precision Média: 88.4740% +- 3.0420%
+        | Folds: 86.5854%, 89.0110%, 86.2069%, 94.2029%, 86.3636%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 85.6667% +- 1.6254%
+        | Folds: 85.0000%, 85.0000%, 83.3333%, 87.7778%, 87.2222%
+      2️⃣ F1 Média: 85.9754% +- 1.7088%
+        | Folds: 85.5615%, 84.7458%, 83.6957%, 88.0435%, 87.8307%
+      3️⃣ Recall Médio: 88.0000% +- 3.1740%
+        | Folds: 88.8889%, 83.3333%, 85.5556%, 90.0000%, 92.2222%
+      4️⃣ Precision Média: 84.1209% +- 1.8005%
+        | Folds: 82.4742%, 86.2069%, 81.9149%, 86.1702%, 83.8384%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_GLCM
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_metrics.csv
+   🎯 Imagens: 100 amostras
+--------------------------------------------------
+   ✅ 100 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+LPQ...
+🚀 Iniciando treinamento de especialistas KNN-LBP+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia_glabella
+=== Iniciando treinamento assistido: KNN-LBP+LPQ-Specialist-peperomia_glabella ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 77.7778%
+   📊 F1: 73.6842%
+   📊 Recall: 62.2222%
+   📊 Precision: 90.3226%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 85.5556%
+   📊 F1: 83.7500%
+   📊 Recall: 74.4444%
+   📊 Precision: 95.7143%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 83.3333%
+   📊 F1: 81.9277%
+   📊 Recall: 75.5556%
+   📊 Precision: 89.4737%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 77.2222%
+   📊 F1: 71.3287%
+   📊 Recall: 56.6667%
+   📊 Precision: 96.2264%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 80.0000%
+   📊 F1: 78.0488%
+   📊 Recall: 71.1111%
+   📊 Precision: 86.4865%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper_amalago
+=== Iniciando treinamento assistido: KNN-LBP+LPQ-Specialist-piper_amalago ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 77.7778%
+   📊 F1: 79.3814%
+   📊 Recall: 85.5556%
+   📊 Precision: 74.0385%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 81.6667%
+   📊 F1: 83.2487%
+   📊 Recall: 91.1111%
+   📊 Precision: 76.6355%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 78.8889%
+   📊 F1: 81.5534%
+   📊 Recall: 93.3333%
+   📊 Precision: 72.4138%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 80.0000%
+   📊 F1: 80.8511%
+   📊 Recall: 84.4444%
+   📊 Precision: 77.5510%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 79.4444%
+   📊 F1: 82.4645%
+   📊 Recall: 96.6667%
+   📊 Precision: 71.9008%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LBP+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LBP+LPQ): 5.24 s
+########################################
+Métricas Finais Relevância KNN LBP+LPQ:
+   📊 Acurácia: 96.0000%
+   📊 F1: 95.9936%
+   📊 Recall: 96.0000%
+   📊 Precision: 96.2963%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 80.7778% +- 3.2126%
+        | Folds: 77.7778%, 85.5556%, 83.3333%, 77.2222%, 80.0000%
+      2️⃣ F1 Média: 77.7479% +- 4.7182%
+        | Folds: 73.6842%, 83.7500%, 81.9277%, 71.3287%, 78.0488%
+      3️⃣ Recall Médio: 68.0000% +- 7.3501%
+        | Folds: 62.2222%, 74.4444%, 75.5556%, 56.6667%, 71.1111%
+      4️⃣ Precision Média: 91.6447% +- 3.7582%
+        | Folds: 90.3226%, 95.7143%, 89.4737%, 96.2264%, 86.4865%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 79.5556% +- 1.2862%
+        | Folds: 77.7778%, 81.6667%, 78.8889%, 80.0000%, 79.4444%
+      2️⃣ F1 Média: 81.4998% +- 1.3342%
+        | Folds: 79.3814%, 83.2487%, 81.5534%, 80.8511%, 82.4645%
+      3️⃣ Recall Médio: 90.2222% +- 4.6295%
+        | Folds: 85.5556%, 91.1111%, 93.3333%, 84.4444%, 96.6667%
+      4️⃣ Precision Média: 74.5079% +- 2.2445%
+        | Folds: 74.0385%, 76.6355%, 72.4138%, 77.5510%, 71.9008%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_lpq_metrics.csv
+   🎯 Imagens: 100 amostras
+--------------------------------------------------
+   ✅ 100 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância GLCM+LPQ...
+🚀 Iniciando treinamento de especialistas KNN-GLCM+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia_glabella
+=== Iniciando treinamento assistido: KNN-GLCM+LPQ-Specialist-peperomia_glabella ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 82.2222%
+   📊 F1: 81.1765%
+   📊 Recall: 76.6667%
+   📊 Precision: 86.2500%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 90.0000%
+   📊 F1: 89.7727%
+   📊 Recall: 87.7778%
+   📊 Precision: 91.8605%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 86.6667%
+   📊 F1: 86.5169%
+   📊 Recall: 85.5556%
+   📊 Precision: 87.5000%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 84.4444%
+   📊 F1: 82.7160%
+   📊 Recall: 74.4444%
+   📊 Precision: 93.0556%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 83.8889%
+   📊 F1: 83.4286%
+   📊 Recall: 81.1111%
+   📊 Precision: 85.8824%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper_amalago
+=== Iniciando treinamento assistido: KNN-GLCM+LPQ-Specialist-piper_amalago ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 86.1111%
+   📊 F1: 85.8757%
+   📊 Recall: 84.4444%
+   📊 Precision: 87.3563%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 82.2222%
+   📊 F1: 80.9524%
+   📊 Recall: 75.5556%
+   📊 Precision: 87.1795%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 79.4444%
+   📊 F1: 79.7814%
+   📊 Recall: 81.1111%
+   📊 Precision: 78.4946%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 85.0000%
+   📊 F1: 84.5714%
+   📊 Recall: 82.2222%
+   📊 Precision: 87.0588%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 85.0000%
+   📊 F1: 85.5615%
+   📊 Recall: 88.8889%
+   📊 Precision: 82.4742%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-GLCM+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-GLCM+LPQ): 6.05 s
+########################################
+Métricas Finais Relevância KNN GLCM+LPQ:
+   📊 Acurácia: 97.0000%
+   📊 F1: 96.9997%
+   📊 Recall: 97.0000%
+   📊 Precision: 97.0188%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 85.4444% +- 2.6851%
+        | Folds: 82.2222%, 90.0000%, 86.6667%, 84.4444%, 83.8889%
+      2️⃣ F1 Média: 84.7221% +- 3.0659%
+        | Folds: 81.1765%, 89.7727%, 86.5169%, 82.7160%, 83.4286%
+      3️⃣ Recall Médio: 81.1111% +- 5.0674%
+        | Folds: 76.6667%, 87.7778%, 85.5556%, 74.4444%, 81.1111%
+      4️⃣ Precision Média: 88.9097% +- 2.9706%
+        | Folds: 86.2500%, 91.8605%, 87.5000%, 93.0556%, 85.8824%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 83.5556% +- 2.4242%
+        | Folds: 86.1111%, 82.2222%, 79.4444%, 85.0000%, 85.0000%
+      2️⃣ F1 Média: 83.3485% +- 2.4998%
+        | Folds: 85.8757%, 80.9524%, 79.7814%, 84.5714%, 85.5615%
+      3️⃣ Recall Médio: 82.4444% +- 4.3546%
+        | Folds: 84.4444%, 75.5556%, 81.1111%, 82.2222%, 88.8889%
+      4️⃣ Precision Média: 84.5127% +- 3.5229%
+        | Folds: 87.3563%, 87.1795%, 78.4946%, 87.0588%, 82.4742%
+########################################
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_lpq_metrics.csv
+   🎯 Imagens: 100 amostras
+--------------------------------------------------
+   ✅ 100 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+GLCM+LPQ...
+🚀 Iniciando treinamento de especialistas KNN-LBP+GLCM+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia_glabella
+=== Iniciando treinamento assistido: KNN-LBP+GLCM+LPQ-Specialist-peperomia_glabella ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 82.2222%
+   📊 F1: 80.7229%
+   📊 Recall: 74.4444%
+   📊 Precision: 88.1579%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 89.4444%
+   📊 F1: 89.3855%
+   📊 Recall: 88.8889%
+   📊 Precision: 89.8876%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 85.0000%
+   📊 F1: 84.7458%
+   📊 Recall: 83.3333%
+   📊 Precision: 86.2069%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 84.4444%
+   📊 F1: 82.7160%
+   📊 Recall: 74.4444%
+   📊 Precision: 93.0556%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM+LPQ-Specialist-peperomia_glabella:
+   📊 Acurácia: 87.2222%
+   📊 F1: 86.5497%
+   📊 Recall: 82.2222%
+   📊 Precision: 91.3580%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper_amalago
+=== Iniciando treinamento assistido: KNN-LBP+GLCM+LPQ-Specialist-piper_amalago ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 86.1111%
+   📊 F1: 86.6310%
+   📊 Recall: 90.0000%
+   📊 Precision: 83.5052%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 86.6667%
+   📊 F1: 87.0968%
+   📊 Recall: 90.0000%
+   📊 Precision: 84.3750%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 83.3333%
+   📊 F1: 84.3750%
+   📊 Recall: 90.0000%
+   📊 Precision: 79.4118%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 86.6667%
+   📊 F1: 87.6289%
+   📊 Recall: 94.4444%
+   📊 Precision: 81.7308%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM+LPQ-Specialist-piper_amalago:
+   📊 Acurácia: 86.1111%
+   📊 F1: 87.1795%
+   📊 Recall: 94.4444%
+   📊 Precision: 80.9524%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LBP+GLCM+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LBP+GLCM+LPQ): 6.93 s
+########################################
+Métricas Finais Relevância KNN LBP+GLCM+LPQ:
+   📊 Acurácia: 99.0000%
+   📊 F1: 98.9999%
+   📊 Recall: 99.0000%
+   📊 Precision: 99.0196%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 85.6667% +- 2.4696%
+        | Folds: 82.2222%, 89.4444%, 85.0000%, 84.4444%, 87.2222%
+      2️⃣ F1 Média: 84.8240% +- 3.0018%
+        | Folds: 80.7229%, 89.3855%, 84.7458%, 82.7160%, 86.5497%
+      3️⃣ Recall Médio: 80.6667% +- 5.5600%
+        | Folds: 74.4444%, 88.8889%, 83.3333%, 74.4444%, 82.2222%
+      4️⃣ Precision Média: 89.7332% +- 2.3924%
+        | Folds: 88.1579%, 89.8876%, 86.2069%, 93.0556%, 91.3580%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 85.7778% +- 1.2472%
+        | Folds: 86.1111%, 86.6667%, 83.3333%, 86.6667%, 86.1111%
+      2️⃣ F1 Média: 86.5822% +- 1.1481%
+        | Folds: 86.6310%, 87.0968%, 84.3750%, 87.6289%, 87.1795%
+      3️⃣ Recall Médio: 91.7778% +- 2.1773%
+        | Folds: 90.0000%, 90.0000%, 90.0000%, 94.4444%, 94.4444%
+      4️⃣ Precision Média: 81.9950% +- 1.7762%
+        | Folds: 83.5052%, 84.3750%, 79.4118%, 81.7308%, 80.9524%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_lpq_metrics.csv
+   🎯 Imagens: 100 amostras
+--------------------------------------------------
+   ✅ 100 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_metrics.csv
+==================================================
+✅ Relevância calculada para todos os 7 conjuntos de features
+📊 Métricas e matrizes de confusão geradas para cada combinação
+
+🎉 === CÁLCULO DE RELEVÂNCIA KNN CONCLUÍDO ===
+✅ Resultados compactados em: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/experimento_20260201_161047.zip
+⏳ Tempo total de execução do script: 3m 44.06s
