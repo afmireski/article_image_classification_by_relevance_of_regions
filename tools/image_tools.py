@@ -791,7 +791,7 @@ def resize_with_padding(img, target_size=512):
 
     # resize proporcional
     resized = transform.resize(
-        img, (new_h, new_w), anti_aliasing=True, preserve_range=True
+        img, (new_h, new_w), anti_aliasing=True, preserve_range=False
     )
 
     # cria canvas preto
@@ -859,6 +859,51 @@ def load_images_from_category(
 
     return images_dict
 
+def load_images_from_category_gray(
+    directory: str, category: str, allowed_extensions: List[str], resize: bool = True
+) -> Dict[str, np.ndarray]:
+    """
+    Load images from a specific category directory and return as dictionary.
+    Assumes that images are already in grayscale.
+
+    Args:
+        directory (str): Base directory path containing category subdirectories
+        category (str): Category subdirectory name
+        allowed_extensions (List[str]): List of allowed file extensions (e.g., ['.jpg', '.png'])
+        resize (bool): Whether to resize images with padding to standard size
+
+    Returns:
+        Dict[str, np.ndarray]: Dictionary with filename (without extension) as key
+                              and processed grayscale image as value
+    """
+    import glob
+
+    # Coletar todos os arquivos de imagem com seus caminhos
+    all_files = []
+    for ext in allowed_extensions:
+        pattern = os.path.join(directory, category, f"*{ext}")
+        all_files.extend(glob.glob(pattern))
+
+    # Ordenar para garantir consistência
+    all_files.sort()
+
+    # Criar dicionário com nome do arquivo como chave
+    images_dict = {}
+
+    for file_path in all_files:
+        # Extrair nome do arquivo sem extensão
+        file_name = os.path.splitext(os.path.basename(file_path))[0]
+
+        # Carregar e processar a imagem
+        gray_img = ski.io.imread(file_path)
+
+        if resize:
+            gray_img = resize_with_padding(gray_img)
+
+        gray_img_uint8 = ski.util.img_as_ubyte(gray_img)
+        images_dict[file_name] = gray_img_uint8
+
+    return images_dict
 
 def load_train_images_dict(
     directory: str,
@@ -881,6 +926,33 @@ def load_train_images_dict(
     """
     return {
         category: load_images_from_category(
+            directory, category, allowed_extensions, resize
+        )
+        for category in categories
+    }
+
+def load_train_images_dict_gray(
+    directory: str,
+    categories: List[str],
+    allowed_extensions: List[str] = [".jpg", ".jpeg", ".png"],
+    resize: bool = True,
+) -> Dict[str, Dict[str, np.ndarray]]:
+    """
+    Load images from multiple categories and return nested dictionary structure.
+    Assumes that images are already in grayscale.
+
+    Args:
+        directory (str): Base directory path containing category subdirectories
+        categories (List[str]): List of category names (subdirectory names)
+        allowed_extensions (List[str]): List of allowed file extensions
+        resize (bool): Whether to resize images with padding to standard size
+
+    Returns:
+        Dict[str, Dict[str, np.ndarray]]: Nested dictionary structure:
+                                        {category: {filename: image_array}}
+    """
+    return {
+        category: load_images_from_category_gray(
             directory, category, allowed_extensions, resize
         )
         for category in categories
