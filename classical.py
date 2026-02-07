@@ -522,6 +522,7 @@ def standard_technique(
             predicted_y,
             title=f"{model_name}",
             cmap=cmap,
+            save_dir=experiment_dir
         )
 
     # ETAPA 7: Exportar resultados para CSV
