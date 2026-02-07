@@ -103,8 +103,8 @@ warnings.filterwarnings("ignore", message=".*resource_tracker.*")
 warnings.filterwarnings("ignore", message=".*Cannot register.*")
 
 
-images_directory = "./images/experiment/peppers"
-image_categories = ["peperomia_glabella", "peperomia_tetraphylla", "peperomia_urocarpa", "piper_amalago", "piper_gaudichaudianum", "piper_glabratum", "piper_hispidum", "piper_miquelianum", "piper_xylosteoides"]
+images_directory = "./images/experiment/peppers_two_classes"
+image_categories = ["peperomia", "piper"]
 n_examples = 4
 NEEDS_RESIZE = int(os.getenv("NEEDS_RESIZE", True))
 RESIZE_SIZE = int(os.getenv("RESIZE_SIZE", 512))
