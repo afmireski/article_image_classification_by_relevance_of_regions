@@ -1,0 +1,2328 @@
+Categoria: peperomia_glabella, Número de elementos: 50
+Categoria: peperomia_tetraphylla, Número de elementos: 50
+Categoria: peperomia_urocarpa, Número de elementos: 50
+Categoria: piper_amalago, Número de elementos: 50
+Categoria: piper_gaudichaudianum, Número de elementos: 50
+Categoria: piper_glabratum, Número de elementos: 50
+Categoria: piper_hispidum, Número de elementos: 50
+Categoria: piper_miquelianum, Número de elementos: 50
+Categoria: piper_xylosteoides, Número de elementos: 50
+Categoria: peperomia_glabella, Número de elementos: 50
+Categoria: peperomia_tetraphylla, Número de elementos: 50
+Categoria: peperomia_urocarpa, Número de elementos: 50
+Categoria: piper_amalago, Número de elementos: 50
+Categoria: piper_gaudichaudianum, Número de elementos: 50
+Categoria: piper_glabratum, Número de elementos: 50
+Categoria: piper_hispidum, Número de elementos: 50
+Categoria: piper_miquelianum, Número de elementos: 50
+Categoria: piper_xylosteoides, Número de elementos: 50
+Categoria: peperomia_glabella, Número de elementos: 50
+Categoria: peperomia_tetraphylla, Número de elementos: 50
+Categoria: peperomia_urocarpa, Número de elementos: 50
+Categoria: piper_amalago, Número de elementos: 50
+Categoria: piper_gaudichaudianum, Número de elementos: 50
+Categoria: piper_glabratum, Número de elementos: 50
+Categoria: piper_hispidum, Número de elementos: 50
+Categoria: piper_miquelianum, Número de elementos: 50
+Categoria: piper_xylosteoides, Número de elementos: 50
+Limpando variáveis desnecessárias...
+Variáveis antes da limpeza: 54 variáveis locais
+  ✓ Removida: lbps_by_categories_full
+  ✓ Removida: glcms_by_category_full
+  ✓ Removida: radius
+  ✓ Removida: n_pixels
+  ✓ Removida: n_examples
+
+✓ Limpeza concluída!
+  - 5 variáveis removidas
+  - Memória liberada pela coleta de lixo
+  - Variáveis após limpeza: 52 variáveis locais
+
+📋 Principais variáveis mantidas:
+  ✓ image_categories: list (tamanho: 9)
+  ✓ train_images_by_categories: dict (tamanho: 9)
+  ✓ labels: list (tamanho: 450)
+  ✓ GLCM_DISTANCES: list (tamanho: 3)
+  ✓ GLCM_ANGLES: ndarray (4,)
+  ✓ GLCM_FEATURES: list (tamanho: 6)
+
+💡 Variáveis limpas com sucesso! Agora você pode prosseguir com o treinamento dos modelos.
+🔄 Nova estrutura: combined_sets contém todos os conjuntos de features combinados.
+Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+
+============================================================
+PREPARANDO CONJUNTOS DE IMAGENS COMPLETAS
+============================================================
+============================================================
+PREPARANDO CONJUNTOS PARA CLASSIFICAÇÃO MULTICLASSE
+============================================================
+📊 Total de conjuntos de features: 7
+🔄 K-folds: 5
+🎲 Random state: 42
+
+🔧 Criando divisão base de folds (será reutilizada para todos os conjuntos)...
+📊 Total de imagens: 450
+📊 Total de classes: 9
+🔄 Dividindo em 5 folds...
+  Classe 0: 50 imagens
+  Classe 1: 50 imagens
+  Classe 2: 50 imagens
+  Classe 3: 50 imagens
+  Classe 4: 50 imagens
+  Classe 5: 50 imagens
+  Classe 6: 50 imagens
+  Classe 7: 50 imagens
+  Classe 8: 50 imagens
+  Fold 0: [10, 10, 10, 10, 10, 10, 10, 10, 10] (total: 90)
+  Fold 1: [10, 10, 10, 10, 10, 10, 10, 10, 10] (total: 90)
+  Fold 2: [10, 10, 10, 10, 10, 10, 10, 10, 10] (total: 90)
+  Fold 3: [10, 10, 10, 10, 10, 10, 10, 10, 10] (total: 90)
+  Fold 4: [10, 10, 10, 10, 10, 10, 10, 10, 10] (total: 90)
+
+🔧 Construindo fold 0...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🎉 5 folds construídos com sucesso!
+
+✅ Estrutura de folds criada com sucesso!
+📋 Cada fold terá:
+   - Treino: 360 imagens
+   - Teste: 90 imagens
+
+============================================================
+📦 Processando conjunto 1/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🎉 5 folds construídos para conjunto 1!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 59), y(360,)
+  ✅ Teste: 90 imagens → X(90, 59), y(90,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 59), y(360,)
+  ✅ Teste: 90 imagens → X(90, 59), y(90,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 59), y(360,)
+  ✅ Teste: 90 imagens → X(90, 59), y(90,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 59), y(360,)
+  ✅ Teste: 90 imagens → X(90, 59), y(90,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 59), y(360,)
+  ✅ Teste: 90 imagens → X(90, 59), y(90,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 1 preparado com sucesso!
+============================================================
+📦 Processando conjunto 2/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🎉 5 folds construídos para conjunto 2!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 72), y(360,)
+  ✅ Teste: 90 imagens → X(90, 72), y(90,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 72), y(360,)
+  ✅ Teste: 90 imagens → X(90, 72), y(90,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 72), y(360,)
+  ✅ Teste: 90 imagens → X(90, 72), y(90,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 72), y(360,)
+  ✅ Teste: 90 imagens → X(90, 72), y(90,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 72), y(360,)
+  ✅ Teste: 90 imagens → X(90, 72), y(90,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 2 preparado com sucesso!
+============================================================
+📦 Processando conjunto 3/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🎉 5 folds construídos para conjunto 3!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 256), y(360,)
+  ✅ Teste: 90 imagens → X(90, 256), y(90,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 256), y(360,)
+  ✅ Teste: 90 imagens → X(90, 256), y(90,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 256), y(360,)
+  ✅ Teste: 90 imagens → X(90, 256), y(90,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 256), y(360,)
+  ✅ Teste: 90 imagens → X(90, 256), y(90,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 256), y(360,)
+  ✅ Teste: 90 imagens → X(90, 256), y(90,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 3 preparado com sucesso!
+============================================================
+📦 Processando conjunto 4/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🎉 5 folds construídos para conjunto 4!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 131), y(360,)
+  ✅ Teste: 90 imagens → X(90, 131), y(90,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 131), y(360,)
+  ✅ Teste: 90 imagens → X(90, 131), y(90,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 131), y(360,)
+  ✅ Teste: 90 imagens → X(90, 131), y(90,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 131), y(360,)
+  ✅ Teste: 90 imagens → X(90, 131), y(90,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 131), y(360,)
+  ✅ Teste: 90 imagens → X(90, 131), y(90,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 4 preparado com sucesso!
+============================================================
+📦 Processando conjunto 5/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🎉 5 folds construídos para conjunto 5!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 315), y(360,)
+  ✅ Teste: 90 imagens → X(90, 315), y(90,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 315), y(360,)
+  ✅ Teste: 90 imagens → X(90, 315), y(90,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 315), y(360,)
+  ✅ Teste: 90 imagens → X(90, 315), y(90,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 315), y(360,)
+  ✅ Teste: 90 imagens → X(90, 315), y(90,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 315), y(360,)
+  ✅ Teste: 90 imagens → X(90, 315), y(90,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 5 preparado com sucesso!
+============================================================
+📦 Processando conjunto 6/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🎉 5 folds construídos para conjunto 6!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 328), y(360,)
+  ✅ Teste: 90 imagens → X(90, 328), y(90,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 328), y(360,)
+  ✅ Teste: 90 imagens → X(90, 328), y(90,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 328), y(360,)
+  ✅ Teste: 90 imagens → X(90, 328), y(90,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 328), y(360,)
+  ✅ Teste: 90 imagens → X(90, 328), y(90,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 328), y(360,)
+  ✅ Teste: 90 imagens → X(90, 328), y(90,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 6 preparado com sucesso!
+============================================================
+📦 Processando conjunto 7/7
+============================================================
+
+🔧 Construindo fold 0...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 360 imagens
+  ✅ Teste: 90 imagens
+
+🎉 5 folds construídos para conjunto 7!
+
+🔄 Convertendo para formato de classificação...
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 387), y(360,)
+  ✅ Teste: 90 imagens → X(90, 387), y(90,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 387), y(360,)
+  ✅ Teste: 90 imagens → X(90, 387), y(90,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 387), y(360,)
+  ✅ Teste: 90 imagens → X(90, 387), y(90,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 387), y(360,)
+  ✅ Teste: 90 imagens → X(90, 387), y(90,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 360 imagens → X(360, 387), y(360,)
+  ✅ Teste: 90 imagens → X(90, 387), y(90,)
+
+🎉 5 folds processados com sucesso!
+✅ Conjunto 7 preparado com sucesso!
+
+============================================================
+🎊 TODOS OS 7 CONJUNTOS PREPARADOS COM SUCESSO!
+============================================================
+
+
+✅ Conjuntos de imagens completas preparados com sucesso!
+   - LBP: 5 folds
+   - GLCM: 5 folds
+   - LPQ: 5 folds
+   - LBP+GLCM: 5 folds
+   - LBP+LPQ: 5 folds
+   - GLCM+LPQ: 5 folds
+   - LBP+GLCM+LPQ: 5 folds
+============================================================
+
+Tunando parâmetros do KNN...
+Tunando parâmetros do Random Forest...
+Tunando SVM...
+🚀 === CLASSIFICAÇÃO PADRÃO - KNN ===
+
+📊 Classificando com LBP...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LBP
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LBP ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 1 - KNN_LBP:
+   📊 Acurácia: 27.7778%
+   📊 F1: 27.2490%
+   📊 Recall: 27.7778%
+   📊 Precision: 27.7361%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN_LBP:
+   📊 Acurácia: 34.4444%
+   📊 F1: 32.2885%
+   📊 Recall: 34.4444%
+   📊 Precision: 34.9784%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN_LBP:
+   📊 Acurácia: 26.6667%
+   📊 F1: 25.1808%
+   📊 Recall: 26.6667%
+   📊 Precision: 25.1010%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 4 - KNN_LBP:
+   📊 Acurácia: 37.7778%
+   📊 F1: 37.5984%
+   📊 Recall: 37.7778%
+   📊 Precision: 39.3235%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 5 - KNN_LBP:
+   📊 Acurácia: 28.8889%
+   📊 F1: 24.3062%
+   📊 Recall: 28.8889%
+   📊 Precision: 23.9079%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LBP:
+   📊 Acurácia: 31.1111%
+   📊 F1: 29.7322%
+   📊 Recall: 31.1111%
+   📊 Precision: 30.0228%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.2777777777777778, 0.34444444444444444, 0.26666666666666666, 0.37777777777777777, 0.28888888888888886], 'mean': np.float64(0.31111111111111106), 'std': np.float64(0.04274529791482521)}, 'f1': {'folds': [0.2724898315350148, 0.3228845228845229, 0.25180776014109346, 0.3759840376657355, 0.24306231949252544], 'mean': np.float64(0.29324569434377845), 'std': np.float64(0.04978026306944013)}, 'recall': {'folds': [0.2777777777777778, 0.34444444444444444, 0.26666666666666666, 0.37777777777777777, 0.2888888888888889], 'mean': np.float64(0.3111111111111111), 'std': np.float64(0.0427452979148252)}, 'precision': {'folds': [0.27736060236060234, 0.3497835497835498, 0.251010101010101, 0.3932353140686475, 0.23907882241215578], 'mean': np.float64(0.30209367792701125), 'std': np.float64(0.059620886590900625)}}
+      1️⃣ Acurácia Média: 31.1111% +- 4.2745%
+        | Folds: 27.7778%, 34.4444%, 26.6667%, 37.7778%, 28.8889%
+      2️⃣ F1 Média: 29.3246% +- 4.9780%
+        | Folds: 27.2490%, 32.2885%, 25.1808%, 37.5984%, 24.3062%
+      3️⃣ Recall Médio: 31.1111% +- 4.2745%
+        | Folds: 27.7778%, 34.4444%, 26.6667%, 37.7778%, 28.8889%
+      4️⃣ Precision Média: 30.2094% +- 5.9621%
+        | Folds: 27.7361%, 34.9784%, 25.1010%, 39.3235%, 23.9079%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LBP
+   📁 Arquivo: results/peppers/csv_exports/KNN_LBP_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/KNN_LBP_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LBP_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LBP_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LBP
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.3111
+   📊 F1-Score: 0.2973
+   🔄 Recall: 0.3111
+   🎯 Precision: 0.3002
+============================================================
+
+⏱️  Tempo de execução (KNN_LBP): 0.92 s
+
+
+📊 Classificando com GLCM...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_GLCM
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_GLCM ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN_GLCM:
+   📊 Acurácia: 36.6667%
+   📊 F1: 35.1997%
+   📊 Recall: 36.6667%
+   📊 Precision: 35.3643%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN_GLCM:
+   📊 Acurácia: 48.8889%
+   📊 F1: 48.6022%
+   📊 Recall: 48.8889%
+   📊 Precision: 48.8490%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN_GLCM:
+   📊 Acurácia: 54.4444%
+   📊 F1: 52.5289%
+   📊 Recall: 54.4444%
+   📊 Precision: 53.5185%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN_GLCM:
+   📊 Acurácia: 54.4444%
+   📊 F1: 53.9803%
+   📊 Recall: 54.4444%
+   📊 Precision: 54.6196%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN_GLCM:
+   📊 Acurácia: 43.3333%
+   📊 F1: 41.3266%
+   📊 Recall: 43.3333%
+   📊 Precision: 40.7350%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_GLCM:
+   📊 Acurácia: 47.5556%
+   📊 F1: 46.4187%
+   📊 Recall: 47.5556%
+   📊 Precision: 46.0457%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.36666666666666664, 0.4888888888888889, 0.5444444444444444, 0.5444444444444444, 0.43333333333333335], 'mean': np.float64(0.47555555555555545), 'std': np.float64(0.0682768510921654)}, 'f1': {'folds': [0.3519972802009415, 0.4860218005639102, 0.5252888360731498, 0.5398026657056584, 0.4132658384143555], 'mean': np.float64(0.463275284191603), 'std': np.float64(0.07085656438825108)}, 'recall': {'folds': [0.36666666666666664, 0.4888888888888888, 0.5444444444444445, 0.5444444444444445, 0.43333333333333335], 'mean': np.float64(0.47555555555555556), 'std': np.float64(0.06827685109216543)}, 'precision': {'folds': [0.3536426536426537, 0.4884902134902135, 0.5351851851851852, 0.5461960878627545, 0.4073497490164157], 'mean': np.float64(0.4661727778394445), 'std': np.float64(0.07454889405004946)}}
+      1️⃣ Acurácia Média: 47.5556% +- 6.8277%
+        | Folds: 36.6667%, 48.8889%, 54.4444%, 54.4444%, 43.3333%
+      2️⃣ F1 Média: 46.3275% +- 7.0857%
+        | Folds: 35.1997%, 48.6022%, 52.5289%, 53.9803%, 41.3266%
+      3️⃣ Recall Médio: 47.5556% +- 6.8277%
+        | Folds: 36.6667%, 48.8889%, 54.4444%, 54.4444%, 43.3333%
+      4️⃣ Precision Média: 46.6173% +- 7.4549%
+        | Folds: 35.3643%, 48.8490%, 53.5185%, 54.6196%, 40.7350%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_GLCM
+   📁 Arquivo: results/peppers/csv_exports/KNN_GLCM_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/KNN_GLCM_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_GLCM_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_GLCM_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_GLCM
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.4756
+   📊 F1-Score: 0.4642
+   🔄 Recall: 0.4756
+   🎯 Precision: 0.4605
+============================================================
+
+⏱️  Tempo de execução (KNN_GLCM): 0.43 s
+
+
+📊 Classificando com LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LPQ
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN_LPQ:
+   📊 Acurácia: 27.7778%
+   📊 F1: 27.1422%
+   📊 Recall: 27.7778%
+   📊 Precision: 27.9671%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN_LPQ:
+   📊 Acurácia: 40.0000%
+   📊 F1: 39.5535%
+   📊 Recall: 40.0000%
+   📊 Precision: 43.5327%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN_LPQ:
+   📊 Acurácia: 38.8889%
+   📊 F1: 37.7433%
+   📊 Recall: 38.8889%
+   📊 Precision: 37.1368%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN_LPQ:
+   📊 Acurácia: 45.5556%
+   📊 F1: 44.4894%
+   📊 Recall: 45.5556%
+   📊 Precision: 45.5772%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN_LPQ:
+   📊 Acurácia: 28.8889%
+   📊 F1: 27.0630%
+   📊 Recall: 28.8889%
+   📊 Precision: 29.1021%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LPQ:
+   📊 Acurácia: 36.2222%
+   📊 F1: 35.3819%
+   📊 Recall: 36.2222%
+   📊 Precision: 36.2542%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.2777777777777778, 0.4, 0.3888888888888889, 0.45555555555555555, 0.28888888888888886], 'mean': np.float64(0.36222222222222217), 'std': np.float64(0.06834913999657644)}, 'f1': {'folds': [0.27142175435949084, 0.3955352916395228, 0.3774327122153209, 0.44489423251855764, 0.27062992817378784], 'mean': np.float64(0.35198278378133596), 'std': np.float64(0.0696927882660634)}, 'recall': {'folds': [0.27777777777777785, 0.4, 0.3888888888888889, 0.4555555555555556, 0.2888888888888889], 'mean': np.float64(0.3622222222222222), 'std': np.float64(0.06834913999657644)}, 'precision': {'folds': [0.27967112771034336, 0.43532653802261645, 0.3713675213675213, 0.4557715704774528, 0.29102132435465766], 'mean': np.float64(0.3666316163865183), 'std': np.float64(0.07206440913773604)}}
+      1️⃣ Acurácia Média: 36.2222% +- 6.8349%
+        | Folds: 27.7778%, 40.0000%, 38.8889%, 45.5556%, 28.8889%
+      2️⃣ F1 Média: 35.1983% +- 6.9693%
+        | Folds: 27.1422%, 39.5535%, 37.7433%, 44.4894%, 27.0630%
+      3️⃣ Recall Médio: 36.2222% +- 6.8349%
+        | Folds: 27.7778%, 40.0000%, 38.8889%, 45.5556%, 28.8889%
+      4️⃣ Precision Média: 36.6632% +- 7.2064%
+        | Folds: 27.9671%, 43.5327%, 37.1368%, 45.5772%, 29.1021%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LPQ
+   📁 Arquivo: results/peppers/csv_exports/KNN_LPQ_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/KNN_LPQ_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LPQ
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.3622
+   📊 F1-Score: 0.3538
+   🔄 Recall: 0.3622
+   🎯 Precision: 0.3625
+============================================================
+
+⏱️  Tempo de execução (KNN_LPQ): 0.59 s
+
+
+📊 Classificando com LBP+GLCM...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LBP_GLCM
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LBP_GLCM ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN_LBP_GLCM:
+   📊 Acurácia: 38.8889%
+   📊 F1: 38.2427%
+   📊 Recall: 38.8889%
+   📊 Precision: 40.7259%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN_LBP_GLCM:
+   📊 Acurácia: 40.0000%
+   📊 F1: 38.3204%
+   📊 Recall: 40.0000%
+   📊 Precision: 37.3681%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN_LBP_GLCM:
+   📊 Acurácia: 50.0000%
+   📊 F1: 47.9342%
+   📊 Recall: 50.0000%
+   📊 Precision: 50.2954%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN_LBP_GLCM:
+   📊 Acurácia: 46.6667%
+   📊 F1: 46.8139%
+   📊 Recall: 46.6667%
+   📊 Precision: 48.2672%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN_LBP_GLCM:
+   📊 Acurácia: 42.2222%
+   📊 F1: 38.1404%
+   📊 Recall: 42.2222%
+   📊 Precision: 36.3690%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LBP_GLCM:
+   📊 Acurácia: 43.5556%
+   📊 F1: 42.3020%
+   📊 Recall: 43.5556%
+   📊 Precision: 42.4471%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.3888888888888889, 0.4, 0.5, 0.4666666666666667, 0.4222222222222222], 'mean': np.float64(0.43555555555555553), 'std': np.float64(0.04181086160494839)}, 'f1': {'folds': [0.38242736470806643, 0.3832042226779069, 0.47934151828372673, 0.4681386514719848, 0.3814037814037814], 'mean': np.float64(0.4189031077090933), 'std': np.float64(0.04491776916926006)}, 'recall': {'folds': [0.3888888888888889, 0.4000000000000001, 0.5, 0.4666666666666667, 0.4222222222222223], 'mean': np.float64(0.4355555555555556), 'std': np.float64(0.04181086160494838)}, 'precision': {'folds': [0.4072590989257656, 0.3736812570145904, 0.5029541446208113, 0.4826719576719577, 0.36369047619047623], 'mean': np.float64(0.42605138688472016), 'std': np.float64(0.05675312670796298)}}
+      1️⃣ Acurácia Média: 43.5556% +- 4.1811%
+        | Folds: 38.8889%, 40.0000%, 50.0000%, 46.6667%, 42.2222%
+      2️⃣ F1 Média: 41.8903% +- 4.4918%
+        | Folds: 38.2427%, 38.3204%, 47.9342%, 46.8139%, 38.1404%
+      3️⃣ Recall Médio: 43.5556% +- 4.1811%
+        | Folds: 38.8889%, 40.0000%, 50.0000%, 46.6667%, 42.2222%
+      4️⃣ Precision Média: 42.6051% +- 5.6753%
+        | Folds: 40.7259%, 37.3681%, 50.2954%, 48.2672%, 36.3690%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LBP_GLCM
+   📁 Arquivo: results/peppers/csv_exports/KNN_LBP_GLCM_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/KNN_LBP_GLCM_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LBP_GLCM_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LBP_GLCM_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LBP_GLCM
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.4356
+   📊 F1-Score: 0.4230
+   🔄 Recall: 0.4356
+   🎯 Precision: 0.4245
+============================================================
+
+⏱️  Tempo de execução (KNN_LBP_GLCM): 0.46 s
+
+
+📊 Classificando com LBP+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LBP_LPQ
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LBP_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN_LBP_LPQ:
+   📊 Acurácia: 30.0000%
+   📊 F1: 29.6084%
+   📊 Recall: 30.0000%
+   📊 Precision: 30.8193%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN_LBP_LPQ:
+   📊 Acurácia: 42.2222%
+   📊 F1: 40.9894%
+   📊 Recall: 42.2222%
+   📊 Precision: 45.2202%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN_LBP_LPQ:
+   📊 Acurácia: 36.6667%
+   📊 F1: 35.8562%
+   📊 Recall: 36.6667%
+   📊 Precision: 36.2935%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN_LBP_LPQ:
+   📊 Acurácia: 43.3333%
+   📊 F1: 42.4309%
+   📊 Recall: 43.3333%
+   📊 Precision: 42.2320%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN_LBP_LPQ:
+   📊 Acurácia: 33.3333%
+   📊 F1: 30.4538%
+   📊 Recall: 33.3333%
+   📊 Precision: 31.9196%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LBP_LPQ:
+   📊 Acurácia: 37.1111%
+   📊 F1: 36.2036%
+   📊 Recall: 37.1111%
+   📊 Precision: 36.8061%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.3, 0.4222222222222222, 0.36666666666666664, 0.43333333333333335, 0.3333333333333333], 'mean': np.float64(0.37111111111111106), 'std': np.float64(0.0509659775163543)}, 'f1': {'folds': [0.29608393555761975, 0.40989387784740106, 0.3585622467201415, 0.424308569922605, 0.3045382168189186], 'mean': np.float64(0.35867736937333716), 'std': np.float64(0.05249682709495986)}, 'recall': {'folds': [0.30000000000000004, 0.4222222222222222, 0.3666666666666666, 0.43333333333333335, 0.3333333333333333], 'mean': np.float64(0.3711111111111111), 'std': np.float64(0.05096597751635429)}, 'precision': {'folds': [0.30819304152637483, 0.4522023541760384, 0.3629349046015713, 0.42232042648709317, 0.3191962358629026], 'mean': np.float64(0.3729693925307961), 'std': np.float64(0.05639433613247272)}}
+      1️⃣ Acurácia Média: 37.1111% +- 5.0966%
+        | Folds: 30.0000%, 42.2222%, 36.6667%, 43.3333%, 33.3333%
+      2️⃣ F1 Média: 35.8677% +- 5.2497%
+        | Folds: 29.6084%, 40.9894%, 35.8562%, 42.4309%, 30.4538%
+      3️⃣ Recall Médio: 37.1111% +- 5.0966%
+        | Folds: 30.0000%, 42.2222%, 36.6667%, 43.3333%, 33.3333%
+      4️⃣ Precision Média: 37.2969% +- 5.6394%
+        | Folds: 30.8193%, 45.2202%, 36.2935%, 42.2320%, 31.9196%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LBP_LPQ
+   📁 Arquivo: results/peppers/csv_exports/KNN_LBP_LPQ_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/KNN_LBP_LPQ_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LBP_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LBP_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LBP_LPQ
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.3711
+   📊 F1-Score: 0.3620
+   🔄 Recall: 0.3711
+   🎯 Precision: 0.3681
+============================================================
+
+⏱️  Tempo de execução (KNN_LBP_LPQ): 0.62 s
+
+
+📊 Classificando com GLCM+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_GLCM_LPQ
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_GLCM_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 1 - KNN_GLCM_LPQ:
+   📊 Acurácia: 41.1111%
+   📊 F1: 41.1242%
+   📊 Recall: 41.1111%
+   📊 Precision: 43.1431%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN_GLCM_LPQ:
+   📊 Acurácia: 45.5556%
+   📊 F1: 43.8614%
+   📊 Recall: 45.5556%
+   📊 Precision: 43.3043%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN_GLCM_LPQ:
+   📊 Acurácia: 44.4444%
+   📊 F1: 43.7040%
+   📊 Recall: 44.4444%
+   📊 Precision: 43.6111%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN_GLCM_LPQ:
+   📊 Acurácia: 48.8889%
+   📊 F1: 46.2668%
+   📊 Recall: 48.8889%
+   📊 Precision: 45.7672%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 5 - KNN_GLCM_LPQ:
+   📊 Acurácia: 50.0000%
+   📊 F1: 49.5568%
+   📊 Recall: 50.0000%
+   📊 Precision: 51.9339%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_GLCM_LPQ:
+   📊 Acurácia: 46.0000%
+   📊 F1: 44.9430%
+   📊 Recall: 46.0000%
+   📊 Precision: 44.5638%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.4111111111111111, 0.45555555555555555, 0.4444444444444444, 0.4888888888888889, 0.5], 'mean': np.float64(0.45999999999999996), 'std': np.float64(0.031894889098682946)}, 'f1': {'folds': [0.4112424615578921, 0.43861410654608485, 0.4370398621352092, 0.46266784997684834, 0.4955680364177096], 'mean': np.float64(0.4490264633267488), 'std': np.float64(0.02839694359271991)}, 'recall': {'folds': [0.4111111111111111, 0.4555555555555556, 0.4444444444444444, 0.4888888888888888, 0.5], 'mean': np.float64(0.45999999999999996), 'std': np.float64(0.03189488909868293)}, 'precision': {'folds': [0.43143060643060643, 0.43304257470924135, 0.4361111111111111, 0.45767195767195773, 0.5193390487508134], 'mean': np.float64(0.455519059734746), 'std': np.float64(0.033285854049443016)}}
+      1️⃣ Acurácia Média: 46.0000% +- 3.1895%
+        | Folds: 41.1111%, 45.5556%, 44.4444%, 48.8889%, 50.0000%
+      2️⃣ F1 Média: 44.9026% +- 2.8397%
+        | Folds: 41.1242%, 43.8614%, 43.7040%, 46.2668%, 49.5568%
+      3️⃣ Recall Médio: 46.0000% +- 3.1895%
+        | Folds: 41.1111%, 45.5556%, 44.4444%, 48.8889%, 50.0000%
+      4️⃣ Precision Média: 45.5519% +- 3.3286%
+        | Folds: 43.1431%, 43.3043%, 43.6111%, 45.7672%, 51.9339%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ
+   📁 Arquivo: results/peppers/csv_exports/KNN_GLCM_LPQ_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/KNN_GLCM_LPQ_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_GLCM_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_GLCM_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_GLCM_LPQ
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.4600
+   📊 F1-Score: 0.4494
+   🔄 Recall: 0.4600
+   🎯 Precision: 0.4456
+============================================================
+
+⏱️  Tempo de execução (KNN_GLCM_LPQ): 0.66 s
+
+
+📊 Classificando com LBP+GLCM+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: KNN_LBP_GLCM_LPQ
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: KNN_LBP_GLCM_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 1 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 42.2222%
+   📊 F1: 41.9344%
+   📊 Recall: 42.2222%
+   📊 Precision: 42.8368%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 48.8889%
+   📊 F1: 47.1843%
+   📊 Recall: 48.8889%
+   📊 Precision: 49.3509%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 43.3333%
+   📊 F1: 43.2239%
+   📊 Recall: 43.3333%
+   📊 Precision: 43.7911%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 43.3333%
+   📊 F1: 40.3042%
+   📊 Recall: 43.3333%
+   📊 Precision: 39.8788%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 5 - KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 46.6667%
+   📊 F1: 45.6655%
+   📊 Recall: 46.6667%
+   📊 Precision: 46.7310%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais KNN_LBP_GLCM_LPQ:
+   📊 Acurácia: 44.8889%
+   📊 F1: 43.7815%
+   📊 Recall: 44.8889%
+   📊 Precision: 44.0096%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.4222222222222222, 0.4888888888888889, 0.43333333333333335, 0.43333333333333335, 0.4666666666666667], 'mean': np.float64(0.4488888888888889), 'std': np.float64(0.024944382578492935)}, 'f1': {'folds': [0.4193442780960168, 0.47184328017661353, 0.4322389951904916, 0.40304232804232804, 0.456654906503099], 'mean': np.float64(0.4366247576017098), 'std': np.float64(0.024848262137847767)}, 'recall': {'folds': [0.4222222222222222, 0.4888888888888888, 0.43333333333333335, 0.4333333333333333, 0.4666666666666667], 'mean': np.float64(0.4488888888888889), 'std': np.float64(0.024944382578492925)}, 'precision': {'folds': [0.4283679283679284, 0.4935086155674391, 0.4379108545775212, 0.39878787878787875, 0.46731021338864465], 'mean': np.float64(0.4451770981378824), 'std': np.float64(0.03259790337884768)}}
+      1️⃣ Acurácia Média: 44.8889% +- 2.4944%
+        | Folds: 42.2222%, 48.8889%, 43.3333%, 43.3333%, 46.6667%
+      2️⃣ F1 Média: 43.6625% +- 2.4848%
+        | Folds: 41.9344%, 47.1843%, 43.2239%, 40.3042%, 45.6655%
+      3️⃣ Recall Médio: 44.8889% +- 2.4944%
+        | Folds: 42.2222%, 48.8889%, 43.3333%, 43.3333%, 46.6667%
+      4️⃣ Precision Média: 44.5177% +- 3.2598%
+        | Folds: 42.8368%, 49.3509%, 43.7911%, 39.8788%, 46.7310%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ
+   📁 Arquivo: results/peppers/csv_exports/KNN_LBP_GLCM_LPQ_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/KNN_LBP_GLCM_LPQ_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LBP_GLCM_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/KNN_LBP_GLCM_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: KNN_LBP_GLCM_LPQ
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.4489
+   📊 F1-Score: 0.4378
+   🔄 Recall: 0.4489
+   🎯 Precision: 0.4401
+============================================================
+
+⏱️  Tempo de execução (KNN_LBP_GLCM_LPQ): 1.19 s
+
+
+✅ Classificação padrão KNN concluída para todos os 7 conjuntos de features
+================================================================================
+🚀 === CLASSIFICAÇÃO PADRÃO - SVM ===
+
+📊 Classificando com LBP...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: SVM_LBP
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: SVM_LBP ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM_LBP:
+   📊 Acurácia: 55.5556%
+   📊 F1: 54.9109%
+   📊 Recall: 55.5556%
+   📊 Precision: 56.1287%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM_LBP:
+   📊 Acurácia: 53.3333%
+   📊 F1: 53.4408%
+   📊 Recall: 53.3333%
+   📊 Precision: 54.5594%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM_LBP:
+   📊 Acurácia: 47.7778%
+   📊 F1: 47.6060%
+   📊 Recall: 47.7778%
+   📊 Precision: 49.3486%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM_LBP:
+   📊 Acurácia: 51.1111%
+   📊 F1: 48.8704%
+   📊 Recall: 51.1111%
+   📊 Precision: 48.3766%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM_LBP:
+   📊 Acurácia: 54.4444%
+   📊 F1: 54.7329%
+   📊 Recall: 54.4444%
+   📊 Precision: 58.1987%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais SVM_LBP:
+   📊 Acurácia: 54.6667%
+   📊 F1: 53.9299%
+   📊 Recall: 54.6667%
+   📊 Precision: 53.5357%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.5555555555555556, 0.5333333333333333, 0.4777777777777778, 0.5111111111111111, 0.5444444444444444], 'mean': np.float64(0.5244444444444445), 'std': np.float64(0.027577052546646344)}, 'f1': {'folds': [0.5491086649084586, 0.5344084849805674, 0.47605963195208045, 0.48870370370370364, 0.5473293230104377], 'mean': np.float64(0.5191219617110494), 'std': np.float64(0.03068605565485694)}, 'recall': {'folds': [0.5555555555555556, 0.5333333333333334, 0.47777777777777775, 0.5111111111111111, 0.5444444444444445], 'mean': np.float64(0.5244444444444445), 'std': np.float64(0.027577052546646382)}, 'precision': {'folds': [0.5612874779541446, 0.5455939122605789, 0.49348614348614345, 0.4837662337662338, 0.5819865319865319], 'mean': np.float64(0.5332240598907265), 'std': np.float64(0.038323689621659635)}}
+      1️⃣ Acurácia Média: 52.4444% +- 2.7577%
+        | Folds: 55.5556%, 53.3333%, 47.7778%, 51.1111%, 54.4444%
+      2️⃣ F1 Média: 51.9122% +- 3.0686%
+        | Folds: 54.9109%, 53.4408%, 47.6060%, 48.8704%, 54.7329%
+      3️⃣ Recall Médio: 52.4444% +- 2.7577%
+        | Folds: 55.5556%, 53.3333%, 47.7778%, 51.1111%, 54.4444%
+      4️⃣ Precision Média: 53.3224% +- 3.8324%
+        | Folds: 56.1287%, 54.5594%, 49.3486%, 48.3766%, 58.1987%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: SVM_LBP
+   📁 Arquivo: results/peppers/csv_exports/SVM_LBP_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/SVM_LBP_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LBP_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LBP_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: SVM_LBP
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.5467
+   📊 F1-Score: 0.5393
+   🔄 Recall: 0.5467
+   🎯 Precision: 0.5354
+============================================================
+
+⏱️  Tempo de execução (SVM_LBP): 3.88 s
+
+
+📊 Classificando com GLCM...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: SVM_GLCM
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: SVM_GLCM ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM_GLCM:
+   📊 Acurácia: 55.5556%
+   📊 F1: 54.2730%
+   📊 Recall: 55.5556%
+   📊 Precision: 54.8854%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM_GLCM:
+   📊 Acurácia: 58.8889%
+   📊 F1: 58.5077%
+   📊 Recall: 58.8889%
+   📊 Precision: 59.6549%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM_GLCM:
+   📊 Acurácia: 55.5556%
+   📊 F1: 55.0905%
+   📊 Recall: 55.5556%
+   📊 Precision: 55.3928%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM_GLCM:
+   📊 Acurácia: 60.0000%
+   📊 F1: 57.6913%
+   📊 Recall: 60.0000%
+   📊 Precision: 57.3522%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM_GLCM:
+   📊 Acurácia: 62.2222%
+   📊 F1: 61.5814%
+   📊 Recall: 62.2222%
+   📊 Precision: 62.3393%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais SVM_GLCM:
+   📊 Acurácia: 58.4444%
+   📊 F1: 57.2012%
+   📊 Recall: 58.4444%
+   📊 Precision: 57.2830%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.5555555555555556, 0.5888888888888889, 0.5555555555555556, 0.6, 0.6222222222222222], 'mean': np.float64(0.5844444444444444), 'std': np.float64(0.025915341754867992)}, 'f1': {'folds': [0.5427296702838498, 0.5850769600769601, 0.5509047376896345, 0.5769133130244241, 0.6158143725326388], 'mean': np.float64(0.5742878107215015), 'std': np.float64(0.026040117796613076)}, 'recall': {'folds': [0.5555555555555556, 0.5888888888888889, 0.5555555555555556, 0.6000000000000001, 0.6222222222222222], 'mean': np.float64(0.5844444444444444), 'std': np.float64(0.025915341754868006)}, 'precision': {'folds': [0.5488536155202822, 0.5965488215488215, 0.5539275539275539, 0.5735223382282206, 0.62339265672599], 'mean': np.float64(0.5792489971901736), 'std': np.float64(0.02773371932749408)}}
+      1️⃣ Acurácia Média: 58.4444% +- 2.5915%
+        | Folds: 55.5556%, 58.8889%, 55.5556%, 60.0000%, 62.2222%
+      2️⃣ F1 Média: 57.4288% +- 2.6040%
+        | Folds: 54.2730%, 58.5077%, 55.0905%, 57.6913%, 61.5814%
+      3️⃣ Recall Médio: 58.4444% +- 2.5915%
+        | Folds: 55.5556%, 58.8889%, 55.5556%, 60.0000%, 62.2222%
+      4️⃣ Precision Média: 57.9249% +- 2.7734%
+        | Folds: 54.8854%, 59.6549%, 55.3928%, 57.3522%, 62.3393%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: SVM_GLCM
+   📁 Arquivo: results/peppers/csv_exports/SVM_GLCM_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/SVM_GLCM_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_GLCM_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_GLCM_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: SVM_GLCM
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.5844
+   📊 F1-Score: 0.5720
+   🔄 Recall: 0.5844
+   🎯 Precision: 0.5728
+============================================================
+
+⏱️  Tempo de execução (SVM_GLCM): 4.04 s
+
+
+📊 Classificando com LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: SVM_LPQ
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: SVM_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM_LPQ:
+   📊 Acurácia: 55.5556%
+   📊 F1: 54.8877%
+   📊 Recall: 55.5556%
+   📊 Precision: 55.2181%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM_LPQ:
+   📊 Acurácia: 56.6667%
+   📊 F1: 57.7252%
+   📊 Recall: 56.6667%
+   📊 Precision: 60.6077%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM_LPQ:
+   📊 Acurácia: 56.6667%
+   📊 F1: 56.7397%
+   📊 Recall: 56.6667%
+   📊 Precision: 59.8092%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM_LPQ:
+   📊 Acurácia: 60.0000%
+   📊 F1: 58.2036%
+   📊 Recall: 60.0000%
+   📊 Precision: 57.2427%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM_LPQ:
+   📊 Acurácia: 53.3333%
+   📊 F1: 52.1190%
+   📊 Recall: 53.3333%
+   📊 Precision: 52.2188%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais SVM_LPQ:
+   📊 Acurácia: 58.2222%
+   📊 F1: 57.1695%
+   📊 Recall: 58.2222%
+   📊 Precision: 56.5244%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.5555555555555556, 0.5666666666666667, 0.5666666666666667, 0.6, 0.5333333333333333], 'mean': np.float64(0.5644444444444444), 'std': np.float64(0.02154524381073923)}, 'f1': {'folds': [0.5488768216838391, 0.5772517300381077, 0.5673969435372944, 0.5820360467419292, 0.5211899784655203], 'mean': np.float64(0.5593503040933382), 'std': np.float64(0.022207010886287164)}, 'recall': {'folds': [0.5555555555555556, 0.5666666666666667, 0.5666666666666667, 0.6, 0.5333333333333333], 'mean': np.float64(0.5644444444444444), 'std': np.float64(0.02154524381073923)}, 'precision': {'folds': [0.5521805355138688, 0.6060766394099727, 0.5980920314253647, 0.5724266474266474, 0.5221881513548179], 'mean': np.float64(0.5701928010261343), 'std': np.float64(0.030659077229160142)}}
+      1️⃣ Acurácia Média: 56.4444% +- 2.1545%
+        | Folds: 55.5556%, 56.6667%, 56.6667%, 60.0000%, 53.3333%
+      2️⃣ F1 Média: 55.9350% +- 2.2207%
+        | Folds: 54.8877%, 57.7252%, 56.7397%, 58.2036%, 52.1190%
+      3️⃣ Recall Médio: 56.4444% +- 2.1545%
+        | Folds: 55.5556%, 56.6667%, 56.6667%, 60.0000%, 53.3333%
+      4️⃣ Precision Média: 57.0193% +- 3.0659%
+        | Folds: 55.2181%, 60.6077%, 59.8092%, 57.2427%, 52.2188%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: SVM_LPQ
+   📁 Arquivo: results/peppers/csv_exports/SVM_LPQ_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/SVM_LPQ_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: SVM_LPQ
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.5822
+   📊 F1-Score: 0.5717
+   🔄 Recall: 0.5822
+   🎯 Precision: 0.5652
+============================================================
+
+⏱️  Tempo de execução (SVM_LPQ): 6.53 s
+
+
+📊 Classificando com LBP+GLCM...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: SVM_LBP_GLCM
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: SVM_LBP_GLCM ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM_LBP_GLCM:
+   📊 Acurácia: 54.4444%
+   📊 F1: 52.0489%
+   📊 Recall: 54.4444%
+   📊 Precision: 51.8983%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM_LBP_GLCM:
+   📊 Acurácia: 65.5556%
+   📊 F1: 64.1611%
+   📊 Recall: 65.5556%
+   📊 Precision: 64.7884%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM_LBP_GLCM:
+   📊 Acurácia: 54.4444%
+   📊 F1: 53.6684%
+   📊 Recall: 54.4444%
+   📊 Precision: 54.3434%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM_LBP_GLCM:
+   📊 Acurácia: 54.4444%
+   📊 F1: 53.5866%
+   📊 Recall: 54.4444%
+   📊 Precision: 53.3802%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM_LBP_GLCM:
+   📊 Acurácia: 57.7778%
+   📊 F1: 56.7036%
+   📊 Recall: 57.7778%
+   📊 Precision: 56.7365%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais SVM_LBP_GLCM:
+   📊 Acurácia: 60.6667%
+   📊 F1: 59.6026%
+   📊 Recall: 60.6667%
+   📊 Precision: 59.0563%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.5444444444444444, 0.6555555555555556, 0.5444444444444444, 0.5444444444444444, 0.5777777777777777], 'mean': np.float64(0.5733333333333333), 'std': np.float64(0.0430904876214785)}, 'f1': {'folds': [0.5204891853882296, 0.6416105499438833, 0.5366838522848753, 0.5358659175171043, 0.5670361912341542], 'mean': np.float64(0.5603371392736494), 'std': np.float64(0.043350715536488886)}, 'recall': {'folds': [0.5444444444444445, 0.6555555555555556, 0.5444444444444445, 0.5444444444444444, 0.5777777777777778], 'mean': np.float64(0.5733333333333335), 'std': np.float64(0.04309048762147847)}, 'precision': {'folds': [0.5189831773165107, 0.647883597883598, 0.5434343434343434, 0.5338023088023088, 0.5673647340314008], 'mean': np.float64(0.5622936322936324), 'std': np.float64(0.045595135888418896)}}
+      1️⃣ Acurácia Média: 57.3333% +- 4.3090%
+        | Folds: 54.4444%, 65.5556%, 54.4444%, 54.4444%, 57.7778%
+      2️⃣ F1 Média: 56.0337% +- 4.3351%
+        | Folds: 52.0489%, 64.1611%, 53.6684%, 53.5866%, 56.7036%
+      3️⃣ Recall Médio: 57.3333% +- 4.3090%
+        | Folds: 54.4444%, 65.5556%, 54.4444%, 54.4444%, 57.7778%
+      4️⃣ Precision Média: 56.2294% +- 4.5595%
+        | Folds: 51.8983%, 64.7884%, 54.3434%, 53.3802%, 56.7365%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: SVM_LBP_GLCM
+   📁 Arquivo: results/peppers/csv_exports/SVM_LBP_GLCM_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/SVM_LBP_GLCM_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LBP_GLCM_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LBP_GLCM_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: SVM_LBP_GLCM
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.6067
+   📊 F1-Score: 0.5960
+   🔄 Recall: 0.6067
+   🎯 Precision: 0.5906
+============================================================
+
+⏱️  Tempo de execução (SVM_LBP_GLCM): 4.49 s
+
+
+📊 Classificando com LBP+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: SVM_LBP_LPQ
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: SVM_LBP_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM_LBP_LPQ:
+   📊 Acurácia: 57.7778%
+   📊 F1: 57.5982%
+   📊 Recall: 57.7778%
+   📊 Precision: 59.6032%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM_LBP_LPQ:
+   📊 Acurácia: 54.4444%
+   📊 F1: 55.0122%
+   📊 Recall: 54.4444%
+   📊 Precision: 56.5216%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM_LBP_LPQ:
+   📊 Acurácia: 54.4444%
+   📊 F1: 53.7858%
+   📊 Recall: 54.4444%
+   📊 Precision: 57.0030%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM_LBP_LPQ:
+   📊 Acurácia: 65.5556%
+   📊 F1: 63.7542%
+   📊 Recall: 65.5556%
+   📊 Precision: 62.7136%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM_LBP_LPQ:
+   📊 Acurácia: 53.3333%
+   📊 F1: 51.4833%
+   📊 Recall: 53.3333%
+   📊 Precision: 51.0634%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais SVM_LBP_LPQ:
+   📊 Acurácia: 60.2222%
+   📊 F1: 59.0621%
+   📊 Recall: 60.2222%
+   📊 Precision: 58.4240%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.5777777777777777, 0.5444444444444444, 0.5444444444444444, 0.6555555555555556, 0.5333333333333333], 'mean': np.float64(0.571111111111111), 'std': np.float64(0.04477653706579975)}, 'f1': {'folds': [0.5759823727470786, 0.5501219011516495, 0.5378580877302105, 0.6375419337695553, 0.5148333797456605], 'mean': np.float64(0.5632675350288309), 'std': np.float64(0.04205393800001618)}, 'recall': {'folds': [0.5777777777777777, 0.5444444444444444, 0.5444444444444445, 0.6555555555555554, 0.5333333333333333], 'mean': np.float64(0.571111111111111), 'std': np.float64(0.0447765370657997)}, 'precision': {'folds': [0.5960317460317461, 0.5652162652162652, 0.5700295075295075, 0.6271358271358272, 0.5106341189674523], 'mean': np.float64(0.5738094929761598), 'std': np.float64(0.038514377004504254)}}
+      1️⃣ Acurácia Média: 57.1111% +- 4.4777%
+        | Folds: 57.7778%, 54.4444%, 54.4444%, 65.5556%, 53.3333%
+      2️⃣ F1 Média: 56.3268% +- 4.2054%
+        | Folds: 57.5982%, 55.0122%, 53.7858%, 63.7542%, 51.4833%
+      3️⃣ Recall Médio: 57.1111% +- 4.4777%
+        | Folds: 57.7778%, 54.4444%, 54.4444%, 65.5556%, 53.3333%
+      4️⃣ Precision Média: 57.3809% +- 3.8514%
+        | Folds: 59.6032%, 56.5216%, 57.0030%, 62.7136%, 51.0634%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: SVM_LBP_LPQ
+   📁 Arquivo: results/peppers/csv_exports/SVM_LBP_LPQ_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/SVM_LBP_LPQ_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LBP_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LBP_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: SVM_LBP_LPQ
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.6022
+   📊 F1-Score: 0.5906
+   🔄 Recall: 0.6022
+   🎯 Precision: 0.5842
+============================================================
+
+⏱️  Tempo de execução (SVM_LBP_LPQ): 7.67 s
+
+
+📊 Classificando com GLCM+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: SVM_GLCM_LPQ
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: SVM_GLCM_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM_GLCM_LPQ:
+   📊 Acurácia: 60.0000%
+   📊 F1: 58.8416%
+   📊 Recall: 60.0000%
+   📊 Precision: 59.1591%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM_GLCM_LPQ:
+   📊 Acurácia: 65.5556%
+   📊 F1: 65.2108%
+   📊 Recall: 65.5556%
+   📊 Precision: 65.4682%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM_GLCM_LPQ:
+   📊 Acurácia: 58.8889%
+   📊 F1: 58.9656%
+   📊 Recall: 58.8889%
+   📊 Precision: 60.2264%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM_GLCM_LPQ:
+   📊 Acurácia: 64.4444%
+   📊 F1: 61.3051%
+   📊 Recall: 64.4444%
+   📊 Precision: 60.5262%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM_GLCM_LPQ:
+   📊 Acurácia: 62.2222%
+   📊 F1: 61.1971%
+   📊 Recall: 62.2222%
+   📊 Precision: 61.3067%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais SVM_GLCM_LPQ:
+   📊 Acurácia: 62.2222%
+   📊 F1: 60.7703%
+   📊 Recall: 62.2222%
+   📊 Precision: 60.2665%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.6, 0.6555555555555556, 0.5888888888888889, 0.6444444444444445, 0.6222222222222222], 'mean': np.float64(0.6222222222222222), 'std': np.float64(0.025337231668869743)}, 'f1': {'folds': [0.5884164802457977, 0.652107839414341, 0.5896557012499042, 0.6130507978334064, 0.6119709950256905], 'mean': np.float64(0.611040362753828), 'std': np.float64(0.023067680300675977)}, 'recall': {'folds': [0.6000000000000001, 0.6555555555555554, 0.5888888888888889, 0.6444444444444445, 0.6222222222222222], 'mean': np.float64(0.6222222222222222), 'std': np.float64(0.02533723166886969)}, 'precision': {'folds': [0.5915908165908166, 0.6546817380150713, 0.6022644022644023, 0.6052620219286886, 0.6130671797338464], 'mean': np.float64(0.613373231706565), 'std': np.float64(0.021772265776259844)}}
+      1️⃣ Acurácia Média: 62.2222% +- 2.5337%
+        | Folds: 60.0000%, 65.5556%, 58.8889%, 64.4444%, 62.2222%
+      2️⃣ F1 Média: 61.1040% +- 2.3068%
+        | Folds: 58.8416%, 65.2108%, 58.9656%, 61.3051%, 61.1971%
+      3️⃣ Recall Médio: 62.2222% +- 2.5337%
+        | Folds: 60.0000%, 65.5556%, 58.8889%, 64.4444%, 62.2222%
+      4️⃣ Precision Média: 61.3373% +- 2.1772%
+        | Folds: 59.1591%, 65.4682%, 60.2264%, 60.5262%, 61.3067%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: SVM_GLCM_LPQ
+   📁 Arquivo: results/peppers/csv_exports/SVM_GLCM_LPQ_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/SVM_GLCM_LPQ_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_GLCM_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_GLCM_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: SVM_GLCM_LPQ
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.6222
+   📊 F1-Score: 0.6077
+   🔄 Recall: 0.6222
+   🎯 Precision: 0.6027
+============================================================
+
+⏱️  Tempo de execução (SVM_GLCM_LPQ): 7.15 s
+
+
+📊 Classificando com LBP+GLCM+LPQ...
+
+============================================================
+🚀 INICIANDO CLASSIFICAÇÃO PADRÃO: SVM_LBP_GLCM_LPQ
+============================================================
+   📊 Classes: ['peperomia_glabella', 'peperomia_tetraphylla', 'peperomia_urocarpa', 'piper_amalago', 'piper_gaudichaudianum', 'piper_glabratum', 'piper_hispidum', 'piper_miquelianum', 'piper_xylosteoides']
+   🔄 Validação cruzada: 5 folds
+   🎯 Total de imagens: 450
+============================================================
+
+📈 ETAPA 1: Extração de probabilidades
+=== Iniciando treinamento padrão: SVM_LBP_GLCM_LPQ ===
+Validação cruzada: 5 folds
+--------------------------------------------------
+
+~~ Fold 1/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM_LBP_GLCM_LPQ:
+   📊 Acurácia: 61.1111%
+   📊 F1: 59.9526%
+   📊 Recall: 61.1111%
+   📊 Precision: 61.5837%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM_LBP_GLCM_LPQ:
+   📊 Acurácia: 63.3333%
+   📊 F1: 63.2313%
+   📊 Recall: 63.3333%
+   📊 Precision: 63.4680%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM_LBP_GLCM_LPQ:
+   📊 Acurácia: 57.7778%
+   📊 F1: 58.4568%
+   📊 Recall: 57.7778%
+   📊 Precision: 60.3968%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM_LBP_GLCM_LPQ:
+   📊 Acurácia: 65.5556%
+   📊 F1: 63.0605%
+   📊 Recall: 65.5556%
+   📊 Precision: 62.4695%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5/5 ~~
+  Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 2e-05, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM_LBP_GLCM_LPQ:
+   📊 Acurácia: 63.3333%
+   📊 F1: 61.6911%
+   📊 Recall: 63.3333%
+   📊 Precision: 61.6265%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------
+✅ Probabilidades extraídas para 450 imagens
+
+🎯 ETAPA 2: Predição de labels
+✅ Labels preditos para 450 imagens
+
+📊 ETAPA 3: Computação de métricas
+
+📋 ETAPA 4: Exibição de métricas
+########################################
+Métricas Finais SVM_LBP_GLCM_LPQ:
+   📊 Acurácia: 63.7778%
+   📊 F1: 62.3933%
+   📊 Recall: 63.7778%
+   📊 Precision: 61.7234%
+----------------------------------------
+Métricas do Treinamento:
+{'accuracy': {'folds': [0.6111111111111112, 0.6333333333333333, 0.5777777777777777, 0.6555555555555556, 0.6333333333333333], 'mean': np.float64(0.6222222222222222), 'std': np.float64(0.02629368792488719)}, 'f1': {'folds': [0.5995257348638243, 0.6323131059973165, 0.5845679012345679, 0.6306053518329734, 0.6169114210647391], 'mean': np.float64(0.6127847029986843), 'std': np.float64(0.01837363321907462)}, 'recall': {'folds': [0.6111111111111112, 0.6333333333333333, 0.5777777777777778, 0.6555555555555556, 0.6333333333333333], 'mean': np.float64(0.6222222222222222), 'std': np.float64(0.026293687924887156)}, 'precision': {'folds': [0.6158372491705825, 0.6346801346801346, 0.6039682539682539, 0.6246947496947497, 0.6162652162652162], 'mean': np.float64(0.6190891207557874), 'std': np.float64(0.010214621958500317)}}
+      1️⃣ Acurácia Média: 62.2222% +- 2.6294%
+        | Folds: 61.1111%, 63.3333%, 57.7778%, 65.5556%, 63.3333%
+      2️⃣ F1 Média: 61.2785% +- 1.8374%
+        | Folds: 59.9526%, 63.2313%, 58.4568%, 63.0605%, 61.6911%
+      3️⃣ Recall Médio: 62.2222% +- 2.6294%
+        | Folds: 61.1111%, 63.3333%, 57.7778%, 65.5556%, 63.3333%
+      4️⃣ Precision Média: 61.9089% +- 1.0215%
+        | Folds: 61.5837%, 63.4680%, 60.3968%, 62.4695%, 61.6265%
+########################################
+
+📁 Diretório do experimento: results/peppers
+
+🔲 ETAPA 5: Salvamento da matriz de confusão
+
+💾 ETAPA 6: Exportação de resultados para CSV
+📊 Exportando resultados para CSV: SVM_LBP_GLCM_LPQ
+   📁 Arquivo: results/peppers/csv_exports/SVM_LBP_GLCM_LPQ_results.csv
+   📁 Arquivo de métricas: results/peppers/csv_exports/SVM_LBP_GLCM_LPQ_metrics.csv
+   🎯 Imagens: 450 amostras
+--------------------------------------------------
+   ✅ 450 linhas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LBP_GLCM_LPQ_results.csv
+   ✅ 7 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/peppers/csv_exports/SVM_LBP_GLCM_LPQ_metrics.csv
+==================================================
+
+============================================================
+✅ CLASSIFICAÇÃO PADRÃO CONCLUÍDA: SVM_LBP_GLCM_LPQ
+============================================================
+   📁 Resultados salvos em: results/peppers
+   🎯 Acurácia: 0.6378
+   📊 F1-Score: 0.6239
+   🔄 Recall: 0.6378
+   🎯 Precision: 0.6172
+============================================================
+
+⏱️  Tempo de execução (SVM_LBP_GLCM_LPQ): 8.27 s
+
+
+✅ Classificação padrão SVM concluída para todos os 7 conjuntos de features
+================================================================================
+✅ Resultados compactados em: /home/alunos/a2020815/article_image_classification_by_relevance_of_regions/results/peppers/standards/experimento_20260206_210109.zip
+⏳ Tempo total de execução do script: 1m 57.82s
