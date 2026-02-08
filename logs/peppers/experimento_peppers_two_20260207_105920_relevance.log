@@ -1,0 +1,3386 @@
+MIN_K: 4, MAX_K: 20, BASE_SIZE: 512, BASE_K: 9
+Auto-segmenting 300 images from category 'peperomia' (K range: 4-20)...
+  Generated average 9.0 regions per image
+peperomia: 2700 regions total
+Auto-segmenting 300 images from category 'piper' (K range: 4-20)...
+  Generated average 9.0 regions per image
+piper: 2700 regions total
+Categoria: peperomia, Número de elementos: 300
+Categoria: piper, Número de elementos: 300
+Categoria: peperomia, Número de elementos: 300
+Categoria: piper, Número de elementos: 300
+Categoria: peperomia, Número de elementos: 300
+Categoria: piper, Número de elementos: 300
+==================================================
+RESUMO DOS CONJUNTOS DE FEATURES
+==================================================
+📊 Total de imagens: 600
+🔧 Total de conjuntos gerados: 7
+📋 Labels únicos: {'peperomia', 'piper'}
+
+🔹 LBP:
+   📁 Imagens: 600
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 5400
+   🎯 Features por segmento: 59
+   📈 Total features por imagem: 531
+
+🔹 GLCM:
+   📁 Imagens: 600
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 5400
+   🎯 Features por segmento: 72
+   📈 Total features por imagem: 648
+
+🔹 LPQ:
+   📁 Imagens: 600
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 5400
+   🎯 Features por segmento: 256
+   📈 Total features por imagem: 2304
+
+🔹 LBP+GLCM:
+   📁 Imagens: 600
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 5400
+   🎯 Features por segmento: 131
+   📈 Total features por imagem: 1179
+
+🔹 LBP+LPQ:
+   📁 Imagens: 600
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 5400
+   🎯 Features por segmento: 315
+   📈 Total features por imagem: 2835
+
+🔹 GLCM+LPQ:
+   📁 Imagens: 600
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 5400
+   🎯 Features por segmento: 328
+   📈 Total features por imagem: 2952
+
+🔹 LBP+GLCM+LPQ:
+   📁 Imagens: 600
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 5400
+   🎯 Features por segmento: 387
+   📈 Total features por imagem: 3483
+
+==================================================
+Limpando variáveis desnecessárias...
+Variáveis antes da limpeza: 67 variáveis locais
+  ✓ Removida: segmented_train_images
+  ✓ Removida: lbps_by_categories
+  ✓ Removida: glcms_by_category
+  ✓ Removida: radius
+  ✓ Removida: n_pixels
+  ✓ Removida: n_examples
+
+✓ Limpeza concluída!
+  - 6 variáveis removidas
+  - Memória liberada pela coleta de lixo
+  - Variáveis após limpeza: 64 variáveis locais
+
+📋 Principais variáveis mantidas:
+  ✓ image_categories: list (tamanho: 2)
+  ✓ train_images_by_categories: dict (tamanho: 2)
+  ✓ labels: list (tamanho: 600)
+  ✓ GLCM_DISTANCES: list (tamanho: 3)
+  ✓ GLCM_ANGLES: ndarray (4,)
+  ✓ GLCM_FEATURES: list (tamanho: 6)
+
+💡 Variáveis limpas com sucesso! Agora você pode prosseguir com o treinamento dos modelos.
+🔄 Nova estrutura: combined_sets contém todos os conjuntos de features combinados.
+Classes: ['peperomia', 'piper']
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 59), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 59), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 72), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 72), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 256), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 256), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 131), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 131), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 315), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 315), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 328), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 328), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+🎉 5 folds processados com sucesso!
+📊 Total imagens classe: 300
+📊 Total imagens não-classe: 300
+🔄 Dividindo em 5 folds...
+  Fold 0: 60 classe, 60 não-classe
+  Fold 1: 60 classe, 60 não-classe
+  Fold 2: 60 classe, 60 não-classe
+  Fold 3: 60 classe, 60 não-classe
+  Fold 4: 60 classe, 60 não-classe
+
+🔧 Construindo fold 0...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 1...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 2...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 3...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🔧 Construindo fold 4...
+  ✅ Treino: 240 classe + 240 não-classe = 480
+  ✅ Teste: 60 classe + 60 não-classe = 120
+
+🎉 5 folds construídos com sucesso!
+🔄 Convertendo folds para formato de classificação...
+
+📂 Processando fold 0...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+📂 Processando fold 1...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+📂 Processando fold 2...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+📂 Processando fold 3...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+📂 Processando fold 4...
+  🏋️ Processando dados de treino...
+  🧪 Processando dados de teste...
+  ✅ Treino: 4320 imagens → X(4320, 387), y(4320,)
+  ✅ Teste: 1080 imagens → X(1080, 387), y(1080,)
+
+🎉 5 folds processados com sucesso!
+Tunando parâmetros do KNN...
+Tunando parâmetros do Random Forest...
+Tunando SVM...
+🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS KNN ===
+
+📊 Calculando relevância LBP...
+🚀 Iniciando treinamento de especialistas KNN-LBP
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: KNN-LBP-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP-Specialist-peperomia:
+   📊 Acurácia: 83.2407%
+   📊 F1: 81.0471%
+   📊 Recall: 71.6667%
+   📊 Precision: 93.2530%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP-Specialist-peperomia:
+   📊 Acurácia: 81.8519%
+   📊 F1: 79.1932%
+   📊 Recall: 69.0741%
+   📊 Precision: 92.7861%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP-Specialist-peperomia:
+   📊 Acurácia: 83.4259%
+   📊 F1: 81.3736%
+   📊 Recall: 72.4074%
+   📊 Precision: 92.8741%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP-Specialist-peperomia:
+   📊 Acurácia: 82.0370%
+   📊 F1: 79.9172%
+   📊 Recall: 71.4815%
+   📊 Precision: 90.6103%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP-Specialist-peperomia:
+   📊 Acurácia: 82.3148%
+   📊 F1: 79.9159%
+   📊 Recall: 70.3704%
+   📊 Precision: 92.4574%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: KNN-LBP-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP-Specialist-piper:
+   📊 Acurácia: 75.0926%
+   📊 F1: 75.6120%
+   📊 Recall: 77.2222%
+   📊 Precision: 74.0675%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP-Specialist-piper:
+   📊 Acurácia: 78.7963%
+   📊 F1: 79.3879%
+   📊 Recall: 81.6667%
+   📊 Precision: 77.2329%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP-Specialist-piper:
+   📊 Acurácia: 78.3333%
+   📊 F1: 78.9189%
+   📊 Recall: 81.1111%
+   📊 Precision: 76.8421%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP-Specialist-piper:
+   📊 Acurácia: 75.9259%
+   📊 F1: 76.5766%
+   📊 Recall: 78.7037%
+   📊 Precision: 74.5614%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP-Specialist-piper:
+   📊 Acurácia: 77.4074%
+   📊 F1: 78.3688%
+   📊 Recall: 81.8519%
+   📊 Precision: 75.1701%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LBP concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LBP): 5.69 s
+########################################
+Métricas Finais Relevância KNN LBP:
+   📊 Acurácia: 95.6667%
+   📊 F1: 95.6597%
+   📊 Recall: 95.6667%
+   📊 Precision: 95.9608%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 82.5741% +- 0.6399%
+        | Folds: 83.2407%, 81.8519%, 83.4259%, 82.0370%, 82.3148%
+      2️⃣ F1 Média: 80.2894% +- 0.8037%
+        | Folds: 81.0471%, 79.1932%, 81.3736%, 79.9172%, 79.9159%
+      3️⃣ Recall Médio: 71.0000% +- 1.1630%
+        | Folds: 71.6667%, 69.0741%, 72.4074%, 71.4815%, 70.3704%
+      4️⃣ Precision Média: 92.3962% +- 0.9282%
+        | Folds: 93.2530%, 92.7861%, 92.8741%, 90.6103%, 92.4574%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 77.1111% +- 1.4072%
+        | Folds: 75.0926%, 78.7963%, 78.3333%, 75.9259%, 77.4074%
+      2️⃣ F1 Média: 77.7728% +- 1.4407%
+        | Folds: 75.6120%, 79.3879%, 78.9189%, 76.5766%, 78.3688%
+      3️⃣ Recall Médio: 80.1111% +- 1.8317%
+        | Folds: 77.2222%, 81.6667%, 81.1111%, 78.7037%, 81.8519%
+      4️⃣ Precision Média: 75.5748% +- 1.2505%
+        | Folds: 74.0675%, 77.2329%, 76.8421%, 74.5614%, 75.1701%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_metrics.csv
+==================================================
+
+📊 Calculando relevância GLCM...
+🚀 Iniciando treinamento de especialistas KNN-GLCM
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: KNN-GLCM-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM-Specialist-peperomia:
+   📊 Acurácia: 85.4630%
+   📊 F1: 84.7425%
+   📊 Recall: 80.7407%
+   📊 Precision: 89.1616%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM-Specialist-peperomia:
+   📊 Acurácia: 85.6481%
+   📊 F1: 84.8485%
+   📊 Recall: 80.3704%
+   📊 Precision: 89.8551%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM-Specialist-peperomia:
+   📊 Acurácia: 86.1111%
+   📊 F1: 85.5769%
+   📊 Recall: 82.4074%
+   📊 Precision: 89.0000%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM-Specialist-peperomia:
+   📊 Acurácia: 85.2778%
+   📊 F1: 84.3350%
+   📊 Recall: 79.2593%
+   📊 Precision: 90.1053%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM-Specialist-peperomia:
+   📊 Acurácia: 85.4630%
+   📊 F1: 84.5624%
+   📊 Recall: 79.6296%
+   📊 Precision: 90.1468%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: KNN-GLCM-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM-Specialist-piper:
+   📊 Acurácia: 80.6481%
+   📊 F1: 79.7677%
+   📊 Recall: 76.2963%
+   📊 Precision: 83.5700%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM-Specialist-piper:
+   📊 Acurácia: 81.9444%
+   📊 F1: 81.4815%
+   📊 Recall: 79.4444%
+   📊 Precision: 83.6257%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM-Specialist-piper:
+   📊 Acurácia: 79.9074%
+   📊 F1: 79.3136%
+   📊 Recall: 77.0370%
+   📊 Precision: 81.7289%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM-Specialist-piper:
+   📊 Acurácia: 80.4630%
+   📊 F1: 79.6528%
+   📊 Recall: 76.4815%
+   📊 Precision: 83.0986%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM-Specialist-piper:
+   📊 Acurácia: 81.2037%
+   📊 F1: 80.7217%
+   📊 Recall: 78.7037%
+   📊 Precision: 82.8460%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-GLCM concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-GLCM): 5.47 s
+########################################
+Métricas Finais Relevância KNN GLCM:
+   📊 Acurácia: 97.0000%
+   📊 F1: 97.0000%
+   📊 Recall: 97.0000%
+   📊 Precision: 97.0021%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 85.5926% +- 0.2845%
+        | Folds: 85.4630%, 85.6481%, 86.1111%, 85.2778%, 85.4630%
+      2️⃣ F1 Média: 84.8131% +- 0.4198%
+        | Folds: 84.7425%, 84.8485%, 85.5769%, 84.3350%, 84.5624%
+      3️⃣ Recall Médio: 80.4815% +- 1.0962%
+        | Folds: 80.7407%, 80.3704%, 82.4074%, 79.2593%, 79.6296%
+      4️⃣ Precision Média: 89.6537% +- 0.4811%
+        | Folds: 89.1616%, 89.8551%, 89.0000%, 90.1053%, 90.1468%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 80.8333% +- 0.6929%
+        | Folds: 80.6481%, 81.9444%, 79.9074%, 80.4630%, 81.2037%
+      2️⃣ F1 Média: 80.1875% +- 0.7982%
+        | Folds: 79.7677%, 81.4815%, 79.3136%, 79.6528%, 80.7217%
+      3️⃣ Recall Médio: 77.5926% +- 1.2560%
+        | Folds: 76.2963%, 79.4444%, 77.0370%, 76.4815%, 78.7037%
+      4️⃣ Precision Média: 82.9738% +- 0.6873%
+        | Folds: 83.5700%, 83.6257%, 81.7289%, 83.0986%, 82.8460%
+########################################
+📊 Exportando resultados para CSV: KNN_GLCM
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_metrics.csv
+==================================================
+
+📊 Calculando relevância LPQ...
+🚀 Iniciando treinamento de especialistas KNN-LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: KNN-LPQ-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-LPQ-Specialist-peperomia:
+   📊 Acurácia: 84.5370%
+   📊 F1: 83.0457%
+   📊 Recall: 75.7407%
+   📊 Precision: 91.9101%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LPQ-Specialist-peperomia:
+   📊 Acurácia: 81.3889%
+   📊 F1: 78.7302%
+   📊 Recall: 68.8889%
+   📊 Precision: 91.8519%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LPQ-Specialist-peperomia:
+   📊 Acurácia: 82.8704%
+   📊 F1: 80.5058%
+   📊 Recall: 70.7407%
+   📊 Precision: 93.3985%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-LPQ-Specialist-peperomia:
+   📊 Acurácia: 82.4074%
+   📊 F1: 80.5328%
+   📊 Recall: 72.7778%
+   📊 Precision: 90.1376%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LPQ-Specialist-peperomia:
+   📊 Acurácia: 84.5370%
+   📊 F1: 82.3654%
+   📊 Recall: 72.2222%
+   📊 Precision: 95.8231%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: KNN-LPQ-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-LPQ-Specialist-piper:
+   📊 Acurácia: 75.0000%
+   📊 F1: 76.0638%
+   📊 Recall: 79.4444%
+   📊 Precision: 72.9592%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-LPQ-Specialist-piper:
+   📊 Acurácia: 79.2593%
+   📊 F1: 79.8561%
+   📊 Recall: 82.2222%
+   📊 Precision: 77.6224%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-LPQ-Specialist-piper:
+   📊 Acurácia: 78.6111%
+   📊 F1: 78.9041%
+   📊 Recall: 80.0000%
+   📊 Precision: 77.8378%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-LPQ-Specialist-piper:
+   📊 Acurácia: 75.8333%
+   📊 F1: 76.0770%
+   📊 Recall: 76.8519%
+   📊 Precision: 75.3176%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LPQ-Specialist-piper:
+   📊 Acurácia: 79.2593%
+   📊 F1: 79.7468%
+   📊 Recall: 81.6667%
+   📊 Precision: 77.9152%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LPQ): 12.34 s
+########################################
+Métricas Finais Relevância KNN LPQ:
+   📊 Acurácia: 95.1667%
+   📊 F1: 95.1596%
+   📊 Recall: 95.1667%
+   📊 Precision: 95.4337%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 83.1481% +- 1.2312%
+        | Folds: 84.5370%, 81.3889%, 82.8704%, 82.4074%, 84.5370%
+      2️⃣ F1 Média: 81.0360% +- 1.5269%
+        | Folds: 83.0457%, 78.7302%, 80.5058%, 80.5328%, 82.3654%
+      3️⃣ Recall Médio: 72.0741% +- 2.2753%
+        | Folds: 75.7407%, 68.8889%, 70.7407%, 72.7778%, 72.2222%
+      4️⃣ Precision Média: 92.6242% +- 1.9038%
+        | Folds: 91.9101%, 91.8519%, 93.3985%, 90.1376%, 95.8231%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 77.5926% +- 1.8116%
+        | Folds: 75.0000%, 79.2593%, 78.6111%, 75.8333%, 79.2593%
+      2️⃣ F1 Média: 78.1296% +- 1.7133%
+        | Folds: 76.0638%, 79.8561%, 78.9041%, 76.0770%, 79.7468%
+      3️⃣ Recall Médio: 80.0370% +- 1.8936%
+        | Folds: 79.4444%, 82.2222%, 80.0000%, 76.8519%, 81.6667%
+      4️⃣ Precision Média: 76.3304% +- 1.9413%
+        | Folds: 72.9592%, 77.6224%, 77.8378%, 75.3176%, 77.9152%
+########################################
+📊 Exportando resultados para CSV: KNN_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lpq_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+GLCM...
+🚀 Iniciando treinamento de especialistas KNN-LBP+GLCM
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: KNN-LBP+GLCM-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 86.2963%
+   📊 F1: 85.2295%
+   📊 Recall: 79.0741%
+   📊 Precision: 92.4242%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 85.9259%
+   📊 F1: 84.6465%
+   📊 Recall: 77.5926%
+   📊 Precision: 93.1111%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 85.9259%
+   📊 F1: 84.9505%
+   📊 Recall: 79.4444%
+   📊 Precision: 91.2766%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 85.0000%
+   📊 F1: 83.8645%
+   📊 Recall: 77.9630%
+   📊 Precision: 90.7328%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 85.4630%
+   📊 F1: 84.1574%
+   📊 Recall: 77.2222%
+   📊 Precision: 92.4612%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: KNN-LBP+GLCM-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 80.3704%
+   📊 F1: 80.3704%
+   📊 Recall: 80.3704%
+   📊 Precision: 80.3704%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 82.5000%
+   📊 F1: 82.4838%
+   📊 Recall: 82.4074%
+   📊 Precision: 82.5603%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 80.3704%
+   📊 F1: 80.0752%
+   📊 Recall: 78.8889%
+   📊 Precision: 81.2977%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 79.5370%
+   📊 F1: 79.1706%
+   📊 Recall: 77.7778%
+   📊 Precision: 80.6142%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 81.9444%
+   📊 F1: 81.9277%
+   📊 Recall: 81.8519%
+   📊 Precision: 82.0037%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LBP+GLCM concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LBP+GLCM): 7.70 s
+########################################
+Métricas Finais Relevância KNN LBP+GLCM:
+   📊 Acurácia: 97.1667%
+   📊 F1: 97.1657%
+   📊 Recall: 97.1667%
+   📊 Precision: 97.2302%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 85.7222% +- 0.4475%
+        | Folds: 86.2963%, 85.9259%, 85.9259%, 85.0000%, 85.4630%
+      2️⃣ F1 Média: 84.5697% +- 0.5007%
+        | Folds: 85.2295%, 84.6465%, 84.9505%, 83.8645%, 84.1574%
+      3️⃣ Recall Médio: 78.2593% +- 0.8575%
+        | Folds: 79.0741%, 77.5926%, 79.4444%, 77.9630%, 77.2222%
+      4️⃣ Precision Média: 92.0012% +- 0.8668%
+        | Folds: 92.4242%, 93.1111%, 91.2766%, 90.7328%, 92.4612%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 80.9444% +- 1.1009%
+        | Folds: 80.3704%, 82.5000%, 80.3704%, 79.5370%, 81.9444%
+      2️⃣ F1 Média: 80.8055% +- 1.2224%
+        | Folds: 80.3704%, 82.4838%, 80.0752%, 79.1706%, 81.9277%
+      3️⃣ Recall Médio: 80.2593% +- 1.7435%
+        | Folds: 80.3704%, 82.4074%, 78.8889%, 77.7778%, 81.8519%
+      4️⃣ Precision Média: 81.3693% +- 0.8239%
+        | Folds: 80.3704%, 82.5603%, 81.2977%, 80.6142%, 82.0037%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_GLCM
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+LPQ...
+🚀 Iniciando treinamento de especialistas KNN-LBP+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: KNN-LBP+LPQ-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 84.7222%
+   📊 F1: 83.2487%
+   📊 Recall: 75.9259%
+   📊 Precision: 92.1348%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 82.2222%
+   📊 F1: 79.7040%
+   📊 Recall: 69.8148%
+   📊 Precision: 92.8571%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 82.9630%
+   📊 F1: 80.9129%
+   📊 Recall: 72.2222%
+   📊 Precision: 91.9811%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 82.4074%
+   📊 F1: 80.2495%
+   📊 Recall: 71.4815%
+   📊 Precision: 91.4692%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 84.6296%
+   📊 F1: 82.6722%
+   📊 Recall: 73.3333%
+   📊 Precision: 94.7368%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: KNN-LBP+LPQ-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 76.4815%
+   📊 F1: 77.2809%
+   📊 Recall: 80.0000%
+   📊 Precision: 74.7405%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 78.7037%
+   📊 F1: 79.1667%
+   📊 Recall: 80.9259%
+   📊 Precision: 77.4823%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 79.1667%
+   📊 F1: 79.6748%
+   📊 Recall: 81.6667%
+   📊 Precision: 77.7778%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 76.5741%
+   📊 F1: 76.7677%
+   📊 Recall: 77.4074%
+   📊 Precision: 76.1384%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 78.9815%
+   📊 F1: 79.6777%
+   📊 Recall: 82.4074%
+   📊 Precision: 77.1231%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LBP+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LBP+LPQ): 15.24 s
+########################################
+Métricas Finais Relevância KNN LBP+LPQ:
+   📊 Acurácia: 95.5000%
+   📊 F1: 95.4934%
+   📊 Recall: 95.5000%
+   📊 Precision: 95.7690%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 83.3889% +- 1.0792%
+        | Folds: 84.7222%, 82.2222%, 82.9630%, 82.4074%, 84.6296%
+      2️⃣ F1 Média: 81.3575% +- 1.3758%
+        | Folds: 83.2487%, 79.7040%, 80.9129%, 80.2495%, 82.6722%
+      3️⃣ Recall Médio: 72.5556% +- 2.0367%
+        | Folds: 75.9259%, 69.8148%, 72.2222%, 71.4815%, 73.3333%
+      4️⃣ Precision Média: 92.6358% +- 1.1405%
+        | Folds: 92.1348%, 92.8571%, 91.9811%, 91.4692%, 94.7368%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 77.9815% +- 1.1964%
+        | Folds: 76.4815%, 78.7037%, 79.1667%, 76.5741%, 78.9815%
+      2️⃣ F1 Média: 78.5135% +- 1.2408%
+        | Folds: 77.2809%, 79.1667%, 79.6748%, 76.7677%, 79.6777%
+      3️⃣ Recall Médio: 80.4815% +- 1.7317%
+        | Folds: 80.0000%, 80.9259%, 81.6667%, 77.4074%, 82.4074%
+      4️⃣ Precision Média: 76.6524% +- 1.1042%
+        | Folds: 74.7405%, 77.4823%, 77.7778%, 76.1384%, 77.1231%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_lpq_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância GLCM+LPQ...
+🚀 Iniciando treinamento de especialistas KNN-GLCM+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: KNN-GLCM+LPQ-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 87.4074%
+   📊 F1: 86.3454%
+   📊 Recall: 79.6296%
+   📊 Precision: 94.2982%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 85.5556%
+   📊 F1: 84.1785%
+   📊 Recall: 76.8519%
+   📊 Precision: 93.0493%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 86.1111%
+   📊 F1: 84.8178%
+   📊 Recall: 77.5926%
+   📊 Precision: 93.5268%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 85.1852%
+   📊 F1: 83.7067%
+   📊 Recall: 76.1111%
+   📊 Precision: 92.9864%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 85.4630%
+   📊 F1: 83.5946%
+   📊 Recall: 74.0741%
+   📊 Precision: 95.9233%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: KNN-GLCM+LPQ-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 80.2778%
+   📊 F1: 80.2960%
+   📊 Recall: 80.3704%
+   📊 Precision: 80.2218%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 82.0370%
+   📊 F1: 82.1691%
+   📊 Recall: 82.7778%
+   📊 Precision: 81.5693%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 80.6481%
+   📊 F1: 80.3756%
+   📊 Recall: 79.2593%
+   📊 Precision: 81.5238%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 79.1667%
+   📊 F1: 78.9916%
+   📊 Recall: 78.3333%
+   📊 Precision: 79.6610%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 81.6667%
+   📊 F1: 81.9343%
+   📊 Recall: 83.1481%
+   📊 Precision: 80.7554%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-GLCM+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-GLCM+LPQ): 17.22 s
+########################################
+Métricas Finais Relevância KNN GLCM+LPQ:
+   📊 Acurácia: 96.8333%
+   📊 F1: 96.8318%
+   📊 Recall: 96.8333%
+   📊 Precision: 96.9214%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 85.9444% +- 0.7909%
+        | Folds: 87.4074%, 85.5556%, 86.1111%, 85.1852%, 85.4630%
+      2️⃣ F1 Média: 84.5286% +- 1.0055%
+        | Folds: 86.3454%, 84.1785%, 84.8178%, 83.7067%, 83.5946%
+      3️⃣ Recall Médio: 76.8519% +- 1.8182%
+        | Folds: 79.6296%, 76.8519%, 77.5926%, 76.1111%, 74.0741%
+      4️⃣ Precision Média: 93.9568% +- 1.0894%
+        | Folds: 94.2982%, 93.0493%, 93.5268%, 92.9864%, 95.9233%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 80.7593% +- 1.0234%
+        | Folds: 80.2778%, 82.0370%, 80.6481%, 79.1667%, 81.6667%
+      2️⃣ F1 Média: 80.7533% +- 1.1709%
+        | Folds: 80.2960%, 82.1691%, 80.3756%, 78.9916%, 81.9343%
+      3️⃣ Recall Médio: 80.7778% +- 1.9008%
+        | Folds: 80.3704%, 82.7778%, 79.2593%, 78.3333%, 83.1481%
+      4️⃣ Precision Média: 80.7463% +- 0.7396%
+        | Folds: 80.2218%, 81.5693%, 81.5238%, 79.6610%, 80.7554%
+########################################
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_lpq_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+GLCM+LPQ...
+🚀 Iniciando treinamento de especialistas KNN-LBP+GLCM+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: KNN-LBP+GLCM+LPQ-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 86.5741%
+   📊 F1: 85.5721%
+   📊 Recall: 79.6296%
+   📊 Precision: 92.4731%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 85.6481%
+   📊 F1: 84.2640%
+   📊 Recall: 76.8519%
+   📊 Precision: 93.2584%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 86.4815%
+   📊 F1: 85.1020%
+   📊 Recall: 77.2222%
+   📊 Precision: 94.7727%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 85.1852%
+   📊 F1: 83.6735%
+   📊 Recall: 75.9259%
+   📊 Precision: 93.1818%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 85.8333%
+   📊 F1: 84.2754%
+   📊 Recall: 75.9259%
+   📊 Precision: 94.6882%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: KNN-LBP+GLCM+LPQ-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 80.7407%
+   📊 F1: 81.1252%
+   📊 Recall: 82.7778%
+   📊 Precision: 79.5374%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 81.9444%
+   📊 F1: 82.0276%
+   📊 Recall: 82.4074%
+   📊 Precision: 81.6514%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 80.3704%
+   📊 F1: 80.4067%
+   📊 Recall: 80.5556%
+   📊 Precision: 80.2583%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 79.8148%
+   📊 F1: 79.5113%
+   📊 Recall: 78.3333%
+   📊 Precision: 80.7252%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 82.0370%
+   📊 F1: 82.2993%
+   📊 Recall: 83.5185%
+   📊 Precision: 81.1151%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas KNN-LBP+GLCM+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (KNN-LBP+GLCM+LPQ): 19.89 s
+########################################
+Métricas Finais Relevância KNN LBP+GLCM+LPQ:
+   📊 Acurácia: 97.0000%
+   📊 F1: 96.9988%
+   📊 Recall: 97.0000%
+   📊 Precision: 97.0753%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 85.9444% +- 0.5218%
+        | Folds: 86.5741%, 85.6481%, 86.4815%, 85.1852%, 85.8333%
+      2️⃣ F1 Média: 84.5774% +- 0.6740%
+        | Folds: 85.5721%, 84.2640%, 85.1020%, 83.6735%, 84.2754%
+      3️⃣ Recall Médio: 77.1111% +- 1.3588%
+        | Folds: 79.6296%, 76.8519%, 77.2222%, 75.9259%, 75.9259%
+      4️⃣ Precision Média: 93.6749% +- 0.9048%
+        | Folds: 92.4731%, 93.2584%, 94.7727%, 93.1818%, 94.6882%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 80.9815% +- 0.8757%
+        | Folds: 80.7407%, 81.9444%, 80.3704%, 79.8148%, 82.0370%
+      2️⃣ F1 Média: 81.0740% +- 1.0296%
+        | Folds: 81.1252%, 82.0276%, 80.4067%, 79.5113%, 82.2993%
+      3️⃣ Recall Médio: 81.5185% +- 1.8681%
+        | Folds: 82.7778%, 82.4074%, 80.5556%, 78.3333%, 83.5185%
+      4️⃣ Precision Média: 80.6575% +- 0.7233%
+        | Folds: 79.5374%, 81.6514%, 80.2583%, 80.7252%, 81.1151%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_lpq_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_metrics.csv
+==================================================
+✅ Relevância calculada para todos os 7 conjuntos de features
+📊 Métricas e matrizes de confusão geradas para cada combinação
+
+🎉 === CÁLCULO DE RELEVÂNCIA KNN CONCLUÍDO ===
+🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS SVM ===
+
+📊 Calculando relevância LBP...
+🚀 Iniciando treinamento de especialistas SVM-LBP
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: SVM-LBP-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LBP-Specialist-peperomia:
+   📊 Acurácia: 87.3148%
+   📊 F1: 86.6861%
+   📊 Recall: 82.5926%
+   📊 Precision: 91.2065%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LBP-Specialist-peperomia:
+   📊 Acurácia: 87.9630%
+   📊 F1: 87.0259%
+   📊 Recall: 80.7407%
+   📊 Precision: 94.3723%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LBP-Specialist-peperomia:
+   📊 Acurácia: 87.0370%
+   📊 F1: 86.5125%
+   📊 Recall: 83.1481%
+   📊 Precision: 90.1606%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LBP-Specialist-peperomia:
+   📊 Acurácia: 85.7407%
+   📊 F1: 85.0195%
+   📊 Recall: 80.9259%
+   📊 Precision: 89.5492%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LBP-Specialist-peperomia:
+   📊 Acurácia: 87.4074%
+   📊 F1: 86.5613%
+   📊 Recall: 81.1111%
+   📊 Precision: 92.7966%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: SVM-LBP-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LBP-Specialist-piper:
+   📊 Acurácia: 88.0556%
+   📊 F1: 88.5537%
+   📊 Recall: 92.4074%
+   📊 Precision: 85.0085%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LBP-Specialist-piper:
+   📊 Acurácia: 88.7037%
+   📊 F1: 89.4097%
+   📊 Recall: 95.3704%
+   📊 Precision: 84.1503%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LBP-Specialist-piper:
+   📊 Acurácia: 86.3889%
+   📊 F1: 86.9565%
+   📊 Recall: 90.7407%
+   📊 Precision: 83.4753%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LBP-Specialist-piper:
+   📊 Acurácia: 86.1111%
+   📊 F1: 86.7021%
+   📊 Recall: 90.5556%
+   📊 Precision: 83.1633%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LBP-Specialist-piper:
+   📊 Acurácia: 85.8333%
+   📊 F1: 86.7303%
+   📊 Recall: 92.5926%
+   📊 Precision: 81.5661%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas SVM-LBP concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (SVM-LBP): 4m 31.23s
+########################################
+Métricas Finais Relevância SVM LBP:
+   📊 Acurácia: 98.1667%
+   📊 F1: 98.1666%
+   📊 Recall: 98.1667%
+   📊 Precision: 98.1715%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 87.0926% +- 0.7398%
+        | Folds: 87.3148%, 87.9630%, 87.0370%, 85.7407%, 87.4074%
+      2️⃣ F1 Média: 86.3611% +- 0.6944%
+        | Folds: 86.6861%, 87.0259%, 86.5125%, 85.0195%, 86.5613%
+      3️⃣ Recall Médio: 81.7037% +- 0.9757%
+        | Folds: 82.5926%, 80.7407%, 83.1481%, 80.9259%, 81.1111%
+      4️⃣ Precision Média: 91.6171% +- 1.7634%
+        | Folds: 91.2065%, 94.3723%, 90.1606%, 89.5492%, 92.7966%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 87.0185% +- 1.1437%
+        | Folds: 88.0556%, 88.7037%, 86.3889%, 86.1111%, 85.8333%
+      2️⃣ F1 Média: 87.6705% +- 1.1078%
+        | Folds: 88.5537%, 89.4097%, 86.9565%, 86.7021%, 86.7303%
+      3️⃣ Recall Médio: 92.3333% +- 1.7317%
+        | Folds: 92.4074%, 95.3704%, 90.7407%, 90.5556%, 92.5926%
+      4️⃣ Precision Média: 83.4727% +- 1.1445%
+        | Folds: 85.0085%, 84.1503%, 83.4753%, 83.1633%, 81.5661%
+########################################
+📊 Exportando resultados para CSV: SVM_LBP
+   📁 Arquivo com os resultados: results/csv_exports/svm_lbp_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/svm_lbp_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lbp_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lbp_metrics.csv
+==================================================
+
+📊 Calculando relevância GLCM...
+🚀 Iniciando treinamento de especialistas SVM-GLCM
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: SVM-GLCM-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-GLCM-Specialist-peperomia:
+   📊 Acurácia: 86.6667%
+   📊 F1: 86.2333%
+   📊 Recall: 83.5185%
+   📊 Precision: 89.1304%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-GLCM-Specialist-peperomia:
+   📊 Acurácia: 87.8704%
+   📊 F1: 87.2692%
+   📊 Recall: 83.1481%
+   📊 Precision: 91.8200%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-GLCM-Specialist-peperomia:
+   📊 Acurácia: 87.6852%
+   📊 F1: 87.3213%
+   📊 Recall: 84.8148%
+   📊 Precision: 89.9804%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-GLCM-Specialist-peperomia:
+   📊 Acurácia: 86.3889%
+   📊 F1: 85.9867%
+   📊 Recall: 83.5185%
+   📊 Precision: 88.6051%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-GLCM-Specialist-peperomia:
+   📊 Acurácia: 87.2222%
+   📊 F1: 86.4440%
+   📊 Recall: 81.4815%
+   📊 Precision: 92.0502%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: SVM-GLCM-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-GLCM-Specialist-piper:
+   📊 Acurácia: 88.8889%
+   📊 F1: 89.2473%
+   📊 Recall: 92.2222%
+   📊 Precision: 86.4583%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-GLCM-Specialist-piper:
+   📊 Acurácia: 86.9444%
+   📊 F1: 87.4889%
+   📊 Recall: 91.2963%
+   📊 Precision: 83.9864%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-GLCM-Specialist-piper:
+   📊 Acurácia: 86.8519%
+   📊 F1: 87.2531%
+   📊 Recall: 90.0000%
+   📊 Precision: 84.6690%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-GLCM-Specialist-piper:
+   📊 Acurácia: 87.2222%
+   📊 F1: 87.5676%
+   📊 Recall: 90.0000%
+   📊 Precision: 85.2632%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-GLCM-Specialist-piper:
+   📊 Acurácia: 86.2037%
+   📊 F1: 86.8953%
+   📊 Recall: 91.4815%
+   📊 Precision: 82.7471%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas SVM-GLCM concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (SVM-GLCM): 5m 14.80s
+########################################
+Métricas Finais Relevância SVM GLCM:
+   📊 Acurácia: 97.5000%
+   📊 F1: 97.4998%
+   📊 Recall: 97.5000%
+   📊 Precision: 97.5132%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 87.1667% +- 0.5696%
+        | Folds: 86.6667%, 87.8704%, 87.6852%, 86.3889%, 87.2222%
+      2️⃣ F1 Média: 86.6509% +- 0.5459%
+        | Folds: 86.2333%, 87.2692%, 87.3213%, 85.9867%, 86.4440%
+      3️⃣ Recall Médio: 83.2963% +- 1.0696%
+        | Folds: 83.5185%, 83.1481%, 84.8148%, 83.5185%, 81.4815%
+      4️⃣ Precision Média: 90.3172% +- 1.3939%
+        | Folds: 89.1304%, 91.8200%, 89.9804%, 88.6051%, 92.0502%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 87.2222% +- 0.8977%
+        | Folds: 88.8889%, 86.9444%, 86.8519%, 87.2222%, 86.2037%
+      2️⃣ F1 Média: 87.6905% +- 0.8128%
+        | Folds: 89.2473%, 87.4889%, 87.2531%, 87.5676%, 86.8953%
+      3️⃣ Recall Médio: 91.0000% +- 0.8733%
+        | Folds: 92.2222%, 91.2963%, 90.0000%, 90.0000%, 91.4815%
+      4️⃣ Precision Média: 84.6248% +- 1.2414%
+        | Folds: 86.4583%, 83.9864%, 84.6690%, 85.2632%, 82.7471%
+########################################
+📊 Exportando resultados para CSV: SVM_GLCM
+   📁 Arquivo com os resultados: results/csv_exports/svm_glcm_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/svm_glcm_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_glcm_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_glcm_metrics.csv
+==================================================
+
+📊 Calculando relevância LPQ...
+🚀 Iniciando treinamento de especialistas SVM-LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: SVM-LPQ-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.1481%
+   📊 F1: 87.6209%
+   📊 Recall: 83.8889%
+   📊 Precision: 91.7004%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.3333%
+   📊 F1: 87.3747%
+   📊 Recall: 80.7407%
+   📊 Precision: 95.1965%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LPQ-Specialist-peperomia:
+   📊 Acurácia: 86.8519%
+   📊 F1: 86.3985%
+   📊 Recall: 83.5185%
+   📊 Precision: 89.4841%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LPQ-Specialist-peperomia:
+   📊 Acurácia: 85.8333%
+   📊 F1: 85.2743%
+   📊 Recall: 82.0370%
+   📊 Precision: 88.7776%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.2407%
+   📊 F1: 87.6339%
+   📊 Recall: 83.3333%
+   📊 Precision: 92.4025%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: SVM-LPQ-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 10, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LPQ-Specialist-piper:
+   📊 Acurácia: 87.5926%
+   📊 F1: 88.2250%
+   📊 Recall: 92.9630%
+   📊 Precision: 83.9465%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LPQ-Specialist-piper:
+   📊 Acurácia: 88.7037%
+   📊 F1: 89.2982%
+   📊 Recall: 94.2593%
+   📊 Precision: 84.8333%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LPQ-Specialist-piper:
+   📊 Acurácia: 88.2407%
+   📊 F1: 88.6506%
+   📊 Recall: 91.8519%
+   📊 Precision: 85.6649%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LPQ-Specialist-piper:
+   📊 Acurácia: 86.3889%
+   📊 F1: 86.8161%
+   📊 Recall: 89.6296%
+   📊 Precision: 84.1739%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LPQ-Specialist-piper:
+   📊 Acurácia: 86.2963%
+   📊 F1: 87.2193%
+   📊 Recall: 93.5185%
+   📊 Precision: 81.7152%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas SVM-LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (SVM-LPQ): 39m 25.90s
+########################################
+Métricas Finais Relevância SVM LPQ:
+   📊 Acurácia: 98.0000%
+   📊 F1: 97.9998%
+   📊 Recall: 98.0000%
+   📊 Precision: 98.0192%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 87.4815% +- 0.9858%
+        | Folds: 88.1481%, 88.3333%, 86.8519%, 85.8333%, 88.2407%
+      2️⃣ F1 Média: 86.8605% +- 0.9133%
+        | Folds: 87.6209%, 87.3747%, 86.3985%, 85.2743%, 87.6339%
+      3️⃣ Recall Médio: 82.7037% +- 1.1630%
+        | Folds: 83.8889%, 80.7407%, 83.5185%, 82.0370%, 83.3333%
+      4️⃣ Precision Média: 91.5122% +- 2.2801%
+        | Folds: 91.7004%, 95.1965%, 89.4841%, 88.7776%, 92.4025%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 87.4444% +- 0.9669%
+        | Folds: 87.5926%, 88.7037%, 88.2407%, 86.3889%, 86.2963%
+      2️⃣ F1 Média: 88.0419% +- 0.9123%
+        | Folds: 88.2250%, 89.2982%, 88.6506%, 86.8161%, 87.2193%
+      3️⃣ Recall Médio: 92.4444% +- 1.6119%
+        | Folds: 92.9630%, 94.2593%, 91.8519%, 89.6296%, 93.5185%
+      4️⃣ Precision Média: 84.0668% +- 1.3189%
+        | Folds: 83.9465%, 84.8333%, 85.6649%, 84.1739%, 81.7152%
+########################################
+📊 Exportando resultados para CSV: SVM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/svm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/svm_lpq_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+GLCM...
+🚀 Iniciando treinamento de especialistas SVM-LBP+GLCM
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: SVM-LBP+GLCM-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 10, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 88.0556%
+   📊 F1: 87.7956%
+   📊 Recall: 85.9259%
+   📊 Precision: 89.7485%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 88.3333%
+   📊 F1: 87.7432%
+   📊 Recall: 83.5185%
+   📊 Precision: 92.4180%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 1000, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 88.9815%
+   📊 F1: 88.6775%
+   📊 Recall: 86.2963%
+   📊 Precision: 91.1937%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 87.8704%
+   📊 F1: 87.3430%
+   📊 Recall: 83.7037%
+   📊 Precision: 91.3131%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LBP+GLCM-Specialist-peperomia:
+   📊 Acurácia: 88.9815%
+   📊 F1: 88.4802%
+   📊 Recall: 84.6296%
+   📊 Precision: 92.6978%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: SVM-LBP+GLCM-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 88.7037%
+   📊 F1: 89.0877%
+   📊 Recall: 92.2222%
+   📊 Precision: 86.1592%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 10, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 88.7963%
+   📊 F1: 89.3015%
+   📊 Recall: 93.5185%
+   📊 Precision: 85.4484%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 87.3148%
+   📊 F1: 87.6465%
+   📊 Recall: 90.0000%
+   📊 Precision: 85.4130%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 88.3333%
+   📊 F1: 88.7900%
+   📊 Recall: 92.4074%
+   📊 Precision: 85.4452%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LBP+GLCM-Specialist-piper:
+   📊 Acurácia: 87.7778%
+   📊 F1: 88.4413%
+   📊 Recall: 93.5185%
+   📊 Precision: 83.8870%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas SVM-LBP+GLCM concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (SVM-LBP+GLCM): 12m 26.33s
+########################################
+Métricas Finais Relevância SVM LBP+GLCM:
+   📊 Acurácia: 97.8333%
+   📊 F1: 97.8333%
+   📊 Recall: 97.8333%
+   📊 Precision: 97.8381%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 88.4444% +- 0.4626%
+        | Folds: 88.0556%, 88.3333%, 88.9815%, 87.8704%, 88.9815%
+      2️⃣ F1 Média: 88.0079% +- 0.4957%
+        | Folds: 87.7956%, 87.7432%, 88.6775%, 87.3430%, 88.4802%
+      3️⃣ Recall Médio: 84.8148% +- 1.1295%
+        | Folds: 85.9259%, 83.5185%, 86.2963%, 83.7037%, 84.6296%
+      4️⃣ Precision Média: 91.4742% +- 1.0460%
+        | Folds: 89.7485%, 92.4180%, 91.1937%, 91.3131%, 92.6978%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 88.1852% +- 0.5635%
+        | Folds: 88.7037%, 88.7963%, 87.3148%, 88.3333%, 87.7778%
+      2️⃣ F1 Média: 88.6534% +- 0.5807%
+        | Folds: 89.0877%, 89.3015%, 87.6465%, 88.7900%, 88.4413%
+      3️⃣ Recall Médio: 92.3333% +- 1.2862%
+        | Folds: 92.2222%, 93.5185%, 90.0000%, 92.4074%, 93.5185%
+      4️⃣ Precision Média: 85.2706% +- 0.7465%
+        | Folds: 86.1592%, 85.4484%, 85.4130%, 85.4452%, 83.8870%
+########################################
+📊 Exportando resultados para CSV: SVM_LBP_GLCM
+   📁 Arquivo com os resultados: results/csv_exports/svm_lbp_glcm_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/svm_lbp_glcm_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lbp_glcm_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lbp_glcm_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+LPQ...
+🚀 Iniciando treinamento de especialistas SVM-LBP+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: SVM-LBP+LPQ-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.4259%
+   📊 F1: 87.8758%
+   📊 Recall: 83.8889%
+   📊 Precision: 92.2607%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 89.4444%
+   📊 F1: 88.6680%
+   📊 Recall: 82.5926%
+   📊 Precision: 95.7082%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.1481%
+   📊 F1: 87.7629%
+   📊 Recall: 85.0000%
+   📊 Precision: 90.7115%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 85.9259%
+   📊 F1: 85.1852%
+   📊 Recall: 80.9259%
+   📊 Precision: 89.9177%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 10, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LBP+LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.6111%
+   📊 F1: 87.8818%
+   📊 Recall: 82.5926%
+   📊 Precision: 93.8947%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: SVM-LBP+LPQ-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 89.1667%
+   📊 F1: 89.6000%
+   📊 Recall: 93.3333%
+   📊 Precision: 86.1538%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 89.8148%
+   📊 F1: 90.3509%
+   📊 Recall: 95.3704%
+   📊 Precision: 85.8333%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 88.2407%
+   📊 F1: 88.7111%
+   📊 Recall: 92.4074%
+   📊 Precision: 85.2991%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 87.3148%
+   📊 F1: 87.6465%
+   📊 Recall: 90.0000%
+   📊 Precision: 85.4130%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LBP+LPQ-Specialist-piper:
+   📊 Acurácia: 87.2222%
+   📊 F1: 88.0623%
+   📊 Recall: 94.2593%
+   📊 Precision: 82.6299%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas SVM-LBP+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (SVM-LBP+LPQ): 50m 56.97s
+########################################
+Métricas Finais Relevância SVM LBP+LPQ:
+   📊 Acurácia: 98.0000%
+   📊 F1: 97.9998%
+   📊 Recall: 98.0000%
+   📊 Precision: 98.0192%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 88.1111% +- 1.1750%
+        | Folds: 88.4259%, 89.4444%, 88.1481%, 85.9259%, 88.6111%
+      2️⃣ F1 Média: 87.4747% +- 1.1896%
+        | Folds: 87.8758%, 88.6680%, 87.7629%, 85.1852%, 87.8818%
+      3️⃣ Recall Médio: 83.0000% +- 1.3729%
+        | Folds: 83.8889%, 82.5926%, 85.0000%, 80.9259%, 82.5926%
+      4️⃣ Precision Média: 92.4985% +- 2.1053%
+        | Folds: 92.2607%, 95.7082%, 90.7115%, 89.9177%, 93.8947%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 88.3519% +- 1.0167%
+        | Folds: 89.1667%, 89.8148%, 88.2407%, 87.3148%, 87.2222%
+      2️⃣ F1 Média: 88.8742% +- 0.9900%
+        | Folds: 89.6000%, 90.3509%, 88.7111%, 87.6465%, 88.0623%
+      3️⃣ Recall Médio: 93.0741% +- 1.8242%
+        | Folds: 93.3333%, 95.3704%, 92.4074%, 90.0000%, 94.2593%
+      4️⃣ Precision Média: 85.0658% +- 1.2555%
+        | Folds: 86.1538%, 85.8333%, 85.2991%, 85.4130%, 82.6299%
+########################################
+📊 Exportando resultados para CSV: SVM_LBP_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/svm_lbp_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/svm_lbp_lpq_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lbp_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lbp_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância GLCM+LPQ...
+🚀 Iniciando treinamento de especialistas SVM-GLCM+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: SVM-GLCM+LPQ-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.5185%
+   📊 F1: 88.2129%
+   📊 Recall: 85.9259%
+   📊 Precision: 90.6250%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.6111%
+   📊 F1: 87.8818%
+   📊 Recall: 82.5926%
+   📊 Precision: 93.8947%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.7037%
+   📊 F1: 88.3365%
+   📊 Recall: 85.5556%
+   📊 Precision: 91.3043%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.9815%
+   📊 F1: 88.5687%
+   📊 Recall: 85.3704%
+   📊 Precision: 92.0160%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 89.6296%
+   📊 F1: 89.2100%
+   📊 Recall: 85.7407%
+   📊 Precision: 92.9719%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: SVM-GLCM+LPQ-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 89.7222%
+   📊 F1: 90.0270%
+   📊 Recall: 92.7778%
+   📊 Precision: 87.4346%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 90.2778%
+   📊 F1: 90.6832%
+   📊 Recall: 94.6296%
+   📊 Precision: 87.0528%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 10, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 89.3519%
+   📊 F1: 89.7596%
+   📊 Recall: 93.3333%
+   📊 Precision: 86.4494%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 88.4259%
+   📊 F1: 88.7691%
+   📊 Recall: 91.4815%
+   📊 Precision: 86.2129%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 10, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 88.8889%
+   📊 F1: 89.4737%
+   📊 Recall: 94.4444%
+   📊 Precision: 85.0000%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas SVM-GLCM+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (SVM-GLCM+LPQ): 49m 29.64s
+########################################
+Métricas Finais Relevância SVM GLCM+LPQ:
+   📊 Acurácia: 98.3333%
+   📊 F1: 98.3332%
+   📊 Recall: 98.3333%
+   📊 Precision: 98.3527%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 88.8889% +- 0.4015%
+        | Folds: 88.5185%, 88.6111%, 88.7037%, 88.9815%, 89.6296%
+      2️⃣ F1 Média: 88.4420% +- 0.4435%
+        | Folds: 88.2129%, 87.8818%, 88.3365%, 88.5687%, 89.2100%
+      3️⃣ Recall Médio: 85.0370% +- 1.2362%
+        | Folds: 85.9259%, 82.5926%, 85.5556%, 85.3704%, 85.7407%
+      4️⃣ Precision Média: 92.1624% +- 1.1643%
+        | Folds: 90.6250%, 93.8947%, 91.3043%, 92.0160%, 92.9719%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 89.3333% +- 0.6426%
+        | Folds: 89.7222%, 90.2778%, 89.3519%, 88.4259%, 88.8889%
+      2️⃣ F1 Média: 89.7425% +- 0.6302%
+        | Folds: 90.0270%, 90.6832%, 89.7596%, 88.7691%, 89.4737%
+      3️⃣ Recall Médio: 93.3333% +- 1.1535%
+        | Folds: 92.7778%, 94.6296%, 93.3333%, 91.4815%, 94.4444%
+      4️⃣ Precision Média: 86.4299% +- 0.8354%
+        | Folds: 87.4346%, 87.0528%, 86.4494%, 86.2129%, 85.0000%
+########################################
+📊 Exportando resultados para CSV: SVM_GLCM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/svm_glcm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/svm_glcm_lpq_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_glcm_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_glcm_lpq_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+GLCM+LPQ...
+🚀 Iniciando treinamento de especialistas SVM-LBP+GLCM+LPQ
+   📋 2 especialistas para treinar
+   🔄 Validação cruzada: 5 folds
+------------------------------------------------------------
+
+🎯 Treinando especialista 1/2: peperomia
+=== Iniciando treinamento assistido: SVM-LBP+GLCM+LPQ-Specialist-peperomia ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 89.4444%
+   📊 F1: 89.1635%
+   📊 Recall: 86.8519%
+   📊 Precision: 91.6016%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 88.9815%
+   📊 F1: 88.2989%
+   📊 Recall: 83.1481%
+   📊 Precision: 94.1300%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 89.2593%
+   📊 F1: 88.9524%
+   📊 Recall: 86.4815%
+   📊 Precision: 91.5686%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 89.0741%
+   📊 F1: 88.6756%
+   📊 Recall: 85.5556%
+   📊 Precision: 92.0319%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LBP+GLCM+LPQ-Specialist-peperomia:
+   📊 Acurácia: 90.8333%
+   📊 F1: 90.4716%
+   📊 Recall: 87.0370%
+   📊 Precision: 94.1884%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎯 Treinando especialista 2/2: piper
+=== Iniciando treinamento assistido: SVM-LBP+GLCM+LPQ-Specialist-piper ===
+Validação cruzada: 5 folds
+==================================================
+
+~~ Fold 1 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 1 - SVM-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 89.5370%
+   📊 F1: 89.8836%
+   📊 Recall: 92.9630%
+   📊 Precision: 87.0017%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 2 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 2 - SVM-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 90.9259%
+   📊 F1: 91.2966%
+   📊 Recall: 95.1852%
+   📊 Precision: 87.7133%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 3 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 3 - SVM-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 88.7037%
+   📊 F1: 88.9091%
+   📊 Recall: 90.5556%
+   📊 Precision: 87.3214%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 4 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 0.002, 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 4 - SVM-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 88.6111%
+   📊 F1: 88.9289%
+   📊 Recall: 91.4815%
+   📊 Precision: 86.5149%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~ Fold 5 ~~
+Melhores parâmetros: {'svm__C': 100, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'}
+----------------------------------------
+Métricas Fold 5 - SVM-LBP+GLCM+LPQ-Specialist-piper:
+   📊 Acurácia: 89.5370%
+   📊 F1: 90.0964%
+   📊 Recall: 95.1852%
+   📊 Precision: 85.5241%
+----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+
+🎉 Treinamento de especialistas SVM-LBP+GLCM+LPQ concluído!
+   ✅ 2 especialistas treinados com sucesso
+   📦 Array retornado: raw_probabilities[i] = probabilidades do especialista da classe i
+============================================================
+⏱️ Tempo de execução (SVM-LBP+GLCM+LPQ): 59m 34.12s
+########################################
+Métricas Finais Relevância SVM LBP+GLCM+LPQ:
+   📊 Acurácia: 98.5000%
+   📊 F1: 98.4999%
+   📊 Recall: 98.5000%
+   📊 Precision: 98.5135%
+----------------------------------------
+Métricas de Treinamento dos Especialistas:
+   Especialista classe 0:
+      1️⃣ Acurácia Média: 89.5185% +- 0.6764%
+        | Folds: 89.4444%, 88.9815%, 89.2593%, 89.0741%, 90.8333%
+      2️⃣ F1 Média: 89.1124% +- 0.7387%
+        | Folds: 89.1635%, 88.2989%, 88.9524%, 88.6756%, 90.4716%
+      3️⃣ Recall Médio: 85.8148% +- 1.4277%
+        | Folds: 86.8519%, 83.1481%, 86.4815%, 85.5556%, 87.0370%
+      4️⃣ Precision Média: 92.7041% +- 1.1994%
+        | Folds: 91.6016%, 94.1300%, 91.5686%, 92.0319%, 94.1884%
+   Especialista classe 1:
+      1️⃣ Acurácia Média: 89.4630% +- 0.8311%
+        | Folds: 89.5370%, 90.9259%, 88.7037%, 88.6111%, 89.5370%
+      2️⃣ F1 Média: 89.8229% +- 0.8814%
+        | Folds: 89.8836%, 91.2966%, 88.9091%, 88.9289%, 90.0964%
+      3️⃣ Recall Médio: 93.0741% +- 1.8871%
+        | Folds: 92.9630%, 95.1852%, 90.5556%, 91.4815%, 95.1852%
+      4️⃣ Precision Média: 86.8151% +- 0.7556%
+        | Folds: 87.0017%, 87.7133%, 87.3214%, 86.5149%, 85.5241%
+########################################
+📊 Exportando resultados para CSV: SVM_LBP_GLCM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/svm_lbp_glcm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/svm_lbp_glcm_lpq_metrics.csv
+   🎯 Imagens: 600 amostras
+--------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lbp_glcm_lpq_results.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/svm_lbp_glcm_lpq_metrics.csv
+==================================================
+✅ Relevância calculada para todos os 7 conjuntos de features
+📊 Métricas e matrizes de confusão geradas para cada combinação
+
+🎉 === CÁLCULO DE RELEVÂNCIA SVM CONCLUÍDO ===
+✅ Resultados compactados em: /home/alunos/a2020815/article_image_classification_by_relevance_of_regions/results/experiments/experimento_20260207_150106.zip
+⏳ Tempo total de execução do script: 242m 4.60s
