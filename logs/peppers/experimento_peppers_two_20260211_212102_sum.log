@@ -1,0 +1,2776 @@
+📦 MODO LOTE: Processando experimento completo
+
+================================================================================
+🚀 PROCESSAMENTO EM LOTE: EXPERIMENTO COMPLETO
+================================================================================
+   📁 Experimento: results/experiments/peppers/experimento_20260207_150106_two_rel
+================================================================================
+
+📊 Encontrados 14 arquivos CSV para processar:
+   • knn_glcm_lpq_results.csv
+   • knn_glcm_results.csv
+   • knn_lbp_glcm_lpq_results.csv
+   • knn_lbp_glcm_results.csv
+   • knn_lbp_lpq_results.csv
+   • knn_lbp_results.csv
+   • knn_lpq_results.csv
+   • svm_glcm_lpq_results.csv
+   • svm_glcm_results.csv
+   • svm_lbp_glcm_lpq_results.csv
+   • svm_lbp_glcm_results.csv
+   • svm_lbp_lpq_results.csv
+   • svm_lbp_results.csv
+   • svm_lpq_results.csv
+
+--------------------------------------------------------------------------------
+🔄 Processando: knn_glcm_lpq_results.csv
+   🏷️  Modelo: KNN_GLCM_LPQ
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_glcm_lpq_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: KNN_GLCM_LPQ
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_glcm_lpq_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[1. 0.]
+ [1. 0.]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 313 imagens (52.17%)
+      1 (cat): 287 imagens (47.83%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9716666666666667, 0.9716533594937624, 0.9716666666666667, 0.9725540181006557)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 97.1667%
+   📊 F1: 97.1653%
+   📊 Recall: 97.1667%
+   📊 Precision: 97.2554%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: KNN_GLCM_LPQ
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Oranges
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_glcm_lpq_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_glcm_lpq_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_glcm_lpq_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_glcm_lpq_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_glcm_lpq_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 97.17%
+   • F1-Score: 97.17%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_glcm_lpq_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_glcm_lpq_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: KNN_GLCM_LPQ
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 579 (96.50%)
+      R (Só Relevância): 2 (0.33%)
+      S (Só Soma): 4 (0.67%)
+      N (Nenhum acertou): 15 (2.50%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_glcm_lpq_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_glcm_lpq_divergences.csv
+   📊 21 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: KNN_GLCM_LPQ
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 579 (96.50%)
+   🟡 Só Relevância (R): 2 (0.33%)
+   🟠 Só Soma (S): 4 (0.67%)
+   ❌ Nenhum acertou (N): 15 (2.50%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: -0.0034
+   F1-Score: -0.0034
+   Recall: -0.0034
+   Precision: -0.0034
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (2 imagens):
+   • piper_gaudichaudianum108_NY00556551_01: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides10_FURB38323: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (4 imagens):
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=0
+   • piper_amalago12_HUEM000009912: Real=1, Relevância=0, Soma=1
+   • piper_hispidum19_HUEM000010056: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides03_CEN00044967: Real=1, Relevância=0, Soma=1
+
+❌ Nenhum Acertou (15 imagens):
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_caldense13_MBM076454: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum02_CEN00062426: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_glabratum09_HUEM000010029: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides04_CEN00047094: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides11_HUEM000010107: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides14_INPA0112932: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides15_INPA0240893: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_glcm_lpq_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_glcm_lpq_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: knn_glcm_results.csv
+   🏷️  Modelo: KNN_GLCM
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_glcm_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: KNN_GLCM
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_glcm_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[1. 0.]
+ [1. 0.]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 305 imagens (50.83%)
+      1 (cat): 295 imagens (49.17%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9716666666666667, 0.9716646989374262, 0.9716666666666667, 0.9717977215893303)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 97.1667%
+   📊 F1: 97.1665%
+   📊 Recall: 97.1667%
+   📊 Precision: 97.1798%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: KNN_GLCM
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Oranges
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_glcm_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_glcm_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_glcm_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_glcm_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_glcm_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 97.17%
+   • F1-Score: 97.17%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_glcm_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_glcm_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: KNN_GLCM
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 577 (96.17%)
+      R (Só Relevância): 5 (0.83%)
+      S (Só Soma): 6 (1.00%)
+      N (Nenhum acertou): 12 (2.00%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_glcm_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_glcm_divergences.csv
+   📊 23 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: KNN_GLCM
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 577 (96.17%)
+   🟡 Só Relevância (R): 5 (0.83%)
+   🟠 Só Soma (S): 6 (1.00%)
+   ❌ Nenhum acertou (N): 12 (2.00%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: -0.0017
+   F1-Score: -0.0017
+   Recall: -0.0017
+   Precision: -0.0018
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (5 imagens):
+   • peperomia_blanda15_MBM193318: Real=0, Relevância=0, Soma=1
+   • peperomia_urocarpa02_ALCB002439: Real=0, Relevância=0, Soma=1
+   • piper_amalago12_HUEM000009912: Real=1, Relevância=1, Soma=0
+   • piper_gaudichaudianum02_CEN00062426: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides04_CEN00047094: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (6 imagens):
+   • peperomia_catharinae15_MBM045103: Real=0, Relevância=1, Soma=0
+   • peperomia_catharinae19_MBM179276: Real=0, Relevância=1, Soma=0
+   • peperomia_glabella06_INPA0112935: Real=0, Relevância=1, Soma=0
+   • peperomia_urocarpa21_MBM045046: Real=0, Relevância=1, Soma=0
+   • piper_amalago13_HUEM000009913: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides03_CEN00044967: Real=1, Relevância=0, Soma=1
+
+❌ Nenhum Acertou (12 imagens):
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa50_NY00555473_01: Real=0, Relevância=1, Soma=1
+   • piper_caldense13_MBM076454: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides02_CEN00041553: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides11_HUEM000010107: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides12_HUEM000010108: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides14_INPA0112932: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_glcm_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_glcm_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: knn_lbp_glcm_lpq_results.csv
+   🏷️  Modelo: KNN_LBP_GLCM_LPQ
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_glcm_lpq_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: KNN_LBP_GLCM_LPQ
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_glcm_lpq_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[1. 0.]
+ [1. 0.]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 313 imagens (52.17%)
+      1 (cat): 287 imagens (47.83%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9716666666666667, 0.9716533594937624, 0.9716666666666667, 0.9725540181006557)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 97.1667%
+   📊 F1: 97.1653%
+   📊 Recall: 97.1667%
+   📊 Precision: 97.2554%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: KNN_LBP_GLCM_LPQ
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Oranges
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lbp_glcm_lpq_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_glcm_lpq_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_glcm_lpq_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_glcm_lpq_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_glcm_lpq_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 97.17%
+   • F1-Score: 97.17%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_glcm_lpq_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lbp_glcm_lpq_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: KNN_LBP_GLCM_LPQ
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 580 (96.67%)
+      R (Só Relevância): 2 (0.33%)
+      S (Só Soma): 3 (0.50%)
+      N (Nenhum acertou): 15 (2.50%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_glcm_lpq_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_glcm_lpq_divergences.csv
+   📊 20 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: KNN_LBP_GLCM_LPQ
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 580 (96.67%)
+   🟡 Só Relevância (R): 2 (0.33%)
+   🟠 Só Soma (S): 3 (0.50%)
+   ❌ Nenhum acertou (N): 15 (2.50%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: -0.0017
+   F1-Score: -0.0017
+   Recall: -0.0017
+   Precision: -0.0018
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (2 imagens):
+   • piper_mikanianum15_MBM044904: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides10_FURB38323: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (3 imagens):
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=0
+   • piper_aduncum15_FURB38518: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides03_CEN00044967: Real=1, Relevância=0, Soma=1
+
+❌ Nenhum Acertou (15 imagens):
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_caldense13_MBM076454: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum02_CEN00062426: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum108_NY00556551_01: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides04_CEN00047094: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides11_HUEM000010107: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides14_INPA0112932: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides15_INPA0240893: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_glcm_lpq_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_glcm_lpq_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: knn_lbp_glcm_results.csv
+   🏷️  Modelo: KNN_LBP_GLCM
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_glcm_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: KNN_LBP_GLCM
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_glcm_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[1. 0.]
+ [1. 0.]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 311 imagens (51.83%)
+      1 (cat): 289 imagens (48.17%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.975, 0.9749915943970057, 0.975, 0.9756394708441349)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 97.5000%
+   📊 F1: 97.4992%
+   📊 Recall: 97.5000%
+   📊 Precision: 97.5639%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: KNN_LBP_GLCM
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Oranges
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lbp_glcm_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_glcm_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_glcm_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_glcm_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_glcm_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 97.50%
+   • F1-Score: 97.50%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_glcm_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lbp_glcm_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: KNN_LBP_GLCM
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 582 (97.00%)
+      R (Só Relevância): 1 (0.17%)
+      S (Só Soma): 3 (0.50%)
+      N (Nenhum acertou): 14 (2.33%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_glcm_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_glcm_divergences.csv
+   📊 18 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: KNN_LBP_GLCM
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 582 (97.00%)
+   🟡 Só Relevância (R): 1 (0.17%)
+   🟠 Só Soma (S): 3 (0.50%)
+   ❌ Nenhum acertou (N): 14 (2.33%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: -0.0033
+   F1-Score: -0.0033
+   Recall: -0.0033
+   Precision: -0.0033
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (1 imagens):
+   • piper_xylosteoides10_FURB38323: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (3 imagens):
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=0
+   • piper_amalago04_CEN00076994: Real=1, Relevância=0, Soma=1
+   • piper_mikanianum01_CEN00027516: Real=1, Relevância=0, Soma=1
+
+❌ Nenhum Acertou (14 imagens):
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_amalago12_HUEM000009912: Real=1, Relevância=0, Soma=0
+   • piper_caldense13_MBM076454: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum02_CEN00062426: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides03_CEN00044967: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides04_CEN00047094: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides11_HUEM000010107: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides14_INPA0112932: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_glcm_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_glcm_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: knn_lbp_lpq_results.csv
+   🏷️  Modelo: KNN_LBP_LPQ
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_lpq_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: KNN_LBP_LPQ
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_lpq_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[1.    0.   ]
+ [0.878 0.122]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 320 imagens (53.33%)
+      1 (cat): 280 imagens (46.67%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.96, 0.9599555061179088, 0.96, 0.9620535714285714)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 96.0000%
+   📊 F1: 95.9956%
+   📊 Recall: 96.0000%
+   📊 Precision: 96.2054%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: KNN_LBP_LPQ
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Oranges
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lbp_lpq_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_lpq_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_lpq_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_lpq_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_lpq_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 96.00%
+   • F1-Score: 96.00%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_lpq_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lbp_lpq_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: KNN_LBP_LPQ
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 567 (94.50%)
+      R (Só Relevância): 6 (1.00%)
+      S (Só Soma): 9 (1.50%)
+      N (Nenhum acertou): 18 (3.00%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_lpq_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_lpq_divergences.csv
+   📊 33 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: KNN_LBP_LPQ
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 567 (94.50%)
+   🟡 Só Relevância (R): 6 (1.00%)
+   🟠 Só Soma (S): 9 (1.50%)
+   ❌ Nenhum acertou (N): 18 (3.00%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: -0.0050
+   F1-Score: -0.0051
+   Recall: -0.0050
+   Precision: -0.0044
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (6 imagens):
+   • piper_dilatatum06_ESA083235: Real=1, Relevância=1, Soma=0
+   • piper_dilatatum18_R000014603_001: Real=1, Relevância=1, Soma=0
+   • piper_gaudichaudianum108_NY00556551_01: Real=1, Relevância=1, Soma=0
+   • piper_mikanianum15_MBM044904: Real=1, Relevância=1, Soma=0
+   • piper_mikanianum17_MBM044908: Real=1, Relevância=1, Soma=0
+   • piper_mikanianum20_MBM094287: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (9 imagens):
+   • piper_amalago05_ESA083385: Real=1, Relevância=0, Soma=1
+   • piper_amalago08_HDJF001297_01: Real=1, Relevância=0, Soma=1
+   • piper_mikanianum03_CEN00041573: Real=1, Relevância=0, Soma=1
+   • piper_mikanianum06_FURB38069: Real=1, Relevância=0, Soma=1
+   • piper_mikanianum12_MBM009369: Real=1, Relevância=0, Soma=1
+   • piper_miquelianum10_HUEM000010068: Real=1, Relevância=0, Soma=1
+   • piper_miquelianum17_INPA0240912: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides04_CEN00047094: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides12_HUEM000010108: Real=1, Relevância=0, Soma=1
+
+❌ Nenhum Acertou (18 imagens):
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum02_CEN00062426: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum103_NY00556530_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum105_NY00556544_01: Real=1, Relevância=0, Soma=0
+   • piper_glabratum09_HUEM000010029: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+   • piper_miquelianum07_HUEFS0067611: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides03_CEN00044967: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides10_FURB38323: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides11_HUEM000010107: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides14_INPA0112932: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides15_INPA0240893: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_lpq_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_lpq_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: knn_lbp_results.csv
+   🏷️  Modelo: KNN_LBP
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: KNN_LBP
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[0.8333 0.1667]
+ [1.     0.    ]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 324 imagens (54.00%)
+      1 (cat): 276 imagens (46.00%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.96, 0.9599358974358975, 0.96, 0.962962962962963)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 96.0000%
+   📊 F1: 95.9936%
+   📊 Recall: 96.0000%
+   📊 Precision: 96.2963%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: KNN_LBP
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Oranges
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lbp_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lbp_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 96.00%
+   • F1-Score: 95.99%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lbp_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lbp_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: KNN_LBP
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 570 (95.00%)
+      R (Só Relevância): 4 (0.67%)
+      S (Só Soma): 6 (1.00%)
+      N (Nenhum acertou): 20 (3.33%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_divergences.csv
+   📊 30 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: KNN_LBP
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 570 (95.00%)
+   🟡 Só Relevância (R): 4 (0.67%)
+   🟠 Só Soma (S): 6 (1.00%)
+   ❌ Nenhum acertou (N): 20 (3.33%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: -0.0033
+   F1-Score: -0.0033
+   Recall: -0.0033
+   Precision: -0.0034
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (4 imagens):
+   • piper_grazielae10_HUEM000009982: Real=1, Relevância=1, Soma=0
+   • piper_hispidum04_ESA113113: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides04_CEN00047094: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides10_FURB38323: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (6 imagens):
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=0
+   • piper_amalago15_HUEM000009923: Real=1, Relevância=0, Soma=1
+   • piper_hispidum02_CEN00041554: Real=1, Relevância=0, Soma=1
+   • piper_mikanianum17_MBM044908: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides14_INPA0112932: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides16_MBM009368: Real=1, Relevância=0, Soma=1
+
+❌ Nenhum Acertou (20 imagens):
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_amalago12_HUEM000009912: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum02_CEN00062426: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum105_NY00556544_01: Real=1, Relevância=0, Soma=0
+   • piper_glabratum09_HUEM000010029: Real=1, Relevância=0, Soma=0
+   • piper_grazielae04_HUEM000009976: Real=1, Relevância=0, Soma=0
+   • piper_hispidum06_FURB38017: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum06_FURB38069: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum09_HUEM000010077: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum15_MBM044904: Real=1, Relevância=0, Soma=0
+   • piper_regnellii08_HUEM000010089: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides03_CEN00044967: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides11_HUEM000010107: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides12_HUEM000010108: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides15_INPA0240893: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lbp_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: knn_lpq_results.csv
+   🏷️  Modelo: KNN_LPQ
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lpq_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: KNN_LPQ
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lpq_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[1.     0.    ]
+ [0.8108 0.1892]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 321 imagens (53.50%)
+      1 (cat): 279 imagens (46.50%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9583333333333334, 0.9582822290639367, 0.9583333333333333, 0.9605902254379795)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 95.8333%
+   📊 F1: 95.8282%
+   📊 Recall: 95.8333%
+   📊 Precision: 96.0590%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: KNN_LPQ
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Oranges
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lpq_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lpq_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lpq_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/knn_lpq_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lpq_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 95.83%
+   • F1-Score: 95.83%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/knn_lpq_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/knn_lpq_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: KNN_LPQ
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 566 (94.33%)
+      R (Só Relevância): 5 (0.83%)
+      S (Só Soma): 9 (1.50%)
+      N (Nenhum acertou): 20 (3.33%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lpq_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lpq_divergences.csv
+   📊 34 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: KNN_LPQ
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 566 (94.33%)
+   🟡 Só Relevância (R): 5 (0.83%)
+   🟠 Só Soma (S): 9 (1.50%)
+   ❌ Nenhum acertou (N): 20 (3.33%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: -0.0066
+   F1-Score: -0.0067
+   Recall: -0.0066
+   Precision: -0.0063
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (5 imagens):
+   • piper_dilatatum06_ESA083235: Real=1, Relevância=1, Soma=0
+   • piper_dilatatum18_R000014603_001: Real=1, Relevância=1, Soma=0
+   • piper_gaudichaudianum03_ESA113126: Real=1, Relevância=1, Soma=0
+   • piper_miquelianum06_FLOR0015517: Real=1, Relevância=1, Soma=0
+   • piper_miquelianum07_HUEFS0067611: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (9 imagens):
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=0
+   • piper_amalago04_CEN00076994: Real=1, Relevância=0, Soma=1
+   • piper_dilatatum07_ESA083273: Real=1, Relevância=0, Soma=1
+   • piper_grazielae05_HUEM000009977: Real=1, Relevância=0, Soma=1
+   • piper_hispidum10_HUEM000010044: Real=1, Relevância=0, Soma=1
+   • piper_mikanianum03_CEN00041573: Real=1, Relevância=0, Soma=1
+   • piper_mikanianum12_MBM009369: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides12_HUEM000010108: Real=1, Relevância=0, Soma=1
+   • piper_xylosteoides13_INPA0112929: Real=1, Relevância=0, Soma=1
+
+❌ Nenhum Acertou (20 imagens):
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • piper_amalago05_ESA083385: Real=1, Relevância=0, Soma=0
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum02_CEN00062426: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum105_NY00556544_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum108_NY00556551_01: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum15_MBM044904: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum17_MBM044908: Real=1, Relevância=0, Soma=0
+   • piper_regnellii08_HUEM000010089: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides03_CEN00044967: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides10_FURB38323: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides11_HUEM000010107: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides14_INPA0112932: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides15_INPA0240893: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lpq_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/knn_lpq_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: svm_glcm_lpq_results.csv
+   🏷️  Modelo: SVM_GLCM_LPQ
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_glcm_lpq_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: SVM_GLCM_LPQ
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_glcm_lpq_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[0.8766 0.1234]
+ [0.6102 0.3898]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 296 imagens (49.33%)
+      1 (cat): 304 imagens (50.67%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9766666666666667, 0.976665629583537, 0.9766666666666666, 0.9767514224751067)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 97.6667%
+   📊 F1: 97.6666%
+   📊 Recall: 97.6667%
+   📊 Precision: 97.6751%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: SVM_GLCM_LPQ
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Purples
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_glcm_lpq_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_glcm_lpq_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_glcm_lpq_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_glcm_lpq_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_glcm_lpq_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 97.67%
+   • F1-Score: 97.67%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_glcm_lpq_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_glcm_lpq_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: SVM_GLCM_LPQ
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 586 (97.67%)
+      R (Só Relevância): 4 (0.67%)
+      S (Só Soma): 0 (0.00%)
+      N (Nenhum acertou): 10 (1.67%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_glcm_lpq_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_glcm_lpq_divergences.csv
+   📊 14 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: SVM_GLCM_LPQ
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 586 (97.67%)
+   🟡 Só Relevância (R): 4 (0.67%)
+   🟠 Só Soma (S): 0 (0.00%)
+   ❌ Nenhum acertou (N): 10 (1.67%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: +0.0066
+   F1-Score: +0.0066
+   Recall: +0.0066
+   Precision: +0.0067
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (4 imagens):
+   • peperomia_glabella31_NY00559163_01: Real=0, Relevância=0, Soma=1
+   • piper_caldense13_MBM076454: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=1, Soma=0
+
+❌ Nenhum Acertou (10 imagens):
+   • peperomia_blanda11_MBM069652: Real=0, Relevância=1, Soma=1
+   • peperomia_blanda15_MBM193318: Real=0, Relevância=1, Soma=1
+   • peperomia_catharinae15_MBM045103: Real=0, Relevância=1, Soma=1
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa02_ALCB002439: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa50_NY00555473_01: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_glcm_lpq_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_glcm_lpq_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: svm_glcm_results.csv
+   🏷️  Modelo: SVM_GLCM
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_glcm_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: SVM_GLCM
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_glcm_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[0.9327 0.0673]
+ [0.9655 0.0345]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 300 imagens (50.00%)
+      1 (cat): 300 imagens (50.00%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9733333333333334, 0.9733333333333334, 0.9733333333333334, 0.9733333333333334)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 97.3333%
+   📊 F1: 97.3333%
+   📊 Recall: 97.3333%
+   📊 Precision: 97.3333%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: SVM_GLCM
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Purples
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_glcm_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_glcm_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_glcm_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_glcm_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_glcm_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 97.33%
+   • F1-Score: 97.33%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_glcm_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_glcm_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: SVM_GLCM
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 582 (97.00%)
+      R (Só Relevância): 3 (0.50%)
+      S (Só Soma): 2 (0.33%)
+      N (Nenhum acertou): 13 (2.17%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_glcm_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_glcm_divergences.csv
+   📊 18 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: SVM_GLCM
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 582 (97.00%)
+   🟡 Só Relevância (R): 3 (0.50%)
+   🟠 Só Soma (S): 2 (0.33%)
+   ❌ Nenhum acertou (N): 13 (2.17%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: +0.0017
+   F1-Score: +0.0017
+   Recall: +0.0017
+   Precision: +0.0018
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (3 imagens):
+   • piper_gaudichaudianum02_CEN00062426: Real=1, Relevância=1, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides11_HUEM000010107: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (2 imagens):
+   • peperomia_blanda11_MBM069652: Real=0, Relevância=1, Soma=0
+   • peperomia_glabella06_INPA0112935: Real=0, Relevância=1, Soma=0
+
+❌ Nenhum Acertou (13 imagens):
+   • peperomia_blanda15_MBM193318: Real=0, Relevância=1, Soma=1
+   • peperomia_catharinae15_MBM045103: Real=0, Relevância=1, Soma=1
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa02_ALCB002439: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa42_MBM237072: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa50_NY00555473_01: Real=0, Relevância=1, Soma=1
+   • piper_caldense13_MBM076454: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_glcm_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_glcm_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: svm_lbp_glcm_lpq_results.csv
+   🏷️  Modelo: SVM_LBP_GLCM_LPQ
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_glcm_lpq_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: SVM_LBP_GLCM_LPQ
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_glcm_lpq_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[0.8719 0.1281]
+ [0.8326 0.1674]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 298 imagens (49.67%)
+      1 (cat): 302 imagens (50.33%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.98, 0.9799997777753087, 0.98, 0.9800213342815236)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 98.0000%
+   📊 F1: 98.0000%
+   📊 Recall: 98.0000%
+   📊 Precision: 98.0021%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: SVM_LBP_GLCM_LPQ
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Purples
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lbp_glcm_lpq_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_glcm_lpq_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_glcm_lpq_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_glcm_lpq_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_glcm_lpq_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 98.00%
+   • F1-Score: 98.00%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_glcm_lpq_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lbp_glcm_lpq_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: SVM_LBP_GLCM_LPQ
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 588 (98.00%)
+      R (Só Relevância): 3 (0.50%)
+      S (Só Soma): 0 (0.00%)
+      N (Nenhum acertou): 9 (1.50%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_glcm_lpq_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_glcm_lpq_divergences.csv
+   📊 12 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: SVM_LBP_GLCM_LPQ
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 588 (98.00%)
+   🟡 Só Relevância (R): 3 (0.50%)
+   🟠 Só Soma (S): 0 (0.00%)
+   ❌ Nenhum acertou (N): 9 (1.50%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: +0.0050
+   F1-Score: +0.0050
+   Recall: +0.0050
+   Precision: +0.0051
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (3 imagens):
+   • piper_caldense13_MBM076454: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=1, Soma=0
+
+❌ Nenhum Acertou (9 imagens):
+   • peperomia_blanda15_MBM193318: Real=0, Relevância=1, Soma=1
+   • peperomia_catharinae15_MBM045103: Real=0, Relevância=1, Soma=1
+   • peperomia_glabella31_NY00559163_01: Real=0, Relevância=1, Soma=1
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa02_ALCB002439: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_glcm_lpq_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_glcm_lpq_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: svm_lbp_glcm_results.csv
+   🏷️  Modelo: SVM_LBP_GLCM
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_glcm_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: SVM_LBP_GLCM
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_glcm_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[0.9722 0.0278]
+ [0.9865 0.0135]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 299 imagens (49.83%)
+      1 (cat): 301 imagens (50.17%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9816666666666667, 0.9816666157405993, 0.9816666666666667, 0.9816720185779841)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 98.1667%
+   📊 F1: 98.1667%
+   📊 Recall: 98.1667%
+   📊 Precision: 98.1672%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: SVM_LBP_GLCM
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Purples
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lbp_glcm_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_glcm_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_glcm_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_glcm_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_glcm_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 98.17%
+   • F1-Score: 98.17%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_glcm_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lbp_glcm_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: SVM_LBP_GLCM
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 587 (97.83%)
+      R (Só Relevância): 0 (0.00%)
+      S (Só Soma): 2 (0.33%)
+      N (Nenhum acertou): 11 (1.83%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_glcm_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_glcm_divergences.csv
+   📊 13 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: SVM_LBP_GLCM
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 587 (97.83%)
+   🟡 Só Relevância (R): 0 (0.00%)
+   🟠 Só Soma (S): 2 (0.33%)
+   ❌ Nenhum acertou (N): 11 (1.83%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: -0.0034
+   F1-Score: -0.0034
+   Recall: -0.0034
+   Precision: -0.0033
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟠 Só Soma Acertou (2 imagens):
+   • peperomia_blanda11_MBM069652: Real=0, Relevância=1, Soma=0
+   • peperomia_urocarpa42_MBM237072: Real=0, Relevância=1, Soma=0
+
+❌ Nenhum Acertou (11 imagens):
+   • peperomia_blanda15_MBM193318: Real=0, Relevância=1, Soma=1
+   • peperomia_blanda22_NY00558803_01: Real=0, Relevância=1, Soma=1
+   • peperomia_glabella06_INPA0112935: Real=0, Relevância=1, Soma=1
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_caldense13_MBM076454: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_glcm_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_glcm_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: svm_lbp_lpq_results.csv
+   🏷️  Modelo: SVM_LBP_LPQ
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_lpq_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: SVM_LBP_LPQ
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_lpq_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[0.9477 0.0523]
+ [0.5745 0.4255]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 298 imagens (49.67%)
+      1 (cat): 302 imagens (50.33%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9766666666666667, 0.9766664074045267, 0.9766666666666667, 0.9766878527934575)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 97.6667%
+   📊 F1: 97.6666%
+   📊 Recall: 97.6667%
+   📊 Precision: 97.6688%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: SVM_LBP_LPQ
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Purples
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lbp_lpq_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_lpq_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_lpq_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_lpq_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_lpq_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 97.67%
+   • F1-Score: 97.67%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_lpq_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lbp_lpq_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: SVM_LBP_LPQ
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 585 (97.50%)
+      R (Só Relevância): 3 (0.50%)
+      S (Só Soma): 1 (0.17%)
+      N (Nenhum acertou): 11 (1.83%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_lpq_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_lpq_divergences.csv
+   📊 15 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: SVM_LBP_LPQ
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 585 (97.50%)
+   🟡 Só Relevância (R): 3 (0.50%)
+   🟠 Só Soma (S): 1 (0.17%)
+   ❌ Nenhum acertou (N): 11 (1.83%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: +0.0033
+   F1-Score: +0.0033
+   Recall: +0.0033
+   Precision: +0.0035
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (3 imagens):
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (1 imagens):
+   • peperomia_blanda03_CEN00041556: Real=0, Relevância=1, Soma=0
+
+❌ Nenhum Acertou (11 imagens):
+   • peperomia_blanda11_MBM069652: Real=0, Relevância=1, Soma=1
+   • peperomia_blanda15_MBM193318: Real=0, Relevância=1, Soma=1
+   • peperomia_catharinae15_MBM045103: Real=0, Relevância=1, Soma=1
+   • peperomia_glabella31_NY00559163_01: Real=0, Relevância=1, Soma=1
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa02_ALCB002439: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_lpq_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_lpq_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: svm_lbp_results.csv
+   🏷️  Modelo: SVM_LBP
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: SVM_LBP
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[0.5547 0.4453]
+ [0.402  0.598 ]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 299 imagens (49.83%)
+      1 (cat): 301 imagens (50.17%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9816666666666667, 0.9816666157405993, 0.9816666666666667, 0.9816720185779841)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 98.1667%
+   📊 F1: 98.1667%
+   📊 Recall: 98.1667%
+   📊 Precision: 98.1672%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: SVM_LBP
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Purples
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lbp_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lbp_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 98.17%
+   • F1-Score: 98.17%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lbp_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lbp_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: SVM_LBP
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 588 (98.00%)
+      R (Só Relevância): 1 (0.17%)
+      S (Só Soma): 1 (0.17%)
+      N (Nenhum acertou): 10 (1.67%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_divergences.csv
+   📊 12 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: SVM_LBP
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 588 (98.00%)
+   🟡 Só Relevância (R): 1 (0.17%)
+   🟠 Só Soma (S): 1 (0.17%)
+   ❌ Nenhum acertou (N): 10 (1.67%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: +0.0000
+   F1-Score: +0.0000
+   Recall: +0.0000
+   Precision: +0.0000
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (1 imagens):
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (1 imagens):
+   • peperomia_urocarpa53_NY00555546_01: Real=0, Relevância=1, Soma=0
+
+❌ Nenhum Acertou (10 imagens):
+   • peperomia_blanda15_MBM193318: Real=0, Relevância=1, Soma=1
+   • peperomia_glabella06_INPA0112935: Real=0, Relevância=1, Soma=1
+   • peperomia_glabella31_NY00559163_01: Real=0, Relevância=1, Soma=1
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_caldense13_MBM076454: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum05_FURB38062: Real=1, Relevância=0, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lbp_divergences.csv
+================================================================================
+
+--------------------------------------------------------------------------------
+🔄 Processando: svm_lpq_results.csv
+   🏷️  Modelo: SVM_LPQ
+--------------------------------------------------------------------------------
+
+================================================================================
+🚀 PIPELINE: CLASSIFICAÇÃO POR SOMA DE PROBABILIDADES
+================================================================================
+   📁 CSV de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lpq_results.csv
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🏷️  Modelo: SVM_LPQ
+================================================================================
+
+📖 ETAPA 2: Leitura do CSV de entrada
+   📁 Arquivo: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lpq_results.csv
+------------------------------------------------------------
+   ✅ 600 imagens lidas com sucesso
+   📊 Exemplo de dados (primeira imagem):
+      - Imagem: peperomia_blanda01_ALCB002274
+      - Label real: 0
+      - Label predito (relevância): 0
+      - Shape probabilidades: (9, 2)
+      - Primeiras probabilidades:
+        [[0.9678 0.0322]
+ [0.3299 0.6701]]
+============================================================
+
+🔄 ETAPA 5: Processamento de todas as imagens
+   📊 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 imagens processadas com sucesso
+   📊 Labels preditos: 600
+   📊 Somas calculadas: 600
+   📊 Labels reais: 600
+
+   📈 Distribuição de predições:
+      0 (dog): 299 imagens (49.83%)
+      1 (cat): 301 imagens (50.17%)
+============================================================
+
+📊 ETAPA 6: Cálculo de métricas globais
+   📈 Total de amostras: 600
+------------------------------------------------------------
+   ✅ Amostras processadas: 600
+
+(0.9783333333333334, 0.978333273147981, 0.9783333333333333, 0.9783386482072023)
+########################################
+Métricas Finais Soma Soma de Probabilidades:
+   📊 Acurácia: 97.8333%
+   📊 F1: 97.8333%
+   📊 Recall: 97.8333%
+   📊 Precision: 97.8339%
+----------------------------------------
+As métricas dos especialistas são as mesmas da técnica de relevância.
+########################################
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: SVM_LPQ
+   📁 Diretório base: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+   🎨 Colormap: Purples
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lpq_confusion_matrix.png
+============================================================
+
+📊 ETAPA 8: Exportação para CSV
+   📁 Arquivo de saída: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lpq_results.csv
+   📈 Total de imagens: 600
+------------------------------------------------------------
+   ✅ 600 linhas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lpq_results.csv
+============================================================
+
+📊 ETAPA 8.1: Exportação de métricas intermediárias (SumProb)
+   📁 Metrics (relevância) de entrada: results/experiments/peppers/experimento_20260207_150106_two_rel/csv_exports/svm_lpq_metrics.csv
+   ✅ 13 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lpq_sumprob_metrics.csv
+============================================================
+
+================================================================================
+🎉 PIPELINE CONCLUÍDO COM SUCESSO!
+================================================================================
+📊 Resumo dos Resultados:
+   • Total de imagens: 600
+   • Acurácia: 97.83%
+   • F1-Score: 97.83%
+
+📁 Arquivos Gerados:
+   • CSV: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/csv_exports/svm_lpq_results.csv
+   • Matriz de Confusão: results/experiments/peppers/experimento_20260207_150106_two_rel/sum/confusion_matrixs/svm_lpq_confusion_matrix.png
+================================================================================
+
+
+🔄 Gerando CSV comparativo...
+
+================================================================================
+📊 ETAPA 9: GERAÇÃO DE CSV COMPARATIVO
+================================================================================
+   📂 Diretório de saída: results/experiments/peppers/experimento_20260207_150106_two_rel
+   🏷️  Modelo: SVM_LPQ
+================================================================================
+
+📖 ETAPA 9.1: Preparação dos dados
+------------------------------------------------------------
+   ✅ 600 imagens da técnica de relevância
+   ✅ 600 imagens da técnica de soma
+============================================================
+
+🔍 ETAPA 9.2: Validação de Consistência
+------------------------------------------------------------
+   ✅ Conjuntos de imagens coincidem: 600 imagens
+   ✅ Labels reais consistentes
+============================================================
+
+🔄 ETAPA 9.3: Processamento e Comparação
+------------------------------------------------------------
+   ✅ 600 linhas processadas
+   📊 Estatísticas de acerto:
+      C (Ambos acertaram): 585 (97.50%)
+      R (Só Relevância): 3 (0.50%)
+      S (Só Soma): 2 (0.33%)
+      N (Nenhum acertou): 10 (1.67%)
+============================================================
+
+💾 ETAPA 9.4: Exportação do CSV de Comparação
+------------------------------------------------------------
+   ✅ CSV de comparação salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lpq_comparison.csv
+   📊 600 linhas escritas
+============================================================
+
+💾 ETAPA 9.5: Exportação do CSV de Divergências
+------------------------------------------------------------
+   ✅ CSV de divergências salvo: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lpq_divergences.csv
+   📊 15 linhas escritas
+============================================================
+
+================================================================================
+📊 RESUMO DA COMPARAÇÃO
+================================================================================
+
+🎯 Modelo: SVM_LPQ
+📈 Total de imagens: 600
+
+📊 Distribuição de Acertos:
+------------------------------------------------------------
+   ✅ Ambos acertaram (C): 585 (97.50%)
+   🟡 Só Relevância (R): 3 (0.50%)
+   🟠 Só Soma (S): 2 (0.33%)
+   ❌ Nenhum acertou (N): 10 (1.67%)
+
+📈 Diferenças Médias (Relevância - Soma):
+------------------------------------------------------------
+   Acurácia: +0.0017
+   F1-Score: +0.0017
+   Recall: +0.0017
+   Precision: +0.0019
+
+📋 Imagens com Divergências:
+------------------------------------------------------------
+
+🟡 Só Relevância Acertou (3 imagens):
+   • piper_xylosteoides01_CEN00041546: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides07_CEN00051635: Real=1, Relevância=1, Soma=0
+   • piper_xylosteoides15_INPA0240893: Real=1, Relevância=1, Soma=0
+
+🟠 Só Soma Acertou (2 imagens):
+   • peperomia_catharinae15_MBM045103: Real=0, Relevância=1, Soma=0
+   • peperomia_urocarpa02_ALCB002439: Real=0, Relevância=1, Soma=0
+
+❌ Nenhum Acertou (10 imagens):
+   • peperomia_blanda03_CEN00041556: Real=0, Relevância=1, Soma=1
+   • peperomia_blanda11_MBM069652: Real=0, Relevância=1, Soma=1
+   • peperomia_blanda15_MBM193318: Real=0, Relevância=1, Soma=1
+   • peperomia_glabella31_NY00559163_01: Real=0, Relevância=1, Soma=1
+   • peperomia_martiana12_MBM045115: Real=0, Relevância=1, Soma=1
+   • peperomia_rotundifolia18_MBM296746: Real=0, Relevância=1, Soma=1
+   • peperomia_urocarpa12_INPA0112958_e1: Real=0, Relevância=1, Soma=1
+   • piper_amalago07_HDJF001296_01: Real=1, Relevância=0, Soma=0
+   • piper_gaudichaudianum104_NY00556539_01: Real=1, Relevância=0, Soma=0
+   • piper_mikanianum14_MBM044903: Real=1, Relevância=0, Soma=0
+
+📁 Arquivos Gerados:
+------------------------------------------------------------
+   • Comparação: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lpq_comparison.csv
+   • Divergências: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/svm_lpq_divergences.csv
+================================================================================
+
+
+================================================================================
+🎉 PROCESSAMENTO EM LOTE CONCLUÍDO!
+================================================================================
+   ✅ Processados com sucesso: 14/14
+   📂 Resultados salvos em: results/experiments/peppers/experimento_20260207_150106_two_rel/sum
+
+📊 Resumo das Métricas:
+--------------------------------------------------------------------------------
+   • KNN_GLCM:
+      - Acurácia: 97.17%
+      - F1-Score: 97.17%
+   • KNN_GLCM_LPQ:
+      - Acurácia: 97.17%
+      - F1-Score: 97.17%
+   • KNN_LBP:
+      - Acurácia: 96.00%
+      - F1-Score: 95.99%
+   • KNN_LBP_GLCM:
+      - Acurácia: 97.50%
+      - F1-Score: 97.50%
+   • KNN_LBP_GLCM_LPQ:
+      - Acurácia: 97.17%
+      - F1-Score: 97.17%
+   • KNN_LBP_LPQ:
+      - Acurácia: 96.00%
+      - F1-Score: 96.00%
+   • KNN_LPQ:
+      - Acurácia: 95.83%
+      - F1-Score: 95.83%
+   • SVM_GLCM:
+      - Acurácia: 97.33%
+      - F1-Score: 97.33%
+   • SVM_GLCM_LPQ:
+      - Acurácia: 97.67%
+      - F1-Score: 97.67%
+   • SVM_LBP:
+      - Acurácia: 98.17%
+      - F1-Score: 98.17%
+   • SVM_LBP_GLCM:
+      - Acurácia: 98.17%
+      - F1-Score: 98.17%
+   • SVM_LBP_GLCM_LPQ:
+      - Acurácia: 98.00%
+      - F1-Score: 98.00%
+   • SVM_LBP_LPQ:
+      - Acurácia: 97.67%
+      - F1-Score: 97.67%
+   • SVM_LPQ:
+      - Acurácia: 97.83%
+      - F1-Score: 97.83%
+
+📋 CSVs de Comparação Gerados:
+--------------------------------------------------------------------------------
+   ✅ 14 comparações geradas
+   📂 Diretório: results/experiments/peppers/experimento_20260207_150106_two_rel/comp/csv_exports/
+================================================================================
+
