@@ -38,6 +38,25 @@ class FoldDataFull(TypedDict):
     train_total: int
     test_total: int
 
+
+# ---- Estruturas auxiliares para folds globais por imagem ----
+
+class ImageFoldStructure(TypedDict):
+    """Estrutura global de folds no nível de imagem.
+
+    Usada para garantir que TODOS os especialistas (e TODOS os conjuntos de features)
+    compartilhem exatamente as mesmas imagens de treino/teste em cada fold.
+    """
+
+    fold_id: int
+    train_images: List[str]
+    test_images: List[str]
+    train_true_map: Dict[str, int]
+    test_true_map: Dict[str, int]
+
+
+ImageFoldsStructure = List[ImageFoldStructure]
+
 class TrainMetricData(TypedDict):
     """Estrutura de dados para consolidar resultados de uma métrica após o treino"""
     folds: List[float]
@@ -106,5 +125,18 @@ RelevanceResults = Tuple[
     PredictResults,
     ModelLabels,
     ExperimentMetrics,
+]
+
+# ---- Cross-validation (técnica de relevância por fold) ----
+
+RelevanceCVTrainMetrics = TrainMetrics
+RelevanceFoldResults = List[RelevanceResults]
+
+# (global_relevance_results, cv_model_metrics, fold_results, fold_model_metrics)
+RelevanceCrossResults = Tuple[
+    RelevanceResults,
+    TrainMetrics,
+    List[RelevanceResults],
+    List[ModelMetrics],
 ]
 

@@ -7,7 +7,7 @@ import zipfile
 from datetime import datetime
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-from typing import List, Tuple, Dict
+from typing import List, Tuple, Dict, Optional
 from sklearn.base import BaseEstimator, clone
 
 from sklearn.metrics import (
@@ -33,14 +33,51 @@ from tools.image_tools import reconstruct_image_from_regions
 from mytypes import (
     PreparedSetsForClassification,
     ClassificationDataset,
+    ClassificationFold,
     RelevanceModelResults,
     PredictResults,
     ModelMetrics,
     ModelLabels,
     RelevanceResults,
     ResultsKeyDict,
-    RelevanceTrainResults
+    RelevanceTrainResults,
+    TrainMetrics,
+    SpecialistsTrainMetrics,
+    RelevanceCrossResults,
 )
+
+
+def relevance_core_from_probabilities(
+    probabilities: ResultsKeyDict,
+) -> Tuple[
+    ResultsKeyDict,
+    ResultsKeyDict,
+    ResultsKeyDict,
+    ResultsKeyDict,
+    ResultsKeyDict,
+    PredictResults,
+]:
+    """Core puro da técnica de relevância.
+
+    Recebe probabilidades já normalizadas (por segmento) e retorna todos
+    os dicionários intermediários + labels preditos, sem acessar dados de treino.
+    """
+
+    entropies = shannon_entropy(probabilities)
+    relevances = calculate_relevance(entropies)
+    max_relevances = calculate_max_relevance(relevances, probabilities)
+    ponderated_votes = calculate_ponderate_votes(probabilities, max_relevances)
+    accumulated_votes = calculate_accumulated_votes(ponderated_votes)
+    predicted_labels = predict_labels(accumulated_votes)
+
+    return (
+        entropies,
+        relevances,
+        max_relevances,
+        ponderated_votes,
+        accumulated_votes,
+        predicted_labels,
+    )
 
 def calculate_intermediary_metrics(
     y_test, predict
@@ -117,7 +154,8 @@ def extract_model_results(
         fold_model.fit(X_train, y_train)
 
         print(f"\n~~ Fold {fold_index + 1} ~~")
-        print("Melhores parâmetros:", fold_model.best_params_)
+        if hasattr(fold_model, "best_params_"):
+            print("Melhores parâmetros:", fold_model.best_params_)
 
         predict_probabilities = fold_model.predict_proba(X_test)
         predict_results = fold_model.predict(X_test)
@@ -152,6 +190,65 @@ def extract_model_results(
     return (probabilities, train_metrics)
 
 
+def extract_model_results_single_fold(
+    base_model: BaseEstimator,
+    fold: ClassificationFold,
+    title: str = "",
+    fold_index: int = 0,
+) -> Tuple[ResultsKeyDict, ModelMetrics]:
+    """Treina/prediz em um único fold e retorna probabilidades por imagem.
+
+    Retorna somente as probabilidades do teste no formato {img_id: [p_seg0, ...]}
+    e as métricas do fold no formato (acc, f1, recall, precision).
+    """
+
+    (train_set, test_set) = fold
+    X_train, y_train, _train_pieces_map = train_set
+    X_test, y_test, test_pieces_map = test_set
+
+    probabilities: ResultsKeyDict = {}
+
+    fold_model = clone(base_model)
+    fold_model.fit(X_train, y_train)
+
+    if title:
+        print(f"\n~~ Fold {fold_index + 1} ~~ {title}")
+    else:
+        print(f"\n~~ Fold {fold_index + 1} ~~")
+
+    if hasattr(fold_model, "best_params_"):
+        print("Melhores parâmetros:", fold_model.best_params_)
+
+    predict_probabilities = fold_model.predict_proba(X_test)
+    predict_results = fold_model.predict(X_test)
+
+    for i, p in enumerate(predict_probabilities):
+        img = test_pieces_map[i]
+        if probabilities.get(img) is None:
+            probabilities[img] = []
+        probabilities[img].append(p[0])
+
+    metrics = calculate_intermediary_metrics(y_test, predict_results)
+    show_metrics(metrics, title=f"Fold {fold_index + 1} - {title}" if title else f"Fold {fold_index + 1}")
+    return probabilities, metrics
+
+
+def calculate_cv_metrics_from_folds(fold_model_metrics: List[ModelMetrics]) -> TrainMetrics:
+    """Agrega métricas finais de K folds no formato TrainMetrics (mean/std/folds)."""
+
+    intermediary_metrics = {
+        "accuracies": [m[0] for m in fold_model_metrics],
+        "f1s": [m[1] for m in fold_model_metrics],
+        "recalls": [m[2] for m in fold_model_metrics],
+        "precisions": [m[3] for m in fold_model_metrics],
+    }
+    return calculate_train_metrics(intermediary_metrics)
+
+
+def _calculate_train_metrics_from_model_metrics_list(metrics_list: List[ModelMetrics]) -> TrainMetrics:
+    return calculate_cv_metrics_from_folds(metrics_list)
+
+
 def consolidate_model_results(specialists_results: List[ResultsKeyDict]) -> ResultsKeyDict:
     """
     Consolida resultados de múltiplos folds em um único dicionário.
@@ -162,22 +259,40 @@ def consolidate_model_results(specialists_results: List[ResultsKeyDict]) -> Resu
     Returns:
         Dicionário consolidado {img_id: [[specialist0_prob_segment_0, specialist0_prob_segment_1, ...], [specialist1_prob_segment_0, ...], ...]}
     """
-    all_images = set()
-    for specialist_results in specialists_results:
-        all_images.update(specialist_results.keys())
+    if not specialists_results:
+        return {}
 
-    consolidated = {}
+    base_images = set(specialists_results[0].keys())
+    for sp_idx, sp_results in enumerate(specialists_results[1:], start=1):
+        sp_images = set(sp_results.keys())
+        if sp_images != base_images:
+            missing = sorted(list(base_images - sp_images))
+            extra = sorted(list(sp_images - base_images))
+            raise ValueError(
+                "Folds desalinhados entre especialistas: o conjunto de imagens preditas difere. "
+                f"Especialista {sp_idx}: missing={len(missing)} extra={len(extra)}. "
+                f"Exemplos missing={missing[:10]} extra={extra[:10]}. "
+                "Gere os conjuntos usando folds globais por imagem (ex: prepare_specialist_sets_from_image_folds)."
+            )
 
-    for img in all_images:
-        img_probs = []
+    consolidated: ResultsKeyDict = {}
+    for img in base_images:
+        img_probs: List[List[float]] = []
+        expected_len = None
 
-        for results in specialists_results:
-            probs = results.get(img)
-            img_probs.append(probs if probs is not None else [])
+        for sp_idx, results in enumerate(specialists_results):
+            probs = results[img]
+            if expected_len is None:
+                expected_len = len(probs)
+            elif len(probs) != expected_len:
+                raise ValueError(
+                    "Inconsistência no número de probabilidades por imagem entre especialistas. "
+                    f"Imagem='{img}', especialista={sp_idx}, len={len(probs)}, esperado={expected_len}. "
+                    "Isso normalmente indica que o fold não foi construído no nível de imagem/segmentos de forma alinhada."
+                )
+            img_probs.append(probs)
 
-        consolidated[img] = np.array(
-            img_probs
-        ).T  # Transpõe para ter shape (n_probabilities, n_specialists)
+        consolidated[img] = np.asarray(img_probs, dtype=float).T
 
     return consolidated
 
@@ -252,6 +367,38 @@ def extract_specialists_probabilities(
     images_probabilities = consolidate_model_results(extracted_probabilities)
 
     return normalize_probabilities(images_probabilities), specialists_train_metrics
+
+
+def extract_specialists_probabilities_single_fold(
+    base_model: BaseEstimator,
+    specialist_sets: PreparedSetsForClassification,
+    class_names: List[str],
+    model_name: str,
+    fold_index: int,
+) -> Tuple[ResultsKeyDict, List[ModelMetrics]]:
+    """Extrai probabilidades normalizadas (teste) de todos especialistas em um fold."""
+
+    extracted_probabilities: List[ResultsKeyDict] = []
+    specialists_fold_metrics: List[ModelMetrics] = []
+
+    print(f"\n=== Fold {fold_index + 1}: treinamento single-fold ({model_name}) ===")
+    for i, dataset in enumerate(specialist_sets):
+        class_name = class_names[i]
+        specialist_title = f"{model_name}-Specialist-{class_name}"
+
+        fold = dataset[fold_index]
+        specialist_probabilities, specialist_metrics = extract_model_results_single_fold(
+            base_model=base_model,
+            fold=fold,
+            title=specialist_title,
+            fold_index=fold_index,
+        )
+
+        extracted_probabilities.append(specialist_probabilities)
+        specialists_fold_metrics.append(specialist_metrics)
+
+    images_probabilities = consolidate_model_results(extracted_probabilities)
+    return normalize_probabilities(images_probabilities), specialists_fold_metrics
 
 
 def normalize_probabilities(probabilities: ResultsKeyDict) -> ResultsKeyDict:
@@ -834,7 +981,8 @@ def export_relevance_results_to_csv(
     true_labels: PredictResults,
     model_name: str,
     output_dir: str = "results",
-    filename: str = None
+    filename: str = None,
+    cv_model_metrics: Optional[TrainMetrics] = None,
 ) -> str:
     """
     Exporta os resultados da técnica de relevância para um arquivo CSV.
@@ -986,6 +1134,49 @@ def export_relevance_results_to_csv(
             "precision_std (+- %)": "###",
         }
     )
+
+    # CV do método (mean/std + folds)
+    if cv_model_metrics is not None:
+        cv_acc = cv_model_metrics["accuracy"]
+        cv_f1 = cv_model_metrics["f1"]
+        cv_recall = cv_model_metrics["recall"]
+        cv_precision = cv_model_metrics["precision"]
+
+        metrics_rows.append(
+            {
+                "model": f"{tag_prefix}_mean",
+                "accuracy (%)": fmt_num(to_percent(cv_acc["mean"])),
+                "accuracy_std (+- %)": fmt_std(to_percent(cv_acc["std"])),
+                "f1_score (%)": fmt_num(to_percent(cv_f1["mean"])),
+                "f1_score_std (+- %)": fmt_std(to_percent(cv_f1["std"])),
+                "recall (%)": fmt_num(to_percent(cv_recall["mean"])),
+                "recall_std (+- %)": fmt_std(to_percent(cv_recall["std"])),
+                "precision (%)": fmt_num(to_percent(cv_precision["mean"])),
+                "precision_std (+- %)": fmt_std(to_percent(cv_precision["std"])),
+            }
+        )
+
+        folds_count = min(
+            len(cv_acc.get("folds", [])),
+            len(cv_f1.get("folds", [])),
+            len(cv_recall.get("folds", [])),
+            len(cv_precision.get("folds", [])),
+        )
+
+        for fold_idx in range(folds_count):
+            metrics_rows.append(
+                {
+                    "model": f"{tag_prefix}_fold{fold_idx + 1}",
+                    "accuracy (%)": fmt_num(to_percent(cv_acc["folds"][fold_idx])),
+                    "accuracy_std (+- %)": "###",
+                    "f1_score (%)": fmt_num(to_percent(cv_f1["folds"][fold_idx])),
+                    "f1_score_std (+- %)": "###",
+                    "recall (%)": fmt_num(to_percent(cv_recall["folds"][fold_idx])),
+                    "recall_std (+- %)": "###",
+                    "precision (%)": fmt_num(to_percent(cv_precision["folds"][fold_idx])),
+                    "precision_std (+- %)": "###",
+                }
+            )
 
     # Especialistas: mean/std + folds
     for sp_idx, train_metrics in enumerate(specialists_train_metrics):
@@ -1202,17 +1393,14 @@ def relevance_technique(
         k_folds=k_folds,
     )
 
-    entropies = shannon_entropy(probabilities)
-
-    relevances = calculate_relevance(entropies)
-
-    max_relevances = calculate_max_relevance(relevances, probabilities)
-
-    ponderated_votes = calculate_ponderate_votes(probabilities, max_relevances)
-
-    accumulated_votes = calculate_accumulated_votes(ponderated_votes)
-
-    predicted_labels = predict_labels(accumulated_votes)
+    (
+        entropies,
+        relevances,
+        max_relevances,
+        ponderated_votes,
+        accumulated_votes,
+        predicted_labels,
+    ) = relevance_core_from_probabilities(probabilities)
 
     labels_list, model_metrics = compute_metrics(
         true_labels, predicted_labels
@@ -1229,3 +1417,221 @@ def relevance_technique(
         labels_list,
         (model_metrics, specialists_train_metrics)
     )
+
+def relevance_technique_cross(
+    base_model: BaseEstimator,
+    specialist_sets: PreparedSetsForClassification,
+    class_names: List[str],
+    true_labels: PredictResults,
+    model_name: str = "Specialist",
+    k_folds: int = 5,
+) -> RelevanceCrossResults:
+    """
+    Aplica a técnica de relevância para classificar imagens usando um modelo base e conjuntos de especialistas.
+
+    Args:
+        base_model: modelo base a ser utilizado para classificação
+        specialist_sets: conjuntos de especialistas preparados para classificação
+        class_names: nomes das classes para a tarefa de classificação
+        model_name: nome do modelo a ser utilizado (padrão: "Specialist")
+        k_folds: número de dobras para validação cruzada (padrão: 5)
+
+    Returns:
+        resultados: resultados da classificação
+    """
+
+    if len(specialist_sets) == 0:
+        raise ValueError("specialist_sets vazio")
+
+    k_folds_real = len(specialist_sets[0])
+    if k_folds != k_folds_real:
+        print(
+            f"⚠️  k_folds={k_folds} ignorado; usando k_folds_real={k_folds_real} (do dataset)."
+        )
+    k_folds = k_folds_real
+
+    for sp_idx, dataset in enumerate(specialist_sets):
+        if len(dataset) != k_folds_real:
+            raise ValueError(
+                f"Especialista {sp_idx} tem {len(dataset)} folds; esperado {k_folds_real}."
+            )
+
+    fold_results: List[RelevanceResults] = []
+    fold_model_metrics: List[ModelMetrics] = []
+
+    # Buffers por especialista para agregar mean/std/folds
+    specialists_metrics_buffer: List[List[ModelMetrics]] = [
+        [] for _ in range(len(specialist_sets))
+    ]
+
+    # Dicionários globais (merge por chave de imagem)
+    probabilities_global: ResultsKeyDict = {}
+    entropies_global: ResultsKeyDict = {}
+    relevances_global: ResultsKeyDict = {}
+    max_relevances_global: ResultsKeyDict = {}
+    ponderated_votes_global: ResultsKeyDict = {}
+    accumulated_votes_global: ResultsKeyDict = {}
+    predicted_labels_global: PredictResults = {}
+
+    for fold_index in range(k_folds_real):
+        probabilities_fold, specialists_metrics_fold = (
+            extract_specialists_probabilities_single_fold(
+                base_model=base_model,
+                specialist_sets=specialist_sets,
+                class_names=class_names,
+                model_name=model_name,
+                fold_index=fold_index,
+            )
+        )
+
+        for sp_idx, sp_metrics in enumerate(specialists_metrics_fold):
+            specialists_metrics_buffer[sp_idx].append(sp_metrics)
+
+        (
+            entropies_fold,
+            relevances_fold,
+            max_relevances_fold,
+            ponderated_votes_fold,
+            accumulated_votes_fold,
+            predicted_labels_fold,
+        ) = relevance_core_from_probabilities(probabilities_fold)
+
+        # Métricas do fold (apenas imagens deste fold)
+        true_labels_fold = {img: true_labels[img] for img in predicted_labels_fold.keys()}
+        labels_list_fold, model_metrics_fold = compute_metrics(true_labels_fold, predicted_labels_fold)
+
+        fold_model_metrics.append(model_metrics_fold)
+
+        fold_results.append(
+            (
+                probabilities_fold,
+                entropies_fold,
+                relevances_fold,
+                max_relevances_fold,
+                ponderated_votes_fold,
+                accumulated_votes_fold,
+                predicted_labels_fold,
+                labels_list_fold,
+                (model_metrics_fold, []),
+            )
+        )
+
+        # Merge globais (folds disjuntos por imagem)
+        for k, v in probabilities_fold.items():
+            if k in probabilities_global:
+                raise ValueError(f"Imagem repetida entre folds: {k}")
+            probabilities_global[k] = v
+        for k, v in entropies_fold.items():
+            entropies_global[k] = v
+        for k, v in relevances_fold.items():
+            relevances_global[k] = v
+        for k, v in max_relevances_fold.items():
+            max_relevances_global[k] = v
+        for k, v in ponderated_votes_fold.items():
+            ponderated_votes_global[k] = v
+        for k, v in accumulated_votes_fold.items():
+            accumulated_votes_global[k] = v
+        for k, v in predicted_labels_fold.items():
+            predicted_labels_global[k] = v
+
+    # Agrega métricas CV do método
+    cv_model_metrics = calculate_cv_metrics_from_folds(fold_model_metrics)
+
+    # Métrica global final (merge)
+    labels_list_global, global_model_metrics = compute_metrics(true_labels, predicted_labels_global)
+
+    # Métricas de treino dos especialistas (agregadas ao longo dos folds)
+    specialists_train_metrics: SpecialistsTrainMetrics = []
+    for sp_idx, metrics_list in enumerate(specialists_metrics_buffer):
+        specialists_train_metrics.append(_calculate_train_metrics_from_model_metrics_list(metrics_list))
+
+    global_relevance_results: RelevanceResults = (
+        probabilities_global,
+        entropies_global,
+        relevances_global,
+        max_relevances_global,
+        ponderated_votes_global,
+        accumulated_votes_global,
+        predicted_labels_global,
+        labels_list_global,
+        (global_model_metrics, specialists_train_metrics),
+    )
+
+    return (global_relevance_results, cv_model_metrics, fold_results, fold_model_metrics)
+
+
+def export_relevance_cross_results_to_csv(
+    cross_results: RelevanceCrossResults,
+    true_labels: PredictResults,
+    model_name: str,
+    output_dir: str = "results",
+) -> Dict[str, str]:
+    """Exporta resultado cross: CSV global + CSV por fold.
+
+    Retorna dict com caminhos: {"global": <path>, "fold1": <path>, ...}.
+    """
+
+    global_results, cv_model_metrics, fold_results, _fold_model_metrics = cross_results
+
+    paths: Dict[str, str] = {}
+    paths["global"] = export_relevance_results_to_csv(
+        relevance_results=global_results,
+        true_labels=true_labels,
+        model_name=model_name,
+        output_dir=output_dir,
+        cv_model_metrics=cv_model_metrics,
+    )
+
+    for idx, fold_res in enumerate(fold_results):
+        fold_name = f"{model_name}_fold{idx + 1}"
+        paths[f"fold{idx + 1}"] = export_relevance_results_to_csv(
+            relevance_results=fold_res,
+            true_labels=true_labels,
+            model_name=fold_name,
+            output_dir=output_dir,
+        )
+
+    return paths
+
+
+def generate_relevance_heatmaps_by_fold(
+    fold_results: List[RelevanceResults],
+    all_images_segmented: Dict[str, np.ndarray],
+    model_name: str,
+    results_dir: str = "results",
+    colormap: str = "viridis",
+    overlay_alpha: float = 0.5,
+    save_grid_lines: bool = True,
+    verbose: bool = False,
+) -> None:
+    """Gera heatmaps por fold usando o mesmo pipeline de `generate_relevance_heatmaps`."""
+
+    for idx, fold_res in enumerate(fold_results):
+        (
+            _probabilities,
+            _entropies,
+            _relevances,
+            max_relevances_fold,
+            _ponderated_votes,
+            _accumulated_votes,
+            predicted_labels_fold,
+            _labels_list,
+            _metrics,
+        ) = fold_res
+
+        segmented_subset = {
+            img_id: all_images_segmented[img_id]
+            for img_id in predicted_labels_fold.keys()
+            if img_id in all_images_segmented
+        }
+
+        generate_relevance_heatmaps(
+            max_relevances=max_relevances_fold,
+            all_images_segmented=segmented_subset,
+            model_name=f"{model_name}_fold{idx + 1}",
+            colormap=colormap,
+            overlay_alpha=overlay_alpha,
+            save_grid_lines=save_grid_lines,
+            results_dir=results_dir,
+            verbose=verbose,
+        )

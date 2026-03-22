@@ -1,0 +1,2177 @@
+MIN_K: 4, MAX_K: 20, BASE_SIZE: 512, BASE_K: 9
+Auto-segmenting 30 images from category 'dogs' (K range: 4-20)...
+  Generated average 9.0 regions per image
+dogs: 270 regions total
+Auto-segmenting 30 images from category 'cats' (K range: 4-20)...
+  Generated average 9.0 regions per image
+cats: 270 regions total
+Auto-segmenting 30 images from category 'lions' (K range: 4-20)...
+  Generated average 9.0 regions per image
+lions: 270 regions total
+Auto-segmenting 30 images from category 'horses' (K range: 4-20)...
+  Generated average 9.0 regions per image
+horses: 270 regions total
+Categoria: dogs, Número de elementos: 30
+Categoria: cats, Número de elementos: 30
+Categoria: lions, Número de elementos: 30
+Categoria: horses, Número de elementos: 30
+Categoria: dogs, Número de elementos: 30
+Categoria: cats, Número de elementos: 30
+Categoria: lions, Número de elementos: 30
+Categoria: horses, Número de elementos: 30
+Categoria: dogs, Número de elementos: 30
+Categoria: cats, Número de elementos: 30
+Categoria: lions, Número de elementos: 30
+Categoria: horses, Número de elementos: 30
+==================================================
+RESUMO DOS CONJUNTOS DE FEATURES
+==================================================
+📊 Total de imagens: 120
+🔧 Total de conjuntos gerados: 7
+📋 Labels únicos: {'horses', 'dogs', 'lions', 'cats'}
+
+🔹 LBP:
+   📁 Imagens: 120
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 1080
+   🎯 Features por segmento: 59
+   📈 Total features por imagem: 531
+
+🔹 GLCM:
+   📁 Imagens: 120
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 1080
+   🎯 Features por segmento: 72
+   📈 Total features por imagem: 648
+
+🔹 LPQ:
+   📁 Imagens: 120
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 1080
+   🎯 Features por segmento: 256
+   📈 Total features por imagem: 2304
+
+🔹 LBP+GLCM:
+   📁 Imagens: 120
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 1080
+   🎯 Features por segmento: 131
+   📈 Total features por imagem: 1179
+
+🔹 LBP+LPQ:
+   📁 Imagens: 120
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 1080
+   🎯 Features por segmento: 315
+   📈 Total features por imagem: 2835
+
+🔹 GLCM+LPQ:
+   📁 Imagens: 120
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 1080
+   🎯 Features por segmento: 328
+   📈 Total features por imagem: 2952
+
+🔹 LBP+GLCM+LPQ:
+   📁 Imagens: 120
+   🧩 Segmentos por imagem: 9
+   🧱 Total de segmentos do conjunto: 1080
+   🎯 Features por segmento: 387
+   📈 Total features por imagem: 3483
+
+==================================================
+Limpando variáveis desnecessárias...
+Variáveis antes da limpeza: 69 variáveis locais
+  ✓ Removida: segmented_train_images
+  ✓ Removida: lbps_by_categories
+  ✓ Removida: glcms_by_category
+  ✓ Removida: radius
+  ✓ Removida: n_pixels
+  ✓ Removida: n_examples
+
+✓ Limpeza concluída!
+  - 6 variáveis removidas
+  - Memória liberada pela coleta de lixo
+  - Variáveis após limpeza: 66 variáveis locais
+
+📋 Principais variáveis mantidas:
+  ✓ image_categories: list (tamanho: 4)
+  ✓ train_images_by_categories: dict (tamanho: 4)
+  ✓ labels: list (tamanho: 120)
+  ✓ GLCM_DISTANCES: list (tamanho: 3)
+  ✓ GLCM_ANGLES: ndarray (4,)
+  ✓ GLCM_FEATURES: list (tamanho: 6)
+
+💡 Variáveis limpas com sucesso! Agora você pode prosseguir com o treinamento dos modelos.
+🔄 Nova estrutura: combined_sets contém todos os conjuntos de features combinados.
+Classes: ['dogs', 'cats', 'lions', 'horses']
+📊 Total de imagens: 120
+📊 Total de classes: 4
+🔄 Dividindo em 5 folds...
+  Classe 0: 30 imagens
+  Classe 1: 30 imagens
+  Classe 2: 30 imagens
+  Classe 3: 30 imagens
+  Fold 0: [6, 6, 6, 6] (total: 24)
+  Fold 1: [6, 6, 6, 6] (total: 24)
+  Fold 2: [6, 6, 6, 6] (total: 24)
+  Fold 3: [6, 6, 6, 6] (total: 24)
+  Fold 4: [6, 6, 6, 6] (total: 24)
+
+🔧 Construindo fold 0...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 1...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 2...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 3...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🔧 Construindo fold 4...
+  ✅ Treino: 96 imagens
+  ✅ Teste: 24 imagens
+
+🎉 5 folds construídos com sucesso!
+Tunando parâmetros do KNN...
+Tunando parâmetros do Random Forest...
+Tunando SVM...
+🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS KNN ===
+
+📊 Calculando relevância LBP...
+
+=== Fold 1: treinamento single-fold (KNN-LBP) ===
+
+~~ Fold 1 ~~ KNN-LBP-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP-Specialist-dogs:
+   📊 Acurácia: 80.0926%
+   📊 F1: 86.8502%
+   📊 Recall: 87.6543%
+   📊 Precision: 86.0606%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP-Specialist-cats:
+   📊 Acurácia: 82.4074%
+   📊 F1: 89.0805%
+   📊 Recall: 95.6790%
+   📊 Precision: 83.3333%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP-Specialist-lions:
+   📊 Acurácia: 91.2037%
+   📊 F1: 94.2943%
+   📊 Recall: 96.9136%
+   📊 Precision: 91.8129%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP-Specialist-horses:
+   📊 Acurácia: 88.8889%
+   📊 F1: 92.8994%
+   📊 Recall: 96.9136%
+   📊 Precision: 89.2045%
+----------------------------------------
+
+=== Fold 2: treinamento single-fold (KNN-LBP) ===
+
+~~ Fold 2 ~~ KNN-LBP-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP-Specialist-dogs:
+   📊 Acurácia: 74.0741%
+   📊 F1: 83.5294%
+   📊 Recall: 87.6543%
+   📊 Precision: 79.7753%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP-Specialist-cats:
+   📊 Acurácia: 76.3889%
+   📊 F1: 84.2105%
+   📊 Recall: 83.9506%
+   📊 Precision: 84.4720%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP-Specialist-lions:
+   📊 Acurácia: 87.5000%
+   📊 F1: 91.9881%
+   📊 Recall: 95.6790%
+   📊 Precision: 88.5714%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP-Specialist-horses:
+   📊 Acurácia: 85.1852%
+   📊 F1: 90.5882%
+   📊 Recall: 95.0617%
+   📊 Precision: 86.5169%
+----------------------------------------
+
+=== Fold 3: treinamento single-fold (KNN-LBP) ===
+
+~~ Fold 3 ~~ KNN-LBP-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP-Specialist-dogs:
+   📊 Acurácia: 74.5370%
+   📊 F1: 82.9721%
+   📊 Recall: 82.7160%
+   📊 Precision: 83.2298%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP-Specialist-cats:
+   📊 Acurácia: 80.5556%
+   📊 F1: 87.7907%
+   📊 Recall: 93.2099%
+   📊 Precision: 82.9670%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP-Specialist-lions:
+   📊 Acurácia: 84.7222%
+   📊 F1: 90.3790%
+   📊 Recall: 95.6790%
+   📊 Precision: 85.6354%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP-Specialist-horses:
+   📊 Acurácia: 82.8704%
+   📊 F1: 88.7538%
+   📊 Recall: 90.1235%
+   📊 Precision: 87.4251%
+----------------------------------------
+
+=== Fold 4: treinamento single-fold (KNN-LBP) ===
+
+~~ Fold 4 ~~ KNN-LBP-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP-Specialist-dogs:
+   📊 Acurácia: 80.0926%
+   📊 F1: 87.0091%
+   📊 Recall: 88.8889%
+   📊 Precision: 85.2071%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP-Specialist-cats:
+   📊 Acurácia: 85.1852%
+   📊 F1: 90.7514%
+   📊 Recall: 96.9136%
+   📊 Precision: 85.3261%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP-Specialist-lions:
+   📊 Acurácia: 81.0185%
+   📊 F1: 87.2274%
+   📊 Recall: 86.4198%
+   📊 Precision: 88.0503%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP-Specialist-horses:
+   📊 Acurácia: 80.5556%
+   📊 F1: 87.8613%
+   📊 Recall: 93.8272%
+   📊 Precision: 82.6087%
+----------------------------------------
+
+=== Fold 5: treinamento single-fold (KNN-LBP) ===
+
+~~ Fold 5 ~~ KNN-LBP-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP-Specialist-dogs:
+   📊 Acurácia: 76.8519%
+   📊 F1: 85.1190%
+   📊 Recall: 88.2716%
+   📊 Precision: 82.1839%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP-Specialist-cats:
+   📊 Acurácia: 79.6296%
+   📊 F1: 87.1345%
+   📊 Recall: 91.9753%
+   📊 Precision: 82.7778%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP-Specialist-lions:
+   📊 Acurácia: 81.0185%
+   📊 F1: 87.1473%
+   📊 Recall: 85.8025%
+   📊 Precision: 88.5350%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP-Specialist-horses:
+   📊 Acurácia: 80.5556%
+   📊 F1: 88.0000%
+   📊 Recall: 95.0617%
+   📊 Precision: 81.9149%
+----------------------------------------
+⏱️ Tempo de execução (KNN-LBP): 4.03 s
+########################################
+Métricas Relevância CROSS KNN LBP:
+   🌐 Global - Acurácia: 84.1667% | F1: 84.1646% | Recall: 84.1667% | Precision: 84.1861%
+----------------------------------------
+   📈 Mean±Std - Acurácia: 84.1667% ± 6.1237% | F1: 84.2463% ± 6.0140% | Recall: 84.1667% ± 6.1237% | Precision: 85.9583% ± 5.3360%
+   🧩 Fold 1 - Acurácia: 95.8333% | F1: 95.8042% | Recall: 95.8333% | Precision: 96.4286%
+   🧩 Fold 2 - Acurácia: 79.1667% | F1: 79.5996% | Recall: 79.1667% | Precision: 81.4583%
+   🧩 Fold 3 - Acurácia: 79.1667% | F1: 79.3939% | Recall: 79.1667% | Precision: 83.3333%
+   🧩 Fold 4 - Acurácia: 83.3333% | F1: 83.2168% | Recall: 83.3333% | Precision: 84.2857%
+   🧩 Fold 5 - Acurácia: 83.3333% | F1: 83.2168% | Recall: 83.3333% | Precision: 84.2857%
+----------------------------------------
+Métricas de Treinamento dos Especialistas (agregadas por fold):
+   Especialista classe 0: Acurácia Média 77.1296% ± 2.5959%
+   Especialista classe 1: Acurácia Média 80.8333% ± 2.9222%
+   Especialista classe 2: Acurácia Média 85.0926% ± 3.9109%
+   Especialista classe 3: Acurácia Média 83.6111% ± 3.1481%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_results.csv
+   ✅ 31 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_fold1
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_fold1_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_fold1_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold1_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold1_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_fold2
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_fold2_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_fold2_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold2_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold2_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_fold3
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_fold3_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_fold3_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold3_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold3_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_fold4
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_fold4_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_fold4_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold4_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold4_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_fold5
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_fold5_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_fold5_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold5_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_fold5_metrics.csv
+==================================================
+
+📊 Calculando relevância GLCM...
+
+=== Fold 1: treinamento single-fold (KNN-GLCM) ===
+
+~~ Fold 1 ~~ KNN-GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM-Specialist-dogs:
+   📊 Acurácia: 78.2407%
+   📊 F1: 85.4489%
+   📊 Recall: 85.1852%
+   📊 Precision: 85.7143%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM-Specialist-cats:
+   📊 Acurácia: 75.9259%
+   📊 F1: 84.7953%
+   📊 Recall: 89.5062%
+   📊 Precision: 80.5556%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM-Specialist-lions:
+   📊 Acurácia: 88.4259%
+   📊 F1: 92.4471%
+   📊 Recall: 94.4444%
+   📊 Precision: 90.5325%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM-Specialist-horses:
+   📊 Acurácia: 90.2778%
+   📊 F1: 93.8416%
+   📊 Recall: 98.7654%
+   📊 Precision: 89.3855%
+----------------------------------------
+
+=== Fold 2: treinamento single-fold (KNN-GLCM) ===
+
+~~ Fold 2 ~~ KNN-GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM-Specialist-dogs:
+   📊 Acurácia: 80.5556%
+   📊 F1: 87.6471%
+   📊 Recall: 91.9753%
+   📊 Precision: 83.7079%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM-Specialist-cats:
+   📊 Acurácia: 71.7593%
+   📊 F1: 81.1146%
+   📊 Recall: 80.8642%
+   📊 Precision: 81.3665%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM-Specialist-lions:
+   📊 Acurácia: 90.7407%
+   📊 F1: 94.0476%
+   📊 Recall: 97.5309%
+   📊 Precision: 90.8046%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM-Specialist-horses:
+   📊 Acurácia: 87.0370%
+   📊 F1: 91.9075%
+   📊 Recall: 98.1481%
+   📊 Precision: 86.4130%
+----------------------------------------
+
+=== Fold 3: treinamento single-fold (KNN-GLCM) ===
+
+~~ Fold 3 ~~ KNN-GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM-Specialist-dogs:
+   📊 Acurácia: 74.5370%
+   📊 F1: 83.7758%
+   📊 Recall: 87.6543%
+   📊 Precision: 80.2260%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM-Specialist-cats:
+   📊 Acurácia: 68.9815%
+   📊 F1: 80.0000%
+   📊 Recall: 82.7160%
+   📊 Precision: 77.4566%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM-Specialist-lions:
+   📊 Acurácia: 82.8704%
+   📊 F1: 89.3983%
+   📊 Recall: 96.2963%
+   📊 Precision: 83.4225%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM-Specialist-horses:
+   📊 Acurácia: 84.2593%
+   📊 F1: 89.3082%
+   📊 Recall: 87.6543%
+   📊 Precision: 91.0256%
+----------------------------------------
+
+=== Fold 4: treinamento single-fold (KNN-GLCM) ===
+
+~~ Fold 4 ~~ KNN-GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM-Specialist-dogs:
+   📊 Acurácia: 74.0741%
+   📊 F1: 83.7209%
+   📊 Recall: 88.8889%
+   📊 Precision: 79.1209%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM-Specialist-cats:
+   📊 Acurácia: 78.2407%
+   📊 F1: 86.2974%
+   📊 Recall: 91.3580%
+   📊 Precision: 81.7680%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM-Specialist-lions:
+   📊 Acurácia: 90.2778%
+   📊 F1: 93.6937%
+   📊 Recall: 96.2963%
+   📊 Precision: 91.2281%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM-Specialist-horses:
+   📊 Acurácia: 87.5000%
+   📊 F1: 91.9881%
+   📊 Recall: 95.6790%
+   📊 Precision: 88.5714%
+----------------------------------------
+
+=== Fold 5: treinamento single-fold (KNN-GLCM) ===
+
+~~ Fold 5 ~~ KNN-GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM-Specialist-dogs:
+   📊 Acurácia: 81.0185%
+   📊 F1: 87.7612%
+   📊 Recall: 90.7407%
+   📊 Precision: 84.9711%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM-Specialist-cats:
+   📊 Acurácia: 76.8519%
+   📊 F1: 84.3750%
+   📊 Recall: 83.3333%
+   📊 Precision: 85.4430%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM-Specialist-lions:
+   📊 Acurácia: 85.6481%
+   📊 F1: 90.6344%
+   📊 Recall: 92.5926%
+   📊 Precision: 88.7574%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM-Specialist-horses:
+   📊 Acurácia: 86.1111%
+   📊 F1: 91.1243%
+   📊 Recall: 95.0617%
+   📊 Precision: 87.5000%
+----------------------------------------
+⏱️ Tempo de execução (KNN-GLCM): 3.94 s
+########################################
+Métricas Relevância CROSS KNN GLCM:
+   🌐 Global - Acurácia: 78.3333% | F1: 78.2960% | Recall: 78.3333% | Precision: 78.3789%
+----------------------------------------
+   📈 Mean±Std - Acurácia: 78.3333% ± 6.1237% | F1: 78.0347% ± 6.3488% | Recall: 78.3333% ± 6.1237% | Precision: 79.4802% ± 5.9756%
+   🧩 Fold 1 - Acurácia: 83.3333% | F1: 83.2168% | Recall: 83.3333% | Precision: 84.2857%
+   🧩 Fold 2 - Acurácia: 75.0000% | F1: 75.6119% | Recall: 75.0000% | Precision: 76.7857%
+   🧩 Fold 3 - Acurácia: 70.8333% | F1: 70.2922% | Recall: 70.8333% | Precision: 71.2500%
+   🧩 Fold 4 - Acurácia: 75.0000% | F1: 73.5820% | Recall: 75.0000% | Precision: 76.9841%
+   🧩 Fold 5 - Acurácia: 87.5000% | F1: 87.4709% | Recall: 87.5000% | Precision: 88.0952%
+----------------------------------------
+Métricas de Treinamento dos Especialistas (agregadas por fold):
+   Especialista classe 0: Acurácia Média 77.6852% ± 2.9192%
+   Especialista classe 1: Acurácia Média 74.3519% ± 3.4471%
+   Especialista classe 2: Acurácia Média 87.5926% ± 2.9630%
+   Especialista classe 3: Acurácia Média 87.0370% ± 1.9642%
+########################################
+📊 Exportando resultados para CSV: KNN_GLCM
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_results.csv
+   ✅ 31 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_fold1
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_fold1_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_fold1_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold1_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold1_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_fold2
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_fold2_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_fold2_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold2_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold2_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_fold3
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_fold3_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_fold3_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold3_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold3_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_fold4
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_fold4_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_fold4_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold4_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold4_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_fold5
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_fold5_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_fold5_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold5_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_fold5_metrics.csv
+==================================================
+
+📊 Calculando relevância LPQ...
+
+=== Fold 1: treinamento single-fold (KNN-LPQ) ===
+
+~~ Fold 1 ~~ KNN-LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LPQ-Specialist-dogs:
+   📊 Acurácia: 78.7037%
+   📊 F1: 86.2275%
+   📊 Recall: 88.8889%
+   📊 Precision: 83.7209%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LPQ-Specialist-cats:
+   📊 Acurácia: 79.6296%
+   📊 F1: 86.9822%
+   📊 Recall: 90.7407%
+   📊 Precision: 83.5227%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LPQ-Specialist-lions:
+   📊 Acurácia: 88.8889%
+   📊 F1: 92.7711%
+   📊 Recall: 95.0617%
+   📊 Precision: 90.5882%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-LPQ-Specialist-horses:
+   📊 Acurácia: 89.3519%
+   📊 F1: 93.2153%
+   📊 Recall: 97.5309%
+   📊 Precision: 89.2655%
+----------------------------------------
+
+=== Fold 2: treinamento single-fold (KNN-LPQ) ===
+
+~~ Fold 2 ~~ KNN-LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LPQ-Specialist-dogs:
+   📊 Acurácia: 76.8519%
+   📊 F1: 84.3750%
+   📊 Recall: 83.3333%
+   📊 Precision: 85.4430%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LPQ-Specialist-cats:
+   📊 Acurácia: 81.4815%
+   📊 F1: 88.3721%
+   📊 Recall: 93.8272%
+   📊 Precision: 83.5165%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-LPQ-Specialist-lions:
+   📊 Acurácia: 87.0370%
+   📊 F1: 91.6667%
+   📊 Recall: 95.0617%
+   📊 Precision: 88.5057%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LPQ-Specialist-horses:
+   📊 Acurácia: 84.2593%
+   📊 F1: 90.2299%
+   📊 Recall: 96.9136%
+   📊 Precision: 84.4086%
+----------------------------------------
+
+=== Fold 3: treinamento single-fold (KNN-LPQ) ===
+
+~~ Fold 3 ~~ KNN-LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LPQ-Specialist-dogs:
+   📊 Acurácia: 75.0000%
+   📊 F1: 83.0189%
+   📊 Recall: 81.4815%
+   📊 Precision: 84.6154%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LPQ-Specialist-cats:
+   📊 Acurácia: 75.9259%
+   📊 F1: 85.4749%
+   📊 Recall: 94.4444%
+   📊 Precision: 78.0612%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LPQ-Specialist-lions:
+   📊 Acurácia: 81.9444%
+   📊 F1: 88.7608%
+   📊 Recall: 95.0617%
+   📊 Precision: 83.2432%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LPQ-Specialist-horses:
+   📊 Acurácia: 81.9444%
+   📊 F1: 88.2175%
+   📊 Recall: 90.1235%
+   📊 Precision: 86.3905%
+----------------------------------------
+
+=== Fold 4: treinamento single-fold (KNN-LPQ) ===
+
+~~ Fold 4 ~~ KNN-LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN-LPQ-Specialist-dogs:
+   📊 Acurácia: 82.4074%
+   📊 F1: 88.4848%
+   📊 Recall: 90.1235%
+   📊 Precision: 86.9048%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LPQ-Specialist-cats:
+   📊 Acurácia: 86.1111%
+   📊 F1: 91.3295%
+   📊 Recall: 97.5309%
+   📊 Precision: 85.8696%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LPQ-Specialist-lions:
+   📊 Acurácia: 82.4074%
+   📊 F1: 88.1988%
+   📊 Recall: 87.6543%
+   📊 Precision: 88.7500%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LPQ-Specialist-horses:
+   📊 Acurácia: 82.4074%
+   📊 F1: 89.3855%
+   📊 Recall: 98.7654%
+   📊 Precision: 81.6327%
+----------------------------------------
+
+=== Fold 5: treinamento single-fold (KNN-LPQ) ===
+
+~~ Fold 5 ~~ KNN-LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LPQ-Specialist-dogs:
+   📊 Acurácia: 77.7778%
+   📊 F1: 85.1852%
+   📊 Recall: 85.1852%
+   📊 Precision: 85.1852%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LPQ-Specialist-cats:
+   📊 Acurácia: 78.2407%
+   📊 F1: 86.6856%
+   📊 Recall: 94.4444%
+   📊 Precision: 80.1047%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LPQ-Specialist-lions:
+   📊 Acurácia: 82.4074%
+   📊 F1: 88.1250%
+   📊 Recall: 87.0370%
+   📊 Precision: 89.2405%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LPQ-Specialist-horses:
+   📊 Acurácia: 81.9444%
+   📊 F1: 88.7608%
+   📊 Recall: 95.0617%
+   📊 Precision: 83.2432%
+----------------------------------------
+⏱️ Tempo de execução (KNN-LPQ): 11.23 s
+########################################
+Métricas Relevância CROSS KNN LPQ:
+   🌐 Global - Acurácia: 75.0000% | F1: 74.3998% | Recall: 75.0000% | Precision: 77.5643%
+----------------------------------------
+   📈 Mean±Std - Acurácia: 75.0000% ± 6.9722% | F1: 73.1835% ± 8.6783% | Recall: 75.0000% ± 6.9722% | Precision: 81.9762% ± 4.3498%
+   🧩 Fold 1 - Acurácia: 79.1667% | F1: 79.1375% | Recall: 79.1667% | Precision: 79.7619%
+   🧩 Fold 2 - Acurácia: 79.1667% | F1: 78.9773% | Recall: 79.1667% | Precision: 85.8333%
+   🧩 Fold 3 - Acurácia: 66.6667% | F1: 62.8320% | Recall: 66.6667% | Precision: 76.1905%
+   🧩 Fold 4 - Acurácia: 83.3333% | F1: 82.4709% | Recall: 83.3333% | Precision: 88.0952%
+   🧩 Fold 5 - Acurácia: 66.6667% | F1: 62.5000% | Recall: 66.6667% | Precision: 80.0000%
+----------------------------------------
+Métricas de Treinamento dos Especialistas (agregadas por fold):
+   Especialista classe 0: Acurácia Média 78.1481% ± 2.4568%
+   Especialista classe 1: Acurácia Média 80.2778% ± 3.4347%
+   Especialista classe 2: Acurácia Média 84.5370% ± 2.8629%
+   Especialista classe 3: Acurácia Média 83.9815% ± 2.8176%
+########################################
+📊 Exportando resultados para CSV: KNN_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lpq_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_results.csv
+   ✅ 31 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LPQ_fold1
+   📁 Arquivo com os resultados: results/csv_exports/knn_lpq_fold1_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lpq_fold1_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold1_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold1_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LPQ_fold2
+   📁 Arquivo com os resultados: results/csv_exports/knn_lpq_fold2_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lpq_fold2_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold2_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold2_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LPQ_fold3
+   📁 Arquivo com os resultados: results/csv_exports/knn_lpq_fold3_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lpq_fold3_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold3_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold3_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LPQ_fold4
+   📁 Arquivo com os resultados: results/csv_exports/knn_lpq_fold4_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lpq_fold4_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold4_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold4_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LPQ_fold5
+   📁 Arquivo com os resultados: results/csv_exports/knn_lpq_fold5_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lpq_fold5_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold5_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lpq_fold5_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+GLCM...
+
+=== Fold 1: treinamento single-fold (KNN-LBP+GLCM) ===
+
+~~ Fold 1 ~~ KNN-LBP+GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM-Specialist-dogs:
+   📊 Acurácia: 78.7037%
+   📊 F1: 85.3503%
+   📊 Recall: 82.7160%
+   📊 Precision: 88.1579%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM-Specialist-cats:
+   📊 Acurácia: 76.8519%
+   📊 F1: 85.3801%
+   📊 Recall: 90.1235%
+   📊 Precision: 81.1111%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM-Specialist-lions:
+   📊 Acurácia: 90.2778%
+   📊 F1: 93.6937%
+   📊 Recall: 96.2963%
+   📊 Precision: 91.2281%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM-Specialist-horses:
+   📊 Acurácia: 89.8148%
+   📊 F1: 93.6047%
+   📊 Recall: 99.3827%
+   📊 Precision: 88.4615%
+----------------------------------------
+
+=== Fold 2: treinamento single-fold (KNN-LBP+GLCM) ===
+
+~~ Fold 2 ~~ KNN-LBP+GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM-Specialist-dogs:
+   📊 Acurácia: 78.2407%
+   📊 F1: 85.0794%
+   📊 Recall: 82.7160%
+   📊 Precision: 87.5817%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM-Specialist-cats:
+   📊 Acurácia: 75.9259%
+   📊 F1: 84.4311%
+   📊 Recall: 87.0370%
+   📊 Precision: 81.9767%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM-Specialist-lions:
+   📊 Acurácia: 88.4259%
+   📊 F1: 92.5816%
+   📊 Recall: 96.2963%
+   📊 Precision: 89.1429%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM-Specialist-horses:
+   📊 Acurácia: 83.7963%
+   📊 F1: 89.7361%
+   📊 Recall: 94.4444%
+   📊 Precision: 85.4749%
+----------------------------------------
+
+=== Fold 3: treinamento single-fold (KNN-LBP+GLCM) ===
+
+~~ Fold 3 ~~ KNN-LBP+GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM-Specialist-dogs:
+   📊 Acurácia: 79.6296%
+   📊 F1: 86.0759%
+   📊 Recall: 83.9506%
+   📊 Precision: 88.3117%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM-Specialist-cats:
+   📊 Acurácia: 78.2407%
+   📊 F1: 86.4553%
+   📊 Recall: 92.5926%
+   📊 Precision: 81.0811%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM-Specialist-lions:
+   📊 Acurácia: 87.0370%
+   📊 F1: 91.6168%
+   📊 Recall: 94.4444%
+   📊 Precision: 88.9535%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM-Specialist-horses:
+   📊 Acurácia: 87.0370%
+   📊 F1: 91.4110%
+   📊 Recall: 91.9753%
+   📊 Precision: 90.8537%
+----------------------------------------
+
+=== Fold 4: treinamento single-fold (KNN-LBP+GLCM) ===
+
+~~ Fold 4 ~~ KNN-LBP+GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM-Specialist-dogs:
+   📊 Acurácia: 81.4815%
+   📊 F1: 87.4214%
+   📊 Recall: 85.8025%
+   📊 Precision: 89.1026%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM-Specialist-cats:
+   📊 Acurácia: 81.0185%
+   📊 F1: 88.1844%
+   📊 Recall: 94.4444%
+   📊 Precision: 82.7027%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM-Specialist-lions:
+   📊 Acurácia: 89.3519%
+   📊 F1: 92.9664%
+   📊 Recall: 93.8272%
+   📊 Precision: 92.1212%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM-Specialist-horses:
+   📊 Acurácia: 85.1852%
+   📊 F1: 90.4762%
+   📊 Recall: 93.8272%
+   📊 Precision: 87.3563%
+----------------------------------------
+
+=== Fold 5: treinamento single-fold (KNN-LBP+GLCM) ===
+
+~~ Fold 5 ~~ KNN-LBP+GLCM-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM-Specialist-dogs:
+   📊 Acurácia: 78.2407%
+   📊 F1: 85.3583%
+   📊 Recall: 84.5679%
+   📊 Precision: 86.1635%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+GLCM-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM-Specialist-cats:
+   📊 Acurácia: 78.2407%
+   📊 F1: 86.3768%
+   📊 Recall: 91.9753%
+   📊 Precision: 81.4208%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+GLCM-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM-Specialist-lions:
+   📊 Acurácia: 86.5741%
+   📊 F1: 91.0217%
+   📊 Recall: 90.7407%
+   📊 Precision: 91.3043%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+GLCM-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM-Specialist-horses:
+   📊 Acurácia: 86.1111%
+   📊 F1: 91.1765%
+   📊 Recall: 95.6790%
+   📊 Precision: 87.0787%
+----------------------------------------
+⏱️ Tempo de execução (KNN-LBP+GLCM): 8.78 s
+########################################
+Métricas Relevância CROSS KNN LBP+GLCM:
+   🌐 Global - Acurácia: 84.1667% | F1: 83.7195% | Recall: 84.1667% | Precision: 85.6327%
+----------------------------------------
+   📈 Mean±Std - Acurácia: 84.1667% ± 5.5277% | F1: 82.9796% ± 7.2554% | Recall: 84.1667% ± 5.5277% | Precision: 86.9524% ± 4.3090%
+   🧩 Fold 1 - Acurácia: 83.3333% | F1: 83.2168% | Recall: 83.3333% | Precision: 84.2857%
+   🧩 Fold 2 - Acurácia: 91.6667% | F1: 91.4286% | Recall: 91.6667% | Precision: 93.7500%
+   🧩 Fold 3 - Acurácia: 83.3333% | F1: 83.2168% | Recall: 83.3333% | Precision: 84.2857%
+   🧩 Fold 4 - Acurácia: 87.5000% | F1: 87.2328% | Recall: 87.5000% | Precision: 90.1786%
+   🧩 Fold 5 - Acurácia: 75.0000% | F1: 69.8031% | Recall: 75.0000% | Precision: 82.2619%
+----------------------------------------
+Métricas de Treinamento dos Especialistas (agregadas por fold):
+   Especialista classe 0: Acurácia Média 79.2593% ± 1.2214%
+   Especialista classe 1: Acurácia Média 78.0556% ± 1.7223%
+   Especialista classe 2: Acurácia Média 88.3333% ± 1.3858%
+   Especialista classe 3: Acurácia Média 86.3889% ± 2.0201%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_GLCM
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_results.csv
+   ✅ 31 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_fold1
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_fold1_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_fold1_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold1_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold1_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_fold2
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_fold2_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_fold2_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold2_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold2_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_fold3
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_fold3_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_fold3_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold3_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold3_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_fold4
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_fold4_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_fold4_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold4_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold4_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_fold5
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_fold5_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_fold5_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold5_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_fold5_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+LPQ...
+
+=== Fold 1: treinamento single-fold (KNN-LBP+LPQ) ===
+
+~~ Fold 1 ~~ KNN-LBP+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+LPQ-Specialist-dogs:
+   📊 Acurácia: 79.1667%
+   📊 F1: 86.5672%
+   📊 Recall: 89.5062%
+   📊 Precision: 83.8150%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+LPQ-Specialist-cats:
+   📊 Acurácia: 80.5556%
+   📊 F1: 87.5000%
+   📊 Recall: 90.7407%
+   📊 Precision: 84.4828%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+LPQ-Specialist-lions:
+   📊 Acurácia: 89.3519%
+   📊 F1: 93.0091%
+   📊 Recall: 94.4444%
+   📊 Precision: 91.6168%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+LPQ-Specialist-horses:
+   📊 Acurácia: 87.5000%
+   📊 F1: 92.0821%
+   📊 Recall: 96.9136%
+   📊 Precision: 87.7095%
+----------------------------------------
+
+=== Fold 2: treinamento single-fold (KNN-LBP+LPQ) ===
+
+~~ Fold 2 ~~ KNN-LBP+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+LPQ-Specialist-dogs:
+   📊 Acurácia: 77.7778%
+   📊 F1: 84.9057%
+   📊 Recall: 83.3333%
+   📊 Precision: 86.5385%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+LPQ-Specialist-cats:
+   📊 Acurácia: 81.9444%
+   📊 F1: 88.6297%
+   📊 Recall: 93.8272%
+   📊 Precision: 83.9779%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+LPQ-Specialist-lions:
+   📊 Acurácia: 88.8889%
+   📊 F1: 92.7711%
+   📊 Recall: 95.0617%
+   📊 Precision: 90.5882%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+LPQ-Specialist-horses:
+   📊 Acurácia: 85.6481%
+   📊 F1: 91.0663%
+   📊 Recall: 97.5309%
+   📊 Precision: 85.4054%
+----------------------------------------
+
+=== Fold 3: treinamento single-fold (KNN-LBP+LPQ) ===
+
+~~ Fold 3 ~~ KNN-LBP+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+LPQ-Specialist-dogs:
+   📊 Acurácia: 76.8519%
+   📊 F1: 84.4720%
+   📊 Recall: 83.9506%
+   📊 Precision: 85.0000%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+LPQ-Specialist-cats:
+   📊 Acurácia: 78.7037%
+   📊 F1: 86.5497%
+   📊 Recall: 91.3580%
+   📊 Precision: 82.2222%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+LPQ-Specialist-lions:
+   📊 Acurácia: 84.7222%
+   📊 F1: 90.2655%
+   📊 Recall: 94.4444%
+   📊 Precision: 86.4407%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+LPQ-Specialist-horses:
+   📊 Acurácia: 83.3333%
+   📊 F1: 89.1566%
+   📊 Recall: 91.3580%
+   📊 Precision: 87.0588%
+----------------------------------------
+
+=== Fold 4: treinamento single-fold (KNN-LBP+LPQ) ===
+
+~~ Fold 4 ~~ KNN-LBP+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+LPQ-Specialist-dogs:
+   📊 Acurácia: 81.4815%
+   📊 F1: 88.3041%
+   📊 Recall: 93.2099%
+   📊 Precision: 83.8889%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+LPQ-Specialist-cats:
+   📊 Acurácia: 87.0370%
+   📊 F1: 91.5663%
+   📊 Recall: 93.8272%
+   📊 Precision: 89.4118%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+LPQ-Specialist-lions:
+   📊 Acurácia: 84.7222%
+   📊 F1: 89.5238%
+   📊 Recall: 87.0370%
+   📊 Precision: 92.1569%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+LPQ-Specialist-horses:
+   📊 Acurácia: 83.7963%
+   📊 F1: 90.0850%
+   📊 Recall: 98.1481%
+   📊 Precision: 83.2461%
+----------------------------------------
+
+=== Fold 5: treinamento single-fold (KNN-LBP+LPQ) ===
+
+~~ Fold 5 ~~ KNN-LBP+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+LPQ-Specialist-dogs:
+   📊 Acurácia: 74.0741%
+   📊 F1: 82.7160%
+   📊 Recall: 82.7160%
+   📊 Precision: 82.7160%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+LPQ-Specialist-cats:
+   📊 Acurácia: 80.0926%
+   📊 F1: 87.8187%
+   📊 Recall: 95.6790%
+   📊 Precision: 81.1518%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+LPQ-Specialist-lions:
+   📊 Acurácia: 83.3333%
+   📊 F1: 88.5350%
+   📊 Recall: 85.8025%
+   📊 Precision: 91.4474%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+LPQ-Specialist-horses:
+   📊 Acurácia: 82.4074%
+   📊 F1: 89.2045%
+   📊 Recall: 96.9136%
+   📊 Precision: 82.6316%
+----------------------------------------
+⏱️ Tempo de execução (KNN-LBP+LPQ): 16.25 s
+########################################
+Métricas Relevância CROSS KNN LBP+LPQ:
+   🌐 Global - Acurácia: 77.5000% | F1: 77.3232% | Recall: 77.5000% | Precision: 78.0995%
+----------------------------------------
+   📈 Mean±Std - Acurácia: 77.5000% ± 5.6519% | F1: 76.9006% ± 5.9537% | Recall: 77.5000% ± 5.6519% | Precision: 80.9167% ± 5.0035%
+   🧩 Fold 1 - Acurácia: 75.0000% | F1: 74.8252% | Recall: 75.0000% | Precision: 75.7143%
+   🧩 Fold 2 - Acurácia: 87.5000% | F1: 87.4709% | Recall: 87.5000% | Precision: 88.0952%
+   🧩 Fold 3 - Acurácia: 75.0000% | F1: 74.5879% | Recall: 75.0000% | Precision: 79.3155%
+   🧩 Fold 4 - Acurácia: 79.1667% | F1: 78.0952% | Recall: 79.1667% | Precision: 85.4167%
+   🧩 Fold 5 - Acurácia: 70.8333% | F1: 69.5238% | Recall: 70.8333% | Precision: 76.0417%
+----------------------------------------
+Métricas de Treinamento dos Especialistas (agregadas por fold):
+   Especialista classe 0: Acurácia Média 77.8704% ± 2.4568%
+   Especialista classe 1: Acurácia Média 81.6667% ± 2.8778%
+   Especialista classe 2: Acurácia Média 86.2037% ± 2.4392%
+   Especialista classe 3: Acurácia Média 84.5370% ± 1.8192%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_lpq_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_results.csv
+   ✅ 31 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_LPQ_fold1
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_lpq_fold1_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_lpq_fold1_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold1_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold1_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_LPQ_fold2
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_lpq_fold2_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_lpq_fold2_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold2_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold2_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_LPQ_fold3
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_lpq_fold3_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_lpq_fold3_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold3_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold3_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_LPQ_fold4
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_lpq_fold4_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_lpq_fold4_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold4_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold4_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_LPQ_fold5
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_lpq_fold5_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_lpq_fold5_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold5_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_lpq_fold5_metrics.csv
+==================================================
+
+📊 Calculando relevância GLCM+LPQ...
+
+=== Fold 1: treinamento single-fold (KNN-GLCM+LPQ) ===
+
+~~ Fold 1 ~~ KNN-GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 81.4815%
+   📊 F1: 87.5000%
+   📊 Recall: 86.4198%
+   📊 Precision: 88.6076%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 80.0926%
+   📊 F1: 87.6791%
+   📊 Recall: 94.4444%
+   📊 Precision: 81.8182%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 89.3519%
+   📊 F1: 93.0931%
+   📊 Recall: 95.6790%
+   📊 Precision: 90.6433%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 1 - KNN-GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 87.5000%
+   📊 F1: 92.1739%
+   📊 Recall: 98.1481%
+   📊 Precision: 86.8852%
+----------------------------------------
+
+=== Fold 2: treinamento single-fold (KNN-GLCM+LPQ) ===
+
+~~ Fold 2 ~~ KNN-GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 79.6296%
+   📊 F1: 86.1635%
+   📊 Recall: 84.5679%
+   📊 Precision: 87.8205%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 80.5556%
+   📊 F1: 87.8613%
+   📊 Recall: 93.8272%
+   📊 Precision: 82.6087%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 87.0370%
+   📊 F1: 91.5663%
+   📊 Recall: 93.8272%
+   📊 Precision: 89.4118%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 83.7963%
+   📊 F1: 89.9713%
+   📊 Recall: 96.9136%
+   📊 Precision: 83.9572%
+----------------------------------------
+
+=== Fold 3: treinamento single-fold (KNN-GLCM+LPQ) ===
+
+~~ Fold 3 ~~ KNN-GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 80.5556%
+   📊 F1: 86.8750%
+   📊 Recall: 85.8025%
+   📊 Precision: 87.9747%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 79.1667%
+   📊 F1: 87.1795%
+   📊 Recall: 94.4444%
+   📊 Precision: 80.9524%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 83.3333%
+   📊 F1: 89.7727%
+   📊 Recall: 97.5309%
+   📊 Precision: 83.1579%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 3 - KNN-GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 81.9444%
+   📊 F1: 87.6190%
+   📊 Recall: 85.1852%
+   📊 Precision: 90.1961%
+----------------------------------------
+
+=== Fold 4: treinamento single-fold (KNN-GLCM+LPQ) ===
+
+~~ Fold 4 ~~ KNN-GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 82.8704%
+   📊 F1: 88.6154%
+   📊 Recall: 88.8889%
+   📊 Precision: 88.3436%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 85.1852%
+   📊 F1: 90.7514%
+   📊 Recall: 96.9136%
+   📊 Precision: 85.3261%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 86.5741%
+   📊 F1: 90.9657%
+   📊 Recall: 90.1235%
+   📊 Precision: 91.8239%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 1}
+----------------------------------------
+Métricas Fold 4 - KNN-GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 83.3333%
+   📊 F1: 89.6552%
+   📊 Recall: 96.2963%
+   📊 Precision: 83.8710%
+----------------------------------------
+
+=== Fold 5: treinamento single-fold (KNN-GLCM+LPQ) ===
+
+~~ Fold 5 ~~ KNN-GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 79.6296%
+   📊 F1: 86.1635%
+   📊 Recall: 84.5679%
+   📊 Precision: 87.8205%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 79.1667%
+   📊 F1: 87.2521%
+   📊 Recall: 95.0617%
+   📊 Precision: 80.6283%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 81.9444%
+   📊 F1: 87.8505%
+   📊 Recall: 87.0370%
+   📊 Precision: 88.6792%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 84.7222%
+   📊 F1: 90.4348%
+   📊 Recall: 96.2963%
+   📊 Precision: 85.2459%
+----------------------------------------
+⏱️ Tempo de execução (KNN-GLCM+LPQ): 16.94 s
+########################################
+Métricas Relevância CROSS KNN GLCM+LPQ:
+   🌐 Global - Acurácia: 79.1667% | F1: 78.6059% | Recall: 79.1667% | Precision: 82.6985%
+----------------------------------------
+   📈 Mean±Std - Acurácia: 79.1667% ± 6.9722% | F1: 77.8542% ± 7.6515% | Recall: 79.1667% ± 6.9722% | Precision: 85.2312% ± 4.6987%
+   🧩 Fold 1 - Acurácia: 87.5000% | F1: 87.4709% | Recall: 87.5000% | Precision: 88.0952%
+   🧩 Fold 2 - Acurácia: 75.0000% | F1: 73.2240% | Recall: 75.0000% | Precision: 85.0649%
+   🧩 Fold 3 - Acurácia: 70.8333% | F1: 69.2308% | Recall: 70.8333% | Precision: 77.5794%
+   🧩 Fold 4 - Acurácia: 87.5000% | F1: 86.6667% | Recall: 87.5000% | Precision: 91.6667%
+   🧩 Fold 5 - Acurácia: 75.0000% | F1: 72.6786% | Recall: 75.0000% | Precision: 83.7500%
+----------------------------------------
+Métricas de Treinamento dos Especialistas (agregadas por fold):
+   Especialista classe 0: Acurácia Média 80.8333% ± 1.2284%
+   Especialista classe 1: Acurácia Média 80.8333% ± 2.2414%
+   Especialista classe 2: Acurácia Média 85.6481% ± 2.6676%
+   Especialista classe 3: Acurácia Média 84.2593% ± 1.8519%
+########################################
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_lpq_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_results.csv
+   ✅ 31 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ_fold1
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_lpq_fold1_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_lpq_fold1_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold1_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold1_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ_fold2
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_lpq_fold2_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_lpq_fold2_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold2_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold2_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ_fold3
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_lpq_fold3_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_lpq_fold3_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold3_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold3_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ_fold4
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_lpq_fold4_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_lpq_fold4_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold4_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold4_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_GLCM_LPQ_fold5
+   📁 Arquivo com os resultados: results/csv_exports/knn_glcm_lpq_fold5_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_glcm_lpq_fold5_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold5_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_glcm_lpq_fold5_metrics.csv
+==================================================
+
+📊 Calculando relevância LBP+GLCM+LPQ...
+
+=== Fold 1: treinamento single-fold (KNN-LBP+GLCM+LPQ) ===
+
+~~ Fold 1 ~~ KNN-LBP+GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 80.5556%
+   📊 F1: 86.8750%
+   📊 Recall: 85.8025%
+   📊 Precision: 87.9747%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 77.7778%
+   📊 F1: 86.0465%
+   📊 Recall: 91.3580%
+   📊 Precision: 81.3187%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 90.2778%
+   📊 F1: 93.6556%
+   📊 Recall: 95.6790%
+   📊 Precision: 91.7160%
+----------------------------------------
+
+~~ Fold 1 ~~ KNN-LBP+GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 1 - KNN-LBP+GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 87.5000%
+   📊 F1: 92.0821%
+   📊 Recall: 96.9136%
+   📊 Precision: 87.7095%
+----------------------------------------
+
+=== Fold 2: treinamento single-fold (KNN-LBP+GLCM+LPQ) ===
+
+~~ Fold 2 ~~ KNN-LBP+GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 82.8704%
+   📊 F1: 88.5449%
+   📊 Recall: 88.2716%
+   📊 Precision: 88.8199%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 79.6296%
+   📊 F1: 86.8263%
+   📊 Recall: 89.5062%
+   📊 Precision: 84.3023%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 88.8889%
+   📊 F1: 92.8994%
+   📊 Recall: 96.9136%
+   📊 Precision: 89.2045%
+----------------------------------------
+
+~~ Fold 2 ~~ KNN-LBP+GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 2 - KNN-LBP+GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 85.1852%
+   📊 F1: 90.6977%
+   📊 Recall: 96.2963%
+   📊 Precision: 85.7143%
+----------------------------------------
+
+=== Fold 3: treinamento single-fold (KNN-LBP+GLCM+LPQ) ===
+
+~~ Fold 3 ~~ KNN-LBP+GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 76.3889%
+   📊 F1: 84.0125%
+   📊 Recall: 82.7160%
+   📊 Precision: 85.3503%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 78.2407%
+   📊 F1: 86.1357%
+   📊 Recall: 90.1235%
+   📊 Precision: 82.4859%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 85.1852%
+   📊 F1: 90.6977%
+   📊 Recall: 96.2963%
+   📊 Precision: 85.7143%
+----------------------------------------
+
+~~ Fold 3 ~~ KNN-LBP+GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 3 - KNN-LBP+GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 83.3333%
+   📊 F1: 88.8889%
+   📊 Recall: 88.8889%
+   📊 Precision: 88.8889%
+----------------------------------------
+
+=== Fold 4: treinamento single-fold (KNN-LBP+GLCM+LPQ) ===
+
+~~ Fold 4 ~~ KNN-LBP+GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 84.7222%
+   📊 F1: 89.9696%
+   📊 Recall: 91.3580%
+   📊 Precision: 88.6228%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 85.6481%
+   📊 F1: 90.9621%
+   📊 Recall: 96.2963%
+   📊 Precision: 86.1878%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 87.9630%
+   📊 F1: 91.7722%
+   📊 Recall: 89.5062%
+   📊 Precision: 94.1558%
+----------------------------------------
+
+~~ Fold 4 ~~ KNN-LBP+GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 4 - KNN-LBP+GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 85.1852%
+   📊 F1: 90.9091%
+   📊 Recall: 98.7654%
+   📊 Precision: 84.2105%
+----------------------------------------
+
+=== Fold 5: treinamento single-fold (KNN-LBP+GLCM+LPQ) ===
+
+~~ Fold 5 ~~ KNN-LBP+GLCM+LPQ-Specialist-dogs
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 9}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM+LPQ-Specialist-dogs:
+   📊 Acurácia: 79.6296%
+   📊 F1: 86.5031%
+   📊 Recall: 87.0370%
+   📊 Precision: 85.9756%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+GLCM+LPQ-Specialist-cats
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 3}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM+LPQ-Specialist-cats:
+   📊 Acurácia: 78.2407%
+   📊 F1: 86.4553%
+   📊 Recall: 92.5926%
+   📊 Precision: 81.0811%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+GLCM+LPQ-Specialist-lions
+Melhores parâmetros: {'knn__metric': 'manhattan', 'knn__n_neighbors': 5}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM+LPQ-Specialist-lions:
+   📊 Acurácia: 81.9444%
+   📊 F1: 87.6190%
+   📊 Recall: 85.1852%
+   📊 Precision: 90.1961%
+----------------------------------------
+
+~~ Fold 5 ~~ KNN-LBP+GLCM+LPQ-Specialist-horses
+Melhores parâmetros: {'knn__metric': 'euclidean', 'knn__n_neighbors': 7}
+----------------------------------------
+Métricas Fold 5 - KNN-LBP+GLCM+LPQ-Specialist-horses:
+   📊 Acurácia: 83.7963%
+   📊 F1: 89.9713%
+   📊 Recall: 96.9136%
+   📊 Precision: 83.9572%
+----------------------------------------
+⏱️ Tempo de execução (KNN-LBP+GLCM+LPQ): 22.16 s
+########################################
+Métricas Relevância CROSS KNN LBP+GLCM+LPQ:
+   🌐 Global - Acurácia: 82.5000% | F1: 81.7874% | Recall: 82.5000% | Precision: 86.7597%
+----------------------------------------
+   📈 Mean±Std - Acurácia: 82.5000% ± 6.1237% | F1: 81.0897% ± 7.0420% | Recall: 82.5000% ± 6.1237% | Precision: 88.1071% ± 3.4858%
+   🧩 Fold 1 - Acurácia: 87.5000% | F1: 87.2328% | Recall: 87.5000% | Precision: 90.1786%
+   🧩 Fold 2 - Acurácia: 79.1667% | F1: 77.0542% | Recall: 79.1667% | Precision: 86.4286%
+   🧩 Fold 3 - Acurácia: 79.1667% | F1: 77.0542% | Recall: 79.1667% | Precision: 86.4286%
+   🧩 Fold 4 - Acurácia: 91.6667% | F1: 91.4286% | Recall: 91.6667% | Precision: 93.7500%
+   🧩 Fold 5 - Acurácia: 75.0000% | F1: 72.6786% | Recall: 75.0000% | Precision: 83.7500%
+----------------------------------------
+Métricas de Treinamento dos Especialistas (agregadas por fold):
+   Especialista classe 0: Acurácia Média 80.8333% ± 2.8479%
+   Especialista classe 1: Acurácia Média 79.9074% ± 2.9368%
+   Especialista classe 2: Acurácia Média 86.8519% ± 2.9659%
+   Especialista classe 3: Acurácia Média 85.0000% ± 1.4523%
+########################################
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_lpq_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_lpq_metrics.csv
+   🎯 Imagens: 120 amostras
+--------------------------------------------------
+   ✅ 120 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_results.csv
+   ✅ 31 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ_fold1
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_lpq_fold1_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_lpq_fold1_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold1_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold1_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ_fold2
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_lpq_fold2_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_lpq_fold2_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold2_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold2_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ_fold3
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_lpq_fold3_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_lpq_fold3_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold3_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold3_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ_fold4
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_lpq_fold4_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_lpq_fold4_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold4_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold4_metrics.csv
+==================================================
+📊 Exportando resultados para CSV: KNN_LBP_GLCM_LPQ_fold5
+   📁 Arquivo com os resultados: results/csv_exports/knn_lbp_glcm_lpq_fold5_results.csv
+   📁 Arquivo com as métricas: results/csv_exports/knn_lbp_glcm_lpq_fold5_metrics.csv
+   🎯 Imagens: 24 amostras
+--------------------------------------------------
+   ✅ 24 linhas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold5_results.csv
+   ✅ 1 linhas de métricas escritas com sucesso
+   💾 Arquivo salvo: results/csv_exports/knn_lbp_glcm_lpq_fold5_metrics.csv
+==================================================
+✅ Resultados compactados em: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/experimento_20260321_112033.zip
+⏳ Tempo total de execução do script: 5m 13.69s

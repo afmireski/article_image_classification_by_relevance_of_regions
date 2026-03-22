@@ -20,6 +20,202 @@ from mytypes import (
 )
 
 
+def build_image_folds_structure(
+    X_ref: Dict[str, np.ndarray],
+    y: Dict[str, int],
+    k_folds: int = 5,
+    random_state: int = 42,
+    verbose: bool = True,
+) -> mtp.ImageFoldsStructure:
+    """Cria uma estrutura global de folds por imagem.
+
+    Esta função existe para alinhar TODOS os especialistas (e TODOS os conjuntos de
+    features) com a MESMA partição de imagens por fold.
+
+    Args:
+        X_ref: dicionário {img_id: features} usado apenas para obter as chaves.
+        y: dicionário {img_id: class_idx} no nível da imagem.
+        k_folds: número de folds.
+        random_state: seed.
+        verbose: logs.
+
+    Returns:
+        Estrutura com listas de imagens de treino/teste por fold.
+    """
+    if k_folds < 2:
+        raise ValueError("k_folds deve ser >= 2")
+
+    if set(X_ref.keys()) != set(y.keys()):
+        missing_in_y = set(X_ref.keys()) - set(y.keys())
+        missing_in_X = set(y.keys()) - set(X_ref.keys())
+        raise ValueError(
+            "X_ref e y devem ter as mesmas chaves (imagens). "
+            f"Faltando em y: {sorted(list(missing_in_y))[:10]} | "
+            f"Faltando em X_ref: {sorted(list(missing_in_X))[:10]}"
+        )
+
+    folds = split_full_image_data_in_folds(
+        X_ref,
+        y,
+        k_folds=k_folds,
+        random_state=random_state,
+        verbose=verbose,
+    )
+
+    structure: mtp.ImageFoldsStructure = []
+    for fold in folds:
+        train_images = list(fold["train_features"].keys())
+        test_images = list(fold["test_features"].keys())
+
+        if set(train_images) & set(test_images):
+            raise ValueError(
+                f"Fold {fold['fold_id']} inválido: treino e teste têm interseção de imagens."
+            )
+
+        structure.append(
+            {
+                "fold_id": fold["fold_id"],
+                "train_images": train_images,
+                "test_images": test_images,
+                "train_true_map": fold["train_true_map"],
+                "test_true_map": fold["test_true_map"],
+            }
+        )
+
+    # Validação: teste disjunto entre folds (propriedade importante para o merge global)
+    seen_test = set()
+    for fold in structure:
+        test_set = set(fold["test_images"])
+        overlap = seen_test & test_set
+        if overlap:
+            raise ValueError(
+                "Estrutura de folds inválida: imagens repetidas entre conjuntos de teste. "
+                f"Exemplo: {sorted(list(overlap))[:10]}"
+            )
+        seen_test |= test_set
+
+    return structure
+
+
+def prepare_specialist_sets_from_image_folds(
+    X_features: Dict[str, np.ndarray],
+    y: Dict[str, int],
+    class_names: List[str],
+    folds_structure: mtp.ImageFoldsStructure,
+    verbose: bool = False,
+) -> PreparedSetsForClassification:
+    """Deriva conjuntos de especialistas (binários) a partir de folds globais por imagem.
+
+    Para cada fold global, garante que TODOS os especialistas usam exatamente as
+    mesmas imagens em treino e teste.
+
+    Args:
+        X_features: {img_id: features} (segmentadas: (n_segments, n_feat) ou full: (n_feat,)).
+        y: {img_id: class_idx} no nível de imagem.
+        class_names: lista de classes (ordem define o índice do especialista).
+        folds_structure: estrutura global de folds (build_image_folds_structure).
+        verbose: logs.
+
+    Returns:
+        PreparedSetsForClassification: specialist_sets[sp_idx][fold_idx] = (train_set, test_set)
+    """
+    if not class_names:
+        raise ValueError("class_names não pode ser vazio")
+
+    if set(X_features.keys()) != set(y.keys()):
+        missing_in_y = set(X_features.keys()) - set(y.keys())
+        missing_in_X = set(y.keys()) - set(X_features.keys())
+        raise ValueError(
+            "X_features e y devem ter as mesmas chaves (imagens). "
+            f"Faltando em y: {sorted(list(missing_in_y))[:10]} | "
+            f"Faltando em X_features: {sorted(list(missing_in_X))[:10]}"
+        )
+
+    max_label = max(y.values()) if y else -1
+    if max_label >= len(class_names):
+        raise ValueError(
+            f"y contém índice de classe {max_label}, mas class_names tem tamanho {len(class_names)}"
+        )
+
+    # Validações rápidas da estrutura recebida
+    all_images = set(X_features.keys())
+    for fold in folds_structure:
+        train_imgs = set(fold["train_images"])
+        test_imgs = set(fold["test_images"])
+        if train_imgs & test_imgs:
+            raise ValueError(
+                f"Fold {fold['fold_id']} inválido: treino e teste têm interseção."
+            )
+        if (train_imgs | test_imgs) != all_images:
+            missing = all_images - (train_imgs | test_imgs)
+            extra = (train_imgs | test_imgs) - all_images
+            raise ValueError(
+                "Fold structure não cobre exatamente o conjunto de imagens. "
+                f"Faltando: {sorted(list(missing))[:10]} | Extra: {sorted(list(extra))[:10]}"
+            )
+
+    prepared: PreparedSetsForClassification = []
+    k_folds = len(folds_structure)
+
+    for sp_idx, class_name in enumerate(class_names):
+        if verbose:
+            print(f"\n🧠 Preparando especialista {sp_idx} ({class_name}) com {k_folds} folds...")
+
+        specialist_dataset: ClassificationDataset = []
+
+        for fold in folds_structure:
+            fold_id = fold["fold_id"]
+            train_images = fold["train_images"]
+            test_images = fold["test_images"]
+
+            # Monta dicts (positivos vs negativos) respeitando o split global
+            train_class_features = {
+                img: X_features[img] for img in train_images if y[img] == sp_idx
+            }
+            train_no_class_features = {
+                img: X_features[img] for img in train_images if y[img] != sp_idx
+            }
+            test_class_features = {
+                img: X_features[img] for img in test_images if y[img] == sp_idx
+            }
+            test_no_class_features = {
+                img: X_features[img] for img in test_images if y[img] != sp_idx
+            }
+
+            if len(train_class_features) == 0 or len(train_no_class_features) == 0:
+                raise ValueError(
+                    f"Fold {fold_id}: especialista '{class_name}' sem positivos ou sem negativos no TREINO. "
+                    "Reduza k_folds ou aumente o número de imagens por classe."
+                )
+            if len(test_class_features) == 0 or len(test_no_class_features) == 0:
+                raise ValueError(
+                    f"Fold {fold_id}: especialista '{class_name}' sem positivos ou sem negativos no TESTE. "
+                    "Reduza k_folds ou aumente o número de imagens por classe."
+                )
+
+            train_true_map = {
+                img: (0 if y[img] == sp_idx else 1) for img in train_images
+            }
+            test_true_map = {img: (0 if y[img] == sp_idx else 1) for img in test_images}
+
+            train_set = _extract_features_and_labels(
+                train_class_features,
+                train_no_class_features,
+                train_true_map,
+            )
+            test_set = _extract_features_and_labels(
+                test_class_features,
+                test_no_class_features,
+                test_true_map,
+            )
+
+            specialist_dataset.append((train_set, test_set))
+
+        prepared.append(specialist_dataset)
+
+    return prepared
+
+
 def merge_categories_dicts(
     categories: List[str], textures_dict: Dict[str, Dict[str, np.ndarray]]
 ) -> Tuple[Dict[str, np.ndarray], List[str], Dict[str, int]]:

@@ -1,6 +1,15 @@
 """Script de teste para validar split_full_image_data_in_folds"""
 
+import os
+import sys
+
 import numpy as np
+
+# Garante que a raiz do projeto está no sys.path (execução direta do arquivo).
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
 from tools.data import split_full_image_data_in_folds
 
 # Criar dados de teste simulados
@@ -37,8 +46,8 @@ print("=" * 60)
 
 # Validar que não há overlap entre treino e teste
 for fold_idx, fold in enumerate(folds):
-    train_images = set(fold["train_class_features"].keys())
-    test_images = set(fold["test_class_features"].keys())
+    train_images = set(fold["train_features"].keys())
+    test_images = set(fold["test_features"].keys())
     
     overlap = train_images.intersection(test_images)
     assert len(overlap) == 0, f"Fold {fold_idx}: Overlap detectado! {overlap}"
@@ -67,7 +76,7 @@ print("=" * 60)
 # (para garantir que múltiplos conjuntos de features terão as mesmas divisões)
 all_test_images = []
 for fold_idx, fold in enumerate(folds):
-    test_images = set(fold["test_class_features"].keys())
+    test_images = set(fold["test_features"].keys())
     all_test_images.append(test_images)
     
 # Todas as imagens devem aparecer exatamente uma vez no teste

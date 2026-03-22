@@ -2,6 +2,8 @@
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score, classification_report, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
+from typing import Dict, List
+
 from mytypes import ExperimentMetrics, ModelMetrics, StandardExperimentMetrics
 
 def show_predict_infos(y, predict, title="", cmap="Blues", show_plots=True):
@@ -133,6 +135,51 @@ def show_relevance_experiment_metrics(metrics: ExperimentMetrics, title=""):
         print(f'        | Folds: {print_folds(sp_precision["folds"])}')
     print("#" * 40)
     1
+
+
+def show_relevance_cross_experiment_metrics(
+    global_metrics: ExperimentMetrics,
+    cv_model_metrics: Dict,
+    fold_model_metrics: List[ModelMetrics],
+    title: str = "",
+):
+    """Exibe métricas no padrão do método standard: global + mean/std + fold1..K."""
+
+    (accuracy, f1, recall, precision), specialists_train_metrics = global_metrics
+
+    def fmt_pct(x: float) -> str:
+        return f"{x * 100:.4f}%"
+
+    print("#" * 40)
+    print(f"Métricas Relevância CROSS {title}:")
+    print(f"   🌐 Global - Acurácia: {fmt_pct(accuracy)} | F1: {fmt_pct(f1)} | Recall: {fmt_pct(recall)} | Precision: {fmt_pct(precision)}")
+
+    if cv_model_metrics is not None:
+        acc = cv_model_metrics["accuracy"]
+        f1m = cv_model_metrics["f1"]
+        rec = cv_model_metrics["recall"]
+        prec = cv_model_metrics["precision"]
+        print("-" * 40)
+        print(
+            f"   📈 Mean±Std - Acurácia: {fmt_pct(acc['mean'])} ± {fmt_pct(acc['std'])} | "
+            f"F1: {fmt_pct(f1m['mean'])} ± {fmt_pct(f1m['std'])} | "
+            f"Recall: {fmt_pct(rec['mean'])} ± {fmt_pct(rec['std'])} | "
+            f"Precision: {fmt_pct(prec['mean'])} ± {fmt_pct(prec['std'])}"
+        )
+
+        for idx, m in enumerate(fold_model_metrics):
+            a, f, r, p = m
+            print(
+                f"   🧩 Fold {idx + 1} - Acurácia: {fmt_pct(a)} | F1: {fmt_pct(f)} | Recall: {fmt_pct(r)} | Precision: {fmt_pct(p)}"
+            )
+
+    print("-" * 40)
+    print("Métricas de Treinamento dos Especialistas (agregadas por fold):")
+    for idx, train_metrics in enumerate(specialists_train_metrics):
+        sp_accuracy = train_metrics['accuracy']
+        print(f"   Especialista classe {idx}: Acurácia Média {fmt_pct(sp_accuracy['mean'])} ± {fmt_pct(sp_accuracy['std'])}")
+    print("#" * 40)
+    
 def show_sum_experiment_metrics(metrics: ModelMetrics, title=""):
     """
     Exibe métricas de avaliação de modelos de classificação.
