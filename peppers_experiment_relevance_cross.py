@@ -144,7 +144,7 @@ def _postprocess_relevance_cross_results(
     )
 
 
-images_directory = "./images/pieces/"
+images_directory = "./images/experiment/peppers_two_classes"
 image_categories = ["peperomia", "piper"]
 NEEDS_RESIZE = int(os.getenv("NEEDS_RESIZE", True))
 ACCEPTED_IMAGES_EXTENSIONS = (".jpg", ".jpeg", ".png")
