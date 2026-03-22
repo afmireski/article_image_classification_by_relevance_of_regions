@@ -41,7 +41,7 @@ def transform_model_name(name):
             
     return name
 
-files = glob.glob(os.path.join(input_dir, "*_metrics.csv"))
+files = glob.glob(os.path.join(input_dir, "**", "*_metrics.csv"), recursive=True)
 
 for file_path in files:
     filename = os.path.basename(file_path)

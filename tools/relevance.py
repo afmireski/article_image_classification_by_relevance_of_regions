@@ -983,6 +983,9 @@ def export_relevance_results_to_csv(
     output_dir: str = "results",
     filename: str = None,
     cv_model_metrics: Optional[TrainMetrics] = None,
+    export_metrics: bool = True,
+    use_model_subdir: bool = True,
+    base_name_override: Optional[str] = None,
 ) -> str:
     """
     Exporta os resultados da técnica de relevância para um arquivo CSV.
@@ -1018,12 +1021,15 @@ def export_relevance_results_to_csv(
     # Extrai as métricas globais
     (accuracy_global, f1_global, recall_global, precision_global), specialists_train_metrics = model_metrics
     
+    # Define o nome base (estável) para diretórios/tags
+    base_name = (base_name_override or model_name).lower().replace('-', '_').replace(' ', '_')
+
     # Cria o diretório de saída
-    csv_dir = os.path.join(output_dir, "csv_exports")
+    csv_root_dir = os.path.join(output_dir, "csv_exports")
+    csv_dir = os.path.join(csv_root_dir, base_name) if use_model_subdir else csv_root_dir
     os.makedirs(csv_dir, exist_ok=True)
-    
+
     # Define o nome do arquivo se não fornecido
-    base_name = model_name.lower().replace('-', '_').replace(' ', '_')
     if filename is None:
         filename = f"{base_name}_results.csv"
 
@@ -1036,7 +1042,8 @@ def export_relevance_results_to_csv(
     
     print(f"📊 Exportando resultados para CSV: {model_name}")
     print(f"   📁 Arquivo com os resultados: {results_filepath}")
-    print (f"   📁 Arquivo com as métricas: {metrics_filepath}")
+    if export_metrics:
+        print(f"   📁 Arquivo com as métricas: {metrics_filepath}")
     print(f"   🎯 Imagens: {len(predicted_labels)} amostras")
     print("-" * 50)
     
@@ -1112,7 +1119,8 @@ def export_relevance_results_to_csv(
     def fmt_std(x):
         return f"{x:.4f}"  # já em escala percentual
 
-    tag_prefix = f"{base_name}_relevance"
+    method_tag_prefix = f"{base_name}_relevance"
+    specialist_tag_prefix = base_name
 
     def to_percent(x):
         # Métricas internas são [0,1]; exporta em % (0-100)
@@ -1123,7 +1131,7 @@ def export_relevance_results_to_csv(
     # Global
     metrics_rows.append(
         {
-            "model": f"{tag_prefix}_global",
+            "model": f"{method_tag_prefix}_global",
             "accuracy (%)": fmt_num(to_percent(accuracy_global)),
             "accuracy_std (+- %)": "###",
             "f1_score (%)": fmt_num(to_percent(f1_global)),
@@ -1144,7 +1152,7 @@ def export_relevance_results_to_csv(
 
         metrics_rows.append(
             {
-                "model": f"{tag_prefix}_mean",
+                "model": f"{method_tag_prefix}_mean",
                 "accuracy (%)": fmt_num(to_percent(cv_acc["mean"])),
                 "accuracy_std (+- %)": fmt_std(to_percent(cv_acc["std"])),
                 "f1_score (%)": fmt_num(to_percent(cv_f1["mean"])),
@@ -1166,7 +1174,7 @@ def export_relevance_results_to_csv(
         for fold_idx in range(folds_count):
             metrics_rows.append(
                 {
-                    "model": f"{tag_prefix}_fold{fold_idx + 1}",
+                    "model": f"{method_tag_prefix}_fold{fold_idx + 1}",
                     "accuracy (%)": fmt_num(to_percent(cv_acc["folds"][fold_idx])),
                     "accuracy_std (+- %)": "###",
                     "f1_score (%)": fmt_num(to_percent(cv_f1["folds"][fold_idx])),
@@ -1188,7 +1196,7 @@ def export_relevance_results_to_csv(
         # Mean (com std)
         metrics_rows.append(
             {
-                "model": f"{tag_prefix}_specialist_{sp_idx}_mean",
+                "model": f"{specialist_tag_prefix}_specialist_{sp_idx}_mean",
                 "accuracy (%)": fmt_num(to_percent(sp_accuracy["mean"])),
                 "accuracy_std (+- %)": fmt_std(to_percent(sp_accuracy["std"])),
                 "f1_score (%)": fmt_num(to_percent(sp_f1["mean"])),
@@ -1211,7 +1219,7 @@ def export_relevance_results_to_csv(
         for fold_idx in range(folds_count):
             metrics_rows.append(
                 {
-                    "model": f"{tag_prefix}_specialist_{sp_idx}_fold{fold_idx + 1}",
+                    "model": f"{specialist_tag_prefix}_specialist_{sp_idx}_fold{fold_idx + 1}",
                     "accuracy (%)": fmt_num(to_percent(sp_accuracy["folds"][fold_idx])),
                     "accuracy_std (+- %)": "###",
                     "f1_score (%)": fmt_num(to_percent(sp_f1["folds"][fold_idx])),
@@ -1222,25 +1230,26 @@ def export_relevance_results_to_csv(
                     "precision_std (+- %)": "###",
                 }
             )
-    with open(metrics_filepath, "w", newline="", encoding="utf-8") as csvfile:
-        fieldnames = [
-            "model",
-            "accuracy (%)",
-            "accuracy_std (+- %)",
-            "f1_score (%)",
-            "f1_score_std (+- %)",
-            "recall (%)",
-            "recall_std (+- %)",
-            "precision (%)",
-            "precision_std (+- %)",
-        ]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        for row in metrics_rows:
-            writer.writerow(row)
+    if export_metrics:
+        with open(metrics_filepath, "w", newline="", encoding="utf-8") as csvfile:
+            fieldnames = [
+                "model",
+                "accuracy (%)",
+                "accuracy_std (+- %)",
+                "f1_score (%)",
+                "f1_score_std (+- %)",
+                "recall (%)",
+                "recall_std (+- %)",
+                "precision (%)",
+                "precision_std (+- %)",
+            ]
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in metrics_rows:
+                writer.writerow(row)
 
-    print(f"   ✅ {len(metrics_rows)} linhas de métricas escritas com sucesso")
-    print(f"   💾 Arquivo salvo: {metrics_filepath}")
+        print(f"   ✅ {len(metrics_rows)} linhas de métricas escritas com sucesso")
+        print(f"   💾 Arquivo salvo: {metrics_filepath}")
     print("=" * 50)
     
     return results_filepath
@@ -1292,7 +1301,7 @@ def export_all_relevance_results_to_csv(
     
     print("🎉 Exportação concluída!")
     print(f"   ✅ {len(generated_files)} arquivos CSV gerados")
-    print(f"   📁 Diretório: {output_dir}/csv_exports/")
+    print(f"   📁 Diretório: {output_dir}/csv_exports/<modelo>/")
     print("=" * 60)
     
     return generated_files
@@ -1573,6 +1582,8 @@ def export_relevance_cross_results_to_csv(
 
     global_results, cv_model_metrics, fold_results, _fold_model_metrics = cross_results
 
+    base_name = model_name.lower().replace('-', '_').replace(' ', '_')
+
     paths: Dict[str, str] = {}
     paths["global"] = export_relevance_results_to_csv(
         relevance_results=global_results,
@@ -1580,6 +1591,9 @@ def export_relevance_cross_results_to_csv(
         model_name=model_name,
         output_dir=output_dir,
         cv_model_metrics=cv_model_metrics,
+        export_metrics=True,
+        use_model_subdir=True,
+        base_name_override=base_name,
     )
 
     for idx, fold_res in enumerate(fold_results):
@@ -1589,6 +1603,10 @@ def export_relevance_cross_results_to_csv(
             true_labels=true_labels,
             model_name=fold_name,
             output_dir=output_dir,
+            filename=f"{base_name}_fold{idx + 1}_results.csv",
+            export_metrics=False,
+            use_model_subdir=True,
+            base_name_override=base_name,
         )
 
     return paths

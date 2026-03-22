@@ -198,8 +198,8 @@ def test_export_relevance_cross_metrics_rows():
         for i in range(1, k_folds + 1):
             assert os.path.exists(paths[f"fold{i}"])
 
-        # Checa o metrics CSV global
-        metrics_path = os.path.join(tmpdir, "csv_exports", "test_model_metrics.csv")
+        # Checa o metrics CSV global (agora em subpasta por modelo)
+        metrics_path = os.path.join(tmpdir, "csv_exports", "test_model", "test_model_metrics.csv")
         assert os.path.exists(metrics_path)
 
         with open(metrics_path, "r", encoding="utf-8") as f:
@@ -210,6 +210,10 @@ def test_export_relevance_cross_metrics_rows():
         assert "test_model_relevance_mean" in content
         for i in range(1, k_folds + 1):
             assert f"test_model_relevance_fold{i}" in content
+
+        # Especialistas não devem carregar o sufixo "relevance"
+        assert "test_model_specialist_0_mean" in content
+        assert "test_model_relevance_specialist_0_mean" not in content
 
 
 def run_all_tests():
