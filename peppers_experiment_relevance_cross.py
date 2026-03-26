@@ -160,8 +160,9 @@ MIN_K = int(os.getenv("IMAGE_MIN_K", 4))
 MAX_K = int(os.getenv("IMAGE_MAX_K", 20))
 BASE_SIZE = int(os.getenv("IMAGE_BASE_SIZE", 512))
 BASE_K = int(os.getenv("IMAGE_BASE_K", 9))
+MIN_REGION_SIZE = int(os.getenv("IMAGE_MIN_REGION_SIZE", 128))
 
-print(f"MIN_K: {MIN_K}, MAX_K: {MAX_K}, BASE_SIZE: {BASE_SIZE}, BASE_K: {BASE_K}")
+print(f"MIN_K: {MIN_K}, MAX_K: {MAX_K}, BASE_SIZE: {BASE_SIZE}, BASE_K: {BASE_K}, MIN_REGION_SIZE: {MIN_REGION_SIZE}")
 
 segmented_train_images = segment_images_by_category_auto(
     images_by_category=train_images_by_categories,
@@ -169,6 +170,7 @@ segmented_train_images = segment_images_by_category_auto(
     max_k=MAX_K,
     base_k=BASE_K,
     base_size=BASE_SIZE,
+    min_region_size=MIN_REGION_SIZE
 )
 
 all_images_segmented = merge_image_categories_dicts(segmented_train_images)
