@@ -157,8 +157,8 @@ def _postprocess_relevance_cross_results(
         model_name=export_model_name,
     )
 
-images_directory = "./images/pieces"
-image_categories = ["dogs", "cats", "lions", "horses"]
+images_directory = "./images/experiment/peppers_two_original"
+image_categories = ["peperomia", "piper"]
 n_examples = 4
 NEEDS_RESIZE = int(os.getenv("NEEDS_RESIZE", True))
 RESIZE_SIZE = int(os.getenv("RESIZE_SIZE", 512))

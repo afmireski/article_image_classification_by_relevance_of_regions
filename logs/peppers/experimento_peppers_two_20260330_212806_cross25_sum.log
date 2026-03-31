@@ -1,0 +1,224 @@
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: knn_glcm_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_glcm_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: knn_glcm_lpq_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_glcm_lpq_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: knn_lbp_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lbp_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: knn_lbp_glcm_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lbp_glcm_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: knn_lbp_glcm_lpq_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lbp_glcm_lpq_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: knn_lbp_lpq_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lbp_lpq_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: knn_lpq_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lpq_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: svm_glcm_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_glcm_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: svm_glcm_lpq_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_glcm_lpq_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: svm_lbp_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lbp_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: svm_lbp_glcm_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lbp_glcm_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: svm_lbp_glcm_lpq_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lbp_glcm_lpq_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: svm_lbp_lpq_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lbp_lpq_sumprob_confusion_matrix.png
+============================================================
+
+📊 ETAPA 7: Geração da matriz de confusão
+   📈 Modelo: svm_lpq_sumprob
+   📁 Diretório base: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   🎨 Colormap: Blues
+------------------------------------------------------------
+   ✅ Matriz de confusão gerada
+   💾 Arquivo salvo: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lpq_sumprob_confusion_matrix.png
+============================================================
+
+================================================================================
+✅ SumProb cross finalizado para: knn_glcm
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_glcm/knn_glcm_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_glcm/knn_glcm_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_glcm_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: knn_glcm_lpq
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_glcm_lpq/knn_glcm_lpq_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_glcm_lpq/knn_glcm_lpq_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_glcm_lpq_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: knn_lbp
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lbp/knn_lbp_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lbp/knn_lbp_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lbp_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: knn_lbp_glcm
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lbp_glcm/knn_lbp_glcm_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lbp_glcm/knn_lbp_glcm_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lbp_glcm_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: knn_lbp_glcm_lpq
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lbp_glcm_lpq/knn_lbp_glcm_lpq_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lbp_glcm_lpq/knn_lbp_glcm_lpq_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lbp_glcm_lpq_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: knn_lbp_lpq
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lbp_lpq/knn_lbp_lpq_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lbp_lpq/knn_lbp_lpq_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lbp_lpq_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: knn_lpq
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lpq/knn_lpq_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/knn_lpq/knn_lpq_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/knn_lpq_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: svm_glcm
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_glcm/svm_glcm_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_glcm/svm_glcm_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_glcm_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: svm_glcm_lpq
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_glcm_lpq/svm_glcm_lpq_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_glcm_lpq/svm_glcm_lpq_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_glcm_lpq_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: svm_lbp
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lbp/svm_lbp_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lbp/svm_lbp_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lbp_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: svm_lbp_glcm
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lbp_glcm/svm_lbp_glcm_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lbp_glcm/svm_lbp_glcm_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lbp_glcm_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: svm_lbp_glcm_lpq
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lbp_glcm_lpq/svm_lbp_glcm_lpq_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lbp_glcm_lpq/svm_lbp_glcm_lpq_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lbp_glcm_lpq_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: svm_lbp_lpq
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lbp_lpq/svm_lbp_lpq_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lbp_lpq/svm_lbp_lpq_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lbp_lpq_sumprob_confusion_matrix.png
+================================================================================
+================================================================================
+✅ SumProb cross finalizado para: svm_lpq
+   📁 output_dir: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross
+   📄 results (OOF): /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lpq/svm_lpq_sumprob_results.csv
+   📊 metrics: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/csv_exports/svm_lpq/svm_lpq_sumprob_metrics.csv
+   🧩 confusion: /home/afmireski/Documentos/BCC/artigos/relevancia/code/image_classification_by_relevance_of_regions_article/results/experiments/cross/experimento_20260328_230411_cross25/sum_cross/confusion_matrixs/svm_lpq_sumprob_confusion_matrix.png
+================================================================================
