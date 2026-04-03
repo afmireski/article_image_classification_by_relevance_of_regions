@@ -813,322 +813,322 @@ print("✅ Relevância calculada para todos os 7 conjuntos de features")
 print("📊 Métricas e matrizes de confusão geradas para cada combinação")
 print("\n🎉 === CÁLCULO DE RELEVÂNCIA KNN CONCLUÍDO ===")
 
-# print("🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS SVM ===")
+print("🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS SVM ===")
 
-# base_name = "SVM"
+base_name = "SVM"
 
-# print("\n📊 Calculando relevância LBP...")
-# relevance_results_svm_lbp = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lbp_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
+print("\n📊 Calculando relevância LBP...")
+relevance_results_svm_lbp = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lbp_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LBP",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+)
 
-# (
-#     _,
-#     _,
-#     _,
-#     svm_lbp_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (svm_lbp_true_y, svm_lbp_predicted_y),
-#     svm_lbp_relevance_metrics,
-# ) = relevance_results_svm_lbp
+(
+    _,
+    _,
+    _,
+    svm_lbp_max_relevances,
+    _,
+    _,
+    _,
+    (svm_lbp_true_y, svm_lbp_predicted_y),
+    svm_lbp_relevance_metrics,
+) = relevance_results_svm_lbp
 
-# show_relevance_experiment_metrics(svm_lbp_relevance_metrics, title="SVM LBP")
-# show_confusion_matrix(
-#     svm_lbp_true_y, svm_lbp_predicted_y, title="SVM LBP", cmap="Reds"
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=svm_lbp_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lbp",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
+show_relevance_experiment_metrics(svm_lbp_relevance_metrics, title="SVM LBP")
+show_confusion_matrix(
+    svm_lbp_true_y, svm_lbp_predicted_y, title="SVM LBP", cmap="Reds"
+)
+generate_relevance_heatmaps(
+    max_relevances=svm_lbp_max_relevances,
+    all_images_segmented=all_images_segmented,
+    model_name=f"{base_name.lower()}_lbp",
+    overlay_alpha=0.5,
+    save_grid_lines=True,
+    colormap="spring",
+)
 
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_svm_lbp,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP",
-# )
+# Exporta resultados para CSV
+export_relevance_results_to_csv(
+    relevance_results=relevance_results_svm_lbp,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LBP",
+)
 
-# print("\n📊 Calculando relevância GLCM...")
-# relevance_results_svm_glcm = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_glcm_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-GLCM",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
+print("\n📊 Calculando relevância GLCM...")
+relevance_results_svm_glcm = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_glcm_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-GLCM",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+)
 
-# (
-#     _,
-#     _,
-#     _,
-#     svm_glcm_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (svm_glcm_true_y, svm_glcm_predicted_y),
-#     svm_glcm_relevance_metrics,
-# ) = relevance_results_svm_glcm
+(
+    _,
+    _,
+    _,
+    svm_glcm_max_relevances,
+    _,
+    _,
+    _,
+    (svm_glcm_true_y, svm_glcm_predicted_y),
+    svm_glcm_relevance_metrics,
+) = relevance_results_svm_glcm
 
-# show_relevance_experiment_metrics(svm_glcm_relevance_metrics, title="SVM GLCM")
-# show_confusion_matrix(
-#     svm_glcm_true_y,
-#     svm_glcm_predicted_y,
-#     title="SVM GLCM",
-#     cmap="Reds",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=svm_glcm_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_glcm",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
+show_relevance_experiment_metrics(svm_glcm_relevance_metrics, title="SVM GLCM")
+show_confusion_matrix(
+    svm_glcm_true_y,
+    svm_glcm_predicted_y,
+    title="SVM GLCM",
+    cmap="Reds",
+)
+generate_relevance_heatmaps(
+    max_relevances=svm_glcm_max_relevances,
+    all_images_segmented=all_images_segmented,
+    model_name=f"{base_name.lower()}_glcm",
+    overlay_alpha=0.5,
+    save_grid_lines=True,
+    colormap="spring",
+)
 
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_svm_glcm,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_GLCM",
-# )
+# Exporta resultados para CSV
+export_relevance_results_to_csv(
+    relevance_results=relevance_results_svm_glcm,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_GLCM",
+)
 
-# print("\n📊 Calculando relevância LPQ...")
-# relevance_results_svm_lpq = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
+print("\n📊 Calculando relevância LPQ...")
+relevance_results_svm_lpq = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lpq_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LPQ",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+)
 
-# (
-#     _,
-#     _,
-#     _,
-#     svm_lpq_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (svm_lpq_true_y, svm_lpq_predicted_y),
-#     svm_lpq_relevance_metrics,
-# ) = relevance_results_svm_lpq
+(
+    _,
+    _,
+    _,
+    svm_lpq_max_relevances,
+    _,
+    _,
+    _,
+    (svm_lpq_true_y, svm_lpq_predicted_y),
+    svm_lpq_relevance_metrics,
+) = relevance_results_svm_lpq
 
-# show_relevance_experiment_metrics(svm_lpq_relevance_metrics, title="SVM LPQ")
-# show_confusion_matrix(
-#     svm_lpq_true_y, svm_lpq_predicted_y, title="SVM LPQ", cmap="Reds"
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=svm_lpq_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lpq",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
+show_relevance_experiment_metrics(svm_lpq_relevance_metrics, title="SVM LPQ")
+show_confusion_matrix(
+    svm_lpq_true_y, svm_lpq_predicted_y, title="SVM LPQ", cmap="Reds"
+)
+generate_relevance_heatmaps(
+    max_relevances=svm_lpq_max_relevances,
+    all_images_segmented=all_images_segmented,
+    model_name=f"{base_name.lower()}_lpq",
+    overlay_alpha=0.5,
+    save_grid_lines=True,
+    colormap="spring",
+)
 
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_svm_lpq,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LPQ",
-# )
+# Exporta resultados para CSV
+export_relevance_results_to_csv(
+    relevance_results=relevance_results_svm_lpq,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LPQ",
+)
 
-# print("\n📊 Calculando relevância LBP+GLCM...")
-# relevance_results_svm_lbp_glcm = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lbp_glcm_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+GLCM",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
+print("\n📊 Calculando relevância LBP+GLCM...")
+relevance_results_svm_lbp_glcm = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lbp_glcm_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LBP+GLCM",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+)
 
-# (
-#     _,
-#     _,
-#     _,
-#     svm_lbp_glcm_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (svm_lbp_glcm_true_y, svm_lbp_glcm_predicted_y),
-#     svm_lbp_glcm_relevance_metrics,
-# ) = relevance_results_svm_lbp_glcm
+(
+    _,
+    _,
+    _,
+    svm_lbp_glcm_max_relevances,
+    _,
+    _,
+    _,
+    (svm_lbp_glcm_true_y, svm_lbp_glcm_predicted_y),
+    svm_lbp_glcm_relevance_metrics,
+) = relevance_results_svm_lbp_glcm
 
-# show_relevance_experiment_metrics(svm_lbp_glcm_relevance_metrics, title="SVM LBP+GLCM")
-# show_confusion_matrix(
-#     svm_lbp_glcm_true_y,
-#     svm_lbp_glcm_predicted_y,
-#     title="SVM LBP+GLCM",
-#     cmap="Reds",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=svm_lbp_glcm_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lbp_glcm",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
+show_relevance_experiment_metrics(svm_lbp_glcm_relevance_metrics, title="SVM LBP+GLCM")
+show_confusion_matrix(
+    svm_lbp_glcm_true_y,
+    svm_lbp_glcm_predicted_y,
+    title="SVM LBP+GLCM",
+    cmap="Reds",
+)
+generate_relevance_heatmaps(
+    max_relevances=svm_lbp_glcm_max_relevances,
+    all_images_segmented=all_images_segmented,
+    model_name=f"{base_name.lower()}_lbp_glcm",
+    overlay_alpha=0.5,
+    save_grid_lines=True,
+    colormap="spring",
+)
 
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_svm_lbp_glcm,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_GLCM",
-# )
+# Exporta resultados para CSV
+export_relevance_results_to_csv(
+    relevance_results=relevance_results_svm_lbp_glcm,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LBP_GLCM",
+)
 
-# print("\n📊 Calculando relevância LBP+LPQ...")
-# relevance_results_svm_lbp_lpq = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lbp_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
+print("\n📊 Calculando relevância LBP+LPQ...")
+relevance_results_svm_lbp_lpq = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lbp_lpq_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LBP+LPQ",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+)
 
-# (
-#     _,
-#     _,
-#     _,
-#     svm_lbp_lpq_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (svm_lbp_lpq_true_y, svm_lbp_lpq_predicted_y),
-#     svm_lbp_lpq_relevance_metrics,
-# ) = relevance_results_svm_lbp_lpq
+(
+    _,
+    _,
+    _,
+    svm_lbp_lpq_max_relevances,
+    _,
+    _,
+    _,
+    (svm_lbp_lpq_true_y, svm_lbp_lpq_predicted_y),
+    svm_lbp_lpq_relevance_metrics,
+) = relevance_results_svm_lbp_lpq
 
-# show_relevance_experiment_metrics(svm_lbp_lpq_relevance_metrics, title="SVM LBP+LPQ")
-# show_confusion_matrix(
-#     svm_lbp_lpq_true_y,
-#     svm_lbp_lpq_predicted_y,
-#     title="SVM LBP+LPQ",
-#     cmap="Reds",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=svm_lbp_lpq_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lbp_lpq",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
+show_relevance_experiment_metrics(svm_lbp_lpq_relevance_metrics, title="SVM LBP+LPQ")
+show_confusion_matrix(
+    svm_lbp_lpq_true_y,
+    svm_lbp_lpq_predicted_y,
+    title="SVM LBP+LPQ",
+    cmap="Reds",
+)
+generate_relevance_heatmaps(
+    max_relevances=svm_lbp_lpq_max_relevances,
+    all_images_segmented=all_images_segmented,
+    model_name=f"{base_name.lower()}_lbp_lpq",
+    overlay_alpha=0.5,
+    save_grid_lines=True,
+    colormap="spring",
+)
 
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_svm_lbp_lpq,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_LPQ",
-# )
+# Exporta resultados para CSV
+export_relevance_results_to_csv(
+    relevance_results=relevance_results_svm_lbp_lpq,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LBP_LPQ",
+)
 
-# print("\n📊 Calculando relevância GLCM+LPQ...")
-# relevance_results_svm_glcm_lpq = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_glcm_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-GLCM+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
+print("\n📊 Calculando relevância GLCM+LPQ...")
+relevance_results_svm_glcm_lpq = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_glcm_lpq_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-GLCM+LPQ",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+)
 
-# (
-#     _,
-#     _,
-#     _,
-#     svm_glcm_lpq_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (svm_glcm_lpq_true_y, svm_glcm_lpq_predicted_y),
-#     svm_glcm_lpq_relevance_metrics,
-# ) = relevance_results_svm_glcm_lpq
+(
+    _,
+    _,
+    _,
+    svm_glcm_lpq_max_relevances,
+    _,
+    _,
+    _,
+    (svm_glcm_lpq_true_y, svm_glcm_lpq_predicted_y),
+    svm_glcm_lpq_relevance_metrics,
+) = relevance_results_svm_glcm_lpq
 
-# show_relevance_experiment_metrics(svm_glcm_lpq_relevance_metrics, title="SVM GLCM+LPQ")
-# show_confusion_matrix(
-#     svm_glcm_lpq_true_y,
-#     svm_glcm_lpq_predicted_y,
-#     title="SVM GLCM+LPQ",
-#     cmap="Reds",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=svm_glcm_lpq_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_glcm_lpq",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
+show_relevance_experiment_metrics(svm_glcm_lpq_relevance_metrics, title="SVM GLCM+LPQ")
+show_confusion_matrix(
+    svm_glcm_lpq_true_y,
+    svm_glcm_lpq_predicted_y,
+    title="SVM GLCM+LPQ",
+    cmap="Reds",
+)
+generate_relevance_heatmaps(
+    max_relevances=svm_glcm_lpq_max_relevances,
+    all_images_segmented=all_images_segmented,
+    model_name=f"{base_name.lower()}_glcm_lpq",
+    overlay_alpha=0.5,
+    save_grid_lines=True,
+    colormap="spring",
+)
 
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_svm_glcm_lpq,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_GLCM_LPQ",
-# )
+# Exporta resultados para CSV
+export_relevance_results_to_csv(
+    relevance_results=relevance_results_svm_glcm_lpq,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_GLCM_LPQ",
+)
 
-# print("\n📊 Calculando relevância LBP+GLCM+LPQ...")
-# relevance_results_svm_lbp_glcm_lpq = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lbp_glcm_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+GLCM+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-# )
+print("\n📊 Calculando relevância LBP+GLCM+LPQ...")
+relevance_results_svm_lbp_glcm_lpq = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lbp_glcm_lpq_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LBP+GLCM+LPQ",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+)
 
-# (
-#     _,
-#     _,
-#     _,
-#     svm_lbp_glcm_lpq_max_relevances,
-#     _,
-#     _,
-#     _,
-#     (svm_lbp_glcm_lpq_true_y, svm_lbp_glcm_lpq_predicted_y),
-#     svm_lbp_glcm_lpq_relevance_metrics,
-# ) = relevance_results_svm_lbp_glcm_lpq
+(
+    _,
+    _,
+    _,
+    svm_lbp_glcm_lpq_max_relevances,
+    _,
+    _,
+    _,
+    (svm_lbp_glcm_lpq_true_y, svm_lbp_glcm_lpq_predicted_y),
+    svm_lbp_glcm_lpq_relevance_metrics,
+) = relevance_results_svm_lbp_glcm_lpq
 
-# show_relevance_experiment_metrics(svm_lbp_glcm_lpq_relevance_metrics, title="SVM LBP+GLCM+LPQ")
-# show_confusion_matrix(
-#     svm_lbp_glcm_lpq_true_y,
-#     svm_lbp_glcm_lpq_predicted_y,
-#     title="SVM LBP+GLCM+LPQ",
-#     cmap="Reds",
-# )
-# generate_relevance_heatmaps(
-#     max_relevances=svm_lbp_glcm_lpq_max_relevances,
-#     all_images_segmented=all_images_segmented,
-#     model_name=f"{base_name.lower()}_lbp_glcm_lpq",
-#     overlay_alpha=0.5,
-#     save_grid_lines=True,
-#     colormap="spring",
-# )
+show_relevance_experiment_metrics(svm_lbp_glcm_lpq_relevance_metrics, title="SVM LBP+GLCM+LPQ")
+show_confusion_matrix(
+    svm_lbp_glcm_lpq_true_y,
+    svm_lbp_glcm_lpq_predicted_y,
+    title="SVM LBP+GLCM+LPQ",
+    cmap="Reds",
+)
+generate_relevance_heatmaps(
+    max_relevances=svm_lbp_glcm_lpq_max_relevances,
+    all_images_segmented=all_images_segmented,
+    model_name=f"{base_name.lower()}_lbp_glcm_lpq",
+    overlay_alpha=0.5,
+    save_grid_lines=True,
+    colormap="spring",
+)
 
-# # Exporta resultados para CSV
-# export_relevance_results_to_csv(
-#     relevance_results=relevance_results_svm_lbp_glcm_lpq,
-#     true_labels=true_images_labels,
-#     model_name=f"{base_name}_LBP_GLCM_LPQ",
-# )
+# Exporta resultados para CSV
+export_relevance_results_to_csv(
+    relevance_results=relevance_results_svm_lbp_glcm_lpq,
+    true_labels=true_images_labels,
+    model_name=f"{base_name}_LBP_GLCM_LPQ",
+)
 
-# print("✅ Relevância calculada para todos os 7 conjuntos de features")
-# print("📊 Métricas e matrizes de confusão geradas para cada combinação")
-# print("\n🎉 === CÁLCULO DE RELEVÂNCIA SVM CONCLUÍDO ===")
+print("✅ Relevância calculada para todos os 7 conjuntos de features")
+print("📊 Métricas e matrizes de confusão geradas para cada combinação")
+print("\n🎉 === CÁLCULO DE RELEVÂNCIA SVM CONCLUÍDO ===")
 
 zip_and_cleanup_results(
     results_dir="results",

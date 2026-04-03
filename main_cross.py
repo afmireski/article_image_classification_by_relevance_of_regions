@@ -677,136 +677,136 @@ relevance_results_knn_lbp_glcm_lpq = timed_relevance_technique(
     ),
 )
 
-# print("✅ Relevância calculada para todos os 7 conjuntos de features")
-# print("📊 Métricas e matrizes de confusão geradas para cada combinação")
-# print("\n🎉 === CÁLCULO DE RELEVÂNCIA KNN CONCLUÍDO ===")
+print("✅ Relevância calculada para todos os 7 conjuntos de features")
+print("📊 Métricas e matrizes de confusão geradas para cada combinação")
+print("\n🎉 === CÁLCULO DE RELEVÂNCIA KNN CONCLUÍDO ===")
 
-# print("🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS SVM ===")
+print("🚀 === CALCULANDO RELEVÂNCIA DOS MODELOS SVM ===")
 
-# base_name = "SVM"
+base_name = "SVM"
 
-# print("\n📊 Calculando relevância LBP...")
-# relevance_results_svm_lbp = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lbp_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-#     after=lambda cross_results: _postprocess_relevance_cross_results(
-#         cross_results,
-#         title="SVM LBP",
-#         confusion_cmap="Reds",
-#         heatmap_model_name=f"{base_name.lower()}_lbp",
-#         export_model_name=f"{base_name}_LBP",
-#     ),
-# )
+print("\n📊 Calculando relevância LBP...")
+relevance_results_svm_lbp = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lbp_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LBP",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+    after=lambda cross_results: _postprocess_relevance_cross_results(
+        cross_results,
+        title="SVM LBP",
+        confusion_cmap="Reds",
+        heatmap_model_name=f"{base_name.lower()}_lbp",
+        export_model_name=f"{base_name}_LBP",
+    ),
+)
 
-# print("\n📊 Calculando relevância GLCM...")
-# relevance_results_svm_glcm = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_glcm_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-GLCM",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-#     after=lambda cross_results: _postprocess_relevance_cross_results(
-#         cross_results,
-#         title="SVM GLCM",
-#         confusion_cmap="Reds",
-#         heatmap_model_name=f"{base_name.lower()}_glcm",
-#         export_model_name=f"{base_name}_GLCM",
-#     ),
-# )
+print("\n📊 Calculando relevância GLCM...")
+relevance_results_svm_glcm = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_glcm_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-GLCM",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+    after=lambda cross_results: _postprocess_relevance_cross_results(
+        cross_results,
+        title="SVM GLCM",
+        confusion_cmap="Reds",
+        heatmap_model_name=f"{base_name.lower()}_glcm",
+        export_model_name=f"{base_name}_GLCM",
+    ),
+)
 
-# print("\n📊 Calculando relevância LPQ...")
-# relevance_results_svm_lpq = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-#     after=lambda cross_results: _postprocess_relevance_cross_results(
-#         cross_results,
-#         title="SVM LPQ",
-#         confusion_cmap="Reds",
-#         heatmap_model_name=f"{base_name.lower()}_lpq",
-#         export_model_name=f"{base_name}_LPQ",
-#     ),
-# )
+print("\n📊 Calculando relevância LPQ...")
+relevance_results_svm_lpq = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lpq_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LPQ",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+    after=lambda cross_results: _postprocess_relevance_cross_results(
+        cross_results,
+        title="SVM LPQ",
+        confusion_cmap="Reds",
+        heatmap_model_name=f"{base_name.lower()}_lpq",
+        export_model_name=f"{base_name}_LPQ",
+    ),
+)
 
-# print("\n📊 Calculando relevância LBP+GLCM...")
-# relevance_results_svm_lbp_glcm = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lbp_glcm_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+GLCM",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-#     after=lambda cross_results: _postprocess_relevance_cross_results(
-#         cross_results,
-#         title="SVM LBP+GLCM",
-#         confusion_cmap="Reds",
-#         heatmap_model_name=f"{base_name.lower()}_lbp_glcm",
-#         export_model_name=f"{base_name}_LBP_GLCM",
-#     ),
-# )
+print("\n📊 Calculando relevância LBP+GLCM...")
+relevance_results_svm_lbp_glcm = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lbp_glcm_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LBP+GLCM",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+    after=lambda cross_results: _postprocess_relevance_cross_results(
+        cross_results,
+        title="SVM LBP+GLCM",
+        confusion_cmap="Reds",
+        heatmap_model_name=f"{base_name.lower()}_lbp_glcm",
+        export_model_name=f"{base_name}_LBP_GLCM",
+    ),
+)
 
-# print("\n📊 Calculando relevância LBP+LPQ...")
-# relevance_results_svm_lbp_lpq = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lbp_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-#     after=lambda cross_results: _postprocess_relevance_cross_results(
-#         cross_results,
-#         title="SVM LBP+LPQ",
-#         confusion_cmap="Reds",
-#         heatmap_model_name=f"{base_name.lower()}_lbp_lpq",
-#         export_model_name=f"{base_name}_LBP_LPQ",
-#     ),
-# )
+print("\n📊 Calculando relevância LBP+LPQ...")
+relevance_results_svm_lbp_lpq = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lbp_lpq_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LBP+LPQ",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+    after=lambda cross_results: _postprocess_relevance_cross_results(
+        cross_results,
+        title="SVM LBP+LPQ",
+        confusion_cmap="Reds",
+        heatmap_model_name=f"{base_name.lower()}_lbp_lpq",
+        export_model_name=f"{base_name}_LBP_LPQ",
+    ),
+)
 
-# print("\n📊 Calculando relevância GLCM+LPQ...")
-# relevance_results_svm_glcm_lpq = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_glcm_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-GLCM+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-#     after=lambda cross_results: _postprocess_relevance_cross_results(
-#         cross_results,
-#         title="SVM GLCM+LPQ",
-#         confusion_cmap="Reds",
-#         heatmap_model_name=f"{base_name.lower()}_glcm_lpq",
-#         export_model_name=f"{base_name}_GLCM_LPQ",
-#     ),
-# )
+print("\n📊 Calculando relevância GLCM+LPQ...")
+relevance_results_svm_glcm_lpq = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_glcm_lpq_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-GLCM+LPQ",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+    after=lambda cross_results: _postprocess_relevance_cross_results(
+        cross_results,
+        title="SVM GLCM+LPQ",
+        confusion_cmap="Reds",
+        heatmap_model_name=f"{base_name.lower()}_glcm_lpq",
+        export_model_name=f"{base_name}_GLCM_LPQ",
+    ),
+)
 
-# print("\n📊 Calculando relevância LBP+GLCM+LPQ...")
-# relevance_results_svm_lbp_glcm_lpq = timed_relevance_technique(
-#     base_model=base_svm,
-#     specialist_sets=final_sp_lbp_glcm_lpq_sets,
-#     class_names=class_names,
-#     model_name=f"{base_name}-LBP+GLCM+LPQ",
-#     k_folds=K_FOLDS,
-#     true_labels=true_images_labels,
-#     after=lambda cross_results: _postprocess_relevance_cross_results(
-#         cross_results,
-#         title="SVM LBP+GLCM+LPQ",
-#         confusion_cmap="Reds",
-#         heatmap_model_name=f"{base_name.lower()}_lbp_glcm_lpq",
-#         export_model_name=f"{base_name}_LBP_GLCM_LPQ",
-#     ),
-# )
+print("\n📊 Calculando relevância LBP+GLCM+LPQ...")
+relevance_results_svm_lbp_glcm_lpq = timed_relevance_technique(
+    base_model=base_svm,
+    specialist_sets=final_sp_lbp_glcm_lpq_sets,
+    class_names=class_names,
+    model_name=f"{base_name}-LBP+GLCM+LPQ",
+    k_folds=K_FOLDS,
+    true_labels=true_images_labels,
+    after=lambda cross_results: _postprocess_relevance_cross_results(
+        cross_results,
+        title="SVM LBP+GLCM+LPQ",
+        confusion_cmap="Reds",
+        heatmap_model_name=f"{base_name.lower()}_lbp_glcm_lpq",
+        export_model_name=f"{base_name}_LBP_GLCM_LPQ",
+    ),
+)
 
-# print("✅ Relevância calculada para todos os 7 conjuntos de features")
-# print("📊 Métricas e matrizes de confusão geradas para cada combinação")
-# print("\n🎉 === CÁLCULO DE RELEVÂNCIA SVM CONCLUÍDO ===")
+print("✅ Relevância calculada para todos os 7 conjuntos de features")
+print("📊 Métricas e matrizes de confusão geradas para cada combinação")
+print("\n🎉 === CÁLCULO DE RELEVÂNCIA SVM CONCLUÍDO ===")
 
 zip_and_cleanup_results(
     results_dir="results",
